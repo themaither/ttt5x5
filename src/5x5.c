@@ -122,6 +122,6 @@ _5x5_filldesired ()
 {
   for (size_t i = 0; i < 5 * 5; ++i)
     {
-      desired_pattern[i] = 1;
+      desired_pattern[i] = 0;
     }
 }

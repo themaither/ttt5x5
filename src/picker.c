@@ -219,6 +219,48 @@ picker_update ()
 
               starting = 1;
             }
+          else if (player_x == 1 && player_y == 1)
+            {
+              _5x5_clear ();
+              _5x5_startpattern ();
+              _5x5_filldesired ();
+#define interact(X, Y) _5x5_interact_desired (X, Y)
+#define LEVEL_6
+#include <levels.X.h>
+#undef LEVEL_6
+#undef interact
+              completed_setid (6);
+
+              starting = 1;
+            }
+          else if (player_x == 2 && player_y == 1)
+            {
+              _5x5_clear ();
+              _5x5_startpattern ();
+              _5x5_filldesired ();
+#define interact(X, Y) _5x5_interact_desired (X, Y)
+#define LEVEL_7
+#include <levels.X.h>
+#undef LEVEL_7
+#undef interact
+              completed_setid (7);
+
+              starting = 1;
+            }
+          else if (player_x == 3 && player_y == 1)
+            {
+              _5x5_clear ();
+              _5x5_startpattern ();
+              _5x5_filldesired ();
+#define interact(X, Y) _5x5_interact_desired (X, Y)
+#define LEVEL_8
+#include <levels.X.h>
+#undef LEVEL_8
+#undef interact
+              completed_setid (8);
+
+              starting = 1;
+            }
 
           return;
         }
@@ -241,7 +283,6 @@ picker_update ()
   else
     DrawTexture (leave_texture, 2, 2, WHITE);
 
-  DrawField_flipall ();
 #define interact(X, Y) DrawField_interact (X, Y)
 #define LEVEL_0
 #include <levels.X.h>
@@ -252,7 +293,6 @@ picker_update ()
   if (completed ())
     DrawTexture (completed_texture, 56 + 64, 64 + 64, WHITE);
 
-  DrawField_flipall ();
 #define interact(X, Y) DrawField_interact (X, Y)
 #define LEVEL_1
 #include <levels.X.h>
@@ -263,7 +303,6 @@ picker_update ()
   if (completed ())
     DrawTexture (completed_texture, 56 + 112 + 64, 64 + 64, WHITE);
 
-  DrawField_flipall ();
 #define interact(X, Y) DrawField_interact (X, Y)
 #define LEVEL_2
 #include <levels.X.h>
@@ -274,7 +313,6 @@ picker_update ()
   if (completed ())
     DrawTexture (completed_texture, 56 + 112 * 2 + 64, 64 + 64, WHITE);
 
-  DrawField_flipall ();
 #define interact(X, Y) DrawField_interact (X, Y)
 #define LEVEL_3
 #include <levels.X.h>
@@ -285,7 +323,6 @@ picker_update ()
   if (completed ())
     DrawTexture (completed_texture, 56 + 112 * 3 + 64, 64 + 64, WHITE);
 
-  DrawField_flipall ();
 #define interact(X, Y) DrawField_interact (X, Y)
 #define LEVEL_4
 #include <levels.X.h>
@@ -296,7 +333,6 @@ picker_update ()
   if (completed ())
     DrawTexture (completed_texture, 56 + 112 * 4 + 64, 64 + 64, WHITE);
 
-  DrawField_flipall ();
 #define interact(X, Y) DrawField_interact (X, Y)
 #define LEVEL_5
 #include <levels.X.h>
@@ -306,6 +342,36 @@ picker_update ()
   completed_setid (5);
   if (completed ())
     DrawTexture (completed_texture, 56 + 112 * 0 + 64, 64 + 104 + 64, WHITE);
+
+#define interact(X, Y) DrawField_interact (X, Y)
+#define LEVEL_6
+#include <levels.X.h>
+#undef LEVEL_6
+#undef interact
+  DrawField80 (56 + 112 * 1, 64 + 104);
+  completed_setid (6);
+  if (completed ())
+    DrawTexture (completed_texture, 56 + 112 * 1 + 64, 64 + 104 + 64, WHITE);
+
+#define interact(X, Y) DrawField_interact (X, Y)
+#define LEVEL_7
+#include <levels.X.h>
+#undef LEVEL_7
+#undef interact
+  DrawField80 (56 + 112 * 2, 64 + 104);
+  completed_setid (7);
+  if (completed ())
+    DrawTexture (completed_texture, 56 + 112 * 2 + 64, 64 + 104 + 64, WHITE);
+
+#define interact(X, Y) DrawField_interact (X, Y)
+#define LEVEL_8
+#include <levels.X.h>
+#undef LEVEL_8
+#undef interact
+  DrawField80 (56 + 112 * 3, 64 + 104);
+  completed_setid (8);
+  if (completed ())
+    DrawTexture (completed_texture, 56 + 112 * 3 + 64, 64 + 104 + 64, WHITE);
 
   if (whaton == 0)
     DrawCursor (56 + player_x_interp * 112, 64 + player_y_interp * 104, 80);
