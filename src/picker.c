@@ -140,6 +140,11 @@ picker_update ()
               _5x5_clear ();
               _5x5_startpattern ();
               _5x5_filldesired ();
+#define interact(X, Y) _5x5_interact_desired (X, Y)
+#define LEVEL_0
+#include <levels.X.h>
+#undef LEVEL_0
+#undef interact
               completed_setid (0);
 
               starting = 1;
@@ -149,10 +154,68 @@ picker_update ()
               _5x5_clear ();
               _5x5_startpattern ();
               _5x5_filldesired ();
-              _5x5_interact_desired (2, 1);
-              _5x5_interact_desired (2, 2);
-              _5x5_interact_desired (2, 3);
+#define interact(X, Y) _5x5_interact_desired (X, Y)
+#define LEVEL_1
+#include <levels.X.h>
+#undef LEVEL_1
+#undef interact
               completed_setid (1);
+
+              starting = 1;
+            }
+          else if (player_x == 2 && player_y == 0)
+            {
+              _5x5_clear ();
+              _5x5_startpattern ();
+              _5x5_filldesired ();
+#define interact(X, Y) _5x5_interact_desired (X, Y)
+#define LEVEL_2
+#include <levels.X.h>
+#undef LEVEL_2
+#undef interact
+              completed_setid (2);
+
+              starting = 1;
+            }
+          else if (player_x == 3 && player_y == 0)
+            {
+              _5x5_clear ();
+              _5x5_startpattern ();
+              _5x5_filldesired ();
+#define interact(X, Y) _5x5_interact_desired (X, Y)
+#define LEVEL_3
+#include <levels.X.h>
+#undef LEVEL_3
+#undef interact
+              completed_setid (3);
+
+              starting = 1;
+            }
+          else if (player_x == 4 && player_y == 0)
+            {
+              _5x5_clear ();
+              _5x5_startpattern ();
+              _5x5_filldesired ();
+#define interact(X, Y) _5x5_interact_desired (X, Y)
+#define LEVEL_4
+#include <levels.X.h>
+#undef LEVEL_4
+#undef interact
+              completed_setid (4);
+
+              starting = 1;
+            }
+          else if (player_x == 0 && player_y == 1)
+            {
+              _5x5_clear ();
+              _5x5_startpattern ();
+              _5x5_filldesired ();
+#define interact(X, Y) _5x5_interact_desired (X, Y)
+#define LEVEL_5
+#include <levels.X.h>
+#undef LEVEL_5
+#undef interact
+              completed_setid (5);
 
               starting = 1;
             }
@@ -179,21 +242,70 @@ picker_update ()
     DrawTexture (leave_texture, 2, 2, WHITE);
 
   DrawField_flipall ();
+#define interact(X, Y) DrawField_interact (X, Y)
+#define LEVEL_0
+#include <levels.X.h>
+#undef LEVEL_0
+#undef interact
   DrawField80 (56, 64);
-
   completed_setid (0);
   if (completed ())
     DrawTexture (completed_texture, 56 + 64, 64 + 64, WHITE);
 
   DrawField_flipall ();
-  DrawField_interact (2, 1);
-  DrawField_interact (2, 2);
-  DrawField_interact (2, 3);
-  DrawField80 (168, 64);
-
+#define interact(X, Y) DrawField_interact (X, Y)
+#define LEVEL_1
+#include <levels.X.h>
+#undef LEVEL_1
+#undef interact
+  DrawField80 (56 + 112, 64);
   completed_setid (1);
   if (completed ())
-    DrawTexture (completed_texture, 168 + 64, 64 + 64, WHITE);
+    DrawTexture (completed_texture, 56 + 112 + 64, 64 + 64, WHITE);
+
+  DrawField_flipall ();
+#define interact(X, Y) DrawField_interact (X, Y)
+#define LEVEL_2
+#include <levels.X.h>
+#undef LEVEL_2
+#undef interact
+  DrawField80 (56 + 112 * 2, 64);
+  completed_setid (2);
+  if (completed ())
+    DrawTexture (completed_texture, 56 + 112 * 2 + 64, 64 + 64, WHITE);
+
+  DrawField_flipall ();
+#define interact(X, Y) DrawField_interact (X, Y)
+#define LEVEL_3
+#include <levels.X.h>
+#undef LEVEL_3
+#undef interact
+  DrawField80 (56 + 112 * 3, 64);
+  completed_setid (3);
+  if (completed ())
+    DrawTexture (completed_texture, 56 + 112 * 3 + 64, 64 + 64, WHITE);
+
+  DrawField_flipall ();
+#define interact(X, Y) DrawField_interact (X, Y)
+#define LEVEL_4
+#include <levels.X.h>
+#undef LEVEL_4
+#undef interact
+  DrawField80 (56 + 112 * 4, 64);
+  completed_setid (4);
+  if (completed ())
+    DrawTexture (completed_texture, 56 + 112 * 4 + 64, 64 + 64, WHITE);
+
+  DrawField_flipall ();
+#define interact(X, Y) DrawField_interact (X, Y)
+#define LEVEL_5
+#include <levels.X.h>
+#undef LEVEL_5
+#undef interact
+  DrawField80 (56 + 112 * 0, 64 + 104);
+  completed_setid (5);
+  if (completed ())
+    DrawTexture (completed_texture, 56 + 112 * 0 + 64, 64 + 104 + 64, WHITE);
 
   if (whaton == 0)
     DrawCursor (56 + player_x_interp * 112, 64 + player_y_interp * 104, 80);
