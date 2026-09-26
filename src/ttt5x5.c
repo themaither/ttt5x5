@@ -2,6 +2,7 @@
 #include <session.h>
 #include <picker.h>
 #include <draw_field.h>
+#include <btn.h>
 
 int
 main (int argc, char **argv)
@@ -17,6 +18,8 @@ main (int argc, char **argv)
 
   while (!WindowShouldClose ())
     {
+      BtnReadEvents ();
+
       if (whaton == 0)
         {
           picker_update ();

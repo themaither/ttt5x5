@@ -1,6 +1,7 @@
 #include <imath.h>
 #include <5x5.h>
 #include <camera.h>
+#include <btn.h>
 #include <raylib.h>
 #include <stddef.h>
 #include <stdio.h>
@@ -64,14 +65,12 @@ static Texture2D leave_pressed_texture;
 /* what cursor is on */
 static int whaton = 0;
 
-static int leave_pressed = -1;
 static int leaving = 0;
 
 void
 session_reset ()
 {
   leaving = 0;
-  leave_pressed = -1;
   whaton = 0;
 }
 
@@ -102,20 +101,13 @@ session_update ()
   if (whaton == 1)
     {
       if (IsKeyPressed (KEY_S))
-        whaton = 0;
-
-      if (IsKeyDown (KEY_SPACE))
-        leave_pressed = KEY_SPACE;
-
-      if (IsKeyDown (KEY_KP_ADD))
-        leave_pressed = KEY_KP_ADD;
-
-      if (IsKeyDown (KEY_ENTER))
-        leave_pressed = KEY_ENTER;
-
-      if (leave_pressed != -1 && IsKeyUp (leave_pressed))
         {
-          leave_pressed = -1;
+          BtnAbort ();
+          whaton = 0;
+        }
+
+      if (IsBtnPressed ())
+        {
           leaving = 1;
         }
     }
@@ -132,7 +124,10 @@ session_update ()
       if (IsKeyPressed (KEY_W))
         {
           if (player_y == 0)
-            whaton = 1;
+            {
+              BtnAbort ();
+              whaton = 1;
+            }
 
           --player_y;
         }
@@ -140,9 +135,7 @@ session_update ()
       if (IsKeyPressed (KEY_S))
         ++player_y;
 
-      if (IsKeyPressed (KEY_SPACE)
-          || IsKeyPressed (KEY_KP_ADD)
-          || IsKeyPressed (KEY_ENTER))
+      if (IsBtnPressedRN ())
         {
           _5x5_interact (player_x, player_y);
           press_x = player_x;
@@ -200,7 +193,7 @@ session_update ()
   if (whaton == 0)
     DrawCursor (x (player_x_interp * 48), y (player_y_interp * 48), 48);
 
-  if (leave_pressed != -1)
+  if (whaton == 1 && IsBtnDown ())
     DrawTexture (leave_pressed_texture, 2, 2, WHITE);
   else if (whaton == 1)
     DrawTexture (leave_hovered_texture, 2, 2, WHITE);

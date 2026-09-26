@@ -1,4 +1,6 @@
 #include <5x5.h>
+#include <btn.h>
+#include <stdio.h>
 #include <raylib.h>
 #include <math.h>
 #include <imath.h>
@@ -19,7 +21,6 @@ static float player_y_interp = 0.f;
 /* what cursor is on */
 static int whaton = 0;
 
-static int leave_pressed = -1;
 static int leaving = 0;
 
 static int starting = 0;
@@ -29,7 +30,6 @@ picker_reset ()
 {
   starting = 0;
   leaving = 0;
-  leave_pressed = -1;
 }
 
 static void
@@ -90,20 +90,13 @@ picker_update ()
   if (whaton == 1)
     {
       if (IsKeyPressed (KEY_S))
-        whaton = 0;
-
-      if (IsKeyDown (KEY_SPACE))
-        leave_pressed = KEY_SPACE;
-
-      if (IsKeyDown (KEY_KP_ADD))
-        leave_pressed = KEY_KP_ADD;
-
-      if (IsKeyDown (KEY_ENTER))
-        leave_pressed = KEY_ENTER;
-
-      if (leave_pressed != -1 && IsKeyUp (leave_pressed))
         {
-          leave_pressed = 0;
+          BtnAbort ();
+          whaton = 0;
+        }
+
+      if (IsBtnPressed ())
+        {
           leaving = 1;
         }
     }
@@ -112,13 +105,21 @@ picker_update ()
   else if (whaton == 0)
     {
       if (IsKeyPressed (KEY_D))
-        ++player_x;
+        {
+          BtnAbort ();
+          ++player_x;
+        }
 
       if (IsKeyPressed (KEY_A))
-        --player_x;
+        {
+          BtnAbort ();
+          --player_x;
+        }
 
       if (IsKeyPressed (KEY_W))
         {
+          BtnAbort ();
+
           if (player_y == 0)
             whaton = 1;
 
@@ -126,54 +127,33 @@ picker_update ()
         }
 
       if (IsKeyPressed (KEY_S))
-        ++player_y;
-
-      static int pressing = -1;
-
-      if (IsKeyDown (KEY_SPACE))
-        pressing = KEY_SPACE;
-
-      if (IsKeyDown (KEY_KP_ADD))
-        pressing = KEY_KP_ADD;
-
-      if (IsKeyDown (KEY_ENTER))
-        pressing = KEY_ENTER;
-
-      if (pressing != -1)
-      {
-        if (IsKeyUp (pressing))
-          {
-            pressing = -1;
-
-            if (player_x == 0 && player_y == 0)
-              {
-                _5x5_clear ();
-                _5x5_startpattern ();
-                _5x5_filldesired ();
-
-                starting = 1;
-              }
-            else if (player_x == 1 && player_y == 0)
-              {
-                _5x5_clear ();
-                _5x5_startpattern ();
-                _5x5_filldesired ();
-                _5x5_interact_desired (2, 1);
-                _5x5_interact_desired (2, 2);
-                _5x5_interact_desired (2, 3);
-
-                starting = 1;
-              }
-          }
-      }
-
-      if (IsKeyDown (KEY_SPACE)
-          || IsKeyDown (KEY_KP_ADD)
-          || IsKeyDown (KEY_ENTER))
         {
-          pressing = 1;
+          BtnAbort ();
+          ++player_y;
         }
 
+      if (IsBtnPressed ())
+        {
+          if (player_x == 0 && player_y == 0)
+            {
+              _5x5_clear ();
+              _5x5_startpattern ();
+              _5x5_filldesired ();
+
+              starting = 1;
+            }
+          else if (player_x == 1 && player_y == 0)
+            {
+              _5x5_clear ();
+              _5x5_startpattern ();
+              _5x5_filldesired ();
+              _5x5_interact_desired (2, 1);
+              _5x5_interact_desired (2, 2);
+              _5x5_interact_desired (2, 3);
+
+              starting = 1;
+            }
+        }
     }
 
   player_x = clamp (player_x, 0, 4);
@@ -186,7 +166,7 @@ picker_update ()
 
   DrawTexture (picker_texture, 0, 0, WHITE);
 
-  if (leave_pressed != -1)
+  if (whaton == 1 && IsBtnDown ())
     DrawTexture (leave_pressed_texture, 2, 2, WHITE);
   else if (whaton == 1)
     DrawTexture (leave_hovered_texture, 2, 2, WHITE);
