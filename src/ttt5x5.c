@@ -1,17 +1,18 @@
 #include <raylib.h>
 #include <session.h>
 #include <picker.h>
+#include <completed.h>
 #include <draw_field.h>
 #include <btn.h>
 
 int
 main (int argc, char **argv)
 {
-  SetTargetFPS (60);
-  InitWindow (640, 400, "ttt5x5");
-
   int whaton = 0;
 
+  SetTargetFPS (60);
+  completed_init ();
+  InitWindow (640, 400, "ttt5x5");
   DrawField_init ();
   session_init ();
   picker_init  ();

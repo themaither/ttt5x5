@@ -1,6 +1,7 @@
 #include <imath.h>
 #include <5x5.h>
 #include <camera.h>
+#include <completed.h>
 #include <btn.h>
 #include <raylib.h>
 #include <stddef.h>
@@ -142,9 +143,10 @@ session_update ()
           press_y = player_y;
           press_animation = 1.;
           if (_5x5_matches ())
-            {
-              win_animation = 1.;
-            }
+            win_animation = 1.;
+
+          if (_5x5_won ())
+            complete ();
         }
     }
 

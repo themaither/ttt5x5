@@ -5,6 +5,7 @@
 #include <math.h>
 #include <imath.h>
 #include <draw_field.h>
+#include <completed.h>
 
 static Texture2D picker_texture;
 static Texture2D leave_texture;
@@ -139,6 +140,7 @@ picker_update ()
               _5x5_clear ();
               _5x5_startpattern ();
               _5x5_filldesired ();
+              completed_setid (0);
 
               starting = 1;
             }
@@ -150,9 +152,12 @@ picker_update ()
               _5x5_interact_desired (2, 1);
               _5x5_interact_desired (2, 2);
               _5x5_interact_desired (2, 3);
+              completed_setid (1);
 
               starting = 1;
             }
+
+          return;
         }
     }
 
@@ -176,13 +181,19 @@ picker_update ()
   DrawField_flipall ();
   DrawField80 (56, 64);
 
-  DrawTexture (completed_texture, 56 + 64, 64 + 64, WHITE);
+  completed_setid (0);
+  if (completed ())
+    DrawTexture (completed_texture, 56 + 64, 64 + 64, WHITE);
 
   DrawField_flipall ();
   DrawField_interact (2, 1);
   DrawField_interact (2, 2);
   DrawField_interact (2, 3);
   DrawField80 (168, 64);
+
+  completed_setid (1);
+  if (completed ())
+    DrawTexture (completed_texture, 168 + 64, 64 + 64, WHITE);
 
   if (whaton == 0)
     DrawCursor (56 + player_x_interp * 112, 64 + player_y_interp * 104, 80);
