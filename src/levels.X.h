@@ -108,3 +108,66 @@ interact (1, 1);
 interact (4, 2);
 interact (0, 2);
 #endif
+
+#ifdef LEVEL_9
+interact (1, 0);
+interact (0, 1);
+interact (0, 3);
+interact (1, 4);
+interact (3, 4);
+interact (4, 3);
+interact (4, 1);
+interact (3, 0);
+interact (2, 3);
+interact (3, 4);
+interact (1, 4);
+interact (2, 0);
+interact (3, 1);
+interact (1, 1);
+#endif
+
+#ifdef LEVEL_10
+interact (3, 0);
+interact (4, 1);
+interact (3, 1);
+interact (0, 4);
+interact (1, 1);
+interact (1, 0);
+interact (3, 3);
+interact (4, 3);
+interact (2, 2);
+#endif
+
+#ifdef LEVEL_11
+interact (3, 0);
+interact (3, 1);
+interact (1, 3);
+interact (1, 4);
+interact (0, 0);
+interact (4, 4);
+interact (2, 2);
+#endif
+
+#ifdef LEVEL_12
+interact (1, 0);
+interact (1, 1);
+interact (0, 1);
+interact (3, 0);
+interact (3, 1);
+interact (4, 1);
+interact (4, 3);
+interact (3, 3);
+interact (3, 4);
+interact (0, 3);
+interact (1, 3);
+interact (1, 4);
+interact (1, 4);
+interact (3, 4);
+interact (2, 3);
+interact (2, 3);
+interact (0, 4);
+interact (4, 4);
+interact (2, 4);
+interact (2, 3);
+interact (2, 0);
+#endif

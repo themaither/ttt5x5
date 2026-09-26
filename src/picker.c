@@ -261,6 +261,62 @@ picker_update ()
 
               starting = 1;
             }
+          else if (player_x == 4 && player_y == 1)
+            {
+              _5x5_clear ();
+              _5x5_startpattern ();
+              _5x5_filldesired ();
+#define interact(X, Y) _5x5_interact_desired (X, Y)
+#define LEVEL_9
+#include <levels.X.h>
+#undef LEVEL_9
+#undef interact
+              completed_setid (9);
+
+              starting = 1;
+            }
+          else if (player_x == 0 && player_y == 2)
+            {
+              _5x5_clear ();
+              _5x5_startpattern ();
+              _5x5_filldesired ();
+#define interact(X, Y) _5x5_interact_desired (X, Y)
+#define LEVEL_10
+#include <levels.X.h>
+#undef LEVEL_10
+#undef interact
+              completed_setid (10);
+
+              starting = 1;
+            }
+          else if (player_x == 1 && player_y == 2)
+            {
+              _5x5_clear ();
+              _5x5_startpattern ();
+              _5x5_filldesired ();
+#define interact(X, Y) _5x5_interact_desired (X, Y)
+#define LEVEL_11
+#include <levels.X.h>
+#undef LEVEL_11
+#undef interact
+              completed_setid (11);
+
+              starting = 1;
+            }
+          else if (player_x == 2 && player_y == 2)
+            {
+              _5x5_clear ();
+              _5x5_startpattern ();
+              _5x5_filldesired ();
+#define interact(X, Y) _5x5_interact_desired (X, Y)
+#define LEVEL_12
+#include <levels.X.h>
+#undef LEVEL_12
+#undef interact
+              completed_setid (12);
+
+              starting = 1;
+            }
 
           return;
         }
@@ -372,6 +428,46 @@ picker_update ()
   completed_setid (8);
   if (completed ())
     DrawTexture (completed_texture, 56 + 112 * 3 + 64, 64 + 104 + 64, WHITE);
+
+#define interact(X, Y) DrawField_interact (X, Y)
+#define LEVEL_9
+#include <levels.X.h>
+#undef LEVEL_9
+#undef interact
+  DrawField80 (56 + 112 * 4, 64 + 104);
+  completed_setid (9);
+  if (completed ())
+    DrawTexture (completed_texture, 56 + 112 * 4 + 64, 64 + 104 + 64, WHITE);
+
+#define interact(X, Y) DrawField_interact (X, Y)
+#define LEVEL_10
+#include <levels.X.h>
+#undef LEVEL_10
+#undef interact
+  DrawField80 (56 + 112 * 0, 64 + 104 * 2);
+  completed_setid (10);
+  if (completed ())
+    DrawTexture (completed_texture, 56 + 112 * 0 + 64, 64 + 104 * 2 + 64, WHITE);
+
+#define interact(X, Y) DrawField_interact (X, Y)
+#define LEVEL_11
+#include <levels.X.h>
+#undef LEVEL_11
+#undef interact
+  DrawField80 (56 + 112 * 1, 64 + 104 * 2);
+  completed_setid (11);
+  if (completed ())
+    DrawTexture (completed_texture, 56 + 112 * 1 + 64, 64 + 104 * 2 + 64, WHITE);
+
+#define interact(X, Y) DrawField_interact (X, Y)
+#define LEVEL_12
+#include <levels.X.h>
+#undef LEVEL_12
+#undef interact
+  DrawField80 (56 + 112 * 2, 64 + 104 * 2);
+  completed_setid (12);
+  if (completed ())
+    DrawTexture (completed_texture, 56 + 112 * 2 + 64, 64 + 104 * 2 + 64, WHITE);
 
   if (whaton == 0)
     DrawCursor (56 + player_x_interp * 112, 64 + player_y_interp * 104, 80);
