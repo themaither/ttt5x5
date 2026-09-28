@@ -78,13 +78,12 @@ DrawField80_selected (int x, int y)
 void
 DrawField80 (int x, int y)
 {
-  int old = _5x5_selection ();
-  _5x5_select (pattern_i);
+  int old = _5x5_intsel (pattern_i);
 
   DrawField80_selected (x, y);
-
   DrawField_clear ();
-  _5x5_select (old);
+
+  _5x5_retsel (old);
 }
 
 void
@@ -101,13 +100,12 @@ DrawField240_selected (int x, int y)
 void
 DrawField240 (int x, int y)
 {
-  int old = _5x5_selection ();
-  _5x5_select (pattern_i);
+  int old = _5x5_intsel (pattern_i);
 
   DrawField240_selected (x, y);
-
   DrawField_clear ();
-  _5x5_select (old);
+
+  _5x5_retsel (old);
 }
 
 void
@@ -124,11 +122,9 @@ DrawField240_green_selected (int x, int y)
 void
 DrawField240_green (int x, int y)
 {
-  int old = _5x5_selection ();
-  _5x5_select (pattern_i);
+  int old = _5x5_intsel (pattern_i);
 
   DrawField240_green_selected (x, y);
 
-  DrawField_clear ();
-  _5x5_select (old);
+  _5x5_retsel (old);
 }

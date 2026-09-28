@@ -33,6 +33,12 @@ void _5x5_select (int);
 /* returns current selection */
 int _5x5_selection (void);
 
+/* changes the current selection, and returns a value, which can be used to
+   return to previous state */
+int _5x5_intsel (int);
+
+/* returns selection state from value, returned by previous _5x5_intsel call */
+void _5x5_retsel (int);
 
 /* WORKING WITH SELECTED PATTERN */
 

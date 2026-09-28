@@ -30,6 +30,20 @@ _5x5_selection (void)
 }
 
 int
+_5x5_intsel (int newsel)
+{
+  int old_selection = _5x5_selection ();
+  _5x5_select (newsel);
+  return old_selection;
+}
+
+void
+_5x5_retsel (int value)
+{
+  _5x5_select (value);
+}
+
+int
 _5x5_open (void)
 {
   ++last_selection;
@@ -119,36 +133,32 @@ _5x5_matches (void)
 void
 _5x5_filldesired (void)
 {
-  int back = selection;
-  selection = 1;
+  int back = _5x5_intsel (1);
   _5x5_clear ();
-  selection = back;
+  _5x5_retsel (back);
 }
 
 int
 _5x5_colorat_desired (int x, int y)
 {
-  int back = selection;
-  selection = 1;
-  int result =  _5x5_colorat (x, y);
-  selection = back;
+  int back = _5x5_intsel (1);
+  int result = _5x5_colorat (x, y);
+  _5x5_retsel (back);
   return result;
 }
 
 void
 _5x5_flipat_desired (int x, int y)
 {
-  int back = selection;
-  selection = 1;
+  int back = _5x5_intsel (1);
   _5x5_flipat (x, y);
-  selection = back;
+  _5x5_retsel (back);
 }
 
 void
 _5x5_interact_desired (int x, int y)
 {
-  int back = selection;
-  selection = 1;
+  int back = _5x5_intsel (1);
   _5x5_interact (x, y);
-  selection = back;
+  _5x5_retsel (back);
 }
