@@ -30,6 +30,9 @@ int _5x5_open ();
 /* changes the current selection */
 void _5x5_select (int);
 
+/* returns current selection */
+int _5x5_selection ();
+
 
 /* WORKING WITH SELECTED PATTERN */
 

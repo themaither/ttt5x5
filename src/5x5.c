@@ -24,6 +24,12 @@ _5x5_select (int newsel)
 }
 
 int
+_5x5_selection ()
+{
+  return selection;
+}
+
+int
 _5x5_open ()
 {
   ++last_selection;
@@ -44,7 +50,7 @@ _5x5_clear ()
     patterns[selection][i] = 0;
 }
 
-static void
+void
 _5x5_flipat (int x, int y)
 {
   if (x >= 5)
