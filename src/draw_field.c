@@ -125,6 +125,7 @@ DrawField240_green (int x, int y)
   int old = _5x5_intsel (pattern_i);
 
   DrawField240_green_selected (x, y);
+  DrawField_clear ();
 
   _5x5_retsel (old);
 }
