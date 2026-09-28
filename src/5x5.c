@@ -24,13 +24,13 @@ _5x5_select (int newsel)
 }
 
 int
-_5x5_selection ()
+_5x5_selection (void)
 {
   return selection;
 }
 
 int
-_5x5_open ()
+_5x5_open (void)
 {
   ++last_selection;
   assert (last_selection < MAX_PATTERNS);
@@ -44,7 +44,7 @@ _5x5_colorat (int x, int y)
 }
 
 void
-_5x5_clear ()
+_5x5_clear (void)
 {
   for (size_t i = 0; i < 5 * 5; ++i)
     patterns[selection][i] = 0;
@@ -69,7 +69,7 @@ _5x5_flipat (int x, int y)
 }
 
 void
-_5x5_startpattern ()
+_5x5_startpattern (void)
 {
   _5x5_clear ();
   _5x5_flipat (2, 2);
@@ -105,19 +105,19 @@ _5x5_interact (int x, int y)
 }
 
 int
-_5x5_won ()
+_5x5_won (void)
 {
   return won == 1;
 }
 
 int
-_5x5_matches ()
+_5x5_matches (void)
 {
   return matches == 1;
 }
 
 void
-_5x5_filldesired ()
+_5x5_filldesired (void)
 {
   int back = selection;
   selection = 1;

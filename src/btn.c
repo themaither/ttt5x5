@@ -5,7 +5,7 @@ static int pressed = 0;
 static int abadoned = 0;
 
 void
-BtnReadEvents ()
+BtnReadEvents (void)
 {
   if (IsKeyDown (KEY_SPACE))
     {
@@ -36,13 +36,13 @@ BtnReadEvents ()
 }
 
 int
-IsBtnPressed ()
+IsBtnPressed (void)
 {
   return pressed;
 }
 
 int
-IsBtnPressedRN ()
+IsBtnPressedRN (void)
 {
   return IsKeyPressed (KEY_SPACE)
       || IsKeyPressed (KEY_KP_ADD)
@@ -50,13 +50,13 @@ IsBtnPressedRN ()
 }
 
 int
-IsBtnDown ()
+IsBtnDown (void)
 {
   return press != -1;
 }
 
 void
-BtnAbort ()
+BtnAbort (void)
 {
   press = -1;
   pressed = 0;

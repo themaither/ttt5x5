@@ -8,9 +8,9 @@ Copyright (C) 2026 TheMaither <themaither@gmail.com> */
 extern "C" {
 #endif
 
-void DrawField_init     ();
-void DrawField_clear    ();
-void DrawField_flipall  ();
+void DrawField_init     (void);
+void DrawField_clear    (void);
+void DrawField_flipall  (void);
 void DrawField_flipat   (int x, int y);
 void DrawField_interact (int x, int y);
 

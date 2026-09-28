@@ -4,7 +4,7 @@ static int db[128];
 static int id;
 
 void
-completed_init ()
+completed_init (void)
 {
   for (size_t i = 0; i < 128; ++i)
     db[i] = 0;
@@ -17,13 +17,13 @@ completed_setid (int x)
 }
 
 int
-completed ()
+completed (void)
 {
   return db[id];
 }
 
 void
-complete ()
+complete (void)
 {
   db[id] = 1;
 }

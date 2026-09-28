@@ -8,11 +8,11 @@ Copyright (C) 2026 TheMaither <themaither@gmail.com> */
 extern "C" {
 #endif
 
-void picker_init     ();
-void picker_update   ();
-int  picker_leaving  ();
-int  picker_starting ();
-int  picker_reset    ();
+void picker_init     (void);
+void picker_update   (void);
+int  picker_leaving  (void);
+int  picker_starting (void);
+int  picker_reset    (void);
 
 #ifdef __cplusplus
 }

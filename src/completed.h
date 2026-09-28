@@ -8,13 +8,13 @@ Copyright (C) 2026 TheMaither <themaither@gmail.com> */
 extern "C" {
 #endif
 
-void completed_init ();
+void completed_init (void);
 
 /* chooses level by id */
 void completed_setid (int);
 
-int  completed ();
-void complete  ();
+int  completed (void);
+void complete  (void);
 
 #ifdef __cplusplus
 }

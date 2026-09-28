@@ -27,7 +27,7 @@ static int leaving = 0;
 static int starting = 0;
 
 void
-picker_reset ()
+picker_reset (void)
 {
   starting = 0;
   leaving = 0;
@@ -64,19 +64,19 @@ lerp (float lhs, float rhs, float c)
 }
 
 int
-picker_leaving ()
+picker_leaving (void)
 {
   return leaving;
 }
 
 int
-picker_starting ()
+picker_starting (void)
 {
   return starting;
 }
 
 void
-picker_init ()
+picker_init (void)
 {
   picker_texture = LoadTexture (PKGDATADIR "/picker.png");
   leave_texture = LoadTexture (PKGDATADIR "/back.png");
@@ -86,7 +86,7 @@ picker_init ()
 }
 
 void
-picker_update ()
+picker_update (void)
 {
   _5x5_select (0);
   if (whaton == 1)

@@ -12,7 +12,7 @@ static Texture2D white16_texture;
 static int pattern_i;
 
 void
-DrawField_clear ()
+DrawField_clear (void)
 {
   int old = _5x5_selection ();
   _5x5_select (pattern_i);
@@ -21,7 +21,7 @@ DrawField_clear ()
 }
 
 void
-DrawField_init ()
+DrawField_init (void)
 {
   black48_texture = LoadTexture (PKGDATADIR "/black48.png");
   white48_texture = LoadTexture (PKGDATADIR "/white48.png");
@@ -54,7 +54,7 @@ DrawField_interact (int x, int y)
 }
 
 void
-DrawField_flipall ()
+DrawField_flipall (void)
 {
   int old = _5x5_selection ();
   _5x5_select (pattern_i);

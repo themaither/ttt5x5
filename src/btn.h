@@ -9,17 +9,17 @@ extern "C" {
 #endif
 
 /* should be called every frame before IsBtnPressed and IsBtnDown */
-void BtnReadEvents ();
+void BtnReadEvents (void);
 
 /* only registers if button was released after being pressed */
-int  IsBtnPressed ();
+int  IsBtnPressed (void);
 
 /* similar to Raylib IsKeyPressed and IsKeyDown */
-int  IsBtnPressedRN ();
-int  IsBtnDown ();
+int  IsBtnPressedRN (void);
+int  IsBtnDown (void);
 
 /* should be called when you move focus out of a thing you clicked */
-void BtnAbort ();
+void BtnAbort (void);
 
 #ifdef __cplusplus
 }

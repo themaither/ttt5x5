@@ -69,14 +69,14 @@ static int whaton = 0;
 static int leaving = 0;
 
 void
-session_reset ()
+session_reset (void)
 {
   leaving = 0;
   whaton = 0;
 }
 
 void
-session_init ()
+session_init (void)
 {
   session_texture = LoadTexture (PKGDATADIR "/session.png");
   black48_texture = LoadTexture (PKGDATADIR "/black48.png");
@@ -91,13 +91,13 @@ session_init ()
 }
 
 int
-session_leaving ()
+session_leaving (void)
 {
   return leaving;
 }
 
 void
-session_update ()
+session_update (void)
 {
   _5x5_select (0);
 
