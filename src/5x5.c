@@ -129,36 +129,3 @@ _5x5_matches (void)
 {
   return matches == 1;
 }
-
-void
-_5x5_filldesired (void)
-{
-  int back = _5x5_intsel (1);
-  _5x5_clear ();
-  _5x5_retsel (back);
-}
-
-int
-_5x5_colorat_desired (int x, int y)
-{
-  int back = _5x5_intsel (1);
-  int result = _5x5_colorat (x, y);
-  _5x5_retsel (back);
-  return result;
-}
-
-void
-_5x5_flipat_desired (int x, int y)
-{
-  int back = _5x5_intsel (1);
-  _5x5_flipat (x, y);
-  _5x5_retsel (back);
-}
-
-void
-_5x5_interact_desired (int x, int y)
-{
-  int back = _5x5_intsel (1);
-  _5x5_interact (x, y);
-  _5x5_retsel (back);
-}
