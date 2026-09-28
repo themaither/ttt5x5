@@ -142,8 +142,6 @@ session_update (void)
         {
           _5x5_interact (player_x, player_y);
 
-          printf ("interact (%d, %d);\n", player_x, player_y);
-
           press_x = player_x;
           press_y = player_y;
           press_animation = 1.;
