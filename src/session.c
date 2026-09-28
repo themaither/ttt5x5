@@ -99,6 +99,8 @@ session_leaving ()
 void
 session_update ()
 {
+  _5x5_select (0);
+
   if (whaton == 1)
     {
       if (IsKeyPressed (KEY_S))
@@ -181,8 +183,11 @@ session_update ()
 
   for (size_t i = 0; i < 5; ++i)
     for (size_t j = 0; j < 5; ++j)
-      if (_5x5_colorat_desired (j, i) == 1)
-        DrawField_flipat (j, i);
+      {
+        _5x5_select (1);
+        if (_5x5_colorat (j, i) == 1)
+          DrawField_flipat (j, i);
+      }
 
   DrawField80 (280, 306);
 
