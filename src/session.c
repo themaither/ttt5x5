@@ -168,28 +168,16 @@ session_update (void)
 
   DrawTexture (session_texture, 0, 0, WHITE);
 
-
-  for (size_t i = 0; i < 5; ++i)
-    for (size_t j = 0; j < 5; ++j)
-      if (_5x5_colorat (j, i) == 1)
-        DrawField_flipat (j, i);
-
+  _5x5_select (0);
   if (win_animation > .8)
-    DrawField240_green (200, 51);
+    DrawField240_green_selected (200, 51);
   else if (win_animation > .4 && win_animation < .6)
-    DrawField240_green (200, 51);
+    DrawField240_green_selected (200, 51);
   else
-    DrawField240 (200, 51);
+    DrawField240_selected (200, 51);
 
-  for (size_t i = 0; i < 5; ++i)
-    for (size_t j = 0; j < 5; ++j)
-      {
-        _5x5_select (1);
-        if (_5x5_colorat (j, i) == 1)
-          DrawField_flipat (j, i);
-      }
-
-  DrawField80 (280, 306);
+  _5x5_select (1);
+  DrawField80_selected (280, 306);
 
   setcamx (200);
   setcamy (51);

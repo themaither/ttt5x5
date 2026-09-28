@@ -19,6 +19,11 @@ void DrawField80        (int x, int y);
 void DrawField240       (int x, int y);
 void DrawField240_green (int x, int y);
 
+/* drawing directly from selected field */
+void DrawField80_selected        (int x, int y);
+void DrawField240_selected       (int x, int y);
+void DrawField240_green_selected (int x, int y);
+
 #ifdef __cplusplus
 }
 #endif

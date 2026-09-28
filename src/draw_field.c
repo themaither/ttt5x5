@@ -65,19 +65,37 @@ DrawField_flipall (void)
 }
 
 void
-DrawField80 (int x, int y)
+DrawField80_selected (int x, int y)
 {
-  int old = _5x5_selection ();
-  _5x5_select (pattern_i);
   for (size_t i = 0; i < 5; ++i)
     for (size_t j = 0; j < 5; ++j)
       if (_5x5_colorat(j, i) == 1)
         DrawTexture (black16_texture, x + j * 16, y + i * 16, WHITE);
       else
         DrawTexture (white16_texture, x + j * 16, y + i * 16, WHITE);
+}
+
+void
+DrawField80 (int x, int y)
+{
+  int old = _5x5_selection ();
+  _5x5_select (pattern_i);
+
+  DrawField80_selected (x, y);
 
   DrawField_clear ();
   _5x5_select (old);
+}
+
+void
+DrawField240_selected (int x, int y)
+{
+  for (size_t i = 0; i < 5; ++i)
+    for (size_t j = 0; j < 5; ++j)
+      if (_5x5_colorat(j, i) == 1)
+        DrawTexture (black48_texture, x + j * 48, y + i * 48, WHITE);
+      else
+        DrawTexture (white48_texture, x + j * 48, y + i * 48, WHITE);
 }
 
 void
@@ -85,15 +103,22 @@ DrawField240 (int x, int y)
 {
   int old = _5x5_selection ();
   _5x5_select (pattern_i);
-  for (size_t i = 0; i < 5; ++i)
-    for (size_t j = 0; j < 5; ++j)
-      if (_5x5_colorat(j, i) == 1)
-        DrawTexture (black48_texture, x + j * 48, y + i * 48, WHITE);
-      else
-        DrawTexture (white48_texture, x + j * 48, y + i * 48, WHITE);
+
+  DrawField240_selected (x, y);
 
   DrawField_clear ();
   _5x5_select (old);
+}
+
+void
+DrawField240_green_selected (int x, int y)
+{
+  for (size_t i = 0; i < 5; ++i)
+    for (size_t j = 0; j < 5; ++j)
+      if (_5x5_colorat(j, i) == 1)
+        DrawTexture (dark_green48_texture, x + j * 48, y + i * 48, WHITE);
+      else
+        DrawTexture (light_green48_texture, x + j * 48, y + i * 48, WHITE);
 }
 
 void
@@ -101,12 +126,8 @@ DrawField240_green (int x, int y)
 {
   int old = _5x5_selection ();
   _5x5_select (pattern_i);
-  for (size_t i = 0; i < 5; ++i)
-    for (size_t j = 0; j < 5; ++j)
-      if (_5x5_colorat(j, i) == 1)
-        DrawTexture (dark_green48_texture, x + j * 48, y + i * 48, WHITE);
-      else
-        DrawTexture (light_green48_texture, x + j * 48, y + i * 48, WHITE);
+
+  DrawField240_green_selected (x, y);
 
   DrawField_clear ();
   _5x5_select (old);
