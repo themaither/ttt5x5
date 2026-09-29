@@ -21,10 +21,18 @@ int save = 0;
 void
 completed_init (void)
 {
+  const char *xdg = getenv ("XDG_DATA_HOME");
   const char *home = getenv ("HOME");
 
   FILE *sstream = open_memstream (&savepath, &savepath_size);
-  fprintf (sstream, "%s/.local/share/ttt5x5/", home);
+
+  if (xdg)
+    fprintf (sstream, "%s/ttt5x5/", xdg);
+  else if (home)
+    fprintf (sstream, "%s/.local/share/ttt5x5/", home);
+  else
+    fprintf (sstream, "./");
+
   fflush (sstream);
 
   ttt5x5path = strdup (savepath);
@@ -40,6 +48,9 @@ completed_init (void)
   if (!f)
     {
       perror ("Unable to open save file for reading");
+
+      save = 1;
+
       return;
     }
 
@@ -74,7 +85,7 @@ complete (void)
   FILE *cs;
 
   cs = open_memstream (&command, &command_size);
-  fprintf (cs, "/usr/bin/ls %s >/dev/null", ttt5x5path);
+  fprintf (cs, "/usr/bin/ls %s 2>/dev/null >/dev/null", ttt5x5path);
   fclose (cs);
   if (0 != system (command));
     {
@@ -83,7 +94,7 @@ complete (void)
       command_size = 0;
 
       cs = open_memstream (&command, &command_size);
-      fprintf (cs, "/usr/bin/mkdir -p %s", ttt5x5path);
+      fprintf (cs, "/usr/bin/mkdir -p %s 2>/dev/null >/dev/null", ttt5x5path);
       fclose (cs);
 
       system (command);
