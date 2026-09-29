@@ -1,27 +1,51 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 static int db[128];
 static int id;
 
 static void eval (FILE *);
 
+static char *savepath = NULL;
+size_t savepath_size = 0;
+
+static char *ttt5x5path = NULL;
+
+static char *command = NULL;
+size_t command_size = 0;
+
+int save = 0;
+
 void
 completed_init (void)
 {
+  const char *home = getenv ("HOME");
+
+  FILE *sstream = open_memstream (&savepath, &savepath_size);
+  fprintf (sstream, "%s/.local/share/ttt5x5/", home);
+  fflush (sstream);
+
+  ttt5x5path = strdup (savepath);
+
+  fprintf (sstream, "save.dlf", home);
+  fclose (sstream);
+
   for (size_t i = 0; i < 128; ++i)
     db[i] = 0;
 
-  FILE *f = fopen ("./save.dlf", "r");
+  FILE *f = fopen (savepath, "r");
 
   if (!f)
     {
-      perror ("Unable to open save file './save.dlf' for reading");
+      perror ("Unable to open save file for reading");
       return;
     }
 
   eval (f);
+
+  save = 1;
 }
 
 void
@@ -43,11 +67,37 @@ complete (void)
     return;
 
   db[id] = 1;
-  FILE *f = fopen ("./save.dlf", "a");
+
+  if (!save)
+    return;
+
+  FILE *cs;
+
+  cs = open_memstream (&command, &command_size);
+  fprintf (cs, "/usr/bin/ls %s >/dev/null", ttt5x5path);
+  fclose (cs);
+  if (0 != system (command));
+    {
+      free (command);
+      command = NULL;
+      command_size = 0;
+
+      cs = open_memstream (&command, &command_size);
+      fprintf (cs, "/usr/bin/mkdir -p %s", ttt5x5path);
+      fclose (cs);
+
+      system (command);
+    }
+
+  free (command);
+  command = NULL;
+  command_size = 0;
+
+  FILE *f = fopen (savepath, "a");
 
   if (!f)
     {
-      perror ("Unable to open save file './save.dlf' for writing");
+      perror ("Unable to open save file for writing");
       return;
     }
 
@@ -80,8 +130,8 @@ eval (FILE *f)
         if (sscanf (field, "%d", &value) != 1)
           {
             fprintf (stderr,
-                    "./save.dlf:%d: expected number after 'completed_setid'\n",
-                    line_number);
+                    "%s:%d: expected number after 'completed_setid'\n",
+                    savepath, line_number);
             return;
           }
 
@@ -89,14 +139,13 @@ eval (FILE *f)
       }
     else if (0 == strcmp (field, "complete"))
       {
-        puts ("COMPLETE");
         complete ();
       }
     else
       {
         fprintf (stderr,
-                "./save.dlf:%d: unrecognized '%s'\n",
-                line_number, field);
+                "%s:%d: unrecognized '%s'\n",
+                savepath, line_number, field);
         return;
       }
   }
