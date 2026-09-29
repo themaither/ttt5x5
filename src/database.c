@@ -182,3 +182,9 @@ loadlevel (int id)
       break;
     }
 }
+
+int
+levelcount ()
+{
+  return 13;
+}

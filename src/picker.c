@@ -142,17 +142,20 @@ picker_update (void)
 
       if (IsBtnPressed ())
         {
-          _5x5_select (0);
-          _5x5_clear ();
-          _5x5_startpattern ();
+          if (player_x + 5 * player_y < levelcount ())
+            {
+              _5x5_select (0);
+              _5x5_clear ();
+              _5x5_startpattern ();
 
-          _5x5_select (1);
-          _5x5_clear ();
-          loadlevel       (player_x % 5 + player_y * 5);
-          completed_setid (player_x % 5 + player_y * 5);
+              _5x5_select (1);
+              _5x5_clear ();
+              loadlevel       (player_x % 5 + player_y * 5);
+              completed_setid (player_x % 5 + player_y * 5);
 
-          _5x5_select (0);
-          starting = 1;
+              _5x5_select (0);
+              starting = 1;
+            }
           return;
         }
     }
@@ -178,6 +181,9 @@ picker_update (void)
 
   for (int i = 0; i < 15; ++i)
     {
+      if (i >= levelcount ())
+        break;
+
       int x = i % 5;
       int y = i / 5;
 

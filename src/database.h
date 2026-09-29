@@ -12,6 +12,8 @@ extern "C"
 /* gets a level from an id and loads it into selected 5x5 field */
 void loadlevel (int id);
 
+int levelcount ();
+
 #ifdef __cplusplus
 }
 #endif
