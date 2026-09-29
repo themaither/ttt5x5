@@ -12,7 +12,7 @@ main (int argc, char **argv)
 
   SetTargetFPS (60);
   completed_init ();
-  InitWindow (640, 400, "ttt5x5");
+  InitWindow (640, 400, PACKAGE_STRING);
   DrawField_init ();
   session_init ();
   picker_init  ();

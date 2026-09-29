@@ -27,9 +27,9 @@ completed_init (void)
   FILE *sstream = open_memstream (&savepath, &savepath_size);
 
   if (xdg)
-    fprintf (sstream, "%s/ttt5x5/", xdg);
+    fprintf (sstream, "%s/" PACKAGE_NAME "/", xdg);
   else if (home)
-    fprintf (sstream, "%s/.local/share/ttt5x5/", home);
+    fprintf (sstream, "%s/.local/share/" PACKAGE_NAME "/", home);
   else
     fprintf (sstream, "./");
 
