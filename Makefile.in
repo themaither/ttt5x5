@@ -343,7 +343,6 @@ ttt5x5_SOURCES = src/ttt5x5.c \
                  src/draw_field.c src/draw_field.h \
                  src/btn.c src/btn.h \
                  src/completed.c src/completed.h \
-                 src/levels.X.h \
                  src/database.c src/database.h
 
 ttt5x5_CFLAGS = -I${srcdir}/src ${RAYLIB_CFLAGS} -g \
