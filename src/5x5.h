@@ -20,6 +20,9 @@ int  _5x5_won             (void);
 /* checks if primary and desired patterns are matching right now */
 int  _5x5_matches         (void);
 
+/* resets winning state */
+void _5x5_resetgame       (void);
+
 
 /* SELECTION MANAGEMENT */
 

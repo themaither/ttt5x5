@@ -112,6 +112,7 @@ session_update (void)
       if (IsBtnPressed ())
         {
           leaving = 1;
+          _5x5_resetgame ();
         }
     }
 

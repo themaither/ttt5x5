@@ -16,6 +16,13 @@ static int won = 0;
 static int matches = 0;
 
 void
+_5x5_resetgame (void)
+{
+  won = 0;
+  matches = 0;
+}
+
+void
 _5x5_select (int newsel)
 {
   assert (newsel <= last_selection);
