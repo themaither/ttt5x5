@@ -6,6 +6,7 @@
 #include <imath.h>
 #include <draw_field.h>
 #include <completed.h>
+#include <database.h>
 
 static Texture2D picker_texture;
 static Texture2D leave_texture;
@@ -25,6 +26,9 @@ static int whaton = 0;
 static int leaving = 0;
 
 static int starting = 0;
+
+/* used to store field info for drawing functions */
+static int buffer_field;
 
 void
 picker_reset (void)
@@ -83,6 +87,8 @@ picker_init (void)
   leave_hovered_texture = LoadTexture (PKGDATADIR "/back_hovered.png");
   leave_pressed_texture = LoadTexture (PKGDATADIR "/back_pressed.png");
   completed_texture = LoadTexture (PKGDATADIR "/completed.png");
+
+  buffer_field = _5x5_open ();
 }
 
 void
@@ -136,103 +142,14 @@ picker_update (void)
 
       if (IsBtnPressed ())
         {
+          _5x5_select (0);
           _5x5_clear ();
           _5x5_startpattern ();
+
           _5x5_select (1);
           _5x5_clear ();
-#define interact(X, Y) _5x5_interact (X, Y)
-          if (player_x == 0 && player_y == 0)
-            {
-#define LEVEL_0
-#include <levels.X.h>
-#undef LEVEL_0
-              completed_setid (0);
-            }
-          else if (player_x == 1 && player_y == 0)
-            {
-#define LEVEL_1
-#include <levels.X.h>
-#undef LEVEL_1
-              completed_setid (1);
-            }
-          else if (player_x == 2 && player_y == 0)
-            {
-#define LEVEL_2
-#include <levels.X.h>
-#undef LEVEL_2
-              completed_setid (2);
-            }
-          else if (player_x == 3 && player_y == 0)
-            {
-#define LEVEL_3
-#include <levels.X.h>
-#undef LEVEL_3
-              completed_setid (3);
-            }
-          else if (player_x == 4 && player_y == 0)
-            {
-#define LEVEL_4
-#include <levels.X.h>
-#undef LEVEL_4
-              completed_setid (4);
-            }
-          else if (player_x == 0 && player_y == 1)
-            {
-#define LEVEL_5
-#include <levels.X.h>
-#undef LEVEL_5
-              completed_setid (5);
-            }
-          else if (player_x == 1 && player_y == 1)
-            {
-#define LEVEL_6
-#include <levels.X.h>
-#undef LEVEL_6
-              completed_setid (6);
-            }
-          else if (player_x == 2 && player_y == 1)
-            {
-#define LEVEL_7
-#include <levels.X.h>
-#undef LEVEL_7
-              completed_setid (7);
-            }
-          else if (player_x == 3 && player_y == 1)
-            {
-#define LEVEL_8
-#include <levels.X.h>
-#undef LEVEL_8
-              completed_setid (8);
-            }
-          else if (player_x == 4 && player_y == 1)
-            {
-#define LEVEL_9
-#include <levels.X.h>
-#undef LEVEL_9
-              completed_setid (9);
-            }
-          else if (player_x == 0 && player_y == 2)
-            {
-#define LEVEL_10
-#include <levels.X.h>
-#undef LEVEL_10
-              completed_setid (10);
-            }
-          else if (player_x == 1 && player_y == 2)
-            {
-#define LEVEL_11
-#include <levels.X.h>
-#undef LEVEL_11
-              completed_setid (11);
-            }
-          else if (player_x == 2 && player_y == 2)
-            {
-#define LEVEL_12
-#include <levels.X.h>
-#undef LEVEL_12
-              completed_setid (12);
-            }
-#undef interact
+          loadlevel       (player_x % 5 + player_y * 5);
+          completed_setid (player_x % 5 + player_y * 5);
 
           _5x5_select (0);
           starting = 1;
@@ -257,112 +174,19 @@ picker_update (void)
   else
     DrawTexture (leave_texture, 2, 2, WHITE);
 
-#define interact(X, Y) DrawField_interact (X, Y)
+  _5x5_select (3);
 
-#define LEVEL_0
-#include <levels.X.h>
-#undef LEVEL_0
-  DrawField80 (56, 64);
-  completed_setid (0);
-  if (completed ())
-    DrawTexture (completed_texture, 56 + 64, 64 + 64, WHITE);
+  for (int i = 0; i < 15; ++i)
+    {
+      int x = i % 5;
+      int y = i / 5;
 
-#define LEVEL_1
-#include <levels.X.h>
-#undef LEVEL_1
-  DrawField80 (56 + 112, 64);
-  completed_setid (1);
-  if (completed ())
-    DrawTexture (completed_texture, 56 + 112 + 64, 64 + 64, WHITE);
-
-#define LEVEL_2
-#include <levels.X.h>
-#undef LEVEL_2
-  DrawField80 (56 + 112 * 2, 64);
-  completed_setid (2);
-  if (completed ())
-    DrawTexture (completed_texture, 56 + 112 * 2 + 64, 64 + 64, WHITE);
-
-#define LEVEL_3
-#include <levels.X.h>
-#undef LEVEL_3
-  DrawField80 (56 + 112 * 3, 64);
-  completed_setid (3);
-  if (completed ())
-    DrawTexture (completed_texture, 56 + 112 * 3 + 64, 64 + 64, WHITE);
-
-#define LEVEL_4
-#include <levels.X.h>
-#undef LEVEL_4
-  DrawField80 (56 + 112 * 4, 64);
-  completed_setid (4);
-  if (completed ())
-    DrawTexture (completed_texture, 56 + 112 * 4 + 64, 64 + 64, WHITE);
-
-#define LEVEL_5
-#include <levels.X.h>
-#undef LEVEL_5
-  DrawField80 (56 + 112 * 0, 64 + 104);
-  completed_setid (5);
-  if (completed ())
-    DrawTexture (completed_texture, 56 + 112 * 0 + 64, 64 + 104 + 64, WHITE);
-
-#define LEVEL_6
-#include <levels.X.h>
-#undef LEVEL_6
-  DrawField80 (56 + 112 * 1, 64 + 104);
-  completed_setid (6);
-  if (completed ())
-    DrawTexture (completed_texture, 56 + 112 * 1 + 64, 64 + 104 + 64, WHITE);
-
-#define LEVEL_7
-#include <levels.X.h>
-#undef LEVEL_7
-  DrawField80 (56 + 112 * 2, 64 + 104);
-  completed_setid (7);
-  if (completed ())
-    DrawTexture (completed_texture, 56 + 112 * 2 + 64, 64 + 104 + 64, WHITE);
-
-#define LEVEL_8
-#include <levels.X.h>
-#undef LEVEL_8
-  DrawField80 (56 + 112 * 3, 64 + 104);
-  completed_setid (8);
-  if (completed ())
-    DrawTexture (completed_texture, 56 + 112 * 3 + 64, 64 + 104 + 64, WHITE);
-
-#define LEVEL_9
-#include <levels.X.h>
-#undef LEVEL_9
-  DrawField80 (56 + 112 * 4, 64 + 104);
-  completed_setid (9);
-  if (completed ())
-    DrawTexture (completed_texture, 56 + 112 * 4 + 64, 64 + 104 + 64, WHITE);
-
-#define LEVEL_10
-#include <levels.X.h>
-#undef LEVEL_10
-  DrawField80 (56 + 112 * 0, 64 + 104 * 2);
-  completed_setid (10);
-  if (completed ())
-    DrawTexture (completed_texture, 56 + 112 * 0 + 64, 64 + 104 * 2 + 64, WHITE);
-
-#define LEVEL_11
-#include <levels.X.h>
-#undef LEVEL_11
-  DrawField80 (56 + 112 * 1, 64 + 104 * 2);
-  completed_setid (11);
-  if (completed ())
-    DrawTexture (completed_texture, 56 + 112 * 1 + 64, 64 + 104 * 2 + 64, WHITE);
-
-#define LEVEL_12
-#include <levels.X.h>
-#undef LEVEL_12
-  DrawField80 (56 + 112 * 2, 64 + 104 * 2);
-  completed_setid (12);
-  if (completed ())
-    DrawTexture (completed_texture, 56 + 112 * 2 + 64, 64 + 104 * 2 + 64, WHITE);
-#undef interact
+      loadlevel (i);
+      DrawField80_selected (56 + 112 * x, 64 + 104 * y);
+      completed_setid (i);
+      if (completed ())
+        DrawTexture (completed_texture, 56 + 112 * x + 64, 64 + 104 * y + 64, WHITE);
+    }
 
   if (whaton == 0)
     DrawCursor (56 + player_x_interp * 112, 64 + player_y_interp * 104, 80);
