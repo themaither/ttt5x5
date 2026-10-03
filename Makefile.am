@@ -34,4 +34,10 @@ dist_pkgdata_DATA = assets/black16.png \
                     assets/dark_green48.png \
                     assets/light_green48.png \
                     assets/picker.png \
-                    assets/completed.png
+                    assets/completed.png \
+                    assets/prev.png \
+                    assets/prev_hovered.png \
+                    assets/prev_pressed.png \
+                    assets/next.png \
+                    assets/next_hovered.png \
+                    assets/next_pressed.png
