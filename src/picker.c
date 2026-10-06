@@ -16,9 +16,13 @@ static Texture2D completed_texture;
 static Texture2D prev_texture;
 static Texture2D prev_hovered_texture;
 static Texture2D prev_pressed_texture;
+static Texture2D prev_disabled_texture;
+static Texture2D prev_hovered_disabled_texture;
 static Texture2D next_texture;
 static Texture2D next_hovered_texture;
 static Texture2D next_pressed_texture;
+static Texture2D next_disabled_texture;
+static Texture2D next_hovered_disabled_texture;
 
 static int player_x = 0;
 static int player_y = 0;
@@ -100,9 +104,13 @@ picker_init (void)
   prev_texture = LoadTexture (PKGDATADIR "/prev.png");
   prev_hovered_texture = LoadTexture (PKGDATADIR "/prev_hovered.png");
   prev_pressed_texture = LoadTexture (PKGDATADIR "/prev_pressed.png");
+  prev_disabled_texture = LoadTexture (PKGDATADIR "/prev_disabled.png");
+  prev_hovered_disabled_texture = LoadTexture (PKGDATADIR "/prev_hovered_disabled.png");
   next_texture = LoadTexture (PKGDATADIR "/next.png");
   next_hovered_texture = LoadTexture (PKGDATADIR "/next_hovered.png");
   next_pressed_texture = LoadTexture (PKGDATADIR "/next_pressed.png");
+  next_disabled_texture = LoadTexture (PKGDATADIR "/next_disabled.png");
+  next_hovered_disabled_texture = LoadTexture (PKGDATADIR "/next_hovered_disabled.png");
 
   buffer_field = _5x5_open ();
 }
@@ -148,7 +156,7 @@ picker_update (void)
           ++top_whaton;
         }
 
-      top_whaton = clamp (top_whaton, 0, 2);
+      top_whaton = clamp (0, 2, top_whaton);
     }
 
   /* controls for pattern cursor */
@@ -219,19 +227,39 @@ picker_update (void)
   else
     DrawTexture (leave_texture, 2, 2, WHITE);
 
-  if (whaton == 1 && top_whaton == 1 && IsBtnDown ())
-    DrawTexture (prev_pressed_texture, 282, 2, WHITE);
-  else if (whaton == 1 && top_whaton == 1)
-    DrawTexture (prev_hovered_texture, 282, 2, WHITE);
+  if (page == 0)
+    {
+      if (whaton == 1 && top_whaton == 1)
+        DrawTexture (prev_hovered_disabled_texture, 282, 2, WHITE);
+      else
+        DrawTexture (prev_disabled_texture, 282, 2, WHITE);
+    }
   else
-    DrawTexture (prev_texture, 282, 2, WHITE);
+    {
+      if (whaton == 1 && top_whaton == 1 && IsBtnDown ())
+        DrawTexture (prev_pressed_texture, 282, 2, WHITE);
+      else if (whaton == 1 && top_whaton == 1)
+        DrawTexture (prev_hovered_texture, 282, 2, WHITE);
+      else
+        DrawTexture (prev_texture, 282, 2, WHITE);
+    }
 
-  if (whaton == 1 && top_whaton == 2 && IsBtnDown ())
-    DrawTexture (next_pressed_texture, 326, 2, WHITE);
-  else if (whaton == 1 && top_whaton == 2)
-    DrawTexture (next_hovered_texture, 326, 2, WHITE);
+  if ((levelcount () - 1) / 15 <= page)
+    {
+      if (whaton == 1 && top_whaton == 2)
+        DrawTexture (next_hovered_disabled_texture, 326, 2, WHITE);
+      else
+        DrawTexture (next_disabled_texture, 326, 2, WHITE);
+    }
   else
-    DrawTexture (next_texture, 326, 2, WHITE);
+    {
+      if (whaton == 1 && top_whaton == 2 && IsBtnDown ())
+        DrawTexture (next_pressed_texture, 326, 2, WHITE);
+      else if (whaton == 1 && top_whaton == 2)
+        DrawTexture (next_hovered_texture, 326, 2, WHITE);
+      else
+        DrawTexture (next_texture, 326, 2, WHITE);
+    }
 
   _5x5_select (3);
 
