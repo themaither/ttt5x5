@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.72])
-AC_INIT([ttt5x5], [0.0.4], [themaither@gmail.com])
+AC_INIT([ttt5x5], [0.0.5], [themaither@gmail.com])
 AM_INIT_AUTOMAKE([foreign subdir-objects])
 
 # Checks for programs.
