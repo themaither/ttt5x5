@@ -377,7 +377,18 @@ dist_pkgdata_DATA = assets/black16.png \
                     assets/next_disabled.png \
                     assets/next_hovered.png \
                     assets/next_hovered_disabled.png \
-                    assets/next_pressed.png
+                    assets/next_pressed.png \
+                    assets/digit_0.png \
+                    assets/digit_1.png \
+                    assets/digit_2.png \
+                    assets/digit_3.png \
+                    assets/digit_4.png \
+                    assets/digit_5.png \
+                    assets/digit_6.png \
+                    assets/digit_7.png \
+                    assets/digit_8.png \
+                    assets/digit_9.png \
+                    assets/moves.png
 
 all: all-am
 

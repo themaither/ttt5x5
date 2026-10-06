@@ -7,6 +7,7 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <math.h>
+#include <assert.h>
 #include <draw_field.h>
 
 static void
@@ -62,17 +63,31 @@ static Texture2D white16_texture;
 static Texture2D leave_texture;
 static Texture2D leave_hovered_texture;
 static Texture2D leave_pressed_texture;
+static Texture2D moves_texture;
+
+static Texture2D digit_textures[10];
 
 /* what cursor is on */
 static int whaton = 0;
 
 static int leaving = 0;
 
+static int moves = 0;
+
+static void
+DrawDigit (int digit, int x, int y)
+{
+  assert (digit >= 0);
+  assert (digit <= 9);
+  DrawTexture(digit_textures[digit], x, y, WHITE);
+}
+
 void
 session_reset (void)
 {
   leaving = 0;
   whaton = 0;
+  moves = 0;
 }
 
 void
@@ -88,6 +103,18 @@ session_init (void)
   leave_texture = LoadTexture (PKGDATADIR "/leave.png");
   leave_hovered_texture = LoadTexture (PKGDATADIR "/leave_hovered.png");
   leave_pressed_texture = LoadTexture (PKGDATADIR "/leave_pressed.png");
+  moves_texture = LoadTexture (PKGDATADIR "/moves.png");
+
+  digit_textures[0] = LoadTexture (PKGDATADIR "/digit_0.png");
+  digit_textures[1] = LoadTexture (PKGDATADIR "/digit_1.png");
+  digit_textures[2] = LoadTexture (PKGDATADIR "/digit_2.png");
+  digit_textures[3] = LoadTexture (PKGDATADIR "/digit_3.png");
+  digit_textures[4] = LoadTexture (PKGDATADIR "/digit_4.png");
+  digit_textures[5] = LoadTexture (PKGDATADIR "/digit_5.png");
+  digit_textures[6] = LoadTexture (PKGDATADIR "/digit_6.png");
+  digit_textures[7] = LoadTexture (PKGDATADIR "/digit_7.png");
+  digit_textures[8] = LoadTexture (PKGDATADIR "/digit_8.png");
+  digit_textures[9] = LoadTexture (PKGDATADIR "/digit_9.png");
 }
 
 int
@@ -142,6 +169,7 @@ session_update (void)
       if (IsBtnPressedRN ())
         {
           _5x5_interact (player_x, player_y);
+          ++moves;
 
           press_x = player_x;
           press_y = player_y;
@@ -196,6 +224,11 @@ session_update (void)
     DrawTexture (leave_hovered_texture, 2, 2, WHITE);
   else
     DrawTexture (leave_texture, 2, 2, WHITE);
+
+  DrawTexture (moves_texture, 336, 2, WHITE);
+  DrawDigit (moves % 10 , 452, 6);
+  DrawDigit ((moves / 10) % 10 , 426, 6);
+  DrawDigit ((moves / 100) % 10 , 400, 6);
 
   EndDrawing ();
 }
