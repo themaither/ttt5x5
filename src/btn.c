@@ -7,6 +7,11 @@ static int abadoned = 0;
 void
 BtnReadEvents (void)
 {
+  if (IsMouseButtonDown (MOUSE_BUTTON_LEFT))
+    {
+      if (!abadoned)
+        press = -2;
+    }
   if (IsKeyDown (KEY_SPACE))
     {
       if (!abadoned)
@@ -28,10 +33,18 @@ BtnReadEvents (void)
   if (pressed)
     pressed = 0;
 
-  if (press != -1 && IsKeyUp (press) && !pressed && !abadoned)
+  if (press != -1)
     {
-      pressed = 1;
-      press = -1;
+      if (press == -2 && IsMouseButtonUp (MOUSE_BUTTON_LEFT))
+        {
+          pressed = 1;
+          press = -1;
+        }
+      else if (IsKeyUp (press) && !pressed && !abadoned)
+        {
+          pressed = 1;
+          press = -1;
+        }
     }
 }
 
@@ -46,7 +59,8 @@ IsBtnPressedRN (void)
 {
   return IsKeyPressed (KEY_SPACE)
       || IsKeyPressed (KEY_KP_ADD)
-      || IsKeyPressed (KEY_ENTER);
+      || IsKeyPressed (KEY_ENTER)
+      || IsMouseButtonPressed (MOUSE_BUTTON_LEFT);
 }
 
 int

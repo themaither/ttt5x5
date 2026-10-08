@@ -1,6 +1,7 @@
 #include <5x5.h>
 #include <btn.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <raylib.h>
 #include <math.h>
 #include <imath.h>
@@ -27,6 +28,7 @@ static Texture2D next_hovered_disabled_texture;
 
 static int player_x = 0;
 static int player_y = 0;
+static int mouse = 0;
 
 static float player_x_interp = 0.f;
 static float player_y_interp = 0.f;
@@ -119,6 +121,53 @@ picker_init (void)
 void
 picker_update (void)
 {
+  {
+    Vector2 delta = GetMouseDelta ();
+    int x = GetMouseX ();
+    int y = GetMouseY ();
+
+    if (fabs (delta.x) > 0. && fabs (delta.y) > 0.)
+      mouse = 1;
+
+    if (mouse)
+      {
+        if (x >= 2 && x <= 66)
+          if (y >= 2 && y<= 34)
+            {
+              whaton = 1;
+              top_whaton = 0;
+            }
+
+        if (x >= 248 && x <= 280)
+          if (y >= 2 && y<= 34)
+            {
+              whaton = 1;
+              top_whaton = 1;
+            }
+
+        if (x >= 360 && x <= 392)
+          if (y >= 2 && y<= 34)
+            {
+              whaton = 1;
+              top_whaton = 2;
+            }
+
+        for (int i = 0; i < 15; ++i)
+          {
+            int x1 = i % 5;
+            int y1 = i / 5;
+
+            if (x >= 56 + 112 * x1 && x <= 56 + 112 * x1 + 80)
+              if (y >= 64 + 104 * y1 && y <= 64 + 104 * y1 + 80)
+                {
+                  whaton = 0;
+                  player_x = x1;
+                  player_y = y1;
+                }
+          }
+      }
+  }
+
   _5x5_select (0);
   if (whaton == 1)
     {
