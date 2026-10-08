@@ -66,6 +66,8 @@ static Texture2D leave_hovered_texture;
 static Texture2D leave_pressed_texture;
 static Texture2D moves_texture;
 
+static int mouse = 0;
+
 /* what cursor is on */
 static int whaton = 0;
 
@@ -106,6 +108,32 @@ session_leaving (void)
 void
 session_update (void)
 {
+  {
+    Vector2 delta = GetMouseDelta ();
+    int x = GetMouseX ();
+    int y = GetMouseY ();
+
+    if (fabs (delta.x) > 0. && fabs (delta.y) > 0.)
+      mouse = 1;
+
+    if (mouse)
+      {
+        if (x >= 2 && x <= 66)
+          if (y >= 2 && y<= 34)
+            {
+              whaton = 1;
+            }
+
+        if (x >= 200 && x <= 200 + 240)
+          if (y >= 51 && y <= 51 + 240)
+            {
+              whaton = 0;
+              player_x = (x - 200) * 5 / 240;
+              player_y = (y - 51) * 5 / 240;
+            }
+      }
+  }
+
   _5x5_select (0);
 
   if (whaton == 1)
