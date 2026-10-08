@@ -175,6 +175,7 @@ picker_update (void)
         {
           BtnAbort ();
           whaton = 0;
+          mouse = 0;
         }
 
       if (IsBtnPressed () && top_whaton == 0)
@@ -198,12 +199,14 @@ picker_update (void)
         {
           BtnAbort ();
           --top_whaton;
+          mouse = 0;
         }
 
       if (IsKeyPressed (KEY_D))
         {
           BtnAbort ();
           ++top_whaton;
+          mouse = 0;
         }
 
       top_whaton = clamp (0, 2, top_whaton);
@@ -216,12 +219,14 @@ picker_update (void)
         {
           BtnAbort ();
           ++player_x;
+          mouse = 0;
         }
 
       if (IsKeyPressed (KEY_A))
         {
           BtnAbort ();
           --player_x;
+          mouse = 0;
         }
 
       if (IsKeyPressed (KEY_W))
@@ -232,12 +237,14 @@ picker_update (void)
             whaton = 1;
 
           --player_y;
+          mouse = 0;
         }
 
       if (IsKeyPressed (KEY_S))
         {
           BtnAbort ();
           ++player_y;
+          mouse = 0;
         }
 
       if (IsBtnPressed ())
