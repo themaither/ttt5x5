@@ -5,6 +5,7 @@
 #include <math.h>
 #include <imath.h>
 #include <draw_field.h>
+#include <draw_digit.h>
 #include <completed.h>
 #include <database.h>
 
@@ -230,35 +231,37 @@ picker_update (void)
   if (page == 0)
     {
       if (whaton == 1 && top_whaton == 1)
-        DrawTexture (prev_hovered_disabled_texture, 282, 2, WHITE);
+        DrawTexture (prev_hovered_disabled_texture, 248, 2, WHITE);
       else
-        DrawTexture (prev_disabled_texture, 282, 2, WHITE);
+        DrawTexture (prev_disabled_texture, 248, 2, WHITE);
     }
   else
     {
       if (whaton == 1 && top_whaton == 1 && IsBtnDown ())
-        DrawTexture (prev_pressed_texture, 282, 2, WHITE);
+        DrawTexture (prev_pressed_texture, 248, 2, WHITE);
       else if (whaton == 1 && top_whaton == 1)
-        DrawTexture (prev_hovered_texture, 282, 2, WHITE);
+        DrawTexture (prev_hovered_texture, 248, 2, WHITE);
       else
-        DrawTexture (prev_texture, 282, 2, WHITE);
+        DrawTexture (prev_texture, 248, 2, WHITE);
     }
+
+  DrawNumber3 (page + 1, 282, 6);
 
   if ((levelcount () - 1) / 15 <= page)
     {
       if (whaton == 1 && top_whaton == 2)
-        DrawTexture (next_hovered_disabled_texture, 326, 2, WHITE);
+        DrawTexture (next_hovered_disabled_texture, 360, 2, WHITE);
       else
-        DrawTexture (next_disabled_texture, 326, 2, WHITE);
+        DrawTexture (next_disabled_texture, 360, 2, WHITE);
     }
   else
     {
       if (whaton == 1 && top_whaton == 2 && IsBtnDown ())
-        DrawTexture (next_pressed_texture, 326, 2, WHITE);
+        DrawTexture (next_pressed_texture, 360, 2, WHITE);
       else if (whaton == 1 && top_whaton == 2)
-        DrawTexture (next_hovered_texture, 326, 2, WHITE);
+        DrawTexture (next_hovered_texture, 360, 2, WHITE);
       else
-        DrawTexture (next_texture, 326, 2, WHITE);
+        DrawTexture (next_texture, 360, 2, WHITE);
     }
 
   _5x5_select (3);
@@ -280,6 +283,7 @@ picker_update (void)
 
   if (whaton == 0)
     DrawCursor (56 + player_x_interp * 112, 64 + player_y_interp * 104, 80);
+
 
   EndDrawing ();
 }
