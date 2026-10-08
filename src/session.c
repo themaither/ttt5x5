@@ -142,6 +142,7 @@ session_update (void)
         {
           BtnAbort ();
           whaton = 0;
+          mouse = 0;
         }
 
       if (IsBtnPressed ())
@@ -155,10 +156,16 @@ session_update (void)
   else if (whaton == 0)
     {
       if (IsKeyPressed (KEY_D))
-        ++player_x;
+        {
+          ++player_x;
+          mouse = 0;
+        }
 
       if (IsKeyPressed (KEY_A))
-        --player_x;
+        {
+          --player_x;
+          mouse = 0;
+        }
 
       if (IsKeyPressed (KEY_W))
         {
@@ -169,10 +176,14 @@ session_update (void)
             }
 
           --player_y;
+          mouse = 0;
         }
 
       if (IsKeyPressed (KEY_S))
-        ++player_y;
+        {
+          ++player_y;
+          mouse = 0;
+        }
 
       if (IsBtnPressedRN ())
         {
