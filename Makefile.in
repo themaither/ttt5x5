@@ -110,7 +110,7 @@ am_ttt5x5_OBJECTS = src/ttt5x5-ttt5x5.$(OBJEXT) \
 	src/ttt5x5-camera.$(OBJEXT) src/ttt5x5-session.$(OBJEXT) \
 	src/ttt5x5-picker.$(OBJEXT) src/ttt5x5-draw_field.$(OBJEXT) \
 	src/ttt5x5-btn.$(OBJEXT) src/ttt5x5-completed.$(OBJEXT) \
-	src/ttt5x5-database.$(OBJEXT)
+	src/ttt5x5-database.$(OBJEXT) src/ttt5x5-draw_digit.$(OBJEXT)
 ttt5x5_OBJECTS = $(am_ttt5x5_OBJECTS)
 am__DEPENDENCIES_1 =
 ttt5x5_DEPENDENCIES = $(am__DEPENDENCIES_1)
@@ -135,6 +135,7 @@ am__depfiles_remade = src/$(DEPDIR)/ttt5x5-5x5.Po \
 	src/$(DEPDIR)/ttt5x5-btn.Po src/$(DEPDIR)/ttt5x5-camera.Po \
 	src/$(DEPDIR)/ttt5x5-completed.Po \
 	src/$(DEPDIR)/ttt5x5-database.Po \
+	src/$(DEPDIR)/ttt5x5-draw_digit.Po \
 	src/$(DEPDIR)/ttt5x5-draw_field.Po \
 	src/$(DEPDIR)/ttt5x5-imath.Po src/$(DEPDIR)/ttt5x5-picker.Po \
 	src/$(DEPDIR)/ttt5x5-session.Po src/$(DEPDIR)/ttt5x5-ttt5x5.Po
@@ -343,7 +344,8 @@ ttt5x5_SOURCES = src/ttt5x5.c \
                  src/draw_field.c src/draw_field.h \
                  src/btn.c src/btn.h \
                  src/completed.c src/completed.h \
-                 src/database.c src/database.h
+                 src/database.c src/database.h \
+                 src/draw_digit.c src/draw_digit.h
 
 ttt5x5_CFLAGS = -I${srcdir}/src ${RAYLIB_CFLAGS} -g \
                 -DPKGDATADIR="\"${pkgdatadir}\"" # would probably fail 99% time
@@ -495,6 +497,8 @@ src/ttt5x5-completed.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
 src/ttt5x5-database.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
+src/ttt5x5-draw_digit.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
 
 ttt5x5$(EXEEXT): $(ttt5x5_OBJECTS) $(ttt5x5_DEPENDENCIES) $(EXTRA_ttt5x5_DEPENDENCIES) 
 	@rm -f ttt5x5$(EXEEXT)
@@ -512,6 +516,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-camera.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-completed.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-database.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-draw_digit.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-draw_field.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-imath.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-picker.Po@am__quote@ # am--include-marker
@@ -679,6 +684,20 @@ src/ttt5x5-database.obj: src/database.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/database.c' object='src/ttt5x5-database.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ttt5x5_CFLAGS) $(CFLAGS) -c -o src/ttt5x5-database.obj `if test -f 'src/database.c'; then $(CYGPATH_W) 'src/database.c'; else $(CYGPATH_W) '$(srcdir)/src/database.c'; fi`
+
+src/ttt5x5-draw_digit.o: src/draw_digit.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ttt5x5_CFLAGS) $(CFLAGS) -MT src/ttt5x5-draw_digit.o -MD -MP -MF src/$(DEPDIR)/ttt5x5-draw_digit.Tpo -c -o src/ttt5x5-draw_digit.o `test -f 'src/draw_digit.c' || echo '$(srcdir)/'`src/draw_digit.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/ttt5x5-draw_digit.Tpo src/$(DEPDIR)/ttt5x5-draw_digit.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/draw_digit.c' object='src/ttt5x5-draw_digit.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ttt5x5_CFLAGS) $(CFLAGS) -c -o src/ttt5x5-draw_digit.o `test -f 'src/draw_digit.c' || echo '$(srcdir)/'`src/draw_digit.c
+
+src/ttt5x5-draw_digit.obj: src/draw_digit.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ttt5x5_CFLAGS) $(CFLAGS) -MT src/ttt5x5-draw_digit.obj -MD -MP -MF src/$(DEPDIR)/ttt5x5-draw_digit.Tpo -c -o src/ttt5x5-draw_digit.obj `if test -f 'src/draw_digit.c'; then $(CYGPATH_W) 'src/draw_digit.c'; else $(CYGPATH_W) '$(srcdir)/src/draw_digit.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/ttt5x5-draw_digit.Tpo src/$(DEPDIR)/ttt5x5-draw_digit.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/draw_digit.c' object='src/ttt5x5-draw_digit.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ttt5x5_CFLAGS) $(CFLAGS) -c -o src/ttt5x5-draw_digit.obj `if test -f 'src/draw_digit.c'; then $(CYGPATH_W) 'src/draw_digit.c'; else $(CYGPATH_W) '$(srcdir)/src/draw_digit.c'; fi`
 install-dist_pkgdataDATA: $(dist_pkgdata_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(dist_pkgdata_DATA)'; test -n "$(pkgdatadir)" || list=; \
@@ -1033,6 +1052,7 @@ distclean: distclean-am
 	-rm -f src/$(DEPDIR)/ttt5x5-camera.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-completed.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-database.Po
+	-rm -f src/$(DEPDIR)/ttt5x5-draw_digit.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-draw_field.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-imath.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-picker.Po
@@ -1090,6 +1110,7 @@ maintainer-clean: maintainer-clean-am
 	-rm -f src/$(DEPDIR)/ttt5x5-camera.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-completed.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-database.Po
+	-rm -f src/$(DEPDIR)/ttt5x5-draw_digit.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-draw_field.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-imath.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-picker.Po

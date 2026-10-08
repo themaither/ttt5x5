@@ -3,6 +3,7 @@
 #include <picker.h>
 #include <completed.h>
 #include <draw_field.h>
+#include <draw_digit.h>
 #include <btn.h>
 
 int
@@ -14,6 +15,7 @@ main (int argc, char **argv)
   completed_init ();
   InitWindow (640, 400, PACKAGE_STRING);
   DrawField_init ();
+  DrawDigit_init ();
   session_init ();
   picker_init  ();
 
