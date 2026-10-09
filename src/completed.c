@@ -125,29 +125,26 @@ complete (void)
 static void
 eval (FILE *f)
 {
-  char *line = NULL;
   const char *field = NULL;
-  size_t n = 0;
-  int line_number = 0;
+  dlf_setsource (f);
 
   for (;;)
   {
-    if (-1 == getline (&line, &n, f))
+    if (-1 == dlnext ())
       return;
-    ++line_number;
 
-    field = strtok (line, " \t\r\n");
+    field = dlgets ();
 
     if (0 == strcmp (field, "completed_setid"))
       {
         int value;
-        field = strtok (NULL, " \t\r\n");
+        field = dlgets ();
 
         if (sscanf (field, "%d", &value) != 1)
           {
             fprintf (stderr,
-                    "%s:%d: expected number after 'completed_setid'\n",
-                    savepath, line_number);
+                    "%s:%d:F%d: expected number after 'completed_setid'\n",
+                    savepath, dlf_ln (), dlf_fn ());
             return;
           }
 
@@ -160,8 +157,8 @@ eval (FILE *f)
     else
       {
         fprintf (stderr,
-                "%s:%d: unrecognized '%s'\n",
-                savepath, line_number, field);
+                "%s:%d:F%d: unrecognized '%s'\n",
+                savepath, dlf_ln (), dlf_fn (), field);
         return;
       }
   }

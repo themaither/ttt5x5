@@ -1,13 +1,19 @@
 #include <stdio.h>
+#include <string.h>
+
+static FILE *source;
+static FILE *sink;
 
 static int fc = 0;
-
-FILE *dlf_sink;
+static char *line = NULL;
+static size_t n = 0;
+static int line_number = 0;
+static int ifc = 0;
 
 void
 dlf_init ()
 {
-  dlf_sink = stdout;
+  sink = stdout;
 }
 
 void
@@ -47,19 +53,65 @@ fdline (FILE *f)
 }
 
 void
+dlf_setsink (FILE *f)
+{
+  sink = f;
+  fc = 0;
+}
+
+void
 dlputs (const char *s)
 {
-  fdlputs (dlf_sink, s);
+  fdlputs (sink, s);
 }
 
 void
 dlputi (int n)
 {
-  fdlputi (dlf_sink, n);
+  fdlputi (sink, n);
 }
 
 void
 dline ()
 {
-  fdline (dlf_sink);
+  fdline (sink);
+}
+
+
+void
+dlf_setsource (FILE *f)
+{
+  source = f;
+  int line_number = 0;
+}
+
+int
+dlnext ()
+{
+  ifc = 0;
+  int result = getline (&line, &n, source);
+  if (result != -1)
+    ++line_number;
+  return result;
+}
+
+const char *
+dlgets ()
+{
+  if (ifc++ == 0)
+    return strtok (line, " \t\r\n");
+  else
+    return strtok (NULL, " \t\r\n");
+}
+
+int
+dlf_ln ()
+{
+  return line_number;
+}
+
+int
+dlf_fn ()
+{
+  return ifc;
 }
