@@ -332,14 +332,23 @@ picker_update (void)
 
       loadlevel (page * 15 + i);
       DrawField80_selected (56 + 112 * x, 64 + 104 * y);
-      completed_setid (page * 15 + i);
-      if (completed ())
-        DrawTexture (completed_texture, 56 + 112 * x + 64, 64 + 104 * y + 64, WHITE);
     }
 
   if (whaton == 0)
     DrawCursor (56 + player_x_interp * 112, 64 + player_y_interp * 104, 80);
 
+  for (int i = 0; i < 15; ++i)
+    {
+      if (page * 15 + i >= levelcount ())
+        break;
+
+      int x = i % 5;
+      int y = i / 5;
+
+      completed_setid (page * 15 + i);
+      if (completed ())
+        DrawTexture (completed_texture, 56 + 112 * x + 64, 64 + 104 * y + 64, WHITE);
+    }
 
   EndDrawing ();
 }
