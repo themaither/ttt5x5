@@ -11,8 +11,6 @@ extern "C"
 {
 #endif
 
-extern FILE *dlf_sink;
-
 void dlf_init ();
 
 void fdlputs (FILE *, const char *field);
@@ -20,17 +18,17 @@ void fdlputi (FILE *, int);
 void fdline (FILE *);
 
 void dlf_setsink (FILE *f);
+FILE *dlf_sink ();
 void dlputs (const char *field);
 void dlputi (int);
 void dline ();
 
 void dlf_setsource (FILE *f);
+FILE *dlf_source ();
 int dlnext ();
 const char * dlgets ();
 int dlf_ln ();
 int dlf_fn ();
-
-
 
 #ifdef __cplusplus
 }

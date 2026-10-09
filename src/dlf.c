@@ -14,6 +14,7 @@ void
 dlf_init ()
 {
   sink = stdout;
+  source = stdin;
 }
 
 void
@@ -59,6 +60,12 @@ dlf_setsink (FILE *f)
   fc = 0;
 }
 
+FILE *
+dlf_sink ()
+{
+  return sink;
+}
+
 void
 dlputs (const char *s)
 {
@@ -77,12 +84,17 @@ dline ()
   fdline (sink);
 }
 
-
 void
 dlf_setsource (FILE *f)
 {
   source = f;
   int line_number = 0;
+}
+
+FILE *
+dlf_source ()
+{
+  return source;
 }
 
 int
