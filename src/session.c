@@ -10,22 +10,7 @@
 #include <assert.h>
 #include <draw_field.h>
 #include <draw_digit.h>
-
-static void
-DrawCursor (int _x, int _y, int size)
-{
-  DrawRectangle (_x - 4,            _y - 4,            8, 16, GREEN);
-  DrawRectangle (_x - 4,            _y - 4,            16, 8, GREEN);
-
-  DrawRectangle (_x - 4,            _y + size - 8 - 4, 8, 16, GREEN);
-  DrawRectangle (_x - 4,            _y + size - 8 + 4, 16, 8, GREEN);
-
-  DrawRectangle (_x + size - 8 + 4, _y - 4,            8, 16, GREEN);
-  DrawRectangle (_x + size - 8 - 4, _y - 4,            16, 8, GREEN);
-
-  DrawRectangle (_x + size - 8 + 4, _y + size - 8 - 4, 8, 16, GREEN);
-  DrawRectangle (_x + size - 8 - 4, _y + size - 8 + 4, 16, 8, GREEN);
-}
+#include <draw_cursor.h>
 
 /* lerp with small alignment logic to work with animations */
 static float

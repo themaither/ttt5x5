@@ -9,6 +9,7 @@
 #include <draw_digit.h>
 #include <completed.h>
 #include <database.h>
+#include <draw_cursor.h>
 
 static Texture2D picker_texture;
 static Texture2D leave_texture;
@@ -52,22 +53,6 @@ picker_reset (void)
 {
   starting = 0;
   leaving = 0;
-}
-
-static void
-DrawCursor (int _x, int _y, int size)
-{
-  DrawRectangle (_x - 4,            _y - 4,            8, 16, GREEN);
-  DrawRectangle (_x - 4,            _y - 4,            16, 8, GREEN);
-
-  DrawRectangle (_x - 4,            _y + size - 8 - 4, 8, 16, GREEN);
-  DrawRectangle (_x - 4,            _y + size - 8 + 4, 16, 8, GREEN);
-
-  DrawRectangle (_x + size - 8 + 4, _y - 4,            8, 16, GREEN);
-  DrawRectangle (_x + size - 8 - 4, _y - 4,            16, 8, GREEN);
-
-  DrawRectangle (_x + size - 8 + 4, _y + size - 8 - 4, 8, 16, GREEN);
-  DrawRectangle (_x + size - 8 - 4, _y + size - 8 + 4, 16, 8, GREEN);
 }
 
 static float

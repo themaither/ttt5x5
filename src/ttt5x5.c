@@ -4,6 +4,7 @@
 #include <completed.h>
 #include <draw_field.h>
 #include <draw_digit.h>
+#include <draw_cursor.h>
 #include <btn.h>
 #include <dlf.h>
 
@@ -18,6 +19,7 @@ main (int argc, char **argv)
   InitWindow (640, 400, PACKAGE_STRING);
   DrawField_init ();
   DrawDigit_init ();
+  DrawCursor_init ();
   session_init ();
   picker_init  ();
 
