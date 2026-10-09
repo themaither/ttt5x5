@@ -110,7 +110,8 @@ am_ttt5x5_OBJECTS = src/ttt5x5-ttt5x5.$(OBJEXT) \
 	src/ttt5x5-camera.$(OBJEXT) src/ttt5x5-session.$(OBJEXT) \
 	src/ttt5x5-picker.$(OBJEXT) src/ttt5x5-draw_field.$(OBJEXT) \
 	src/ttt5x5-btn.$(OBJEXT) src/ttt5x5-completed.$(OBJEXT) \
-	src/ttt5x5-database.$(OBJEXT) src/ttt5x5-draw_digit.$(OBJEXT)
+	src/ttt5x5-database.$(OBJEXT) src/ttt5x5-draw_digit.$(OBJEXT) \
+	src/ttt5x5-dlf.$(OBJEXT)
 ttt5x5_OBJECTS = $(am_ttt5x5_OBJECTS)
 am__DEPENDENCIES_1 =
 ttt5x5_DEPENDENCIES = $(am__DEPENDENCIES_1)
@@ -134,7 +135,7 @@ am__maybe_remake_depfiles = depfiles
 am__depfiles_remade = src/$(DEPDIR)/ttt5x5-5x5.Po \
 	src/$(DEPDIR)/ttt5x5-btn.Po src/$(DEPDIR)/ttt5x5-camera.Po \
 	src/$(DEPDIR)/ttt5x5-completed.Po \
-	src/$(DEPDIR)/ttt5x5-database.Po \
+	src/$(DEPDIR)/ttt5x5-database.Po src/$(DEPDIR)/ttt5x5-dlf.Po \
 	src/$(DEPDIR)/ttt5x5-draw_digit.Po \
 	src/$(DEPDIR)/ttt5x5-draw_field.Po \
 	src/$(DEPDIR)/ttt5x5-imath.Po src/$(DEPDIR)/ttt5x5-picker.Po \
@@ -209,7 +210,7 @@ am__define_uniq_tagged_files = \
   done | $(am__uniquify_input)`
 AM_RECURSIVE_TARGETS = cscope
 am__DIST_COMMON = $(srcdir)/Makefile.in COPYING INSTALL README compile \
-	depcomp install-sh missing
+	config.guess config.sub depcomp install-sh missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -345,7 +346,8 @@ ttt5x5_SOURCES = src/ttt5x5.c \
                  src/btn.c src/btn.h \
                  src/completed.c src/completed.h \
                  src/database.c src/database.h \
-                 src/draw_digit.c src/draw_digit.h
+                 src/draw_digit.c src/draw_digit.h \
+                 src/dlf.c src/dlf.h
 
 ttt5x5_CFLAGS = -I${srcdir}/src ${RAYLIB_CFLAGS} -g \
                 -DPKGDATADIR="\"${pkgdatadir}\"" # would probably fail 99% time
@@ -499,6 +501,8 @@ src/ttt5x5-database.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
 src/ttt5x5-draw_digit.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
+src/ttt5x5-dlf.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
 
 ttt5x5$(EXEEXT): $(ttt5x5_OBJECTS) $(ttt5x5_DEPENDENCIES) $(EXTRA_ttt5x5_DEPENDENCIES) 
 	@rm -f ttt5x5$(EXEEXT)
@@ -516,6 +520,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-camera.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-completed.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-database.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-dlf.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-draw_digit.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-draw_field.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-imath.Po@am__quote@ # am--include-marker
@@ -698,6 +703,20 @@ src/ttt5x5-draw_digit.obj: src/draw_digit.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/draw_digit.c' object='src/ttt5x5-draw_digit.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ttt5x5_CFLAGS) $(CFLAGS) -c -o src/ttt5x5-draw_digit.obj `if test -f 'src/draw_digit.c'; then $(CYGPATH_W) 'src/draw_digit.c'; else $(CYGPATH_W) '$(srcdir)/src/draw_digit.c'; fi`
+
+src/ttt5x5-dlf.o: src/dlf.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ttt5x5_CFLAGS) $(CFLAGS) -MT src/ttt5x5-dlf.o -MD -MP -MF src/$(DEPDIR)/ttt5x5-dlf.Tpo -c -o src/ttt5x5-dlf.o `test -f 'src/dlf.c' || echo '$(srcdir)/'`src/dlf.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/ttt5x5-dlf.Tpo src/$(DEPDIR)/ttt5x5-dlf.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/dlf.c' object='src/ttt5x5-dlf.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ttt5x5_CFLAGS) $(CFLAGS) -c -o src/ttt5x5-dlf.o `test -f 'src/dlf.c' || echo '$(srcdir)/'`src/dlf.c
+
+src/ttt5x5-dlf.obj: src/dlf.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ttt5x5_CFLAGS) $(CFLAGS) -MT src/ttt5x5-dlf.obj -MD -MP -MF src/$(DEPDIR)/ttt5x5-dlf.Tpo -c -o src/ttt5x5-dlf.obj `if test -f 'src/dlf.c'; then $(CYGPATH_W) 'src/dlf.c'; else $(CYGPATH_W) '$(srcdir)/src/dlf.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/ttt5x5-dlf.Tpo src/$(DEPDIR)/ttt5x5-dlf.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/dlf.c' object='src/ttt5x5-dlf.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ttt5x5_CFLAGS) $(CFLAGS) -c -o src/ttt5x5-dlf.obj `if test -f 'src/dlf.c'; then $(CYGPATH_W) 'src/dlf.c'; else $(CYGPATH_W) '$(srcdir)/src/dlf.c'; fi`
 install-dist_pkgdataDATA: $(dist_pkgdata_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(dist_pkgdata_DATA)'; test -n "$(pkgdatadir)" || list=; \
@@ -1052,6 +1071,7 @@ distclean: distclean-am
 	-rm -f src/$(DEPDIR)/ttt5x5-camera.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-completed.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-database.Po
+	-rm -f src/$(DEPDIR)/ttt5x5-dlf.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-draw_digit.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-draw_field.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-imath.Po
@@ -1110,6 +1130,7 @@ maintainer-clean: maintainer-clean-am
 	-rm -f src/$(DEPDIR)/ttt5x5-camera.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-completed.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-database.Po
+	-rm -f src/$(DEPDIR)/ttt5x5-dlf.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-draw_digit.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-draw_field.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-imath.Po

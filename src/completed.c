@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <dlf.h>
 
 static int db[128];
 static int id;
@@ -112,8 +113,12 @@ complete (void)
       return;
     }
 
-  fprintf (f, "completed_setid %d\n", id);
-  fprintf (f, "complete\n");
+  fdlputs (f, "completed_setid");
+  fdlputi (f, id);
+  fdline  (f);
+  fdlputs (f, "complete");
+  fdline  (f);
+
   fclose (f);
 }
 

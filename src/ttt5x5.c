@@ -5,14 +5,16 @@
 #include <draw_field.h>
 #include <draw_digit.h>
 #include <btn.h>
+#include <dlf.h>
 
 int
 main (int argc, char **argv)
 {
   int whaton = 0;
 
-  SetTargetFPS (60);
+  dlf_init ();
   completed_init ();
+  SetTargetFPS (60);
   InitWindow (640, 400, PACKAGE_STRING);
   DrawField_init ();
   DrawDigit_init ();
