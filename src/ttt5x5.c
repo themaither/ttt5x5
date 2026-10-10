@@ -1,6 +1,7 @@
 #include <raylib.h>
 #include <session.h>
 #include <picker.h>
+#include <title.h>
 #include <completed.h>
 #include <draw_field.h>
 #include <draw_digit.h>
@@ -11,7 +12,7 @@
 int
 main (int argc, char **argv)
 {
-  int whaton = 0;
+  int whaton = 2;
 
   dlf_init ();
   completed_init ();
@@ -20,6 +21,7 @@ main (int argc, char **argv)
   DrawField_init ();
   DrawDigit_init ();
   DrawCursor_init ();
+  title_init ();
   session_init ();
   picker_init  ();
 
@@ -27,28 +29,44 @@ main (int argc, char **argv)
     {
       BtnReadEvents ();
 
-      if (whaton == 0)
+      switch (whaton)
         {
+        case 0:
           picker_update ();
           if (picker_leaving ())
             {
-              CloseWindow ();
-              break;
+              whaton = 2;
+              picker_reset ();
             }
           if (picker_starting ())
             {
               whaton = 1;
               picker_reset ();
             }
-        }
-      else
-        {
+          continue;
+        case 1:
           session_update ();
           if (session_leaving ())
             {
               whaton = 0;
               session_reset ();
             }
+          continue;
+        case 2:
+          title_update ();
+          if (title_level_select ())
+            {
+              whaton = 0;
+              title_reset ();
+            }
+          if (title_leaving ())
+            {
+              CloseWindow ();
+              break;
+            }
+          continue;
         }
+
+      break;
     }
 }

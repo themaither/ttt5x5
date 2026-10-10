@@ -111,7 +111,8 @@ am_ttt5x5_OBJECTS = src/ttt5x5-ttt5x5.$(OBJEXT) \
 	src/ttt5x5-picker.$(OBJEXT) src/ttt5x5-draw_field.$(OBJEXT) \
 	src/ttt5x5-btn.$(OBJEXT) src/ttt5x5-completed.$(OBJEXT) \
 	src/ttt5x5-database.$(OBJEXT) src/ttt5x5-draw_digit.$(OBJEXT) \
-	src/ttt5x5-draw_cursor.$(OBJEXT) src/ttt5x5-dlf.$(OBJEXT)
+	src/ttt5x5-draw_cursor.$(OBJEXT) src/ttt5x5-title.$(OBJEXT) \
+	src/ttt5x5-dlf.$(OBJEXT)
 ttt5x5_OBJECTS = $(am_ttt5x5_OBJECTS)
 am__DEPENDENCIES_1 =
 ttt5x5_DEPENDENCIES = $(am__DEPENDENCIES_1)
@@ -140,7 +141,8 @@ am__depfiles_remade = src/$(DEPDIR)/ttt5x5-5x5.Po \
 	src/$(DEPDIR)/ttt5x5-draw_digit.Po \
 	src/$(DEPDIR)/ttt5x5-draw_field.Po \
 	src/$(DEPDIR)/ttt5x5-imath.Po src/$(DEPDIR)/ttt5x5-picker.Po \
-	src/$(DEPDIR)/ttt5x5-session.Po src/$(DEPDIR)/ttt5x5-ttt5x5.Po
+	src/$(DEPDIR)/ttt5x5-session.Po src/$(DEPDIR)/ttt5x5-title.Po \
+	src/$(DEPDIR)/ttt5x5-ttt5x5.Po
 am__mv = mv -f
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -349,6 +351,7 @@ ttt5x5_SOURCES = src/ttt5x5.c \
                  src/database.c src/database.h \
                  src/draw_digit.c src/draw_digit.h \
                  src/draw_cursor.c src/draw_cursor.h \
+                 src/title.c src/title.h \
                  src/dlf.c src/dlf.h
 
 ttt5x5_CFLAGS = -I${srcdir}/src ${RAYLIB_CFLAGS} -g \
@@ -398,7 +401,14 @@ dist_pkgdata_DATA = assets/black16.png \
                     assets/selection_bl.png \
                     assets/selection_br.png \
                     assets/selection_tl.png \
-                    assets/selection_tr.png
+                    assets/selection_tr.png \
+                    assets/title.png \
+                    assets/level_select.png \
+                    assets/level_select_hovered.png \
+                    assets/level_select_pressed.png \
+                    assets/quit.png \
+                    assets/quit_hovered.png \
+                    assets/quit_pressed.png
 
 all: all-am
 
@@ -509,6 +519,8 @@ src/ttt5x5-draw_digit.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
 src/ttt5x5-draw_cursor.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
+src/ttt5x5-title.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
 src/ttt5x5-dlf.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
 
@@ -535,6 +547,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-imath.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-picker.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-session.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-title.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-ttt5x5.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
@@ -726,6 +739,20 @@ src/ttt5x5-draw_cursor.obj: src/draw_cursor.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/draw_cursor.c' object='src/ttt5x5-draw_cursor.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ttt5x5_CFLAGS) $(CFLAGS) -c -o src/ttt5x5-draw_cursor.obj `if test -f 'src/draw_cursor.c'; then $(CYGPATH_W) 'src/draw_cursor.c'; else $(CYGPATH_W) '$(srcdir)/src/draw_cursor.c'; fi`
+
+src/ttt5x5-title.o: src/title.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ttt5x5_CFLAGS) $(CFLAGS) -MT src/ttt5x5-title.o -MD -MP -MF src/$(DEPDIR)/ttt5x5-title.Tpo -c -o src/ttt5x5-title.o `test -f 'src/title.c' || echo '$(srcdir)/'`src/title.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/ttt5x5-title.Tpo src/$(DEPDIR)/ttt5x5-title.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/title.c' object='src/ttt5x5-title.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ttt5x5_CFLAGS) $(CFLAGS) -c -o src/ttt5x5-title.o `test -f 'src/title.c' || echo '$(srcdir)/'`src/title.c
+
+src/ttt5x5-title.obj: src/title.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ttt5x5_CFLAGS) $(CFLAGS) -MT src/ttt5x5-title.obj -MD -MP -MF src/$(DEPDIR)/ttt5x5-title.Tpo -c -o src/ttt5x5-title.obj `if test -f 'src/title.c'; then $(CYGPATH_W) 'src/title.c'; else $(CYGPATH_W) '$(srcdir)/src/title.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/ttt5x5-title.Tpo src/$(DEPDIR)/ttt5x5-title.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/title.c' object='src/ttt5x5-title.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ttt5x5_CFLAGS) $(CFLAGS) -c -o src/ttt5x5-title.obj `if test -f 'src/title.c'; then $(CYGPATH_W) 'src/title.c'; else $(CYGPATH_W) '$(srcdir)/src/title.c'; fi`
 
 src/ttt5x5-dlf.o: src/dlf.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ttt5x5_CFLAGS) $(CFLAGS) -MT src/ttt5x5-dlf.o -MD -MP -MF src/$(DEPDIR)/ttt5x5-dlf.Tpo -c -o src/ttt5x5-dlf.o `test -f 'src/dlf.c' || echo '$(srcdir)/'`src/dlf.c
@@ -1101,6 +1128,7 @@ distclean: distclean-am
 	-rm -f src/$(DEPDIR)/ttt5x5-imath.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-picker.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-session.Po
+	-rm -f src/$(DEPDIR)/ttt5x5-title.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-ttt5x5.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
@@ -1161,6 +1189,7 @@ maintainer-clean: maintainer-clean-am
 	-rm -f src/$(DEPDIR)/ttt5x5-imath.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-picker.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-session.Po
+	-rm -f src/$(DEPDIR)/ttt5x5-title.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-ttt5x5.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic

@@ -12,6 +12,7 @@ ttt5x5_SOURCES = src/ttt5x5.c \
                  src/database.c src/database.h \
                  src/draw_digit.c src/draw_digit.h \
                  src/draw_cursor.c src/draw_cursor.h \
+                 src/title.c src/title.h \
                  src/dlf.c src/dlf.h
 
 ttt5x5_CFLAGS = -I${srcdir}/src ${RAYLIB_CFLAGS} -g \
@@ -62,4 +63,11 @@ dist_pkgdata_DATA = assets/black16.png \
                     assets/selection_bl.png \
                     assets/selection_br.png \
                     assets/selection_tl.png \
-                    assets/selection_tr.png
+                    assets/selection_tr.png \
+                    assets/title.png \
+                    assets/level_select.png \
+                    assets/level_select_hovered.png \
+                    assets/level_select_pressed.png \
+                    assets/quit.png \
+                    assets/quit_hovered.png \
+                    assets/quit_pressed.png
