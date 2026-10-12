@@ -12,6 +12,8 @@ static size_t n = 0;
 static int line_number = 0;
 static int ifc = 0;
 
+static char *saveptr = NULL;
+
 void
 dlf_init ()
 {
@@ -113,9 +115,9 @@ const char *
 dlgets ()
 {
   if (ifc++ == 0)
-    return strtok (line, " \t\r\n");
+    return strtok_r (line, " \t\r\n", &saveptr);
   else
-    return strtok (NULL, " \t\r\n");
+    return strtok_r (NULL, " \t\r\n", &saveptr);
 }
 
 int
