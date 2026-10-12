@@ -43,6 +43,15 @@ project used to create assets is located in assets directory under the name
 of layous.svg.
 
 ---------------------------------------------------------------------
+                    How to cross-compile for Windows/NT
+---------------------------------------------------------------------
+
+    Add --host=x86_64-w64-mingw32 while configuring (change x86_64 to whatever
+cpu architecture you want), then compile as usual.  After that, find all
+required dlls and put it to dll search path (same directory as exe would be
+good enough).
+
+---------------------------------------------------------------------
                 How to run (and compile) on Windows/NT?
 ---------------------------------------------------------------------
 
