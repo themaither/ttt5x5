@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdarg.h>
 #include <dlf.h>
 #include <config.h>
 #include <lib/string-buffer.h>
@@ -19,53 +20,61 @@ static char *ttt5x5path = NULL;
 static char *command = NULL;
 size_t command_size = 0;
 
-int save = 0;
-
 struct string_buffer buffer;
 
-void
-completed_init (void)
+static char *
+strdupf (const char *fmt, ...)
+{
+  va_list args;
+  va_start (args, fmt);
+
+  sb_init (&buffer);
+  sb_appendvf (&buffer, fmt, args);
+
+  va_end (args);
+
+  return sb_dupfree_c (&buffer);
+}
+
+static void
+db_reset ()
+{
+  for (size_t i = 0; i < 128; ++i)
+    db[i] = 0;
+}
+
+static void
+init_dirpaths ()
 {
   const char *xdg = getenv ("XDG_DATA_HOME");
   const char *home = getenv ("HOME");
 
-  sb_init (&buffer);
   if (xdg)
-    {
-      sb_appendf (&buffer, "%s/" PACKAGE_NAME "/", xdg);
-    }
+    ttt5x5path = strdupf ("%s/" PACKAGE_NAME "/", xdg);
   else if (home)
-    {
-      sb_appendf (&buffer, "%s/.local/share/" PACKAGE_NAME "/", home);
-    }
+    ttt5x5path = strdupf ("%s/.local/share/" PACKAGE_NAME "/", home);
   else
-    {
-      sb_appendf (&buffer, "./");
-    }
+    ttt5x5path = strdup ("./");
 
-  ttt5x5path = sb_dupfree_c (&buffer);
+  savepath = strdupf ("%s%s", ttt5x5path, "save.dlf");
+}
+
+void
+completed_init (void)
+{
   sb_init (&buffer);
-  sb_appendf (&buffer, "%s%s", ttt5x5path, "save.dlf");
-  savepath = sb_dupfree_c (&buffer);
-  printf ("%s\n", savepath);
+  db_reset ();
+  init_dirpaths ();
 
-  for (size_t i = 0; i < 128; ++i)
-    db[i] = 0;
+  FILE *file = fopen (savepath, "r");
 
-  FILE *f = fopen (savepath, "r");
-
-  if (!f)
+  if (!file)
     {
       perror ("Unable to open save file for reading");
-
-      save = 1;
-
       return;
     }
 
-  eval (f);
-
-  save = 1;
+  eval (file);
 }
 
 void
@@ -83,65 +92,53 @@ completed (void)
 void
 complete (void)
 {
-  if (db[id] == 1)
+  FILE *file;
+
+  if (db[id])
     return;
 
   db[id] = 1;
 
-  if (!save)
-    return;
+  command = strdupf ("/usr/bin/ls %s 2>/dev/null >/dev/null", ttt5x5path);
 
-  FILE *cs;
-
-  sb_init (&buffer);
-  sb_appendf (&buffer, "/usr/bin/ls %s 2>/dev/null >/dev/null", ttt5x5path);
-  command = sb_dupfree_c (&buffer);
   if (0 != system (command));
     {
       free (command);
-
-      sb_init (&buffer);
-      sb_appendf (&buffer, "/usr/bin/mkdir -p %s 2>/dev/null >/dev/null", ttt5x5path);
-      command = sb_dupfree_c (&buffer);
-
+      command = strdupf ("/usr/bin/mkdir -p %s 2>/dev/null >/dev/null", ttt5x5path);
       system (command);
     }
-
   free (command);
 
-  FILE *f = fopen (savepath, "a");
+  file = fopen (savepath, "a");
 
-  if (!f)
+  if (!file)
     {
       perror ("Unable to open save file for writing");
       return;
     }
 
-  fdlputs (f, "completed_setid");
-  fdlputi (f, id);
-  fdline  (f);
-  fdlputs (f, "complete");
-  fdline  (f);
+  fdlputs (file, "completed_setid");
+  fdlputi (file, id);
+  fdline  (file);
+  fdlputs (file, "complete");
+  fdline  (file);
 
-  fclose (f);
+  fclose (file);
 }
 
 static void
 eval (FILE *f)
 {
+  int value;
   const char *field = NULL;
   dlf_setsource (f);
 
-  for (;;)
+  while (-1 != dlnext ())
   {
-    if (-1 == dlnext ())
-      return;
-
     field = dlgets ();
 
     if (0 == strcmp (field, "completed_setid"))
       {
-        int value;
         field = dlgets ();
 
         if (sscanf (field, "%d", &value) != 1)
