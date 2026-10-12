@@ -4,10 +4,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <stdarg.h>
 #include <dlf.h>
-#include <config.h>
-#include <lib/string-buffer.h>
+#include <strdupf.h>
 
 static int db[128];
 static int id;
@@ -19,28 +17,6 @@ static char *ttt5x5path = NULL;
 
 static char *command = NULL;
 size_t command_size = 0;
-
-struct string_buffer buffer;
-
-static void
-strdupf_init ()
-{
-  sb_init (&buffer);
-}
-
-static char *
-strdupf (const char *fmt, ...)
-{
-  va_list args;
-  va_start (args, fmt);
-
-  sb_init (&buffer);
-  sb_appendvf (&buffer, fmt, args);
-
-  va_end (args);
-
-  return sb_dupfree_c (&buffer);
-}
 
 static void
 mem_init ()
@@ -116,7 +92,6 @@ io_complete ()
 void
 completed_init (void)
 {
-  strdupf_init ();
   mem_init ();
   io_init ();
 }

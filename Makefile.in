@@ -175,7 +175,7 @@ am_ttt5x5_OBJECTS = src/ttt5x5-ttt5x5.$(OBJEXT) \
 	src/ttt5x5-btn.$(OBJEXT) src/ttt5x5-completed.$(OBJEXT) \
 	src/ttt5x5-database.$(OBJEXT) src/ttt5x5-draw_digit.$(OBJEXT) \
 	src/ttt5x5-draw_cursor.$(OBJEXT) src/ttt5x5-title.$(OBJEXT) \
-	src/ttt5x5-dlf.$(OBJEXT)
+	src/ttt5x5-dlf.$(OBJEXT) src/ttt5x5-strdupf.$(OBJEXT)
 ttt5x5_OBJECTS = $(am_ttt5x5_OBJECTS)
 am__DEPENDENCIES_1 =
 ttt5x5_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
@@ -205,7 +205,8 @@ am__depfiles_remade = src/$(DEPDIR)/ttt5x5-5x5.Po \
 	src/$(DEPDIR)/ttt5x5-draw_digit.Po \
 	src/$(DEPDIR)/ttt5x5-draw_field.Po \
 	src/$(DEPDIR)/ttt5x5-imath.Po src/$(DEPDIR)/ttt5x5-picker.Po \
-	src/$(DEPDIR)/ttt5x5-session.Po src/$(DEPDIR)/ttt5x5-title.Po \
+	src/$(DEPDIR)/ttt5x5-session.Po \
+	src/$(DEPDIR)/ttt5x5-strdupf.Po src/$(DEPDIR)/ttt5x5-title.Po \
 	src/$(DEPDIR)/ttt5x5-ttt5x5.Po
 am__mv = mv -f
 AM_V_lt = $(am__v_lt_@AM_V@)
@@ -1899,7 +1900,8 @@ ttt5x5_SOURCES = src/ttt5x5.c \
                  src/draw_digit.c src/draw_digit.h \
                  src/draw_cursor.c src/draw_cursor.h \
                  src/title.c src/title.h \
-                 src/dlf.c src/dlf.h
+                 src/dlf.c src/dlf.h \
+                 src/strdupf.c src/strdupf.h
 
 ttt5x5_CFLAGS = -I${srcdir}/src -Ilib ${RAYLIB_CFLAGS} -g \
                 -DPKGDATADIR="\"${pkgdatadir}\"" # would probably fail 99% time
@@ -2089,6 +2091,8 @@ src/ttt5x5-title.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
 src/ttt5x5-dlf.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
+src/ttt5x5-strdupf.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
 
 ttt5x5$(EXEEXT): $(ttt5x5_OBJECTS) $(ttt5x5_DEPENDENCIES) $(EXTRA_ttt5x5_DEPENDENCIES) 
 	@rm -f ttt5x5$(EXEEXT)
@@ -2113,6 +2117,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-imath.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-picker.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-session.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-strdupf.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-title.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ttt5x5-ttt5x5.Po@am__quote@ # am--include-marker
 
@@ -2333,6 +2338,20 @@ src/ttt5x5-dlf.obj: src/dlf.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/dlf.c' object='src/ttt5x5-dlf.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ttt5x5_CFLAGS) $(CFLAGS) -c -o src/ttt5x5-dlf.obj `if test -f 'src/dlf.c'; then $(CYGPATH_W) 'src/dlf.c'; else $(CYGPATH_W) '$(srcdir)/src/dlf.c'; fi`
+
+src/ttt5x5-strdupf.o: src/strdupf.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ttt5x5_CFLAGS) $(CFLAGS) -MT src/ttt5x5-strdupf.o -MD -MP -MF src/$(DEPDIR)/ttt5x5-strdupf.Tpo -c -o src/ttt5x5-strdupf.o `test -f 'src/strdupf.c' || echo '$(srcdir)/'`src/strdupf.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/ttt5x5-strdupf.Tpo src/$(DEPDIR)/ttt5x5-strdupf.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/strdupf.c' object='src/ttt5x5-strdupf.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ttt5x5_CFLAGS) $(CFLAGS) -c -o src/ttt5x5-strdupf.o `test -f 'src/strdupf.c' || echo '$(srcdir)/'`src/strdupf.c
+
+src/ttt5x5-strdupf.obj: src/strdupf.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ttt5x5_CFLAGS) $(CFLAGS) -MT src/ttt5x5-strdupf.obj -MD -MP -MF src/$(DEPDIR)/ttt5x5-strdupf.Tpo -c -o src/ttt5x5-strdupf.obj `if test -f 'src/strdupf.c'; then $(CYGPATH_W) 'src/strdupf.c'; else $(CYGPATH_W) '$(srcdir)/src/strdupf.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/$(DEPDIR)/ttt5x5-strdupf.Tpo src/$(DEPDIR)/ttt5x5-strdupf.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/strdupf.c' object='src/ttt5x5-strdupf.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(ttt5x5_CFLAGS) $(CFLAGS) -c -o src/ttt5x5-strdupf.obj `if test -f 'src/strdupf.c'; then $(CYGPATH_W) 'src/strdupf.c'; else $(CYGPATH_W) '$(srcdir)/src/strdupf.c'; fi`
 install-dist_pkgdataDATA: $(dist_pkgdata_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(dist_pkgdata_DATA)'; test -n "$(pkgdatadir)" || list=; \
@@ -2767,6 +2786,7 @@ distclean: distclean-recursive
 	-rm -f src/$(DEPDIR)/ttt5x5-imath.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-picker.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-session.Po
+	-rm -f src/$(DEPDIR)/ttt5x5-strdupf.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-title.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-ttt5x5.Po
 	-rm -f Makefile
@@ -2828,6 +2848,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f src/$(DEPDIR)/ttt5x5-imath.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-picker.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-session.Po
+	-rm -f src/$(DEPDIR)/ttt5x5-strdupf.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-title.Po
 	-rm -f src/$(DEPDIR)/ttt5x5-ttt5x5.Po
 	-rm -f Makefile
