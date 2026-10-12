@@ -1,7 +1,6 @@
 #include <config.h>
-#include <config.h>
 
-#include <lib/stdio.h>
+#include <stdio.h>
 #include <string.h>
 
 static FILE *source;
