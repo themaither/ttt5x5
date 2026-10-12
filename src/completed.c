@@ -22,6 +22,12 @@ size_t command_size = 0;
 
 struct string_buffer buffer;
 
+static void
+strdupf_init ()
+{
+  sb_init (&buffer);
+}
+
 static char *
 strdupf (const char *fmt, ...)
 {
@@ -37,14 +43,20 @@ strdupf (const char *fmt, ...)
 }
 
 static void
-db_reset ()
+mem_init ()
 {
   for (size_t i = 0; i < 128; ++i)
     db[i] = 0;
 }
 
 static void
-init_dirpaths ()
+mem_complete ()
+{
+  db[id] = 1;
+}
+
+static void
+io_init ()
 {
   const char *xdg = getenv ("XDG_DATA_HOME");
   const char *home = getenv ("HOME");
@@ -57,14 +69,6 @@ init_dirpaths ()
     ttt5x5path = strdup ("./");
 
   savepath = strdupf ("%s%s", ttt5x5path, "save.dlf");
-}
-
-void
-completed_init (void)
-{
-  sb_init (&buffer);
-  db_reset ();
-  init_dirpaths ();
 
   FILE *file = fopen (savepath, "r");
 
@@ -77,27 +81,10 @@ completed_init (void)
   eval (file);
 }
 
-void
-completed_setid (int x)
-{
-  id = x;
-}
-
-int
-completed (void)
-{
-  return db[id];
-}
-
-void
-complete (void)
+static void
+io_complete ()
 {
   FILE *file;
-
-  if (db[id])
-    return;
-
-  db[id] = 1;
 
   command = strdupf ("/usr/bin/ls %s 2>/dev/null >/dev/null", ttt5x5path);
 
@@ -124,6 +111,33 @@ complete (void)
   fdline  (file);
 
   fclose (file);
+}
+
+void
+completed_init (void)
+{
+  strdupf_init ();
+  mem_init ();
+  io_init ();
+}
+
+void
+completed_setid (int x)
+{
+  id = x;
+}
+
+int
+completed (void)
+{
+  return db[id];
+}
+
+void
+complete (void)
+{
+  mem_complete ();
+  io_complete ();
 }
 
 static void
@@ -153,7 +167,7 @@ eval (FILE *f)
       }
     else if (0 == strcmp (field, "complete"))
       {
-        complete ();
+        mem_complete ();
       }
     else
       {
