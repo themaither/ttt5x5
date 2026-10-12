@@ -1,3 +1,7 @@
+SUBDIRS = lib
+ACLOCAL_AMFLAGS = -I m4
+EXTRA_DIST = m4/gnulib-cache.m4
+
 bin_PROGRAMS = ttt5x5
 
 ttt5x5_SOURCES = src/ttt5x5.c \
@@ -18,7 +22,9 @@ ttt5x5_SOURCES = src/ttt5x5.c \
 ttt5x5_CFLAGS = -I${srcdir}/src ${RAYLIB_CFLAGS} -g \
                 -DPKGDATADIR="\"${pkgdatadir}\"" # would probably fail 99% time
 
-ttt5x5_LDADD = ${RAYLIB_LIBS} -lm
+ttt5x5_LDADD = ${RAYLIB_LIBS} -lm $(HARD_LOCALE_LIB) $(LIBC32CONV) \
+               $(LIBUNISTRING) $(MBRTOWC_LIB) $(SETLOCALE_NULL_LIB) ${LIBGNU} \
+               -Llib -lgnu
 
 dist_pkgdata_DATA = assets/black16.png \
                     assets/black48.png \

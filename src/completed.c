@@ -3,6 +3,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include <dlf.h>
+#include <config.h>
+#include <lib/string-buffer.h>
 
 static int db[128];
 static int id;
@@ -10,8 +12,6 @@ static int id;
 static void eval (FILE *);
 
 static char *savepath = NULL;
-size_t savepath_size = 0;
-
 static char *ttt5x5path = NULL;
 
 static char *command = NULL;
@@ -19,27 +19,33 @@ size_t command_size = 0;
 
 int save = 0;
 
+struct string_buffer buffer;
+
 void
 completed_init (void)
 {
   const char *xdg = getenv ("XDG_DATA_HOME");
   const char *home = getenv ("HOME");
 
-  FILE *sstream = open_memstream (&savepath, &savepath_size);
-
+  sb_init (&buffer);
   if (xdg)
-    fprintf (sstream, "%s/" PACKAGE_NAME "/", xdg);
+    {
+      sb_appendf (&buffer, "%s/" PACKAGE_NAME "/", xdg);
+    }
   else if (home)
-    fprintf (sstream, "%s/.local/share/" PACKAGE_NAME "/", home);
+    {
+      sb_appendf (&buffer, "%s/.local/share/" PACKAGE_NAME "/", home);
+    }
   else
-    fprintf (sstream, "./");
+    {
+      sb_appendf (&buffer, "./");
+    }
 
-  fflush (sstream);
-
-  ttt5x5path = strdup (savepath);
-
-  fprintf (sstream, "save.dlf", home);
-  fclose (sstream);
+  ttt5x5path = sb_dupfree_c (&buffer);
+  sb_init (&buffer);
+  sb_appendf (&buffer, "%s%s", ttt5x5path, "save.dlf");
+  savepath = sb_dupfree_c (&buffer);
+  printf ("%s\n", savepath);
 
   for (size_t i = 0; i < 128; ++i)
     db[i] = 0;
@@ -85,25 +91,21 @@ complete (void)
 
   FILE *cs;
 
-  cs = open_memstream (&command, &command_size);
-  fprintf (cs, "/usr/bin/ls %s 2>/dev/null >/dev/null", ttt5x5path);
-  fclose (cs);
+  sb_init (&buffer);
+  sb_appendf (&buffer, "/usr/bin/ls %s 2>/dev/null >/dev/null", ttt5x5path);
+  command = sb_dupfree_c (&buffer);
   if (0 != system (command));
     {
       free (command);
-      command = NULL;
-      command_size = 0;
 
-      cs = open_memstream (&command, &command_size);
-      fprintf (cs, "/usr/bin/mkdir -p %s 2>/dev/null >/dev/null", ttt5x5path);
-      fclose (cs);
+      sb_init (&buffer);
+      sb_appendf (&buffer, "/usr/bin/mkdir -p %s 2>/dev/null >/dev/null", ttt5x5path);
+      command = sb_dupfree_c (&buffer);
 
       system (command);
     }
 
   free (command);
-  command = NULL;
-  command_size = 0;
 
   FILE *f = fopen (savepath, "a");
 

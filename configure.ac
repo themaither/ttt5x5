@@ -6,7 +6,10 @@ AC_INIT([ttt5x5], [0.0.6], [themaither@gmail.com])
 AM_INIT_AUTOMAKE([foreign subdir-objects])
 
 # Checks for programs.
+gl_EARLY
 AC_PROG_CC
+
+gl_INIT
 
 # Checks for libraries.
 PKG_CHECK_MODULES([RAYLIB], [raylib])
@@ -17,4 +20,6 @@ PKG_CHECK_MODULES([RAYLIB], [raylib])
 # Checks for library functions.
 
 AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([lib/Makefile])
+AC_CONFIG_HEADERS([config.h])
 AC_OUTPUT

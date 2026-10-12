@@ -8,6 +8,7 @@
 #include <draw_cursor.h>
 #include <btn.h>
 #include <dlf.h>
+#include <config.h>
 
 int
 main (int argc, char **argv)

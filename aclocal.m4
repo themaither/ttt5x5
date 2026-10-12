@@ -450,6 +450,43 @@ AC_DEFUN([AM_AUX_DIR_EXPAND],
 am_aux_dir=`cd "$ac_aux_dir" && pwd`
 ])
 
+# AM_COND_IF                                            -*- Autoconf -*-
+
+# Copyright (C) 2008-2026 Free Software Foundation, Inc.
+#
+# This file is free software; the Free Software Foundation
+# gives unlimited permission to copy and/or distribute it,
+# with or without modifications, as long as this notice is preserved.
+
+# _AM_COND_IF
+# _AM_COND_ELSE
+# _AM_COND_ENDIF
+# --------------
+# These macros are only used for tracing.
+m4_define([_AM_COND_IF])
+m4_define([_AM_COND_ELSE])
+m4_define([_AM_COND_ENDIF])
+
+# AM_COND_IF(COND, [IF-TRUE], [IF-FALSE])
+# ---------------------------------------
+# If the shell condition COND is true, execute IF-TRUE, otherwise execute
+# IF-FALSE.  Allow automake to learn about conditional instantiating macros
+# (the AC_CONFIG_FOOS).
+AC_DEFUN([AM_COND_IF],
+[m4_ifndef([_AM_COND_VALUE_$1],
+	   [m4_fatal([$0: no such condition "$1"])])dnl
+_AM_COND_IF([$1])dnl
+if test -z "$$1_TRUE"; then :
+  m4_n([$2])[]dnl
+m4_ifval([$3],
+[_AM_COND_ELSE([$1])dnl
+else
+  $3
+])dnl
+_AM_COND_ENDIF([$1])dnl
+fi[]dnl
+])
+
 # AM_CONDITIONAL                                            -*- Autoconf -*-
 
 # Copyright (C) 1997-2026 Free Software Foundation, Inc.
@@ -1665,3 +1702,111 @@ AS_IF([test "$am_cv_xargs_n_works" = yes], [am__xargs_n='xargs -n'], [dnl
 AC_SUBST(am__xargs_n)
 ])
 
+m4_include([m4/00gnulib.m4])
+m4_include([m4/absolute-header.m4])
+m4_include([m4/alloca.m4])
+m4_include([m4/assert_h.m4])
+m4_include([m4/builtin-expect.m4])
+m4_include([m4/c-bool.m4])
+m4_include([m4/c32rtomb.m4])
+m4_include([m4/calloc.m4])
+m4_include([m4/codeset.m4])
+m4_include([m4/errno_h.m4])
+m4_include([m4/exponentd.m4])
+m4_include([m4/exponentf.m4])
+m4_include([m4/exponentl.m4])
+m4_include([m4/extensions-aix.m4])
+m4_include([m4/extensions.m4])
+m4_include([m4/extern-inline.m4])
+m4_include([m4/fcntl-o.m4])
+m4_include([m4/fcntl_h.m4])
+m4_include([m4/float_h.m4])
+m4_include([m4/fpieee.m4])
+m4_include([m4/free.m4])
+m4_include([m4/frexp.m4])
+m4_include([m4/frexpl.m4])
+m4_include([m4/fseterr.m4])
+m4_include([m4/gnulib-common.m4])
+m4_include([m4/gnulib-comp.m4])
+m4_include([m4/include_next.m4])
+m4_include([m4/intmax_t.m4])
+m4_include([m4/inttypes.m4])
+m4_include([m4/inttypes_h.m4])
+m4_include([m4/isnand.m4])
+m4_include([m4/isnanf.m4])
+m4_include([m4/isnanl.m4])
+m4_include([m4/iswblank.m4])
+m4_include([m4/iswdigit.m4])
+m4_include([m4/iswpunct.m4])
+m4_include([m4/iswxdigit.m4])
+m4_include([m4/ldexpl.m4])
+m4_include([m4/libunistring-base.m4])
+m4_include([m4/limits-h.m4])
+m4_include([m4/localcharset.m4])
+m4_include([m4/locale-en.m4])
+m4_include([m4/locale-fr.m4])
+m4_include([m4/locale-ja.m4])
+m4_include([m4/locale-zh.m4])
+m4_include([m4/locale_h.m4])
+m4_include([m4/localeconv.m4])
+m4_include([m4/malloc.m4])
+m4_include([m4/math_h.m4])
+m4_include([m4/mbchar.m4])
+m4_include([m4/mbiter.m4])
+m4_include([m4/mbrtoc32.m4])
+m4_include([m4/mbrtowc.m4])
+m4_include([m4/mbsinit.m4])
+m4_include([m4/mbstate_t.m4])
+m4_include([m4/memchr.m4])
+m4_include([m4/memeq.m4])
+m4_include([m4/memmem.m4])
+m4_include([m4/memrchr.m4])
+m4_include([m4/minmax.m4])
+m4_include([m4/mmap-anon.m4])
+m4_include([m4/msvc-inval.m4])
+m4_include([m4/msvc-nothrow.m4])
+m4_include([m4/multiarch.m4])
+m4_include([m4/musl.m4])
+m4_include([m4/off64_t.m4])
+m4_include([m4/off_t.m4])
+m4_include([m4/printf-frexp.m4])
+m4_include([m4/printf-frexpl.m4])
+m4_include([m4/printf.m4])
+m4_include([m4/raise.m4])
+m4_include([m4/realloc.m4])
+m4_include([m4/reallocarray.m4])
+m4_include([m4/safe-read.m4])
+m4_include([m4/safe-write.m4])
+m4_include([m4/setlocale_null.m4])
+m4_include([m4/signal_h.m4])
+m4_include([m4/signbit.m4])
+m4_include([m4/size_max.m4])
+m4_include([m4/ssize_t.m4])
+m4_include([m4/stdarg.m4])
+m4_include([m4/stdckdint_h.m4])
+m4_include([m4/stdcountof_h.m4])
+m4_include([m4/stddef_h.m4])
+m4_include([m4/stdint.m4])
+m4_include([m4/stdint_h.m4])
+m4_include([m4/stdio_h.m4])
+m4_include([m4/stdlib_h.m4])
+m4_include([m4/streq.m4])
+m4_include([m4/string_h.m4])
+m4_include([m4/sys_types_h.m4])
+m4_include([m4/threadlib.m4])
+m4_include([m4/uchar_h.m4])
+m4_include([m4/unicase_h.m4])
+m4_include([m4/unictype_h.m4])
+m4_include([m4/uninorm_h.m4])
+m4_include([m4/unistd_h.m4])
+m4_include([m4/unitypes_h.m4])
+m4_include([m4/vasnprintf.m4])
+m4_include([m4/visibility.m4])
+m4_include([m4/warn-on-use.m4])
+m4_include([m4/wchar_h.m4])
+m4_include([m4/wctype_h.m4])
+m4_include([m4/wcwidth.m4])
+m4_include([m4/wint_t.m4])
+m4_include([m4/write.m4])
+m4_include([m4/xsize.m4])
+m4_include([m4/zzgnulib.m4])
