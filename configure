@@ -1042,133 +1042,8 @@ GL_COND_OBJ_STDIO_WRITE_FALSE
 GL_COND_OBJ_STDIO_WRITE_TRUE
 GL_COND_OBJ_STDIO_READ_FALSE
 GL_COND_OBJ_STDIO_READ_TRUE
-GL_GNULIB_MDA_TEMPNAM
-GL_GNULIB_MDA_PUTW
-GL_GNULIB_MDA_GETW
-GL_GNULIB_MDA_FILENO
-GL_GNULIB_MDA_FDOPEN
-GL_GNULIB_MDA_FCLOSEALL
-GL_GNULIB_ZPRINTF
-GL_GNULIB_VZPRINTF
-GL_GNULIB_VSZPRINTF
-GL_GNULIB_VSPRINTF_POSIX
-GL_GNULIB_VSNZPRINTF
-GL_GNULIB_VSNPRINTF
-GL_GNULIB_VPRINTF_POSIX
-GL_GNULIB_VPRINTF
-GL_GNULIB_VFZPRINTF
-GL_GNULIB_VFPRINTF_POSIX
-GL_GNULIB_VFPRINTF
-GL_GNULIB_VDZPRINTF
-GL_GNULIB_VDPRINTF
-GL_GNULIB_VSCANF
-GL_GNULIB_VFSCANF
-GL_GNULIB_VASZPRINTF
-GL_GNULIB_VASPRINTF
-GL_GNULIB_VAPRINTF
-GL_GNULIB_TMPFILE
-GL_GNULIB_SZPRINTF
-GL_GNULIB_STDIO_H_SIGPIPE
-GL_GNULIB_STDIO_H_NONBLOCKING
-GL_GNULIB_SPRINTF_POSIX
-GL_GNULIB_SNZPRINTF
-GL_GNULIB_SNPRINTF
-GL_GNULIB_SCANF
-GL_GNULIB_RENAMEAT
-GL_GNULIB_RENAME
-GL_GNULIB_REMOVE
-GL_GNULIB_PUTS
-GL_GNULIB_PUTCHAR
-GL_GNULIB_PUTC
-GL_GNULIB_PRINTF_POSIX
-GL_GNULIB_PRINTF
-GL_GNULIB_POPEN
-GL_GNULIB_PERROR
-GL_GNULIB_PCLOSE
-GL_GNULIB_OBSTACK_ZPRINTF
-GL_GNULIB_OBSTACK_PRINTF_POSIX
-GL_GNULIB_OBSTACK_PRINTF
-GL_GNULIB_GETLINE
-GL_GNULIB_GETDELIM
-GL_GNULIB_GETCHAR
-GL_GNULIB_GETC
-GL_GNULIB_FZPRINTF
-GL_GNULIB_FWRITE
-GL_GNULIB_FTELLO
-GL_GNULIB_FTELL
-GL_GNULIB_FSEEKO
-GL_GNULIB_FSEEK
-GL_GNULIB_FSCANF
-GL_GNULIB_FREOPEN
-GL_GNULIB_FREAD
-GL_GNULIB_FPUTS
-GL_GNULIB_FPUTC
-GL_GNULIB_FPURGE
-GL_GNULIB_FPRINTF_POSIX
-GL_GNULIB_FPRINTF
-GL_GNULIB_FOPEN_GNU
-GL_GNULIB_FOPEN
-GL_GNULIB_FGETS
-GL_GNULIB_FGETC
-GL_GNULIB_FFLUSH
-GL_GNULIB_FDOPEN
-GL_GNULIB_FCLOSE
-GL_GNULIB_DZPRINTF
-GL_GNULIB_DPRINTF
 NEXT_AS_FIRST_DIRECTIVE_STDIO_H
 NEXT_STDIO_H
-REPLACE_VSPRINTF
-REPLACE_VSNPRINTF
-REPLACE_VPRINTF
-REPLACE_VFPRINTF
-REPLACE_VDPRINTF
-REPLACE_VASPRINTF
-REPLACE_TMPFILE
-REPLACE_STDIO_WRITE_FUNCS
-REPLACE_STDIO_READ_FUNCS
-REPLACE_SPRINTF
-REPLACE_SNPRINTF
-REPLACE_RENAMEAT
-REPLACE_RENAME
-REPLACE_REMOVE
-REPLACE_PRINTF
-REPLACE_POPEN
-REPLACE_PERROR
-REPLACE_OBSTACK_PRINTF
-REPLACE_GETLINE
-REPLACE_GETDELIM
-REPLACE_FTELLO
-REPLACE_FTELL
-REPLACE_FSEEKO
-REPLACE_FSEEK
-REPLACE_FREOPEN
-REPLACE_FPURGE
-REPLACE_FPRINTF
-REPLACE_FOPEN_FOR_FOPEN_GNU
-REPLACE_FOPEN
-REPLACE_FFLUSH
-REPLACE_FDOPEN
-REPLACE_FCLOSE
-REPLACE_DPRINTF
-HAVE_VDPRINTF
-HAVE_VASPRINTF
-HAVE_RENAMEAT
-HAVE_POPEN
-HAVE_PCLOSE
-HAVE_FTELLO
-HAVE_FSEEKO
-HAVE_DPRINTF
-HAVE_DECL_VSNPRINTF
-HAVE_DECL_SNPRINTF
-HAVE_DECL_PUTW
-HAVE_DECL_OBSTACK_PRINTF
-HAVE_DECL_GETW
-HAVE_DECL_GETLINE
-HAVE_DECL_GETDELIM
-HAVE_DECL_FTELLO
-HAVE_DECL_FSEEKO
-HAVE_DECL_FPURGE
-HAVE_DECL_FCLOSEALL
 GL_GENERATE_STDINT_H_FALSE
 GL_GENERATE_STDINT_H_TRUE
 STDINT_H
@@ -1524,6 +1399,135 @@ LIB_SCHED_YIELD
 SCHED_YIELD_LIB
 LIBPMULTITHREAD
 LIBPTHREAD
+GL_COND_OBJ_GETLINE_FALSE
+GL_COND_OBJ_GETLINE_TRUE
+GL_GNULIB_MDA_TEMPNAM
+GL_GNULIB_MDA_PUTW
+GL_GNULIB_MDA_GETW
+GL_GNULIB_MDA_FILENO
+GL_GNULIB_MDA_FDOPEN
+GL_GNULIB_MDA_FCLOSEALL
+GL_GNULIB_ZPRINTF
+GL_GNULIB_VZPRINTF
+GL_GNULIB_VSZPRINTF
+GL_GNULIB_VSPRINTF_POSIX
+GL_GNULIB_VSNZPRINTF
+GL_GNULIB_VSNPRINTF
+GL_GNULIB_VPRINTF_POSIX
+GL_GNULIB_VPRINTF
+GL_GNULIB_VFZPRINTF
+GL_GNULIB_VFPRINTF_POSIX
+GL_GNULIB_VFPRINTF
+GL_GNULIB_VDZPRINTF
+GL_GNULIB_VDPRINTF
+GL_GNULIB_VSCANF
+GL_GNULIB_VFSCANF
+GL_GNULIB_VASZPRINTF
+GL_GNULIB_VASPRINTF
+GL_GNULIB_VAPRINTF
+GL_GNULIB_TMPFILE
+GL_GNULIB_SZPRINTF
+GL_GNULIB_STDIO_H_SIGPIPE
+GL_GNULIB_STDIO_H_NONBLOCKING
+GL_GNULIB_SPRINTF_POSIX
+GL_GNULIB_SNZPRINTF
+GL_GNULIB_SNPRINTF
+GL_GNULIB_SCANF
+GL_GNULIB_RENAMEAT
+GL_GNULIB_RENAME
+GL_GNULIB_REMOVE
+GL_GNULIB_PUTS
+GL_GNULIB_PUTCHAR
+GL_GNULIB_PUTC
+GL_GNULIB_PRINTF_POSIX
+GL_GNULIB_PRINTF
+GL_GNULIB_POPEN
+GL_GNULIB_PERROR
+GL_GNULIB_PCLOSE
+GL_GNULIB_OBSTACK_ZPRINTF
+GL_GNULIB_OBSTACK_PRINTF_POSIX
+GL_GNULIB_OBSTACK_PRINTF
+GL_GNULIB_GETLINE
+GL_GNULIB_GETDELIM
+GL_GNULIB_GETCHAR
+GL_GNULIB_GETC
+GL_GNULIB_FZPRINTF
+GL_GNULIB_FWRITE
+GL_GNULIB_FTELLO
+GL_GNULIB_FTELL
+GL_GNULIB_FSEEKO
+GL_GNULIB_FSEEK
+GL_GNULIB_FSCANF
+GL_GNULIB_FREOPEN
+GL_GNULIB_FREAD
+GL_GNULIB_FPUTS
+GL_GNULIB_FPUTC
+GL_GNULIB_FPURGE
+GL_GNULIB_FPRINTF_POSIX
+GL_GNULIB_FPRINTF
+GL_GNULIB_FOPEN_GNU
+GL_GNULIB_FOPEN
+GL_GNULIB_FGETS
+GL_GNULIB_FGETC
+GL_GNULIB_FFLUSH
+GL_GNULIB_FDOPEN
+GL_GNULIB_FCLOSE
+GL_GNULIB_DZPRINTF
+GL_GNULIB_DPRINTF
+GL_COND_OBJ_GETDELIM_FALSE
+GL_COND_OBJ_GETDELIM_TRUE
+REPLACE_VSPRINTF
+REPLACE_VSNPRINTF
+REPLACE_VPRINTF
+REPLACE_VFPRINTF
+REPLACE_VDPRINTF
+REPLACE_VASPRINTF
+REPLACE_TMPFILE
+REPLACE_STDIO_WRITE_FUNCS
+REPLACE_STDIO_READ_FUNCS
+REPLACE_SPRINTF
+REPLACE_SNPRINTF
+REPLACE_RENAMEAT
+REPLACE_RENAME
+REPLACE_REMOVE
+REPLACE_PRINTF
+REPLACE_POPEN
+REPLACE_PERROR
+REPLACE_OBSTACK_PRINTF
+REPLACE_GETLINE
+REPLACE_GETDELIM
+REPLACE_FTELLO
+REPLACE_FTELL
+REPLACE_FSEEKO
+REPLACE_FSEEK
+REPLACE_FREOPEN
+REPLACE_FPURGE
+REPLACE_FPRINTF
+REPLACE_FOPEN_FOR_FOPEN_GNU
+REPLACE_FOPEN
+REPLACE_FFLUSH
+REPLACE_FDOPEN
+REPLACE_FCLOSE
+REPLACE_DPRINTF
+HAVE_VDPRINTF
+HAVE_VASPRINTF
+HAVE_RENAMEAT
+HAVE_POPEN
+HAVE_PCLOSE
+HAVE_FTELLO
+HAVE_FSEEKO
+HAVE_DPRINTF
+HAVE_DECL_VSNPRINTF
+HAVE_DECL_SNPRINTF
+HAVE_DECL_PUTW
+HAVE_DECL_OBSTACK_PRINTF
+HAVE_DECL_GETW
+HAVE_DECL_GETLINE
+HAVE_DECL_GETDELIM
+HAVE_DECL_FTELLO
+HAVE_DECL_FSEEKO
+HAVE_DECL_FPURGE
+HAVE_DECL_FCLOSEALL
 GL_COND_OBJ_FSETERR_FALSE
 GL_COND_OBJ_FSETERR_TRUE
 HAVE_SAME_LONG_DOUBLE_AS_DOUBLE
@@ -2269,6 +2273,7 @@ enable_option_checking
 enable_silent_rules
 enable_dependency_tracking
 enable_cross_guesses
+enable_assert
 '
       ac_precious_vars='build_alias
 host_alias
@@ -2919,6 +2924,7 @@ Optional Features:
                           speeds up one-time build
   --enable-cross-guesses={conservative|risky}
                           specify policy for cross-compilation guesses
+  --disable-assert        turn off assertions
 
 Some influential environment variables:
   CC          C compiler command
@@ -7794,6 +7800,7 @@ printf '%s\n' "#define _LINUX_SOURCE_COMPAT 1" >>confdefs.h
 
   # Code from module absolute-header:
   # Code from module alloca-opt:
+  # Code from module assert:
   # Code from module assert-h:
   # Code from module attribute:
   # Code from module bool:
@@ -7834,6 +7841,8 @@ printf '%s\n' "#define _LINUX_SOURCE_COMPAT 1" >>confdefs.h
   # Code from module fseterr:
   # Code from module full-write:
   # Code from module gen-header:
+  # Code from module getdelim:
+  # Code from module getline:
   # Code from module hard-locale:
   # Code from module ialloc:
   # Code from module idx:
@@ -13445,6 +13454,374 @@ printf '%s\n' "#define HAVE_SAME_LONG_DOUBLE_AS_DOUBLE 1" >>confdefs.h
 
 
 
+    HAVE_DECL_FCLOSEALL=1;
+  HAVE_DECL_FPURGE=1;
+  HAVE_DECL_FSEEKO=1;
+  HAVE_DECL_FTELLO=1;
+  HAVE_DECL_GETDELIM=1;
+  HAVE_DECL_GETLINE=1;
+  HAVE_DECL_GETW=1;
+  HAVE_DECL_OBSTACK_PRINTF=1;
+  HAVE_DECL_PUTW=1;
+  HAVE_DECL_SNPRINTF=1;
+  HAVE_DECL_VSNPRINTF=1;
+  HAVE_DPRINTF=1;
+  HAVE_FSEEKO=1;
+  HAVE_FTELLO=1;
+  HAVE_PCLOSE=1;
+  HAVE_POPEN=1;
+  HAVE_RENAMEAT=1;
+  HAVE_VASPRINTF=1;
+  HAVE_VDPRINTF=1;
+  REPLACE_DPRINTF=0;
+  REPLACE_FCLOSE=0;
+  REPLACE_FDOPEN=0;
+  REPLACE_FFLUSH=0;
+  REPLACE_FOPEN=0;
+  REPLACE_FOPEN_FOR_FOPEN_GNU=0;
+  REPLACE_FPRINTF=0;
+  REPLACE_FPURGE=0;
+  REPLACE_FREOPEN=0;
+  REPLACE_FSEEK=0;
+  REPLACE_FSEEKO=0;
+  REPLACE_FTELL=0;
+  REPLACE_FTELLO=0;
+  REPLACE_GETDELIM=0;
+  REPLACE_GETLINE=0;
+  REPLACE_OBSTACK_PRINTF=0;
+  REPLACE_PERROR=0;
+  REPLACE_POPEN=0;
+  REPLACE_PRINTF=0;
+  REPLACE_REMOVE=0;
+  REPLACE_RENAME=0;
+  REPLACE_RENAMEAT=0;
+  REPLACE_SNPRINTF=0;
+  REPLACE_SPRINTF=0;
+  REPLACE_STDIO_READ_FUNCS=0;
+  REPLACE_STDIO_WRITE_FUNCS=0;
+  REPLACE_TMPFILE=0;
+  REPLACE_VASPRINTF=0;
+  REPLACE_VDPRINTF=0;
+  REPLACE_VFPRINTF=0;
+  REPLACE_VPRINTF=0;
+  REPLACE_VSNPRINTF=0;
+  REPLACE_VSPRINTF=0;
+
+ac_fn_check_decl "$LINENO" "getdelim" "ac_cv_have_decl_getdelim" "$ac_includes_default" "$ac_c_undeclared_builtin_options$ac_c_future_darwin_options" "CFLAGS"
+if test "x$ac_cv_have_decl_getdelim" = xyes
+then :
+  ac_have_decl=1
+else case e in #(
+  e) ac_have_decl=0 ;;
+esac
+fi
+printf '%s\n' "#define HAVE_DECL_GETDELIM $ac_have_decl" >>confdefs.h
+
+
+
+  GL_GNULIB_DPRINTF=0
+
+
+
+  GL_GNULIB_DZPRINTF=0
+
+
+
+  GL_GNULIB_FCLOSE=0
+
+
+
+  GL_GNULIB_FDOPEN=0
+
+
+
+  GL_GNULIB_FFLUSH=0
+
+
+
+  GL_GNULIB_FGETC=0
+
+
+
+  GL_GNULIB_FGETS=0
+
+
+
+  GL_GNULIB_FOPEN=0
+
+
+
+  GL_GNULIB_FOPEN_GNU=0
+
+
+
+  GL_GNULIB_FPRINTF=0
+
+
+
+  GL_GNULIB_FPRINTF_POSIX=0
+
+
+
+  GL_GNULIB_FPURGE=0
+
+
+
+  GL_GNULIB_FPUTC=0
+
+
+
+  GL_GNULIB_FPUTS=0
+
+
+
+  GL_GNULIB_FREAD=0
+
+
+
+  GL_GNULIB_FREOPEN=0
+
+
+
+  GL_GNULIB_FSCANF=0
+
+
+
+  GL_GNULIB_FSEEK=0
+
+
+
+  GL_GNULIB_FSEEKO=0
+
+
+
+  GL_GNULIB_FTELL=0
+
+
+
+  GL_GNULIB_FTELLO=0
+
+
+
+  GL_GNULIB_FWRITE=0
+
+
+
+  GL_GNULIB_FZPRINTF=0
+
+
+
+  GL_GNULIB_GETC=0
+
+
+
+  GL_GNULIB_GETCHAR=0
+
+
+
+  GL_GNULIB_GETDELIM=0
+
+
+
+  GL_GNULIB_GETLINE=0
+
+
+
+  GL_GNULIB_OBSTACK_PRINTF=0
+
+
+
+  GL_GNULIB_OBSTACK_PRINTF_POSIX=0
+
+
+
+  GL_GNULIB_OBSTACK_ZPRINTF=0
+
+
+
+  GL_GNULIB_PCLOSE=0
+
+
+
+  GL_GNULIB_PERROR=0
+
+
+
+  GL_GNULIB_POPEN=0
+
+
+
+  GL_GNULIB_PRINTF=0
+
+
+
+  GL_GNULIB_PRINTF_POSIX=0
+
+
+
+  GL_GNULIB_PUTC=0
+
+
+
+  GL_GNULIB_PUTCHAR=0
+
+
+
+  GL_GNULIB_PUTS=0
+
+
+
+  GL_GNULIB_REMOVE=0
+
+
+
+  GL_GNULIB_RENAME=0
+
+
+
+  GL_GNULIB_RENAMEAT=0
+
+
+
+  GL_GNULIB_SCANF=0
+
+
+
+  GL_GNULIB_SNPRINTF=0
+
+
+
+  GL_GNULIB_SNZPRINTF=0
+
+
+
+  GL_GNULIB_SPRINTF_POSIX=0
+
+
+
+  GL_GNULIB_STDIO_H_NONBLOCKING=0
+
+
+
+  GL_GNULIB_STDIO_H_SIGPIPE=0
+
+
+
+  GL_GNULIB_SZPRINTF=0
+
+
+
+  GL_GNULIB_TMPFILE=0
+
+
+
+  GL_GNULIB_VAPRINTF=0
+
+
+
+  GL_GNULIB_VASPRINTF=0
+
+
+
+  GL_GNULIB_VASZPRINTF=0
+
+
+
+  GL_GNULIB_VFSCANF=0
+
+
+
+  GL_GNULIB_VSCANF=0
+
+
+
+  GL_GNULIB_VDPRINTF=0
+
+
+
+  GL_GNULIB_VDZPRINTF=0
+
+
+
+  GL_GNULIB_VFPRINTF=0
+
+
+
+  GL_GNULIB_VFPRINTF_POSIX=0
+
+
+
+  GL_GNULIB_VFZPRINTF=0
+
+
+
+  GL_GNULIB_VPRINTF=0
+
+
+
+  GL_GNULIB_VPRINTF_POSIX=0
+
+
+
+  GL_GNULIB_VSNPRINTF=0
+
+
+
+  GL_GNULIB_VSNZPRINTF=0
+
+
+
+  GL_GNULIB_VSPRINTF_POSIX=0
+
+
+
+  GL_GNULIB_VSZPRINTF=0
+
+
+
+  GL_GNULIB_VZPRINTF=0
+
+
+
+  GL_GNULIB_ZPRINTF=0
+
+
+
+  GL_GNULIB_MDA_FCLOSEALL=1
+
+
+
+  GL_GNULIB_MDA_FDOPEN=1
+
+
+
+  GL_GNULIB_MDA_FILENO=1
+
+
+
+  GL_GNULIB_MDA_GETW=1
+
+
+
+  GL_GNULIB_MDA_PUTW=1
+
+
+
+  GL_GNULIB_MDA_TEMPNAM=1
+
+
+
+ac_fn_check_decl "$LINENO" "getline" "ac_cv_have_decl_getline" "$ac_includes_default" "$ac_c_undeclared_builtin_options$ac_c_future_darwin_options" "CFLAGS"
+if test "x$ac_cv_have_decl_getline" = xyes
+then :
+  ac_have_decl=1
+else case e in #(
+  e) ac_have_decl=0 ;;
+esac
+fi
+printf '%s\n' "#define HAVE_DECL_GETLINE $ac_have_decl" >>confdefs.h
+
+
 
   if test -z "$gl_anythreadlib_early_done"; then
     # Some systems optimize for single-threaded programs by default, and
@@ -13518,8 +13895,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:13521: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:13522: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:13898: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:13899: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -13548,7 +13925,7 @@ rm -rf conftest*
   *) :
      ;;
 esac
-      echo "$as_me:13551: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:13928: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill.
       if test $gl_pthread_api = yes && test -z "$LIBPTHREAD"
@@ -13800,7 +14177,7 @@ fi
 fi
 
 fi
-      echo "$as_me:13803: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:14180: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
 
 fi
     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
@@ -19055,60 +19432,6 @@ printf '%s\n' "$gl_cv_cxx_have_stdcountof_h" >&6; }
 
 
 
-
-    HAVE_DECL_FCLOSEALL=1;
-  HAVE_DECL_FPURGE=1;
-  HAVE_DECL_FSEEKO=1;
-  HAVE_DECL_FTELLO=1;
-  HAVE_DECL_GETDELIM=1;
-  HAVE_DECL_GETLINE=1;
-  HAVE_DECL_GETW=1;
-  HAVE_DECL_OBSTACK_PRINTF=1;
-  HAVE_DECL_PUTW=1;
-  HAVE_DECL_SNPRINTF=1;
-  HAVE_DECL_VSNPRINTF=1;
-  HAVE_DPRINTF=1;
-  HAVE_FSEEKO=1;
-  HAVE_FTELLO=1;
-  HAVE_PCLOSE=1;
-  HAVE_POPEN=1;
-  HAVE_RENAMEAT=1;
-  HAVE_VASPRINTF=1;
-  HAVE_VDPRINTF=1;
-  REPLACE_DPRINTF=0;
-  REPLACE_FCLOSE=0;
-  REPLACE_FDOPEN=0;
-  REPLACE_FFLUSH=0;
-  REPLACE_FOPEN=0;
-  REPLACE_FOPEN_FOR_FOPEN_GNU=0;
-  REPLACE_FPRINTF=0;
-  REPLACE_FPURGE=0;
-  REPLACE_FREOPEN=0;
-  REPLACE_FSEEK=0;
-  REPLACE_FSEEKO=0;
-  REPLACE_FTELL=0;
-  REPLACE_FTELLO=0;
-  REPLACE_GETDELIM=0;
-  REPLACE_GETLINE=0;
-  REPLACE_OBSTACK_PRINTF=0;
-  REPLACE_PERROR=0;
-  REPLACE_POPEN=0;
-  REPLACE_PRINTF=0;
-  REPLACE_REMOVE=0;
-  REPLACE_RENAME=0;
-  REPLACE_RENAMEAT=0;
-  REPLACE_SNPRINTF=0;
-  REPLACE_SPRINTF=0;
-  REPLACE_STDIO_READ_FUNCS=0;
-  REPLACE_STDIO_WRITE_FUNCS=0;
-  REPLACE_TMPFILE=0;
-  REPLACE_VASPRINTF=0;
-  REPLACE_VDPRINTF=0;
-  REPLACE_VFPRINTF=0;
-  REPLACE_VPRINTF=0;
-  REPLACE_VSNPRINTF=0;
-  REPLACE_VSPRINTF=0;
-
 ac_fn_check_decl "$LINENO" "fcloseall" "ac_cv_have_decl_fcloseall" "$ac_includes_default" "$ac_c_undeclared_builtin_options$ac_c_future_darwin_options" "CFLAGS"
 if test "x$ac_cv_have_decl_fcloseall" = xyes
 then :
@@ -19288,300 +19611,6 @@ printf '%s\n' "#define GNULIB_PRINTF_ATTRIBUTE_FLAVOR_GNU 1" >>confdefs.h
   if test $ac_cv_have_decl_putw = no; then
     HAVE_DECL_PUTW=0
   fi
-
-
-
-  GL_GNULIB_DPRINTF=0
-
-
-
-  GL_GNULIB_DZPRINTF=0
-
-
-
-  GL_GNULIB_FCLOSE=0
-
-
-
-  GL_GNULIB_FDOPEN=0
-
-
-
-  GL_GNULIB_FFLUSH=0
-
-
-
-  GL_GNULIB_FGETC=0
-
-
-
-  GL_GNULIB_FGETS=0
-
-
-
-  GL_GNULIB_FOPEN=0
-
-
-
-  GL_GNULIB_FOPEN_GNU=0
-
-
-
-  GL_GNULIB_FPRINTF=0
-
-
-
-  GL_GNULIB_FPRINTF_POSIX=0
-
-
-
-  GL_GNULIB_FPURGE=0
-
-
-
-  GL_GNULIB_FPUTC=0
-
-
-
-  GL_GNULIB_FPUTS=0
-
-
-
-  GL_GNULIB_FREAD=0
-
-
-
-  GL_GNULIB_FREOPEN=0
-
-
-
-  GL_GNULIB_FSCANF=0
-
-
-
-  GL_GNULIB_FSEEK=0
-
-
-
-  GL_GNULIB_FSEEKO=0
-
-
-
-  GL_GNULIB_FTELL=0
-
-
-
-  GL_GNULIB_FTELLO=0
-
-
-
-  GL_GNULIB_FWRITE=0
-
-
-
-  GL_GNULIB_FZPRINTF=0
-
-
-
-  GL_GNULIB_GETC=0
-
-
-
-  GL_GNULIB_GETCHAR=0
-
-
-
-  GL_GNULIB_GETDELIM=0
-
-
-
-  GL_GNULIB_GETLINE=0
-
-
-
-  GL_GNULIB_OBSTACK_PRINTF=0
-
-
-
-  GL_GNULIB_OBSTACK_PRINTF_POSIX=0
-
-
-
-  GL_GNULIB_OBSTACK_ZPRINTF=0
-
-
-
-  GL_GNULIB_PCLOSE=0
-
-
-
-  GL_GNULIB_PERROR=0
-
-
-
-  GL_GNULIB_POPEN=0
-
-
-
-  GL_GNULIB_PRINTF=0
-
-
-
-  GL_GNULIB_PRINTF_POSIX=0
-
-
-
-  GL_GNULIB_PUTC=0
-
-
-
-  GL_GNULIB_PUTCHAR=0
-
-
-
-  GL_GNULIB_PUTS=0
-
-
-
-  GL_GNULIB_REMOVE=0
-
-
-
-  GL_GNULIB_RENAME=0
-
-
-
-  GL_GNULIB_RENAMEAT=0
-
-
-
-  GL_GNULIB_SCANF=0
-
-
-
-  GL_GNULIB_SNPRINTF=0
-
-
-
-  GL_GNULIB_SNZPRINTF=0
-
-
-
-  GL_GNULIB_SPRINTF_POSIX=0
-
-
-
-  GL_GNULIB_STDIO_H_NONBLOCKING=0
-
-
-
-  GL_GNULIB_STDIO_H_SIGPIPE=0
-
-
-
-  GL_GNULIB_SZPRINTF=0
-
-
-
-  GL_GNULIB_TMPFILE=0
-
-
-
-  GL_GNULIB_VAPRINTF=0
-
-
-
-  GL_GNULIB_VASPRINTF=0
-
-
-
-  GL_GNULIB_VASZPRINTF=0
-
-
-
-  GL_GNULIB_VFSCANF=0
-
-
-
-  GL_GNULIB_VSCANF=0
-
-
-
-  GL_GNULIB_VDPRINTF=0
-
-
-
-  GL_GNULIB_VDZPRINTF=0
-
-
-
-  GL_GNULIB_VFPRINTF=0
-
-
-
-  GL_GNULIB_VFPRINTF_POSIX=0
-
-
-
-  GL_GNULIB_VFZPRINTF=0
-
-
-
-  GL_GNULIB_VPRINTF=0
-
-
-
-  GL_GNULIB_VPRINTF_POSIX=0
-
-
-
-  GL_GNULIB_VSNPRINTF=0
-
-
-
-  GL_GNULIB_VSNZPRINTF=0
-
-
-
-  GL_GNULIB_VSPRINTF_POSIX=0
-
-
-
-  GL_GNULIB_VSZPRINTF=0
-
-
-
-  GL_GNULIB_VZPRINTF=0
-
-
-
-  GL_GNULIB_ZPRINTF=0
-
-
-
-  GL_GNULIB_MDA_FCLOSEALL=1
-
-
-
-  GL_GNULIB_MDA_FDOPEN=1
-
-
-
-  GL_GNULIB_MDA_FILENO=1
-
-
-
-  GL_GNULIB_MDA_GETW=1
-
-
-
-  GL_GNULIB_MDA_PUTW=1
-
-
-
-  GL_GNULIB_MDA_TEMPNAM=1
-
-
 
 
 ac_fn_check_decl "$LINENO" "ecvt" "ac_cv_have_decl_ecvt" "$ac_includes_default" "$ac_c_undeclared_builtin_options$ac_c_future_darwin_options" "CFLAGS"
@@ -23590,6 +23619,31 @@ fi
 
 
 
+  { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether to enable assertions" >&5
+printf %s "checking whether to enable assertions... " >&6; }
+  # Check whether --enable-assert was given.
+if test ${enable_assert+y}
+then :
+  enableval=$enable_assert; if test "x$enableval" = xno
+then :
+
+printf '%s\n' "#define NDEBUG 1" >>confdefs.h
+
+elif test "x$enableval" != xyes
+then :
+  { printf '%s\n' "$as_me:${as_lineno-$LINENO}: WARNING: invalid argument supplied to --enable-assert" >&5
+printf '%s\n' "$as_me: WARNING: invalid argument supplied to --enable-assert" >&2;}
+      enable_assert=yes
+fi
+else case e in #(
+  e) enable_assert=yes ;;
+esac
+fi
+
+  { printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $enable_assert" >&5
+printf '%s\n' "$enable_assert" >&6; }
+
+
   { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for static_assert" >&5
 printf %s "checking for static_assert... " >&6; }
 if test ${gl_cv_static_assert+y}
@@ -25251,6 +25305,493 @@ fi
     GL_COND_OBJ_FSETERR_TRUE='#'
     GL_COND_OBJ_FSETERR_FALSE='#'
   fi
+
+
+
+
+
+
+
+
+
+
+
+  { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for getdelim" >&5
+printf %s "checking for getdelim... " >&6; }
+if test ${gl_cv_onwards_func_getdelim+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)
+  exec 9>&6 6>/dev/null
+
+       case "$host_os" in
+
+         linux*-android*)
+           ac_fn_check_decl "$LINENO" "getdelim" "ac_cv_have_decl_getdelim" "#include <stdio.h>
+" "$ac_c_undeclared_builtin_options$ac_c_future_darwin_options" "CFLAGS"
+if test "x$ac_cv_have_decl_getdelim" = xyes
+then :
+
+fi
+           if test $ac_cv_have_decl_getdelim = yes; then
+             ac_fn_c_check_func "$LINENO" "getdelim" "ac_cv_func_getdelim"
+if test "x$ac_cv_func_getdelim" = xyes
+then :
+
+fi
+
+             if test $ac_cv_func_getdelim = yes; then
+               gl_cv_onwards_func_getdelim=yes
+             else
+                                                            gl_cv_onwards_func_getdelim='future OS version'
+             fi
+           else
+             gl_cv_onwards_func_getdelim='future OS version'
+           fi
+           ;;
+
+
+         *)
+           ac_fn_c_check_func "$LINENO" "getdelim" "ac_cv_func_getdelim"
+if test "x$ac_cv_func_getdelim" = xyes
+then :
+
+fi
+
+           gl_cv_onwards_func_getdelim=$ac_cv_func_getdelim
+           ;;
+
+       esac
+
+  exec 6>&9 9>&-
+
+     ;;
+esac
+fi
+{ printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $gl_cv_onwards_func_getdelim" >&5
+printf '%s\n' "$gl_cv_onwards_func_getdelim" >&6; }
+
+  case "$gl_cv_onwards_func_getdelim" in
+    future*) ac_cv_func_getdelim=no ;;
+    *)       ac_cv_func_getdelim=$gl_cv_onwards_func_getdelim ;;
+  esac
+  if test $ac_cv_func_getdelim = yes; then
+
+printf '%s\n' "#define HAVE_GETDELIM 1" >>confdefs.h
+
+  fi
+
+
+  if test $ac_cv_func_getdelim = yes; then
+    HAVE_GETDELIM=1
+        { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for working getdelim function" >&5
+printf %s "checking for working getdelim function... " >&6; }
+if test ${gl_cv_func_working_getdelim+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) case "$host_os" in
+         darwin*)
+                                                                             gl_cv_func_working_getdelim=no ;;
+         *)
+           echo fooNbarN | tr -d '\012' | tr N '\012' > conftest.data
+           if test "$cross_compiling" = yes
+then :
+                              cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+#include <features.h>
+#ifdef __GNU_LIBRARY__
+ #if (__GLIBC__ >= 2) && !defined __UCLIBC__
+  Lucky GNU user
+ #endif
+#endif
+
+_ACEOF
+if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+  $EGREP_TRADITIONAL "Lucky GNU user" >/dev/null 2>&1
+then :
+  gl_cv_func_working_getdelim="guessing yes"
+else case e in #(
+  e) case "$host_os" in
+                   *-musl* | midipix*) gl_cv_func_working_getdelim="guessing yes" ;;
+                   *)                  gl_cv_func_working_getdelim="$gl_cross_guess_normal" ;;
+                 esac
+                 ;;
+esac
+fi
+rm -rf conftest*
+
+
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+#    include <stdio.h>
+#    include <stdlib.h>
+#    include <string.h>
+    int main ()
+    {
+      FILE *in = fopen ("./conftest.data", "r");
+      int result = 0;
+      if (!in)
+        return 1;
+      {
+        /* Test result for a NULL buffer and a zero size.
+           Based on a test program from Karl Heuer.  */
+        char *line = NULL;
+        size_t siz = 0;
+        int len = getdelim (&line, &siz, '\n', in);
+        if (!(len == 4 && line && strcmp (line, "foo\n") == 0))
+          result |= 2;
+        free (line);
+      }
+      {
+        /* Test result for a NULL buffer and a non-zero size.
+           This crashes on FreeBSD 8.0.  */
+        char *line = NULL;
+        size_t siz = (size_t)(~0) / 4;
+        if (getdelim (&line, &siz, '\n', in) == -1)
+          result |= 4;
+        free (line);
+      }
+      fclose (in);
+      return result;
+    }
+
+_ACEOF
+if ac_fn_c_try_run "$LINENO"
+then :
+  gl_cv_func_working_getdelim=yes
+else case e in #(
+  e) gl_cv_func_working_getdelim=no ;;
+esac
+fi
+rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+  conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+
+           ;;
+       esac
+       rm -f conftest.data
+       ;;
+esac
+fi
+{ printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $gl_cv_func_working_getdelim" >&5
+printf '%s\n' "$gl_cv_func_working_getdelim" >&6; }
+    case "$gl_cv_func_working_getdelim" in
+      *yes) ;;
+      *) REPLACE_GETDELIM=1 ;;
+    esac
+  else
+    HAVE_GETDELIM=0
+    case "$gl_cv_onwards_func_getdelim" in
+      future*) REPLACE_GETDELIM=1 ;;
+    esac
+  fi
+
+  if test $ac_cv_have_decl_getdelim = no; then
+    HAVE_DECL_GETDELIM=0
+  fi
+
+
+     if test $HAVE_GETDELIM = 0 || test $REPLACE_GETDELIM = 1; then
+  GL_COND_OBJ_GETDELIM_TRUE=
+  GL_COND_OBJ_GETDELIM_FALSE='#'
+else
+  GL_COND_OBJ_GETDELIM_TRUE='#'
+  GL_COND_OBJ_GETDELIM_FALSE=
+fi
+:
+    if test -z "${GL_COND_OBJ_GETDELIM_TRUE}" && test -z "${GL_COND_OBJ_GETDELIM_FALSE}"; then
+    GL_COND_OBJ_GETDELIM_TRUE='#'
+    GL_COND_OBJ_GETDELIM_FALSE='#'
+  fi
+
+  if test -z "$GL_COND_OBJ_GETDELIM_TRUE"; then :
+
+
+  ac_fn_c_check_func "$LINENO" "flockfile" "ac_cv_func_flockfile"
+if test "x$ac_cv_func_flockfile" = xyes
+then :
+  printf '%s\n' "#define HAVE_FLOCKFILE 1" >>confdefs.h
+
+fi
+ac_fn_c_check_func "$LINENO" "funlockfile" "ac_cv_func_funlockfile"
+if test "x$ac_cv_func_funlockfile" = xyes
+then :
+  printf '%s\n' "#define HAVE_FUNLOCKFILE 1" >>confdefs.h
+
+fi
+
+  ac_fn_check_decl "$LINENO" "getc_unlocked" "ac_cv_have_decl_getc_unlocked" "$ac_includes_default" "$ac_c_undeclared_builtin_options$ac_c_future_darwin_options" "CFLAGS"
+if test "x$ac_cv_have_decl_getc_unlocked" = xyes
+then :
+  ac_have_decl=1
+else case e in #(
+  e) ac_have_decl=0 ;;
+esac
+fi
+printf '%s\n' "#define HAVE_DECL_GETC_UNLOCKED $ac_have_decl" >>confdefs.h
+
+
+
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          GL_GNULIB_GETDELIM=1
+
+
+
+
+
+printf '%s\n' "#define GNULIB_TEST_GETDELIM 1" >>confdefs.h
+
+
+
+
+
+
+
+
+
+
+
+
+  { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for getline" >&5
+printf %s "checking for getline... " >&6; }
+if test ${gl_cv_onwards_func_getline+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)
+  exec 9>&6 6>/dev/null
+
+       case "$host_os" in
+
+         linux*-android*)
+           ac_fn_check_decl "$LINENO" "getline" "ac_cv_have_decl_getline" "#include <stdio.h>
+" "$ac_c_undeclared_builtin_options$ac_c_future_darwin_options" "CFLAGS"
+if test "x$ac_cv_have_decl_getline" = xyes
+then :
+
+fi
+           if test $ac_cv_have_decl_getline = yes; then
+             ac_fn_c_check_func "$LINENO" "getline" "ac_cv_func_getline"
+if test "x$ac_cv_func_getline" = xyes
+then :
+
+fi
+
+             if test $ac_cv_func_getline = yes; then
+               gl_cv_onwards_func_getline=yes
+             else
+                                                            gl_cv_onwards_func_getline='future OS version'
+             fi
+           else
+             gl_cv_onwards_func_getline='future OS version'
+           fi
+           ;;
+
+
+         *)
+           ac_fn_c_check_func "$LINENO" "getline" "ac_cv_func_getline"
+if test "x$ac_cv_func_getline" = xyes
+then :
+
+fi
+
+           gl_cv_onwards_func_getline=$ac_cv_func_getline
+           ;;
+
+       esac
+
+  exec 6>&9 9>&-
+
+     ;;
+esac
+fi
+{ printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $gl_cv_onwards_func_getline" >&5
+printf '%s\n' "$gl_cv_onwards_func_getline" >&6; }
+
+  case "$gl_cv_onwards_func_getline" in
+    future*) ac_cv_func_getline=no ;;
+    *)       ac_cv_func_getline=$gl_cv_onwards_func_getline ;;
+  esac
+  if test $ac_cv_func_getline = yes; then
+
+printf '%s\n' "#define HAVE_GETLINE 1" >>confdefs.h
+
+  fi
+
+
+  if test $ac_cv_func_getline = yes; then
+        { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for working getline function" >&5
+printf %s "checking for working getline function... " >&6; }
+if test ${am_cv_func_working_getline+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) echo fooNbarN | tr -d '\012' | tr N '\012' > conftest.data
+       if test "$cross_compiling" = yes
+then :
+                      cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+#include <features.h>
+#ifdef __GNU_LIBRARY__
+ #if (__GLIBC__ >= 2) && !defined __UCLIBC__
+  Lucky GNU user
+ #endif
+#endif
+
+_ACEOF
+if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+  $EGREP_TRADITIONAL "Lucky GNU user" >/dev/null 2>&1
+then :
+  am_cv_func_working_getline="guessing yes"
+else case e in #(
+  e) case "$host_os" in
+               *-musl* | midipix*) am_cv_func_working_getline="guessing yes" ;;
+               *)                  am_cv_func_working_getline="$gl_cross_guess_normal" ;;
+             esac
+             ;;
+esac
+fi
+rm -rf conftest*
+
+
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+#    include <stdio.h>
+#    include <stdlib.h>
+#    include <string.h>
+    int main ()
+    {
+      FILE *in = fopen ("./conftest.data", "r");
+      int result = 0;
+      if (!in)
+        return 1;
+      {
+        /* Test result for a NULL buffer and a zero size.
+           Based on a test program from Karl Heuer.  */
+        char *line = NULL;
+        size_t siz = 0;
+        int len = getline (&line, &siz, in);
+        if (!(len == 4 && line && strcmp (line, "foo\n") == 0))
+          result |= 2;
+        free (line);
+      }
+      {
+        /* Test result for a NULL buffer and a non-zero size.
+           This crashes on FreeBSD 8.0.  */
+        char *line = NULL;
+        size_t siz = (size_t)(~0) / 4;
+        if (getline (&line, &siz, in) == -1)
+          result |= 4;
+        free (line);
+      }
+      fclose (in);
+      return result;
+    }
+
+_ACEOF
+if ac_fn_c_try_run "$LINENO"
+then :
+  am_cv_func_working_getline=yes
+else case e in #(
+  e) am_cv_func_working_getline=no ;;
+esac
+fi
+rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+  conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+
+       rm -f conftest.data
+       ;;
+esac
+fi
+{ printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $am_cv_func_working_getline" >&5
+printf '%s\n' "$am_cv_func_working_getline" >&6; }
+  else
+    am_cv_func_working_getline=no
+    case "$gl_cv_onwards_func_getline" in
+      future*) REPLACE_GETLINE=1 ;;
+    esac
+  fi
+
+  if test $ac_cv_have_decl_getline = no; then
+    HAVE_DECL_GETLINE=0
+  fi
+
+  case "$am_cv_func_working_getline" in
+    *yes) ;;
+    *)
+                        REPLACE_GETLINE=1
+      ;;
+  esac
+
+
+     if test $REPLACE_GETLINE = 1; then
+  GL_COND_OBJ_GETLINE_TRUE=
+  GL_COND_OBJ_GETLINE_FALSE='#'
+else
+  GL_COND_OBJ_GETLINE_TRUE='#'
+  GL_COND_OBJ_GETLINE_FALSE=
+fi
+:
+    if test -z "${GL_COND_OBJ_GETLINE_TRUE}" && test -z "${GL_COND_OBJ_GETLINE_FALSE}"; then
+    GL_COND_OBJ_GETLINE_TRUE='#'
+    GL_COND_OBJ_GETLINE_FALSE='#'
+  fi
+
+  if test -z "$GL_COND_OBJ_GETLINE_TRUE"; then :
+
+
+  :
+
+
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          GL_GNULIB_GETLINE=1
+
+
+
+
+
+printf '%s\n' "#define GNULIB_TEST_GETLINE 1" >>confdefs.h
+
+
 
 
   HARD_LOCALE_LIB="$SETLOCALE_NULL_LIB"

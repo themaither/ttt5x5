@@ -44,6 +44,7 @@ AC_DEFUN([gl_EARLY],
 
   # Code from module absolute-header:
   # Code from module alloca-opt:
+  # Code from module assert:
   # Code from module assert-h:
   # Code from module attribute:
   # Code from module bool:
@@ -84,6 +85,8 @@ AC_DEFUN([gl_EARLY],
   # Code from module fseterr:
   # Code from module full-write:
   # Code from module gen-header:
+  # Code from module getdelim:
+  # Code from module getline:
   # Code from module hard-locale:
   # Code from module ialloc:
   # Code from module idx:
@@ -210,6 +213,7 @@ AC_DEFUN([gl_INIT],
   gl_FUNC_ALLOCA
   gl_CONDITIONAL_HEADER([alloca.h])
   AC_PROG_MKDIR_P
+  gl_ASSERT
   gl_ASSERT_H
   gl_CONDITIONAL_HEADER([assert.h])
   AC_PROG_MKDIR_P
@@ -356,6 +360,19 @@ AC_DEFUN([gl_INIT],
   gl_MATH_MODULE_INDICATOR([frexpl])
   gl_FUNC_FSETERR
   gl_CONDITIONAL([GL_COND_OBJ_FSETERR], [test $ac_cv_func___fseterr = no])
+  gl_FUNC_GETDELIM
+  gl_CONDITIONAL([GL_COND_OBJ_GETDELIM],
+                 [test $HAVE_GETDELIM = 0 || test $REPLACE_GETDELIM = 1])
+  AM_COND_IF([GL_COND_OBJ_GETDELIM], [
+    gl_PREREQ_GETDELIM
+  ])
+  gl_STDIO_MODULE_INDICATOR([getdelim])
+  gl_FUNC_GETLINE
+  gl_CONDITIONAL([GL_COND_OBJ_GETLINE], [test $REPLACE_GETLINE = 1])
+  AM_COND_IF([GL_COND_OBJ_GETLINE], [
+    gl_PREREQ_GETLINE
+  ])
+  gl_STDIO_MODULE_INDICATOR([getline])
   AC_REQUIRE([gl_FUNC_SETLOCALE_NULL])
   HARD_LOCALE_LIB="$SETLOCALE_NULL_LIB"
   AC_SUBST([HARD_LOCALE_LIB])
@@ -907,6 +924,8 @@ AC_DEFUN([gl_FILE_LIST], [
   lib/fseterr.h
   lib/full-write.c
   lib/full-write.h
+  lib/getdelim.c
+  lib/getline.c
   lib/hard-locale.c
   lib/hard-locale.h
   lib/ialloc.c
@@ -1064,6 +1083,7 @@ AC_DEFUN([gl_FILE_LIST], [
   m4/00gnulib.m4
   m4/absolute-header.m4
   m4/alloca.m4
+  m4/assert.m4
   m4/assert_h.m4
   m4/builtin-expect.m4
   m4/c-bool.m4
@@ -1085,6 +1105,8 @@ AC_DEFUN([gl_FILE_LIST], [
   m4/frexp.m4
   m4/frexpl.m4
   m4/fseterr.m4
+  m4/getdelim.m4
+  m4/getline.m4
   m4/gnulib-common.m4
   m4/include_next.m4
   m4/intmax_t.m4

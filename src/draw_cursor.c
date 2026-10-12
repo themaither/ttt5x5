@@ -1,3 +1,5 @@
+#include <config.h>
+
 #include <raylib.h>
 
 static Texture2D tl_texture;

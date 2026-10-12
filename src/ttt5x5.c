@@ -1,3 +1,5 @@
+#include <config.h>
+
 #include <raylib.h>
 #include <session.h>
 #include <picker.h>

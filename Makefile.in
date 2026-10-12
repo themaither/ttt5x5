@@ -96,7 +96,7 @@ subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/00gnulib.m4 \
 	$(top_srcdir)/m4/absolute-header.m4 $(top_srcdir)/m4/alloca.m4 \
-	$(top_srcdir)/m4/assert_h.m4 \
+	$(top_srcdir)/m4/assert.m4 $(top_srcdir)/m4/assert_h.m4 \
 	$(top_srcdir)/m4/builtin-expect.m4 $(top_srcdir)/m4/c-bool.m4 \
 	$(top_srcdir)/m4/c32rtomb.m4 $(top_srcdir)/m4/calloc.m4 \
 	$(top_srcdir)/m4/codeset.m4 $(top_srcdir)/m4/errno_h.m4 \
@@ -108,7 +108,8 @@ am__aclocal_m4_deps = $(top_srcdir)/m4/00gnulib.m4 \
 	$(top_srcdir)/m4/fcntl_h.m4 $(top_srcdir)/m4/float_h.m4 \
 	$(top_srcdir)/m4/fpieee.m4 $(top_srcdir)/m4/free.m4 \
 	$(top_srcdir)/m4/frexp.m4 $(top_srcdir)/m4/frexpl.m4 \
-	$(top_srcdir)/m4/fseterr.m4 $(top_srcdir)/m4/gnulib-common.m4 \
+	$(top_srcdir)/m4/fseterr.m4 $(top_srcdir)/m4/getdelim.m4 \
+	$(top_srcdir)/m4/getline.m4 $(top_srcdir)/m4/gnulib-common.m4 \
 	$(top_srcdir)/m4/gnulib-comp.m4 \
 	$(top_srcdir)/m4/include_next.m4 $(top_srcdir)/m4/intmax_t.m4 \
 	$(top_srcdir)/m4/inttypes.m4 $(top_srcdir)/m4/inttypes_h.m4 \
@@ -1900,7 +1901,7 @@ ttt5x5_SOURCES = src/ttt5x5.c \
                  src/title.c src/title.h \
                  src/dlf.c src/dlf.h
 
-ttt5x5_CFLAGS = -I${srcdir}/src ${RAYLIB_CFLAGS} -g \
+ttt5x5_CFLAGS = -I${srcdir}/src -Ilib ${RAYLIB_CFLAGS} -g \
                 -DPKGDATADIR="\"${pkgdatadir}\"" # would probably fail 99% time
 
 ttt5x5_LDADD = ${RAYLIB_LIBS} -lm $(HARD_LOCALE_LIB) $(LIBC32CONV) \

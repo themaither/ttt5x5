@@ -172,6 +172,12 @@
 /* Define to 1 when the gnulib module getchar should be tested. */
 #undef GNULIB_TEST_GETCHAR
 
+/* Define to 1 when the gnulib module getdelim should be tested. */
+#undef GNULIB_TEST_GETDELIM
+
+/* Define to 1 when the gnulib module getline should be tested. */
+#undef GNULIB_TEST_GETLINE
+
 /* Define to 1 when the gnulib module iswblank should be tested. */
 #undef GNULIB_TEST_ISWBLANK
 
@@ -335,6 +341,18 @@
    */
 #undef HAVE_DECL_GCVT
 
+/* Define to 1 if you have the declaration of 'getc_unlocked', and to 0 if you
+   don't. */
+#undef HAVE_DECL_GETC_UNLOCKED
+
+/* Define to 1 if you have the declaration of 'getdelim', and to 0 if you
+   don't. */
+#undef HAVE_DECL_GETDELIM
+
+/* Define to 1 if you have the declaration of 'getline', and to 0 if you
+   don't. */
+#undef HAVE_DECL_GETLINE
+
 /* Define to 1 if you have the declaration of 'getw', and to 0 if you don't.
    */
 #undef HAVE_DECL_GETW
@@ -390,6 +408,9 @@
 /* Define to 1 if you have the <features.h> header file. */
 #undef HAVE_FEATURES_H
 
+/* Define to 1 if you have the 'flockfile' function. */
+#undef HAVE_FLOCKFILE
+
 /* Define if the 'free' function is guaranteed to preserve errno. */
 #undef HAVE_FREE_POSIX
 
@@ -398,6 +419,15 @@
 
 /* Define if the frexp function is available in libc. */
 #undef HAVE_FREXP_IN_LIBC
+
+/* Define to 1 if you have the 'funlockfile' function. */
+#undef HAVE_FUNLOCKFILE
+
+/* Define to 1 if you have the `getdelim' function. */
+#undef HAVE_GETDELIM
+
+/* Define to 1 if you have the `getline' function. */
+#undef HAVE_GETLINE
 
 /* Define if you have the 'intmax_t' type in <stdint.h> or <inttypes.h>. */
 #undef HAVE_INTMAX_T
@@ -848,6 +878,9 @@
 
 /* Define to 1 on musl libc. */
 #undef MUSL_LIBC
+
+/* Define to 1 if assertions should be disabled. */
+#undef NDEBUG
 
 /* Define if the vasnprintf implementation needs special code for the 'a' and
    'A' directives. */

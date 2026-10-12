@@ -37,11 +37,17 @@
 #  --no-conditional-dependencies \
 #  --no-libtool \
 #  --macro-prefix=gl \
+#  assert \
+#  assert-h \
+#  getline \
 #  string-buffer
 
 # Specification in the form of a few gnulib-tool.m4 macro invocations:
 gl_LOCAL_DIR([])
 gl_MODULES([
+  assert
+  assert-h
+  getline
   string-buffer
 ])
 gl_AVOID([])

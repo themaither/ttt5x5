@@ -4,7 +4,9 @@ Copyright (C) 2026 TheMaither <themaither@gmail.com> */
 #ifndef DLF_H_INCLUDED
 #define DLF_H_INCLUDED
 
+#include <config.h>
 #include <stdio.h>
+#include <lib/stdio.h>
 
 #ifdef __cplusplus
 extern "C"

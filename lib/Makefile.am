@@ -32,6 +32,9 @@
 #  --no-conditional-dependencies \
 #  --no-libtool \
 #  --macro-prefix=gl \
+#  assert \
+#  assert-h \
+#  getline \
 #  string-buffer
 
 AUTOMAKE_OPTIONS = 1.14 gnits subdir-objects
@@ -433,6 +436,22 @@ SED_HEADER_TO_AT_t = $(SED_HEADER_STDOUT) -n -e 'w $@-t'
 gl_V_at = $(AM_V_GEN)
 
 ## end   gnulib module gen-header
+
+## begin gnulib module getdelim
+
+if GL_COND_OBJ_GETDELIM
+libgnu_a_SOURCES += getdelim.c
+endif
+
+## end   gnulib module getdelim
+
+## begin gnulib module getline
+
+if GL_COND_OBJ_GETLINE
+libgnu_a_SOURCES += getline.c
+endif
+
+## end   gnulib module getline
 
 ## begin gnulib module hard-locale
 

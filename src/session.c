@@ -1,3 +1,5 @@
+#include <config.h>
+
 #include <imath.h>
 #include <5x5.h>
 #include <camera.h>

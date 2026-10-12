@@ -19,7 +19,7 @@ ttt5x5_SOURCES = src/ttt5x5.c \
                  src/title.c src/title.h \
                  src/dlf.c src/dlf.h
 
-ttt5x5_CFLAGS = -I${srcdir}/src ${RAYLIB_CFLAGS} -g \
+ttt5x5_CFLAGS = -I${srcdir}/src -Ilib ${RAYLIB_CFLAGS} -g \
                 -DPKGDATADIR="\"${pkgdatadir}\"" # would probably fail 99% time
 
 ttt5x5_LDADD = ${RAYLIB_LIBS} -lm $(HARD_LOCALE_LIB) $(LIBC32CONV) \

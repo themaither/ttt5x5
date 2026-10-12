@@ -1,3 +1,5 @@
+#include <config.h>
+
 static int world_offset_x = 0;
 static int world_offset_y = 0;
 

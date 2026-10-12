@@ -1,3 +1,5 @@
+#include <config.h>
+
 #include <5x5.h>
 
 void

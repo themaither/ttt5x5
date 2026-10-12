@@ -1,3 +1,5 @@
+#include <config.h>
+
 #include <stddef.h>
 #include <5x5.h>
 #include <raylib.h>

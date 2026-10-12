@@ -1,3 +1,5 @@
+#include <config.h>
+
 #include <raylib.h>
 
 static int press = -1;

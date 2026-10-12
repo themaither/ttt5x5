@@ -1,3 +1,5 @@
+#include <config.h>
+
 int
 min (int lhs, int rhs)
 {

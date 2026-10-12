@@ -46,6 +46,9 @@
 #  --no-conditional-dependencies \
 #  --no-libtool \
 #  --macro-prefix=gl \
+#  assert \
+#  assert-h \
+#  getline \
 #  string-buffer
 
 
@@ -131,47 +134,49 @@ host_triplet = @host@
 @GL_COND_OBJ_ITOLD_TRUE@am__append_2 = itold.c
 @GL_COND_OBJ_FREE_TRUE@am__append_3 = free.c
 @GL_COND_OBJ_FSETERR_TRUE@am__append_4 = fseterr.c
-@GL_COND_OBJ_ISWBLANK_TRUE@am__append_5 = iswblank.c
-@GL_COND_OBJ_ISWDIGIT_TRUE@am__append_6 = iswdigit.c
-@GL_COND_OBJ_ISWPUNCT_TRUE@am__append_7 = iswpunct.c
-@GL_COND_OBJ_ISWXDIGIT_TRUE@am__append_8 = iswxdigit.c
-@GL_COND_OBJ_LOCALECONV_TRUE@am__append_9 = localeconv.c
-@GL_COND_OBJ_MBRTOC32_TRUE@am__append_10 = mbrtoc32.c
-@GL_COND_OBJ_MBRTOWC_TRUE@am__append_11 = mbrtowc.c
-@GL_COND_OBJ_MBSINIT_TRUE@am__append_12 = mbsinit.c
-@GL_COND_OBJ_MEMCHR_TRUE@am__append_13 = memchr.c
-@GL_COND_OBJ_MEMRCHR_TRUE@am__append_14 = memrchr.c
-@GL_COND_OBJ_MSVC_INVAL_TRUE@am__append_15 = msvc-inval.c
-@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__append_16 = msvc-nothrow.c
-@GL_COND_OBJ_RAISE_TRUE@am__append_17 = raise.c
-@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__append_18 = realloc.c
-@GL_COND_OBJ_REALLOCARRAY_TRUE@am__append_19 = reallocarray.c
-@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__append_20 = setlocale-lock.c
-@GL_COND_OBJ_SIGNBIT3_TRUE@am__append_21 = signbitf.c signbitd.c signbitl.c
-@GL_COND_OBJ_STDIO_READ_TRUE@am__append_22 = stdio-read.c
-@GL_COND_OBJ_STDIO_WRITE_TRUE@am__append_23 = stdio-write.c
-@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__append_24 = stdio-consolesafe.c
-@LIBUNISTRING_COMPILE_UNICASE_TOLOWER_TRUE@am__append_25 = unicase/tolower.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALNUM_TRUE@am__append_26 = unictype/ctype_alnum.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALPHA_TRUE@am__append_27 = unictype/ctype_alpha.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_BLANK_TRUE@am__append_28 = unictype/ctype_blank.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_CNTRL_TRUE@am__append_29 = unictype/ctype_cntrl.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_DIGIT_TRUE@am__append_30 = unictype/ctype_digit.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_GRAPH_TRUE@am__append_31 = unictype/ctype_graph.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_LOWER_TRUE@am__append_32 = unictype/ctype_lower.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PRINT_TRUE@am__append_33 = unictype/ctype_print.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PUNCT_TRUE@am__append_34 = unictype/ctype_punct.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_SPACE_TRUE@am__append_35 = unictype/ctype_space.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_UPPER_TRUE@am__append_36 = unictype/ctype_upper.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_XDIGIT_TRUE@am__append_37 = unictype/ctype_xdigit.c
-@LIBUNISTRING_COMPILE_UNIWIDTH_WIDTH_TRUE@am__append_38 = uniwidth/width.c
-@GL_COND_OBJ_WCWIDTH_TRUE@am__append_39 = wcwidth.c
-@GL_COND_OBJ_WRITE_TRUE@am__append_40 = write.c
+@GL_COND_OBJ_GETDELIM_TRUE@am__append_5 = getdelim.c
+@GL_COND_OBJ_GETLINE_TRUE@am__append_6 = getline.c
+@GL_COND_OBJ_ISWBLANK_TRUE@am__append_7 = iswblank.c
+@GL_COND_OBJ_ISWDIGIT_TRUE@am__append_8 = iswdigit.c
+@GL_COND_OBJ_ISWPUNCT_TRUE@am__append_9 = iswpunct.c
+@GL_COND_OBJ_ISWXDIGIT_TRUE@am__append_10 = iswxdigit.c
+@GL_COND_OBJ_LOCALECONV_TRUE@am__append_11 = localeconv.c
+@GL_COND_OBJ_MBRTOC32_TRUE@am__append_12 = mbrtoc32.c
+@GL_COND_OBJ_MBRTOWC_TRUE@am__append_13 = mbrtowc.c
+@GL_COND_OBJ_MBSINIT_TRUE@am__append_14 = mbsinit.c
+@GL_COND_OBJ_MEMCHR_TRUE@am__append_15 = memchr.c
+@GL_COND_OBJ_MEMRCHR_TRUE@am__append_16 = memrchr.c
+@GL_COND_OBJ_MSVC_INVAL_TRUE@am__append_17 = msvc-inval.c
+@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__append_18 = msvc-nothrow.c
+@GL_COND_OBJ_RAISE_TRUE@am__append_19 = raise.c
+@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__append_20 = realloc.c
+@GL_COND_OBJ_REALLOCARRAY_TRUE@am__append_21 = reallocarray.c
+@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__append_22 = setlocale-lock.c
+@GL_COND_OBJ_SIGNBIT3_TRUE@am__append_23 = signbitf.c signbitd.c signbitl.c
+@GL_COND_OBJ_STDIO_READ_TRUE@am__append_24 = stdio-read.c
+@GL_COND_OBJ_STDIO_WRITE_TRUE@am__append_25 = stdio-write.c
+@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__append_26 = stdio-consolesafe.c
+@LIBUNISTRING_COMPILE_UNICASE_TOLOWER_TRUE@am__append_27 = unicase/tolower.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALNUM_TRUE@am__append_28 = unictype/ctype_alnum.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALPHA_TRUE@am__append_29 = unictype/ctype_alpha.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_BLANK_TRUE@am__append_30 = unictype/ctype_blank.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_CNTRL_TRUE@am__append_31 = unictype/ctype_cntrl.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_DIGIT_TRUE@am__append_32 = unictype/ctype_digit.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_GRAPH_TRUE@am__append_33 = unictype/ctype_graph.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_LOWER_TRUE@am__append_34 = unictype/ctype_lower.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PRINT_TRUE@am__append_35 = unictype/ctype_print.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PUNCT_TRUE@am__append_36 = unictype/ctype_punct.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_SPACE_TRUE@am__append_37 = unictype/ctype_space.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_UPPER_TRUE@am__append_38 = unictype/ctype_upper.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_XDIGIT_TRUE@am__append_39 = unictype/ctype_xdigit.c
+@LIBUNISTRING_COMPILE_UNIWIDTH_WIDTH_TRUE@am__append_40 = uniwidth/width.c
+@GL_COND_OBJ_WCWIDTH_TRUE@am__append_41 = wcwidth.c
+@GL_COND_OBJ_WRITE_TRUE@am__append_42 = write.c
 subdir = lib
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/00gnulib.m4 \
 	$(top_srcdir)/m4/absolute-header.m4 $(top_srcdir)/m4/alloca.m4 \
-	$(top_srcdir)/m4/assert_h.m4 \
+	$(top_srcdir)/m4/assert.m4 $(top_srcdir)/m4/assert_h.m4 \
 	$(top_srcdir)/m4/builtin-expect.m4 $(top_srcdir)/m4/c-bool.m4 \
 	$(top_srcdir)/m4/c32rtomb.m4 $(top_srcdir)/m4/calloc.m4 \
 	$(top_srcdir)/m4/codeset.m4 $(top_srcdir)/m4/errno_h.m4 \
@@ -183,7 +188,8 @@ am__aclocal_m4_deps = $(top_srcdir)/m4/00gnulib.m4 \
 	$(top_srcdir)/m4/fcntl_h.m4 $(top_srcdir)/m4/float_h.m4 \
 	$(top_srcdir)/m4/fpieee.m4 $(top_srcdir)/m4/free.m4 \
 	$(top_srcdir)/m4/frexp.m4 $(top_srcdir)/m4/frexpl.m4 \
-	$(top_srcdir)/m4/fseterr.m4 $(top_srcdir)/m4/gnulib-common.m4 \
+	$(top_srcdir)/m4/fseterr.m4 $(top_srcdir)/m4/getdelim.m4 \
+	$(top_srcdir)/m4/getline.m4 $(top_srcdir)/m4/gnulib-common.m4 \
 	$(top_srcdir)/m4/gnulib-comp.m4 \
 	$(top_srcdir)/m4/include_next.m4 $(top_srcdir)/m4/intmax_t.m4 \
 	$(top_srcdir)/m4/inttypes.m4 $(top_srcdir)/m4/inttypes_h.m4 \
@@ -251,79 +257,82 @@ am__libgnu_a_SOURCES_DIST = c-ctype.h c-ctype.c c32isalnum.c \
 	c32isgraph.c c32islower.c c32isprint.c c32ispunct.c \
 	c32isspace.c c32isupper.c c32isxdigit.c c32tolower.c \
 	c32width.c float.c itold.c free.c fseterr.c full-write.h \
-	full-write.c hard-locale.c ialloc.c idx.h iswblank.c \
-	iswdigit.c iswpunct.c iswxdigit.c localcharset.c localeconv.c \
-	math.c mbchar.c mbiter-aux.h mbiter-aux.c mbiterf.h mbiterf.c \
-	mbrtoc32.c mbrtowc.c mbsinit.c mbsnlen.c mbszero.c memchr.c \
-	memeq.c memrchr.c minmax.h msvc-inval.c msvc-nothrow.c \
-	printf-frexp.c printf-frexpl.c raise.c realloc.c \
-	reallocarray.c safe-write.c setlocale_null.c setlocale-lock.c \
-	setlocale_null-unlocked.c signbitf.c signbitd.c signbitl.c \
-	size_max.h stdio-read.c stdio-write.c stdio-consolesafe.c \
-	stdlib.c streq.c string-buffer.c string-buffer-printf.c \
-	string-desc.c string-desc-contains.c unicase/tolower.c \
-	unictype/ctype_alnum.c unictype/ctype_alpha.c \
-	unictype/ctype_blank.c unictype/ctype_cntrl.c \
-	unictype/ctype_digit.c unictype/ctype_graph.c \
-	unictype/ctype_lower.c unictype/ctype_print.c \
-	unictype/ctype_punct.c unictype/ctype_space.c \
-	unictype/ctype_upper.c unictype/ctype_xdigit.c unistd.c \
-	uniwidth/width.c vsnzprintf.c wctype-h.c wcwidth.c write.c \
-	xsize.h xsize.c
+	full-write.c getdelim.c getline.c hard-locale.c ialloc.c idx.h \
+	iswblank.c iswdigit.c iswpunct.c iswxdigit.c localcharset.c \
+	localeconv.c math.c mbchar.c mbiter-aux.h mbiter-aux.c \
+	mbiterf.h mbiterf.c mbrtoc32.c mbrtowc.c mbsinit.c mbsnlen.c \
+	mbszero.c memchr.c memeq.c memrchr.c minmax.h msvc-inval.c \
+	msvc-nothrow.c printf-frexp.c printf-frexpl.c raise.c \
+	realloc.c reallocarray.c safe-write.c setlocale_null.c \
+	setlocale-lock.c setlocale_null-unlocked.c signbitf.c \
+	signbitd.c signbitl.c size_max.h stdio-read.c stdio-write.c \
+	stdio-consolesafe.c stdlib.c streq.c string-buffer.c \
+	string-buffer-printf.c string-desc.c string-desc-contains.c \
+	unicase/tolower.c unictype/ctype_alnum.c \
+	unictype/ctype_alpha.c unictype/ctype_blank.c \
+	unictype/ctype_cntrl.c unictype/ctype_digit.c \
+	unictype/ctype_graph.c unictype/ctype_lower.c \
+	unictype/ctype_print.c unictype/ctype_punct.c \
+	unictype/ctype_space.c unictype/ctype_upper.c \
+	unictype/ctype_xdigit.c unistd.c uniwidth/width.c vsnzprintf.c \
+	wctype-h.c wcwidth.c write.c xsize.h xsize.c
 @GL_COND_OBJ_FLOAT_TRUE@am__objects_1 = libgnu_a-float.$(OBJEXT)
 @GL_COND_OBJ_ITOLD_TRUE@am__objects_2 = libgnu_a-itold.$(OBJEXT)
 @GL_COND_OBJ_FREE_TRUE@am__objects_3 = libgnu_a-free.$(OBJEXT)
 @GL_COND_OBJ_FSETERR_TRUE@am__objects_4 = libgnu_a-fseterr.$(OBJEXT)
-@GL_COND_OBJ_ISWBLANK_TRUE@am__objects_5 =  \
+@GL_COND_OBJ_GETDELIM_TRUE@am__objects_5 =  \
+@GL_COND_OBJ_GETDELIM_TRUE@	libgnu_a-getdelim.$(OBJEXT)
+@GL_COND_OBJ_GETLINE_TRUE@am__objects_6 = libgnu_a-getline.$(OBJEXT)
+@GL_COND_OBJ_ISWBLANK_TRUE@am__objects_7 =  \
 @GL_COND_OBJ_ISWBLANK_TRUE@	libgnu_a-iswblank.$(OBJEXT)
-@GL_COND_OBJ_ISWDIGIT_TRUE@am__objects_6 =  \
+@GL_COND_OBJ_ISWDIGIT_TRUE@am__objects_8 =  \
 @GL_COND_OBJ_ISWDIGIT_TRUE@	libgnu_a-iswdigit.$(OBJEXT)
-@GL_COND_OBJ_ISWPUNCT_TRUE@am__objects_7 =  \
+@GL_COND_OBJ_ISWPUNCT_TRUE@am__objects_9 =  \
 @GL_COND_OBJ_ISWPUNCT_TRUE@	libgnu_a-iswpunct.$(OBJEXT)
-@GL_COND_OBJ_ISWXDIGIT_TRUE@am__objects_8 =  \
+@GL_COND_OBJ_ISWXDIGIT_TRUE@am__objects_10 =  \
 @GL_COND_OBJ_ISWXDIGIT_TRUE@	libgnu_a-iswxdigit.$(OBJEXT)
-@GL_COND_OBJ_LOCALECONV_TRUE@am__objects_9 =  \
+@GL_COND_OBJ_LOCALECONV_TRUE@am__objects_11 =  \
 @GL_COND_OBJ_LOCALECONV_TRUE@	libgnu_a-localeconv.$(OBJEXT)
-@GL_COND_OBJ_MBRTOC32_TRUE@am__objects_10 =  \
+@GL_COND_OBJ_MBRTOC32_TRUE@am__objects_12 =  \
 @GL_COND_OBJ_MBRTOC32_TRUE@	libgnu_a-mbrtoc32.$(OBJEXT)
-@GL_COND_OBJ_MBRTOWC_TRUE@am__objects_11 = libgnu_a-mbrtowc.$(OBJEXT)
-@GL_COND_OBJ_MBSINIT_TRUE@am__objects_12 = libgnu_a-mbsinit.$(OBJEXT)
-@GL_COND_OBJ_MEMCHR_TRUE@am__objects_13 = libgnu_a-memchr.$(OBJEXT)
-@GL_COND_OBJ_MEMRCHR_TRUE@am__objects_14 = libgnu_a-memrchr.$(OBJEXT)
-@GL_COND_OBJ_MSVC_INVAL_TRUE@am__objects_15 =  \
+@GL_COND_OBJ_MBRTOWC_TRUE@am__objects_13 = libgnu_a-mbrtowc.$(OBJEXT)
+@GL_COND_OBJ_MBSINIT_TRUE@am__objects_14 = libgnu_a-mbsinit.$(OBJEXT)
+@GL_COND_OBJ_MEMCHR_TRUE@am__objects_15 = libgnu_a-memchr.$(OBJEXT)
+@GL_COND_OBJ_MEMRCHR_TRUE@am__objects_16 = libgnu_a-memrchr.$(OBJEXT)
+@GL_COND_OBJ_MSVC_INVAL_TRUE@am__objects_17 =  \
 @GL_COND_OBJ_MSVC_INVAL_TRUE@	libgnu_a-msvc-inval.$(OBJEXT)
-@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__objects_16 = libgnu_a-msvc-nothrow.$(OBJEXT)
-@GL_COND_OBJ_RAISE_TRUE@am__objects_17 = libgnu_a-raise.$(OBJEXT)
-@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__objects_18 =  \
+@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__objects_18 = libgnu_a-msvc-nothrow.$(OBJEXT)
+@GL_COND_OBJ_RAISE_TRUE@am__objects_19 = libgnu_a-raise.$(OBJEXT)
+@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__objects_20 =  \
 @GL_COND_OBJ_REALLOC_POSIX_TRUE@	libgnu_a-realloc.$(OBJEXT)
-@GL_COND_OBJ_REALLOCARRAY_TRUE@am__objects_19 = libgnu_a-reallocarray.$(OBJEXT)
-@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__objects_20 = libgnu_a-setlocale-lock.$(OBJEXT)
-@GL_COND_OBJ_SIGNBIT3_TRUE@am__objects_21 =  \
+@GL_COND_OBJ_REALLOCARRAY_TRUE@am__objects_21 = libgnu_a-reallocarray.$(OBJEXT)
+@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__objects_22 = libgnu_a-setlocale-lock.$(OBJEXT)
+@GL_COND_OBJ_SIGNBIT3_TRUE@am__objects_23 =  \
 @GL_COND_OBJ_SIGNBIT3_TRUE@	libgnu_a-signbitf.$(OBJEXT) \
 @GL_COND_OBJ_SIGNBIT3_TRUE@	libgnu_a-signbitd.$(OBJEXT) \
 @GL_COND_OBJ_SIGNBIT3_TRUE@	libgnu_a-signbitl.$(OBJEXT)
-@GL_COND_OBJ_STDIO_READ_TRUE@am__objects_22 =  \
+@GL_COND_OBJ_STDIO_READ_TRUE@am__objects_24 =  \
 @GL_COND_OBJ_STDIO_READ_TRUE@	libgnu_a-stdio-read.$(OBJEXT)
-@GL_COND_OBJ_STDIO_WRITE_TRUE@am__objects_23 =  \
+@GL_COND_OBJ_STDIO_WRITE_TRUE@am__objects_25 =  \
 @GL_COND_OBJ_STDIO_WRITE_TRUE@	libgnu_a-stdio-write.$(OBJEXT)
-@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__objects_24 = libgnu_a-stdio-consolesafe.$(OBJEXT)
+@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__objects_26 = libgnu_a-stdio-consolesafe.$(OBJEXT)
 am__dirstamp = $(am__leading_dot)dirstamp
-@LIBUNISTRING_COMPILE_UNICASE_TOLOWER_TRUE@am__objects_25 = unicase/libgnu_a-tolower.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALNUM_TRUE@am__objects_26 = unictype/libgnu_a-ctype_alnum.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALPHA_TRUE@am__objects_27 = unictype/libgnu_a-ctype_alpha.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_BLANK_TRUE@am__objects_28 = unictype/libgnu_a-ctype_blank.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_CNTRL_TRUE@am__objects_29 = unictype/libgnu_a-ctype_cntrl.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_DIGIT_TRUE@am__objects_30 = unictype/libgnu_a-ctype_digit.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_GRAPH_TRUE@am__objects_31 = unictype/libgnu_a-ctype_graph.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_LOWER_TRUE@am__objects_32 = unictype/libgnu_a-ctype_lower.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PRINT_TRUE@am__objects_33 = unictype/libgnu_a-ctype_print.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PUNCT_TRUE@am__objects_34 = unictype/libgnu_a-ctype_punct.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_SPACE_TRUE@am__objects_35 = unictype/libgnu_a-ctype_space.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_UPPER_TRUE@am__objects_36 = unictype/libgnu_a-ctype_upper.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_XDIGIT_TRUE@am__objects_37 = unictype/libgnu_a-ctype_xdigit.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNIWIDTH_WIDTH_TRUE@am__objects_38 = uniwidth/libgnu_a-width.$(OBJEXT)
-@GL_COND_OBJ_WCWIDTH_TRUE@am__objects_39 = libgnu_a-wcwidth.$(OBJEXT)
-@GL_COND_OBJ_WRITE_TRUE@am__objects_40 = libgnu_a-write.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICASE_TOLOWER_TRUE@am__objects_27 = unicase/libgnu_a-tolower.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALNUM_TRUE@am__objects_28 = unictype/libgnu_a-ctype_alnum.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALPHA_TRUE@am__objects_29 = unictype/libgnu_a-ctype_alpha.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_BLANK_TRUE@am__objects_30 = unictype/libgnu_a-ctype_blank.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_CNTRL_TRUE@am__objects_31 = unictype/libgnu_a-ctype_cntrl.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_DIGIT_TRUE@am__objects_32 = unictype/libgnu_a-ctype_digit.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_GRAPH_TRUE@am__objects_33 = unictype/libgnu_a-ctype_graph.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_LOWER_TRUE@am__objects_34 = unictype/libgnu_a-ctype_lower.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PRINT_TRUE@am__objects_35 = unictype/libgnu_a-ctype_print.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PUNCT_TRUE@am__objects_36 = unictype/libgnu_a-ctype_punct.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_SPACE_TRUE@am__objects_37 = unictype/libgnu_a-ctype_space.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_UPPER_TRUE@am__objects_38 = unictype/libgnu_a-ctype_upper.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_XDIGIT_TRUE@am__objects_39 = unictype/libgnu_a-ctype_xdigit.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNIWIDTH_WIDTH_TRUE@am__objects_40 = uniwidth/libgnu_a-width.$(OBJEXT)
+@GL_COND_OBJ_WCWIDTH_TRUE@am__objects_41 = libgnu_a-wcwidth.$(OBJEXT)
+@GL_COND_OBJ_WRITE_TRUE@am__objects_42 = libgnu_a-write.$(OBJEXT)
 am_libgnu_a_OBJECTS = libgnu_a-c-ctype.$(OBJEXT) \
 	libgnu_a-c32isalnum.$(OBJEXT) libgnu_a-c32isalpha.$(OBJEXT) \
 	libgnu_a-c32isblank.$(OBJEXT) libgnu_a-c32iscntrl.$(OBJEXT) \
@@ -334,34 +343,35 @@ am_libgnu_a_OBJECTS = libgnu_a-c-ctype.$(OBJEXT) \
 	libgnu_a-c32tolower.$(OBJEXT) libgnu_a-c32width.$(OBJEXT) \
 	$(am__objects_1) $(am__objects_2) $(am__objects_3) \
 	$(am__objects_4) libgnu_a-full-write.$(OBJEXT) \
+	$(am__objects_5) $(am__objects_6) \
 	libgnu_a-hard-locale.$(OBJEXT) libgnu_a-ialloc.$(OBJEXT) \
-	$(am__objects_5) $(am__objects_6) $(am__objects_7) \
-	$(am__objects_8) libgnu_a-localcharset.$(OBJEXT) \
-	$(am__objects_9) libgnu_a-math.$(OBJEXT) \
+	$(am__objects_7) $(am__objects_8) $(am__objects_9) \
+	$(am__objects_10) libgnu_a-localcharset.$(OBJEXT) \
+	$(am__objects_11) libgnu_a-math.$(OBJEXT) \
 	libgnu_a-mbchar.$(OBJEXT) libgnu_a-mbiter-aux.$(OBJEXT) \
-	libgnu_a-mbiterf.$(OBJEXT) $(am__objects_10) $(am__objects_11) \
-	$(am__objects_12) libgnu_a-mbsnlen.$(OBJEXT) \
-	libgnu_a-mbszero.$(OBJEXT) $(am__objects_13) \
-	libgnu_a-memeq.$(OBJEXT) $(am__objects_14) $(am__objects_15) \
-	$(am__objects_16) libgnu_a-printf-frexp.$(OBJEXT) \
-	libgnu_a-printf-frexpl.$(OBJEXT) $(am__objects_17) \
-	$(am__objects_18) $(am__objects_19) \
+	libgnu_a-mbiterf.$(OBJEXT) $(am__objects_12) $(am__objects_13) \
+	$(am__objects_14) libgnu_a-mbsnlen.$(OBJEXT) \
+	libgnu_a-mbszero.$(OBJEXT) $(am__objects_15) \
+	libgnu_a-memeq.$(OBJEXT) $(am__objects_16) $(am__objects_17) \
+	$(am__objects_18) libgnu_a-printf-frexp.$(OBJEXT) \
+	libgnu_a-printf-frexpl.$(OBJEXT) $(am__objects_19) \
+	$(am__objects_20) $(am__objects_21) \
 	libgnu_a-safe-write.$(OBJEXT) \
-	libgnu_a-setlocale_null.$(OBJEXT) $(am__objects_20) \
-	libgnu_a-setlocale_null-unlocked.$(OBJEXT) $(am__objects_21) \
-	$(am__objects_22) $(am__objects_23) $(am__objects_24) \
+	libgnu_a-setlocale_null.$(OBJEXT) $(am__objects_22) \
+	libgnu_a-setlocale_null-unlocked.$(OBJEXT) $(am__objects_23) \
+	$(am__objects_24) $(am__objects_25) $(am__objects_26) \
 	libgnu_a-stdlib.$(OBJEXT) libgnu_a-streq.$(OBJEXT) \
 	libgnu_a-string-buffer.$(OBJEXT) \
 	libgnu_a-string-buffer-printf.$(OBJEXT) \
 	libgnu_a-string-desc.$(OBJEXT) \
-	libgnu_a-string-desc-contains.$(OBJEXT) $(am__objects_25) \
-	$(am__objects_26) $(am__objects_27) $(am__objects_28) \
-	$(am__objects_29) $(am__objects_30) $(am__objects_31) \
-	$(am__objects_32) $(am__objects_33) $(am__objects_34) \
-	$(am__objects_35) $(am__objects_36) $(am__objects_37) \
-	libgnu_a-unistd.$(OBJEXT) $(am__objects_38) \
+	libgnu_a-string-desc-contains.$(OBJEXT) $(am__objects_27) \
+	$(am__objects_28) $(am__objects_29) $(am__objects_30) \
+	$(am__objects_31) $(am__objects_32) $(am__objects_33) \
+	$(am__objects_34) $(am__objects_35) $(am__objects_36) \
+	$(am__objects_37) $(am__objects_38) $(am__objects_39) \
+	libgnu_a-unistd.$(OBJEXT) $(am__objects_40) \
 	libgnu_a-vsnzprintf.$(OBJEXT) libgnu_a-wctype-h.$(OBJEXT) \
-	$(am__objects_39) $(am__objects_40) libgnu_a-xsize.$(OBJEXT)
+	$(am__objects_41) $(am__objects_42) libgnu_a-xsize.$(OBJEXT)
 libgnu_a_OBJECTS = $(am_libgnu_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -398,6 +408,8 @@ am__depfiles_remade = ./$(DEPDIR)/libgnu_a-asnprintf.Po \
 	./$(DEPDIR)/libgnu_a-free.Po ./$(DEPDIR)/libgnu_a-frexp.Po \
 	./$(DEPDIR)/libgnu_a-frexpl.Po ./$(DEPDIR)/libgnu_a-fseterr.Po \
 	./$(DEPDIR)/libgnu_a-full-write.Po \
+	./$(DEPDIR)/libgnu_a-getdelim.Po \
+	./$(DEPDIR)/libgnu_a-getline.Po \
 	./$(DEPDIR)/libgnu_a-hard-locale.Po \
 	./$(DEPDIR)/libgnu_a-ialloc.Po ./$(DEPDIR)/libgnu_a-isnan.Po \
 	./$(DEPDIR)/libgnu_a-isnand.Po ./$(DEPDIR)/libgnu_a-isnanf.Po \
@@ -2195,25 +2207,26 @@ libgnu_a_SOURCES = c-ctype.h c-ctype.c c32isalnum.c c32isalpha.c \
 	c32islower.c c32isprint.c c32ispunct.c c32isspace.c \
 	c32isupper.c c32isxdigit.c c32tolower.c c32width.c \
 	$(am__append_1) $(am__append_2) $(am__append_3) \
-	$(am__append_4) full-write.h full-write.c hard-locale.c \
-	ialloc.c idx.h $(am__append_5) $(am__append_6) $(am__append_7) \
-	$(am__append_8) localcharset.c $(am__append_9) math.c mbchar.c \
-	mbiter-aux.h mbiter-aux.c mbiterf.h mbiterf.c $(am__append_10) \
-	$(am__append_11) $(am__append_12) mbsnlen.c mbszero.c \
-	$(am__append_13) memeq.c $(am__append_14) minmax.h \
-	$(am__append_15) $(am__append_16) printf-frexp.c \
-	printf-frexpl.c $(am__append_17) $(am__append_18) \
-	$(am__append_19) safe-write.c setlocale_null.c \
-	$(am__append_20) setlocale_null-unlocked.c $(am__append_21) \
-	size_max.h $(am__append_22) $(am__append_23) $(am__append_24) \
+	$(am__append_4) full-write.h full-write.c $(am__append_5) \
+	$(am__append_6) hard-locale.c ialloc.c idx.h $(am__append_7) \
+	$(am__append_8) $(am__append_9) $(am__append_10) \
+	localcharset.c $(am__append_11) math.c mbchar.c mbiter-aux.h \
+	mbiter-aux.c mbiterf.h mbiterf.c $(am__append_12) \
+	$(am__append_13) $(am__append_14) mbsnlen.c mbszero.c \
+	$(am__append_15) memeq.c $(am__append_16) minmax.h \
+	$(am__append_17) $(am__append_18) printf-frexp.c \
+	printf-frexpl.c $(am__append_19) $(am__append_20) \
+	$(am__append_21) safe-write.c setlocale_null.c \
+	$(am__append_22) setlocale_null-unlocked.c $(am__append_23) \
+	size_max.h $(am__append_24) $(am__append_25) $(am__append_26) \
 	stdlib.c streq.c string-buffer.c string-buffer-printf.c \
-	string-desc.c string-desc-contains.c $(am__append_25) \
-	$(am__append_26) $(am__append_27) $(am__append_28) \
-	$(am__append_29) $(am__append_30) $(am__append_31) \
-	$(am__append_32) $(am__append_33) $(am__append_34) \
-	$(am__append_35) $(am__append_36) $(am__append_37) unistd.c \
-	$(am__append_38) vsnzprintf.c wctype-h.c $(am__append_39) \
-	$(am__append_40) xsize.h xsize.c
+	string-desc.c string-desc-contains.c $(am__append_27) \
+	$(am__append_28) $(am__append_29) $(am__append_30) \
+	$(am__append_31) $(am__append_32) $(am__append_33) \
+	$(am__append_34) $(am__append_35) $(am__append_36) \
+	$(am__append_37) $(am__append_38) $(am__append_39) unistd.c \
+	$(am__append_40) vsnzprintf.c wctype-h.c $(am__append_41) \
+	$(am__append_42) xsize.h xsize.c
 libgnu_a_CFLAGS = $(AM_CFLAGS) $(GL_CFLAG_GNULIB_WARNINGS) $(GL_CFLAG_ALLOW_WARNINGS)
 libgnu_a_LIBADD = $(gl_libgnu_LIBOBJS)
 libgnu_a_DEPENDENCIES = $(gl_libgnu_LIBOBJS)
@@ -2394,6 +2407,8 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgnu_a-frexpl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgnu_a-fseterr.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgnu_a-full-write.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgnu_a-getdelim.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgnu_a-getline.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgnu_a-hard-locale.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgnu_a-ialloc.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgnu_a-isnan.Po@am__quote@ # am--include-marker
@@ -2772,6 +2787,34 @@ libgnu_a-full-write.obj: full-write.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='full-write.c' object='libgnu_a-full-write.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgnu_a_CFLAGS) $(CFLAGS) -c -o libgnu_a-full-write.obj `if test -f 'full-write.c'; then $(CYGPATH_W) 'full-write.c'; else $(CYGPATH_W) '$(srcdir)/full-write.c'; fi`
+
+libgnu_a-getdelim.o: getdelim.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgnu_a_CFLAGS) $(CFLAGS) -MT libgnu_a-getdelim.o -MD -MP -MF $(DEPDIR)/libgnu_a-getdelim.Tpo -c -o libgnu_a-getdelim.o `test -f 'getdelim.c' || echo '$(srcdir)/'`getdelim.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libgnu_a-getdelim.Tpo $(DEPDIR)/libgnu_a-getdelim.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='getdelim.c' object='libgnu_a-getdelim.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgnu_a_CFLAGS) $(CFLAGS) -c -o libgnu_a-getdelim.o `test -f 'getdelim.c' || echo '$(srcdir)/'`getdelim.c
+
+libgnu_a-getdelim.obj: getdelim.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgnu_a_CFLAGS) $(CFLAGS) -MT libgnu_a-getdelim.obj -MD -MP -MF $(DEPDIR)/libgnu_a-getdelim.Tpo -c -o libgnu_a-getdelim.obj `if test -f 'getdelim.c'; then $(CYGPATH_W) 'getdelim.c'; else $(CYGPATH_W) '$(srcdir)/getdelim.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libgnu_a-getdelim.Tpo $(DEPDIR)/libgnu_a-getdelim.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='getdelim.c' object='libgnu_a-getdelim.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgnu_a_CFLAGS) $(CFLAGS) -c -o libgnu_a-getdelim.obj `if test -f 'getdelim.c'; then $(CYGPATH_W) 'getdelim.c'; else $(CYGPATH_W) '$(srcdir)/getdelim.c'; fi`
+
+libgnu_a-getline.o: getline.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgnu_a_CFLAGS) $(CFLAGS) -MT libgnu_a-getline.o -MD -MP -MF $(DEPDIR)/libgnu_a-getline.Tpo -c -o libgnu_a-getline.o `test -f 'getline.c' || echo '$(srcdir)/'`getline.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libgnu_a-getline.Tpo $(DEPDIR)/libgnu_a-getline.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='getline.c' object='libgnu_a-getline.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgnu_a_CFLAGS) $(CFLAGS) -c -o libgnu_a-getline.o `test -f 'getline.c' || echo '$(srcdir)/'`getline.c
+
+libgnu_a-getline.obj: getline.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgnu_a_CFLAGS) $(CFLAGS) -MT libgnu_a-getline.obj -MD -MP -MF $(DEPDIR)/libgnu_a-getline.Tpo -c -o libgnu_a-getline.obj `if test -f 'getline.c'; then $(CYGPATH_W) 'getline.c'; else $(CYGPATH_W) '$(srcdir)/getline.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libgnu_a-getline.Tpo $(DEPDIR)/libgnu_a-getline.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='getline.c' object='libgnu_a-getline.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgnu_a_CFLAGS) $(CFLAGS) -c -o libgnu_a-getline.obj `if test -f 'getline.c'; then $(CYGPATH_W) 'getline.c'; else $(CYGPATH_W) '$(srcdir)/getline.c'; fi`
 
 libgnu_a-hard-locale.o: hard-locale.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgnu_a_CFLAGS) $(CFLAGS) -MT libgnu_a-hard-locale.o -MD -MP -MF $(DEPDIR)/libgnu_a-hard-locale.Tpo -c -o libgnu_a-hard-locale.o `test -f 'hard-locale.c' || echo '$(srcdir)/'`hard-locale.c
@@ -4139,6 +4182,8 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/libgnu_a-frexpl.Po
 	-rm -f ./$(DEPDIR)/libgnu_a-fseterr.Po
 	-rm -f ./$(DEPDIR)/libgnu_a-full-write.Po
+	-rm -f ./$(DEPDIR)/libgnu_a-getdelim.Po
+	-rm -f ./$(DEPDIR)/libgnu_a-getline.Po
 	-rm -f ./$(DEPDIR)/libgnu_a-hard-locale.Po
 	-rm -f ./$(DEPDIR)/libgnu_a-ialloc.Po
 	-rm -f ./$(DEPDIR)/libgnu_a-isnan.Po
@@ -4283,6 +4328,8 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/libgnu_a-frexpl.Po
 	-rm -f ./$(DEPDIR)/libgnu_a-fseterr.Po
 	-rm -f ./$(DEPDIR)/libgnu_a-full-write.Po
+	-rm -f ./$(DEPDIR)/libgnu_a-getdelim.Po
+	-rm -f ./$(DEPDIR)/libgnu_a-getline.Po
 	-rm -f ./$(DEPDIR)/libgnu_a-hard-locale.Po
 	-rm -f ./$(DEPDIR)/libgnu_a-ialloc.Po
 	-rm -f ./$(DEPDIR)/libgnu_a-isnan.Po

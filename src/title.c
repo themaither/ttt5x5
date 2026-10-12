@@ -1,3 +1,5 @@
+#include <config.h>
+
 #include <raylib.h>
 #include <stdio.h>
 #include <btn.h>
