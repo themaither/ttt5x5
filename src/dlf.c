@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <lib/string-buffer.h>
 
 static FILE *source;
 static FILE *sink;
@@ -127,6 +128,32 @@ dlgets ()
     return strtok_r (line, " \t\r\n", &saveptr);
   else
     return strtok_r (NULL, " \t\r\n", &saveptr);
+}
+
+const char *
+dlrest ()
+{
+  static struct string_buffer sb;
+  static char *buffer = NULL;
+
+  const char *field = NULL;
+  int count = 0;
+
+  sb_init (&sb);
+
+  while (field = dlgets ())
+    {
+      if (count != 0)
+        sb_append1 (&sb, ' ');
+
+      sb_append_c (&sb, field);
+      ++count;
+    }
+
+  if (field)
+    free (buffer);
+
+  buffer = sb_dupfree_c (&sb);
 }
 
 int

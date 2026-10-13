@@ -16,9 +16,9 @@ eval ()
 
   field = dlgets ();
 
-  if (0 == strcmp (field, "print"))
+  if (0 == strcmp (field, "log"))
     {
-      field = dlgets ();
+      field = dlrest ();
       dlf_errorf ("%s\n", field);
     }
   else if (0 == strcmp (field, "completed_setid"))

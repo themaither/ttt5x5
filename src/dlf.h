@@ -30,6 +30,7 @@ void dfl_setsourcename (const char *);
 FILE *dlf_source ();
 int dlnext ();
 const char * dlgets ();
+const char * dlrest ();
 int dlf_ln ();
 int dlf_fn ();
 void dlf_errorf (const char *fmt, ...);
