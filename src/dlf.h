@@ -26,11 +26,13 @@ void dlputi (int);
 void dline ();
 
 void dlf_setsource (FILE *f);
+void dfl_setsourcename (const char *);
 FILE *dlf_source ();
 int dlnext ();
 const char * dlgets ();
 int dlf_ln ();
 int dlf_fn ();
+void dlf_errorf (const char *fmt, ...);
 
 #ifdef __cplusplus
 }

@@ -18,7 +18,8 @@ ttt5x5_SOURCES = src/ttt5x5.c \
                  src/draw_cursor.c src/draw_cursor.h \
                  src/title.c src/title.h \
                  src/dlf.c src/dlf.h \
-                 src/strdupf.c src/strdupf.h
+                 src/strdupf.c src/strdupf.h \
+                 src/gamescript.c src/gamescript.h
 
 ttt5x5_CFLAGS = -I${srcdir}/src -Ilib ${RAYLIB_CFLAGS} -g \
                 -DPKGDATADIR="\"${pkgdatadir}\"" # would probably fail 99% time

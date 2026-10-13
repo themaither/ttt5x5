@@ -11,12 +11,11 @@
 #include <btn.h>
 #include <dlf.h>
 #include <config.h>
+#include <gamescript.h>
 
 int
 main (int argc, char **argv)
 {
-  int whaton = 2;
-
   dlf_init ();
   completed_init ();
   SetTargetFPS (60);
@@ -27,6 +26,8 @@ main (int argc, char **argv)
   title_init ();
   session_init ();
   picker_init  ();
+
+  int whaton = 2;
 
   while (!WindowShouldClose ())
     {

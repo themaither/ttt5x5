@@ -13,12 +13,14 @@ static int line_number = 0;
 static int ifc = 0;
 
 static char *saveptr = NULL;
+static char *source_name = NULL;
 
 void
 dlf_init ()
 {
   sink = stdout;
   source = stdin;
+  source_name = strdup ("<stdin>");
 }
 
 void
@@ -62,6 +64,13 @@ dlf_setsink (FILE *f)
 {
   sink = f;
   fc = 0;
+}
+
+void
+dfl_setsourcename (const char *name)
+{
+  free (source_name);
+  source_name = strdup (name);
 }
 
 FILE *
@@ -130,4 +139,19 @@ int
 dlf_fn ()
 {
   return ifc;
+}
+
+void
+dlf_errorf (const char *fmt, ...)
+{
+  va_list args;
+  va_start (args, fmt);
+
+  fprintf (stderr,
+          "%s:%d:F%d: ",
+          source_name, dlf_ln (), dlf_fn ());
+
+  vfprintf (stderr, fmt, args);
+
+  va_end (args);
 }
