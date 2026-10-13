@@ -29,10 +29,20 @@ project with all game assets is located in assets/layout.svg file
 
 # How to cross-compile for Windows/NT
 
-Add `--host=x86_64-w64-mingw32` while configuring (change x86_64 to whatever
+Add `--host=x86_64-w64-mingw32` to ./configure.sh (change x86_64 to whatever
 cpu architecture you want), then compile as usual.  After that, find all
 required dlls and put it into some directory included in dll search paths 
 (same directory as exe would be good enough).
+
+For somewhat native experience you can try to add
+`--prefix="C:/Program Files/ttt5x5"`.  Then, when installing add
+`DESTDIR=<Any path you want>` to `make install`.  Move 
+`<Any path you want>/ttt5x5` to `C:\\Program Files`.  This is incredibly cheesy
+because we use forward slashes everywhere, which Windows doesn't always like.
+
+With this installation, save files are read from working directory, because
+there is no XDG_DATA_HOME and probably no HOME environment variables.  If you
+want, you can add them to your system settings and be good.
 
 # How to run (and compile) on Windows/NT?
 
