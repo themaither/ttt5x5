@@ -111,6 +111,9 @@ completed (void)
 void
 complete (void)
 {
+  if (completed ())
+    return;
+
   mem_complete ();
   io_complete ();
 }
@@ -149,7 +152,6 @@ eval (FILE *f)
         fprintf (stderr,
                 "%s:%d:F%d: unrecognized '%s'\n",
                 savepath, dlf_ln (), dlf_fn (), field);
-        return;
       }
   }
 }
