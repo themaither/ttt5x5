@@ -1,5 +1,9 @@
 Simple reimplementation of 5x5 game found in GNU Emacs using C and Raylib.
 
+![Screenshot of the game](doc/Screenshot1.png)
+
+![Another screenshot of the game](doc/Screenshot2.png)
+
 # How to install (and compile)?
 
 Follow instructions in INSTALL file.  You need only first 11 lines
