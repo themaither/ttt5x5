@@ -6,11 +6,12 @@
 #include <stdlib.h>
 #include <dlf.h>
 #include <strdupf.h>
+#include <gamescript.h>
 
 static int db[128];
 static int id;
 
-static void eval (FILE *);
+static void evalf (FILE *);
 
 static char *savepath = NULL;
 static char *ttt5x5path = NULL;
@@ -54,7 +55,7 @@ io_init ()
       return;
     }
 
-  eval (file);
+  evalf (file);
 }
 
 static void
@@ -119,37 +120,14 @@ complete (void)
 }
 
 static void
-eval (FILE *f)
+evalf (FILE *f)
 {
-  return;
   int value;
   const char *field = NULL;
   dlf_setsource (f);
 
-  while (-1 != dlnext ())
+  while (-1 != eval ())
   {
-    field = dlgets ();
-
-    if (0 == strcmp (field, "completed_setid"))
-      {
-        field = dlgets ();
-
-        if (sscanf (field, "%d", &value) != 1)
-          {
-            dlf_errorf ("expected number after 'completed_setid'\n");
-            return;
-          }
-
-        completed_setid (value);
-      }
-    else if (0 == strcmp (field, "complete"))
-      {
-        mem_complete ();
-      }
-    else
-      {
-        dlf_errorf ("unrecognized '%s'\n", field);
-      }
   }
 }
 

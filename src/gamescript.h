@@ -11,8 +11,8 @@ extern "C"
 {
 #endif
 
-/* reads line from dlf source */
-void eval ();
+/* reads line from dlf source, returns -1 on eof */
+int eval ();
 
 #ifdef __cplusplus
 }

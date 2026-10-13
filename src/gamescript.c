@@ -5,10 +5,11 @@
 #include <string.h>
 #include <completed.h>
 
-void
+int
 eval ()
 {
-  dlnext ();
+  if (-1 == dlnext ())
+    return -1;
 
   int value;
   const char *field = NULL;
@@ -27,7 +28,7 @@ eval ()
       if (sscanf (field, "%d", &value) != 1)
         {
           dlf_errorf ("expected number after 'completed_setid'\n");
-          return;
+          return 0;
         }
 
       completed_setid (value);
@@ -40,4 +41,6 @@ eval ()
     {
       dlf_errorf ("unrecognized '%s'\n", field);
     }
+
+  return 1;
 }
