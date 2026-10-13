@@ -16,6 +16,8 @@ void completed_setid (int);
 int  completed (void);
 void complete  (void);
 
+void mem_complete (void);
+
 #ifdef __cplusplus
 }
 #endif

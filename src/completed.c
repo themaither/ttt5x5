@@ -25,7 +25,7 @@ mem_init ()
     db[i] = 0;
 }
 
-static void
+void
 mem_complete ()
 {
   db[id] = 1;
@@ -121,6 +121,7 @@ complete (void)
 static void
 eval (FILE *f)
 {
+  return;
   int value;
   const char *field = NULL;
   dlf_setsource (f);
@@ -135,9 +136,7 @@ eval (FILE *f)
 
         if (sscanf (field, "%d", &value) != 1)
           {
-            fprintf (stderr,
-                    "%s:%d:F%d: expected number after 'completed_setid'\n",
-                    savepath, dlf_ln (), dlf_fn ());
+            dlf_errorf ("expected number after 'completed_setid'\n");
             return;
           }
 
@@ -149,9 +148,7 @@ eval (FILE *f)
       }
     else
       {
-        fprintf (stderr,
-                "%s:%d:F%d: unrecognized '%s'\n",
-                savepath, dlf_ln (), dlf_fn (), field);
+        dlf_errorf ("unrecognized '%s'\n", field);
       }
   }
 }

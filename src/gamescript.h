@@ -11,9 +11,7 @@ extern "C"
 {
 #endif
 
-void gamescript_register (const char *command, void (*fn)());
-
-/* reads from dlf stream */
+/* reads line from dlf source */
 void eval ();
 
 #ifdef __cplusplus
