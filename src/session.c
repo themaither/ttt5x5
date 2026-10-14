@@ -136,6 +136,9 @@ session_update (void)
         {
           leaving = 1;
           _5x5_resetgame ();
+#ifdef BUILDLEVEL
+          printf ("break;\n");
+#endif
         }
     }
 
@@ -175,7 +178,9 @@ session_update (void)
       if (IsBtnPressedRN ())
         {
           _5x5_interact (player_x, player_y);
-          // printf ("_5x5_interact (%d, %d);\n", player_x, player_y);
+#ifdef BUILDLEVEL
+          printf ("_5x5_interact (%d, %d);\n", player_x, player_y);
+#endif
           ++moves;
 
           press_x = player_x;

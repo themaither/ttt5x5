@@ -582,11 +582,275 @@ loadlevel (int id)
       _5x5_interact (4, 4);
       _5x5_interact (4, 0);
       break;
+
+    case 43:
+      _5x5_interact (2, 1);
+      _5x5_interact (2, 2);
+      _5x5_interact (2, 3);
+      _5x5_interact (2, 0);
+      _5x5_interact (1, 1);
+      _5x5_interact (0, 2);
+      _5x5_interact (1, 3);
+      _5x5_interact (2, 4);
+      _5x5_interact (3, 3);
+      _5x5_interact (4, 2);
+      _5x5_interact (3, 1);
+      _5x5_interact (4, 0);
+      _5x5_interact (4, 4);
+      _5x5_interact (0, 4);
+      _5x5_interact (0, 0);
+      _5x5_interact (2, 3);
+      _5x5_interact (2, 4);
+      _5x5_interact (1, 4);
+      _5x5_interact (1, 3);
+      _5x5_interact (3, 2);
+      _5x5_interact (3, 1);
+      _5x5_interact (4, 1);
+      _5x5_interact (4, 2);
+      _5x5_interact (4, 4);
+      _5x5_interact (3, 3);
+      _5x5_interact (2, 2);
+      _5x5_interact (1, 1);
+      _5x5_interact (1, 0);
+      _5x5_interact (0, 0);
+      _5x5_interact (0, 1);
+      break;
+
+    case 44:
+      _5x5_interact (1, 2);
+      _5x5_interact (1, 3);
+      _5x5_interact (1, 4);
+      _5x5_interact (3, 4);
+      _5x5_interact (3, 3);
+      _5x5_interact (3, 2);
+      _5x5_interact (2, 1);
+      break;
+
+    case 45:
+      _5x5_interact (1, 1);
+      _5x5_interact (0, 1);
+      _5x5_interact (1, 3);
+      _5x5_interact (2, 3);
+      _5x5_interact (3, 3);
+      _5x5_interact (3, 1);
+      _5x5_interact (4, 1);
+      break;
+    case 46:
+      _5x5_interact (3, 1);
+      _5x5_interact (3, 2);
+      _5x5_interact (3, 3);
+      _5x5_interact (1, 3);
+      _5x5_interact (0, 3);
+      _5x5_interact (0, 1);
+      _5x5_interact (1, 1);
+      break;
+    case 47:
+      _5x5_interact (3, 3);
+      _5x5_interact (3, 4);
+      _5x5_interact (4, 4);
+      _5x5_interact (4, 3);
+      _5x5_interact (0, 3);
+      _5x5_interact (0, 4);
+      _5x5_interact (0, 1);
+      _5x5_interact (0, 0);
+      _5x5_interact (1, 0);
+      _5x5_interact (1, 1);
+      _5x5_interact (4, 1);
+      _5x5_interact (4, 0);
+      break;
+    case 48:
+      _5x5_interact (3, 1);
+      _5x5_interact (1, 1);
+      _5x5_interact (1, 3);
+      _5x5_interact (2, 3);
+      _5x5_interact (3, 3);
+      break;
+    case 49:
+      _5x5_interact (4, 0);
+      _5x5_interact (4, 1);
+      _5x5_interact (2, 1);
+      _5x5_interact (2, 0);
+      _5x5_interact (2, 3);
+      _5x5_interact (2, 4);
+      _5x5_interact (4, 4);
+      _5x5_interact (4, 3);
+      _5x5_interact (3, 2);
+      _5x5_interact (4, 2);
+      break;
+    case 50:
+      _5x5_interact (0, 4);
+      _5x5_interact (2, 4);
+      _5x5_interact (4, 4);
+      _5x5_interact (3, 2);
+      _5x5_interact (1, 2);
+      _5x5_interact (1, 0);
+      _5x5_interact (1, 1);
+      _5x5_interact (3, 1);
+      _5x5_interact (3, 0);
+      break;
+
+    case 51:
+      _5x5_interact (3, 3);
+      _5x5_interact (4, 4);
+      _5x5_interact (2, 4);
+      _5x5_interact (2, 3);
+      _5x5_interact (2, 1);
+      _5x5_interact (2, 0);
+      _5x5_interact (1, 1);
+      _5x5_interact (0, 0);
+      break;
+    case 52:
+      _5x5_interact (1, 1);
+      _5x5_interact (0, 0);
+      _5x5_interact (2, 2);
+      _5x5_interact (4, 4);
+      _5x5_interact (1, 3);
+      _5x5_interact (1, 4);
+      _5x5_interact (0, 4);
+      _5x5_interact (0, 3);
+      _5x5_interact (3, 1);
+      _5x5_interact (3, 0);
+      _5x5_interact (4, 0);
+      _5x5_interact (4, 1);
+      break;
+    case 53:
+      _5x5_interact (2, 0);
+      _5x5_interact (1, 1);
+      _5x5_interact (0, 2);
+      _5x5_interact (1, 3);
+      _5x5_interact (2, 4);
+      _5x5_interact (3, 3);
+      _5x5_interact (4, 2);
+      _5x5_interact (3, 1);
+      _5x5_interact (4, 0);
+      _5x5_interact (4, 4);
+      _5x5_interact (0, 4);
+      _5x5_interact (0, 0);
+      _5x5_interact (1, 1);
+      _5x5_interact (1, 0);
+      _5x5_interact (3, 0);
+      _5x5_interact (3, 1);
+      _5x5_interact (3, 3);
+      _5x5_interact (3, 4);
+      _5x5_interact (1, 4);
+      _5x5_interact (1, 3);
+      break;
+    case 54:
+      _5x5_interact (0, 1);
+      _5x5_interact (1, 1);
+      _5x5_interact (2, 1);
+      _5x5_interact (3, 3);
+      _5x5_interact (4, 3);
+      _5x5_interact (2, 3);
+      _5x5_interact (4, 0);
+      _5x5_interact (0, 4);
+      break;
+    case 55:
+      _5x5_interact (1, 2);
+      _5x5_interact (1, 3);
+      _5x5_interact (3, 3);
+      _5x5_interact (3, 2);
+      _5x5_interact (2, 1);
+      _5x5_interact (2, 0);
+      _5x5_interact (2, 4);
+      _5x5_interact (0, 4);
+      _5x5_interact (4, 4);
+      break;
+    case 56:
+      _5x5_interact (3, 1);
+      _5x5_interact (4, 1);
+      _5x5_interact (4, 2);
+      _5x5_interact (4, 3);
+      _5x5_interact (4, 4);
+      _5x5_interact (1, 3);
+      _5x5_interact (0, 3);
+      _5x5_interact (0, 2);
+      _5x5_interact (0, 1);
+      _5x5_interact (0, 0);
+      _5x5_interact (2, 3);
+      _5x5_interact (2, 4);
+      _5x5_interact (1, 4);
+      _5x5_interact (1, 3);
+      _5x5_interact (3, 2);
+      _5x5_interact (3, 1);
+      _5x5_interact (4, 1);
+      _5x5_interact (4, 2);
+      _5x5_interact (4, 4);
+      _5x5_interact (3, 3);
+      _5x5_interact (2, 2);
+      _5x5_interact (1, 1);
+      _5x5_interact (1, 0);
+      _5x5_interact (0, 0);
+      _5x5_interact (0, 1);
+      break;
+    case 57:
+      _5x5_interact (3, 0);
+      _5x5_interact (3, 1);
+      _5x5_interact (4, 1);
+      _5x5_interact (4, 3);
+      _5x5_interact (3, 3);
+      _5x5_interact (3, 4);
+      _5x5_interact (1, 4);
+      _5x5_interact (1, 3);
+      _5x5_interact (0, 3);
+      _5x5_interact (0, 1);
+      _5x5_interact (1, 1);
+      _5x5_interact (1, 0);
+      _5x5_interact (4, 0);
+      _5x5_interact (3, 1);
+      _5x5_interact (2, 2);
+      _5x5_interact (1, 3);
+      _5x5_interact (0, 4);
+      break;
+    case 58:
+      _5x5_interact (0, 1);
+      _5x5_interact (1, 1);
+      _5x5_interact (2, 1);
+      _5x5_interact (3, 1);
+      _5x5_interact (4, 1);
+      _5x5_interact (4, 3);
+      _5x5_interact (3, 3);
+      _5x5_interact (1, 3);
+      _5x5_interact (0, 3);
+      break;
+    case 59:
+      _5x5_interact (3, 0);
+      _5x5_interact (2, 1);
+      _5x5_interact (1, 2);
+      _5x5_interact (2, 3);
+      _5x5_interact (3, 4);
+      _5x5_interact (1, 4);
+      _5x5_interact (1, 0);
+      _5x5_interact (2, 0);
+      _5x5_interact (1, 1);
+      _5x5_interact (0, 2);
+      _5x5_interact (1, 3);
+      _5x5_interact (2, 4);
+      _5x5_interact (3, 3);
+      _5x5_interact (4, 2);
+      _5x5_interact (3, 1);
+      _5x5_interact (4, 0);
+      _5x5_interact (4, 4);
+      _5x5_interact (0, 4);
+      _5x5_interact (0, 0);
+      break;
+    case 60:
+      _5x5_interact (3, 1);
+      _5x5_interact (3, 0);
+      _5x5_interact (4, 1);
+      _5x5_interact (1, 1);
+      _5x5_interact (1, 0);
+      _5x5_interact (0, 1);
+      _5x5_interact (0, 4);
+      _5x5_interact (1, 4);
+      _5x5_interact (3, 4);
+      _5x5_interact (4, 4);
+      break;
     }
 }
 
 int
 levelcount (void)
 {
-  return 43;
+  return 60;
 }
