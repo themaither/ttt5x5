@@ -8,7 +8,7 @@ Copyright (C) 2026 TheMaither <themaither@gmail.com> */
 extern "C" {
 #endif
 
-void DrawCursor_init ();
+void DrawCursor_init (void);
 void DrawCursor (int x, int y, int size);
 
 #ifdef __cplusplus

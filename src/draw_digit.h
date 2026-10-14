@@ -8,7 +8,7 @@ Copyright (C) 2026 TheMaither <themaither@gmail.com> */
 extern "C" {
 #endif
 
-void DrawDigit_init ();
+void DrawDigit_init (void);
 void DrawDigit (int digit, int x, int y);
 void DrawNumber3 (int number, int x, int y);
 

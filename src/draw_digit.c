@@ -6,7 +6,7 @@
 static Texture2D digit_textures[10];
 
 void
-DrawDigit_init ()
+DrawDigit_init (void)
 {
   digit_textures[0] = LoadTexture (PKGDATADIR "/digit_0.png");
   digit_textures[1] = LoadTexture (PKGDATADIR "/digit_1.png");

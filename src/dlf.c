@@ -17,7 +17,7 @@ static char *saveptr = NULL;
 static char *source_name = NULL;
 
 void
-dlf_init ()
+dlf_init (void)
 {
   sink = stdout;
   source = stdin;
@@ -93,7 +93,7 @@ dlputi (int n)
 }
 
 void
-dline ()
+dline (void)
 {
   fdline (sink);
 }
@@ -106,13 +106,13 @@ dlf_setsource (FILE *f)
 }
 
 FILE *
-dlf_source ()
+dlf_source (void)
 {
   return source;
 }
 
 int
-dlnext ()
+dlnext (void)
 {
   ifc = 0;
   int result = getline (&line, &n, source);
@@ -122,7 +122,7 @@ dlnext ()
 }
 
 const char *
-dlgets ()
+dlgets (void)
 {
   if (ifc++ == 0)
     return strtok_r (line, " \t\r\n", &saveptr);
@@ -131,7 +131,7 @@ dlgets ()
 }
 
 const char *
-dlrest ()
+dlrest (void)
 {
   static struct string_buffer sb;
   static char *buffer = NULL;
@@ -157,13 +157,13 @@ dlrest ()
 }
 
 int
-dlf_ln ()
+dlf_ln (void)
 {
   return line_number;
 }
 
 int
-dlf_fn ()
+dlf_fn (void)
 {
   return ifc;
 }

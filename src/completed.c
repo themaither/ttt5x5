@@ -20,20 +20,20 @@ static char *command = NULL;
 size_t command_size = 0;
 
 static void
-mem_init ()
+mem_init (void)
 {
   for (size_t i = 0; i < 128; ++i)
     db[i] = 0;
 }
 
 void
-mem_complete ()
+mem_complete (void)
 {
   db[id] = 1;
 }
 
 static void
-io_init ()
+io_init (void)
 {
   const char *xdg = getenv ("XDG_DATA_HOME");
   const char *home = getenv ("HOME");
@@ -59,7 +59,7 @@ io_init ()
 }
 
 static void
-io_complete ()
+io_complete (void)
 {
   FILE *file;
 

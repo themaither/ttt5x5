@@ -5,7 +5,8 @@ Copyright (C) 2026 TheMaither <themaither@gmail.com> */
 #define TITLE_H_INCLUDED
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 void title_init     (void);

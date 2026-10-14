@@ -6,7 +6,7 @@
 #include <completed.h>
 
 int
-eval ()
+eval (void)
 {
   if (-1 == dlnext ())
     return -1;

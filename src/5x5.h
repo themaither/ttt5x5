@@ -5,7 +5,8 @@ Copyright (C) 2026 TheMaither <themaither@gmail.com> */
 #define _5X5_H_INCLUDED
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 /* primary pattern is at index 0 */

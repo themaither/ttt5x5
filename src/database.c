@@ -586,7 +586,7 @@ loadlevel (int id)
 }
 
 int
-levelcount ()
+levelcount (void)
 {
   return 43;
 }

@@ -5,7 +5,8 @@ Copyright (C) 2026 TheMaither <themaither@gmail.com> */
 #define BTN_H_INCLUDED
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 /* should be called every frame before IsBtnPressed and IsBtnDown */

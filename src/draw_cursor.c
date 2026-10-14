@@ -8,7 +8,7 @@ static Texture2D bl_texture;
 static Texture2D br_texture;
 
 void
-DrawCursor_init ()
+DrawCursor_init (void)
 {
   tl_texture = LoadTexture (PKGDATADIR "/selection_tl.png");
   tr_texture = LoadTexture (PKGDATADIR "/selection_tr.png");
