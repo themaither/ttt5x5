@@ -9,3 +9,13 @@ build
 raylib
 lib
 m4
+missing
+Makefile.in
+install-sh
+depcomp
+configure
+config.h.in
+config.sub
+config.guess
+compile
+aclocal.m4
