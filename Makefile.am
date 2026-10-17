@@ -34,6 +34,17 @@ ttt5x5_LDADD = -lm $(HARD_LOCALE_LIB) $(LIBC32CONV) \
 
 ttt5x5_DEPENDENCIES = ${RAYLIB_DEPENDENCIES}
 
+raylib/raylib/libraylib.a :
+	${EMCMAKE_CMAKE} ${srcdir}/raylib -B ./raylib
+	cd ./raylib; make
+
+www :
+	install -D ttt5x5 www/ttt5x5.js
+	install -D ttt5x5.wasm www/ttt5x5.wasm
+	sed 's/{{{ SCRIPT }}}/<script src="ttt5x5.js"><\/script>/' <${srcdir}/raylib/src/shell.html >www/index.html
+
+.PHONY : www
+
 assets.c :
 	echo "" > assets.c
 	echo "" > assets.h
@@ -191,6 +202,3 @@ assets.c :
 	echo "extern unsigned char assets_quit_pressed[];" >> assets.h
 	echo "extern unsigned int assets_quit_pressed_len;" >> assets.h
 
-raylib/raylib/libraylib.a :
-	${EMCMAKE_CMAKE} ${srcdir}/raylib -B ./raylib
-	cd ./raylib; make
