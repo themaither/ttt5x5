@@ -16,16 +16,12 @@
 int
 main (int argc, char **argv)
 {
-  dlf_init ();
-  completed_init ();
   SetTargetFPS (60);
   InitWindow (640, 400, PACKAGE_STRING);
-  DrawField_init ();
-  DrawDigit_init ();
-  DrawCursor_init ();
-  title_init ();
-  session_init ();
-  picker_init  ();
+
+  autodep_title_init ();
+  autodep_session_init ();
+  autodep_picker_init  ();
 
   int whaton = 2;
 

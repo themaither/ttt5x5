@@ -42,6 +42,18 @@ title_init (void)
 }
 
 void
+autodep_title_init (void)
+{
+  static int imported = 0;
+
+  if (imported)
+    return;
+
+  title_init ();
+  imported = 1;
+}
+
+void
 title_update (void)
 {
   {

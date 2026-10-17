@@ -14,6 +14,8 @@ extern "C"
 /* Should be called before any further functions */
 void dlf_init (void);
 
+void autodep_dlf_init (void);
+
 /* Puts a field */
 void fdlputs (FILE *, const char *field);
 

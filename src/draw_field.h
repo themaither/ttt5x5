@@ -9,6 +9,7 @@ extern "C" {
 #endif
 
 void DrawField_init     (void);
+void autodep_DrawField_init (void);
 void DrawField_clear    (void);
 void DrawField_flipall  (void);
 void DrawField_flipat   (int x, int y);

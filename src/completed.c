@@ -98,6 +98,20 @@ completed_init (void)
 }
 
 void
+autodep_completed_init (void)
+{
+  static int imported = 0;
+
+  if (imported)
+    return;
+
+  autodep_dlf_init ();
+
+  completed_init ();
+  imported = 1;
+}
+
+void
 completed_setid (int x)
 {
   id = x;

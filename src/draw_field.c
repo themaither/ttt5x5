@@ -4,6 +4,7 @@
 #include <5x5.h>
 #include <raylib.h>
 #include <assets.h>
+#include <stdio.h>
 
 static Texture2D black48_texture;
 static Texture2D white48_texture;
@@ -45,6 +46,19 @@ DrawField_init (void)
   pattern_i = _5x5_open ();
 
   DrawField_clear ();
+}
+
+void
+autodep_DrawField_init (void)
+{
+  static int imported = 0;
+
+  if (imported)
+    return;
+
+
+  DrawField_init ();
+  imported = 1;
 }
 
 void

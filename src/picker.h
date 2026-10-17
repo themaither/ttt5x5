@@ -10,6 +10,7 @@ extern "C"
 #endif
 
 void picker_init     (void);
+void autodep_picker_init (void);
 void picker_update   (void);
 int  picker_leaving  (void);
 int  picker_starting (void);

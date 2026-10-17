@@ -27,6 +27,18 @@ DrawCursor_init (void)
 }
 
 void
+autodep_DrawCursor_init (void)
+{
+  static int imported = 0;
+
+  if (imported)
+    return;
+
+  DrawCursor_init ();
+  imported = 1;
+}
+
+void
 DrawCursor (int _x, int _y, int size)
 {
   DrawTexture (tl_texture, _x - 4, _y - 4, WHITE);

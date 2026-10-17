@@ -31,6 +31,18 @@ DrawDigit_init (void)
 }
 
 void
+autodep_DrawDigit_init (void)
+{
+  static int imported = 0;
+
+  if (imported)
+    return;
+
+  DrawDigit_init ();
+  imported = 1;
+}
+
+void
 DrawDigit (int digit, int x, int y)
 {
   assert (digit >= 0);

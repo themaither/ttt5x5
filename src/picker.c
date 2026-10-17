@@ -120,6 +120,23 @@ picker_init (void)
 }
 
 void
+autodep_picker_init (void)
+{
+  static int imported = 0;
+
+  if (imported)
+    return;
+
+  autodep_completed_init ();
+  autodep_DrawField_init ();
+  autodep_DrawDigit_init ();
+  autodep_DrawCursor_init ();
+
+  picker_init ();
+  imported = 1;
+}
+
+void
 picker_update (void)
 {
   {

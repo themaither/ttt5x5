@@ -84,6 +84,23 @@ session_init (void)
   moves_texture = LoadTextureFromMemory (assets_moves, assets_moves_len);
 }
 
+void
+autodep_session_init (void)
+{
+  static int imported = 0;
+
+  if (imported)
+    return;
+
+  autodep_completed_init ();
+  autodep_DrawField_init ();
+  autodep_DrawDigit_init ();
+  autodep_DrawCursor_init ();
+
+  session_init ();
+  imported = 1;
+}
+
 int
 session_leaving (void)
 {

@@ -9,6 +9,7 @@ extern "C" {
 #endif
 
 void DrawCursor_init (void);
+void autodep_DrawCursor_init (void);
 void DrawCursor (int x, int y, int size);
 
 #ifdef __cplusplus

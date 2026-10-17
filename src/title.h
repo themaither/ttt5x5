@@ -10,6 +10,7 @@ extern "C"
 #endif
 
 void title_init     (void);
+void autodep_title_init (void);
 void title_update   (void);
 void title_reset    (void);
 

@@ -12,6 +12,7 @@ extern "C"
 extern int session_status;
 
 void session_init    (void);
+void autodep_session_init (void);
 void session_update  (void);
 int  session_leaving (void);
 int  session_reset   (void);

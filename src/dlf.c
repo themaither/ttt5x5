@@ -25,6 +25,18 @@ dlf_init (void)
 }
 
 void
+autodep_dlf_init (void)
+{
+  static int imported = 0;
+
+  if (imported)
+    return;
+
+  dlf_init ();
+  imported = 1;
+}
+
+void
 fdlputs (FILE *f, const char *s)
 {
   if (fc == 0)
