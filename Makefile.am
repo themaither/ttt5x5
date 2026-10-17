@@ -14,8 +14,7 @@ ttt5x5_SOURCES = src/ttt5x5.c \
                  src/btn.c src/btn.h \
                  src/completed.c src/completed.h \
                  src/database.c src/database.h \
-                 src/draw_digit.c src/draw_digit.h \
-                 src/draw_cursor.c src/draw_cursor.h \
+                 src/draw.c src/draw.h \
                  src/title.c src/title.h \
                  src/dlf.c src/dlf.h \
                  src/strdupf.c src/strdupf.h \
@@ -201,4 +200,10 @@ assets.c :
 	xxd -n assets_quit_pressed -i ${srcdir}/assets/quit_pressed.png >>assets.c
 	echo "extern unsigned char assets_quit_pressed[];" >> assets.h
 	echo "extern unsigned int assets_quit_pressed_len;" >> assets.h
+	xxd -n assets_button_hovered -i ${srcdir}/assets/button_hovered.png >>assets.c
+	echo "extern unsigned char assets_button_hovered[];" >> assets.h
+	echo "extern unsigned int assets_button_hovered_len;" >> assets.h
+	xxd -n assets_dejavusans -i ${srcdir}/assets/dejavusans.ttf >>assets.c
+	echo "extern unsigned char assets_dejavusans[];" >> assets.h
+	echo "extern unsigned int assets_dejavusans_len;" >> assets.h
 

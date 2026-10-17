@@ -6,12 +6,21 @@
 #include <title.h>
 #include <completed.h>
 #include <draw_field.h>
-#include <draw_digit.h>
-#include <draw_cursor.h>
+#include <draw.h>
 #include <btn.h>
 #include <dlf.h>
 #include <config.h>
 #include <gamescript.h>
+#include <assets.h>
+
+static Texture2D
+LoadTextureFromMemory (unsigned char *data, int length)
+{
+  Image image = LoadImageFromMemory(".png", data, length);
+  Texture2D texture = LoadTextureFromImage (image);
+  UnloadImage (image);
+  return texture;
+}
 
 int
 main (int argc, char **argv)
@@ -23,7 +32,7 @@ main (int argc, char **argv)
   autodep_session_init ();
   autodep_picker_init  ();
 
-  int whaton = 2;
+  int whaton = 0;
 
   while (!WindowShouldClose ())
     {

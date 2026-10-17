@@ -29,23 +29,23 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
-     inkscape:zoom="0.7071068"
-     inkscape:cx="-304.76301"
-     inkscape:cy="149.90663"
+     inkscape:zoom="2.0000001"
+     inkscape:cx="47.249999"
+     inkscape:cy="-456.49999"
      inkscape:window-width="1920"
      inkscape:window-height="1052"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g68"
+     inkscape:current-layer="layer1"
      showgrid="true">
     <inkscape:grid
        id="grid325"
        units="px"
        originx="0"
        originy="0"
-       spacingx="1"
-       spacingy="1"
+       spacingx="0.5"
+       spacingy="0.5"
        empcolor="#0099e5"
        empopacity="0.30196078"
        color="#0099e5"
@@ -477,6 +477,14 @@
        margin="0"
        bleed="0"
        inkscape:label="quit" />
+    <inkscape:page
+       x="-40"
+       y="-592"
+       width="256"
+       height="256"
+       id="page23"
+       margin="0"
+       bleed="0" />
   </sodipodi:namedview>
   <defs
      id="defs1">
@@ -13489,6 +13497,66 @@
          in2="comp1"
          id="feComposite70" />
     </filter>
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect347-7-9-0"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,7,0,1 @ F,0,0,1,0,7,0,1 @ F,0,0,1,0,7,0,1 @ F,0,0,1,0,7,0,1"
+       radius="7"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect346-6-7-9"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,5.5,0,1 @ F,0,0,1,0,5.5,0,1 @ F,0,0,1,0,5.5,0,1 @ F,0,0,1,0,5.5,0,1"
+       radius="5.5"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect345-31-3-3"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,4,0,1 @ F,0,0,1,0,4,0,1 @ F,0,0,1,0,4,0,1 @ F,0,0,1,0,4,0,1"
+       radius="4"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient344"
+       id="linearGradient26"
+       gradientUnits="userSpaceOnUse"
+       x1="16"
+       y1="-136"
+       x2="16"
+       y2="120" />
   </defs>
   <g
      inkscape:label="Layer 1"
@@ -13691,10 +13759,10 @@
        height="32"
        x="0"
        y="-136"
-       inkscape:path-effect="#path-effect347-4"
        sodipodi:type="rect"
+       transform="translate(96)"
        d="m 7,-136 h 86 a 7,7 45 0 1 7,7 v 18 a 7,7 135 0 1 -7,7 H 7 a 7,7 45 0 1 -7,-7 v -18 a 7,7 135 0 1 7,-7 z"
-       transform="translate(96)" />
+       inkscape:path-effect="#path-effect347-4" />
     <path
        style="fill:none;fill-opacity:1;stroke:#216778;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        id="rect339-1-7"
@@ -13702,10 +13770,10 @@
        height="31"
        x="0.5"
        y="-135.5"
-       inkscape:path-effect="#path-effect346-7"
        sodipodi:type="rect"
+       transform="translate(96)"
        d="m 6,-135.5 h 88 a 5.5,5.5 45 0 1 5.5,5.5 v 20 a 5.5,5.5 135 0 1 -5.5,5.5 H 6 A 5.5,5.5 45 0 1 0.5,-110 v -20 a 5.5,5.5 135 0 1 5.5,-5.5 z"
-       transform="translate(96)" />
+       inkscape:path-effect="#path-effect346-7" />
     <path
        style="fill:none;fill-opacity:1;stroke:#87cdde;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        id="rect339-1-3-57"
@@ -13713,11 +13781,11 @@
        height="28"
        x="2"
        y="-134"
-       inkscape:path-effect="#path-effect345-3"
        sodipodi:type="rect"
-       d="m 6,-134 88,0 a 4,4 45 0 1 4,4 v 20 a 4,4 135 0 1 -4,4 l -88,0 a 4,4 45 0 1 -4,-4 v -20 a 4,4 135 0 1 4,-4 z"
        transform="translate(96)"
-       ry="0" />
+       ry="0"
+       d="m 6,-134 88,0 a 4,4 45 0 1 4,4 v 20 a 4,4 135 0 1 -4,4 l -88,0 a 4,4 45 0 1 -4,-4 v -20 a 4,4 135 0 1 4,-4 z"
+       inkscape:path-effect="#path-effect345-3" />
     <path
        style="fill:url(#linearGradient348);fill-opacity:1;stroke:none;stroke-width:1.625;stroke-dasharray:none;paint-order:markers stroke fill"
        id="rect339-9"
@@ -13758,10 +13826,10 @@
        height="31.999924"
        x="-20"
        y="-136"
-       inkscape:path-effect="#path-effect347-2-8"
        sodipodi:type="rect"
+       transform="rotate(180,88,-148)"
        d="m -13,-136 h 86 a 7,7 45 0 1 7,7 v 17.99992 a 7,7 135 0 1 -7,7 l -86,0 a 7,7 45 0 1 -7,-7 V -129 a 7,7 135 0 1 7,-7 z"
-       transform="rotate(180,88,-148)" />
+       inkscape:path-effect="#path-effect347-2-8" />
     <path
        style="fill:none;fill-opacity:1;stroke:#216778;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        id="rect339-1-6-9"
@@ -13769,10 +13837,10 @@
        height="31"
        x="0.5"
        y="-135.5"
-       inkscape:path-effect="#path-effect346-0-5"
        sodipodi:type="rect"
+       transform="translate(96,-56)"
        d="m 6,-135.5 h 88 a 5.5,5.5 45 0 1 5.5,5.5 v 20 a 5.5,5.5 135 0 1 -5.5,5.5 H 6 A 5.5,5.5 45 0 1 0.5,-110 v -20 a 5.5,5.5 135 0 1 5.5,-5.5 z"
-       transform="translate(96,-56)" />
+       inkscape:path-effect="#path-effect346-0-5" />
     <path
        style="fill:none;fill-opacity:1;stroke:#87cdde;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
        id="rect339-1-3-5-3"
@@ -13780,10 +13848,10 @@
        height="28"
        x="2"
        y="-134"
-       inkscape:path-effect="#path-effect345-8-8"
        sodipodi:type="rect"
+       transform="translate(96,-56)"
        d="m 6,-134 88,0 a 4,4 45 0 1 4,4 v 20 a 4,4 135 0 1 -4,4 l -88,0 a 4,4 45 0 1 -4,-4 v -20 a 4,4 135 0 1 4,-4 z"
-       transform="translate(96,-56)" />
+       inkscape:path-effect="#path-effect345-8-8" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:Cantarell;writing-mode:lr-tb;direction:ltr;fill:#216778;stroke:none;stroke-width:4;stroke-dasharray:none;paint-order:markers stroke fill"
@@ -14427,9 +14495,9 @@
        height="24"
        x="202"
        y="-188"
-       inkscape:path-effect="#path-effect20"
        sodipodi:type="rect"
-       d="m 207,-188 h 14 a 5,5 45 0 1 5,5 v 14 a 5,5 135 0 1 -5,5 h -14 a 5,5 45 0 1 -5,-5 v -14 a 5,5 135 0 1 5,-5 z" />
+       d="m 207,-188 h 14 a 5,5 45 0 1 5,5 v 14 a 5,5 135 0 1 -5,5 h -14 a 5,5 45 0 1 -5,-5 v -14 a 5,5 135 0 1 5,-5 z"
+       inkscape:path-effect="#path-effect20" />
     <path
        style="fill:url(#linearGradient23);fill-opacity:1;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
        id="rect21"
@@ -14437,9 +14505,9 @@
        height="22"
        x="203"
        y="-187"
-       inkscape:path-effect="#path-effect21"
        sodipodi:type="rect"
-       d="m 207,-187 h 14 a 4,4 45 0 1 4,4 l 0,14 a 4,4 135 0 1 -4,4 h -14 a 4,4 45 0 1 -4,-4 l 0,-14 a 4,4 135 0 1 4,-4 z" />
+       d="m 207,-187 h 14 a 4,4 45 0 1 4,4 l 0,14 a 4,4 135 0 1 -4,4 h -14 a 4,4 45 0 1 -4,-4 l 0,-14 a 4,4 135 0 1 4,-4 z"
+       inkscape:path-effect="#path-effect21" />
     <path
        style="fill:url(#linearGradient24);fill-opacity:1;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
        id="rect21-5"
@@ -14447,9 +14515,9 @@
        height="20"
        x="204"
        y="-186"
-       inkscape:path-effect="#path-effect21-7"
        sodipodi:type="rect"
-       d="m 207,-186 h 14 a 3,3 45 0 1 3,3 v 14 a 3,3 135 0 1 -3,3 h -14 a 3,3 45 0 1 -3,-3 v -14 a 3,3 135 0 1 3,-3 z" />
+       d="m 207,-186 h 14 a 3,3 45 0 1 3,3 v 14 a 3,3 135 0 1 -3,3 h -14 a 3,3 45 0 1 -3,-3 v -14 a 3,3 135 0 1 3,-3 z"
+       inkscape:path-effect="#path-effect21-7" />
     <text
        xml:space="preserve"
        style="font-weight:bold;font-size:18.6667px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';writing-mode:lr-tb;direction:ltr;fill:#ececec;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
@@ -14468,10 +14536,10 @@
        height="24"
        x="202"
        y="-188"
-       inkscape:path-effect="#path-effect20-0"
        sodipodi:type="rect"
+       transform="translate(26)"
        d="m 207,-188 h 14 a 5,5 45 0 1 5,5 v 14 a 5,5 135 0 1 -5,5 h -14 a 5,5 45 0 1 -5,-5 v -14 a 5,5 135 0 1 5,-5 z"
-       transform="translate(26)" />
+       inkscape:path-effect="#path-effect20-0" />
     <path
        style="fill:url(#linearGradient35);fill-opacity:1;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
        id="rect21-3"
@@ -14479,10 +14547,10 @@
        height="22"
        x="203"
        y="-187"
-       inkscape:path-effect="#path-effect21-75"
        sodipodi:type="rect"
+       transform="translate(26)"
        d="m 207,-187 h 14 a 4,4 45 0 1 4,4 l 0,14 a 4,4 135 0 1 -4,4 h -14 a 4,4 45 0 1 -4,-4 l 0,-14 a 4,4 135 0 1 4,-4 z"
-       transform="translate(26)" />
+       inkscape:path-effect="#path-effect21-75" />
     <path
        style="fill:url(#linearGradient36);fill-opacity:1;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
        id="rect21-5-6"
@@ -14490,10 +14558,10 @@
        height="20"
        x="204"
        y="-186"
-       inkscape:path-effect="#path-effect21-7-2"
        sodipodi:type="rect"
+       transform="translate(26)"
        d="m 207,-186 h 14 a 3,3 45 0 1 3,3 v 14 a 3,3 135 0 1 -3,3 h -14 a 3,3 45 0 1 -3,-3 v -14 a 3,3 135 0 1 3,-3 z"
-       transform="translate(26)" />
+       inkscape:path-effect="#path-effect21-7-2" />
     <text
        xml:space="preserve"
        style="font-weight:bold;font-size:18.6667px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';writing-mode:lr-tb;direction:ltr;fill:#ececec;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
@@ -14512,10 +14580,10 @@
        height="24"
        x="202"
        y="-188"
-       inkscape:path-effect="#path-effect20-0-1"
        sodipodi:type="rect"
+       transform="translate(52)"
        d="m 207,-188 h 14 a 5,5 45 0 1 5,5 v 14 a 5,5 135 0 1 -5,5 h -14 a 5,5 45 0 1 -5,-5 v -14 a 5,5 135 0 1 5,-5 z"
-       transform="translate(52)" />
+       inkscape:path-effect="#path-effect20-0-1" />
     <path
        style="fill:url(#linearGradient37);fill-opacity:1;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
        id="rect21-3-6"
@@ -14523,10 +14591,10 @@
        height="22"
        x="203"
        y="-187"
-       inkscape:path-effect="#path-effect21-75-8"
        sodipodi:type="rect"
+       transform="translate(52)"
        d="m 207,-187 h 14 a 4,4 45 0 1 4,4 l 0,14 a 4,4 135 0 1 -4,4 h -14 a 4,4 45 0 1 -4,-4 l 0,-14 a 4,4 135 0 1 4,-4 z"
-       transform="translate(52)" />
+       inkscape:path-effect="#path-effect21-75-8" />
     <path
        style="fill:url(#linearGradient38);fill-opacity:1;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
        id="rect21-5-6-3"
@@ -14534,10 +14602,10 @@
        height="20"
        x="204"
        y="-186"
-       inkscape:path-effect="#path-effect21-7-2-3"
        sodipodi:type="rect"
+       transform="translate(52)"
        d="m 207,-186 h 14 a 3,3 45 0 1 3,3 v 14 a 3,3 135 0 1 -3,3 h -14 a 3,3 45 0 1 -3,-3 v -14 a 3,3 135 0 1 3,-3 z"
-       transform="translate(52)" />
+       inkscape:path-effect="#path-effect21-7-2-3" />
     <text
        xml:space="preserve"
        style="font-weight:bold;font-size:18.6667px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';writing-mode:lr-tb;direction:ltr;fill:#ececec;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
@@ -14556,10 +14624,10 @@
        height="24"
        x="202"
        y="-188"
-       inkscape:path-effect="#path-effect20-0-1-5"
        sodipodi:type="rect"
+       transform="translate(-5.9960184e-6,26.14133)"
        d="m 207,-188 h 14 a 5,5 45 0 1 5,5 v 14 a 5,5 135 0 1 -5,5 h -14 a 5,5 45 0 1 -5,-5 v -14 a 5,5 135 0 1 5,-5 z"
-       transform="translate(-5.9960184e-6,26.14133)" />
+       inkscape:path-effect="#path-effect20-0-1-5" />
     <path
        style="fill:url(#linearGradient39);fill-opacity:1;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
        id="rect21-3-6-2"
@@ -14567,10 +14635,10 @@
        height="22"
        x="203"
        y="-187"
-       inkscape:path-effect="#path-effect21-75-8-6"
        sodipodi:type="rect"
+       transform="translate(-5.9960184e-6,26.14133)"
        d="m 207,-187 h 14 a 4,4 45 0 1 4,4 l 0,14 a 4,4 135 0 1 -4,4 h -14 a 4,4 45 0 1 -4,-4 l 0,-14 a 4,4 135 0 1 4,-4 z"
-       transform="translate(-5.9960184e-6,26.14133)" />
+       inkscape:path-effect="#path-effect21-75-8-6" />
     <path
        style="fill:url(#linearGradient40);fill-opacity:1;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
        id="rect21-5-6-3-5"
@@ -14578,10 +14646,10 @@
        height="20"
        x="204"
        y="-186"
-       inkscape:path-effect="#path-effect21-7-2-3-3"
        sodipodi:type="rect"
+       transform="translate(-5.9960184e-6,26.14133)"
        d="m 207,-186 h 14 a 3,3 45 0 1 3,3 v 14 a 3,3 135 0 1 -3,3 h -14 a 3,3 45 0 1 -3,-3 v -14 a 3,3 135 0 1 3,-3 z"
-       transform="translate(-5.9960184e-6,26.14133)" />
+       inkscape:path-effect="#path-effect21-7-2-3-3" />
     <text
        xml:space="preserve"
        style="font-weight:bold;font-size:18.6667px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';writing-mode:lr-tb;direction:ltr;fill:#ececec;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
@@ -14600,10 +14668,10 @@
        height="24"
        x="202"
        y="-188"
-       inkscape:path-effect="#path-effect20-0-1-5-3"
        sodipodi:type="rect"
+       transform="translate(26,26)"
        d="m 207,-188 h 14 a 5,5 45 0 1 5,5 v 14 a 5,5 135 0 1 -5,5 h -14 a 5,5 45 0 1 -5,-5 v -14 a 5,5 135 0 1 5,-5 z"
-       transform="translate(26,26)" />
+       inkscape:path-effect="#path-effect20-0-1-5-3" />
     <path
        style="fill:url(#linearGradient41);fill-opacity:1;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
        id="rect21-3-6-2-2"
@@ -14611,10 +14679,10 @@
        height="22"
        x="203"
        y="-187"
-       inkscape:path-effect="#path-effect21-75-8-6-6"
        sodipodi:type="rect"
+       transform="translate(26,26)"
        d="m 207,-187 h 14 a 4,4 45 0 1 4,4 l 0,14 a 4,4 135 0 1 -4,4 h -14 a 4,4 45 0 1 -4,-4 l 0,-14 a 4,4 135 0 1 4,-4 z"
-       transform="translate(26,26)" />
+       inkscape:path-effect="#path-effect21-75-8-6-6" />
     <path
        style="fill:url(#linearGradient42);fill-opacity:1;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
        id="rect21-5-6-3-5-0"
@@ -14622,10 +14690,10 @@
        height="20"
        x="204"
        y="-186"
-       inkscape:path-effect="#path-effect21-7-2-3-3-3"
        sodipodi:type="rect"
+       transform="translate(26,26)"
        d="m 207,-186 h 14 a 3,3 45 0 1 3,3 v 14 a 3,3 135 0 1 -3,3 h -14 a 3,3 45 0 1 -3,-3 v -14 a 3,3 135 0 1 3,-3 z"
-       transform="translate(26,26)" />
+       inkscape:path-effect="#path-effect21-7-2-3-3-3" />
     <text
        xml:space="preserve"
        style="font-weight:bold;font-size:18.6667px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';writing-mode:lr-tb;direction:ltr;fill:#ececec;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
@@ -14644,10 +14712,10 @@
        height="24"
        x="202"
        y="-188"
-       inkscape:path-effect="#path-effect20-0-1-5-3-6"
        sodipodi:type="rect"
+       transform="translate(52,26)"
        d="m 207,-188 h 14 a 5,5 45 0 1 5,5 v 14 a 5,5 135 0 1 -5,5 h -14 a 5,5 45 0 1 -5,-5 v -14 a 5,5 135 0 1 5,-5 z"
-       transform="translate(52,26)" />
+       inkscape:path-effect="#path-effect20-0-1-5-3-6" />
     <path
        style="fill:url(#linearGradient43);fill-opacity:1;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
        id="rect21-3-6-2-2-7"
@@ -14655,10 +14723,10 @@
        height="22"
        x="203"
        y="-187"
-       inkscape:path-effect="#path-effect21-75-8-6-6-5"
        sodipodi:type="rect"
+       transform="translate(52,26)"
        d="m 207,-187 h 14 a 4,4 45 0 1 4,4 l 0,14 a 4,4 135 0 1 -4,4 h -14 a 4,4 45 0 1 -4,-4 l 0,-14 a 4,4 135 0 1 4,-4 z"
-       transform="translate(52,26)" />
+       inkscape:path-effect="#path-effect21-75-8-6-6-5" />
     <path
        style="fill:url(#linearGradient44);fill-opacity:1;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
        id="rect21-5-6-3-5-0-2"
@@ -14666,10 +14734,10 @@
        height="20"
        x="204"
        y="-186"
-       inkscape:path-effect="#path-effect21-7-2-3-3-3-7"
        sodipodi:type="rect"
+       transform="translate(52,26)"
        d="m 207,-186 h 14 a 3,3 45 0 1 3,3 v 14 a 3,3 135 0 1 -3,3 h -14 a 3,3 45 0 1 -3,-3 v -14 a 3,3 135 0 1 3,-3 z"
-       transform="translate(52,26)" />
+       inkscape:path-effect="#path-effect21-7-2-3-3-3-7" />
     <text
        xml:space="preserve"
        style="font-weight:bold;font-size:18.6667px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';writing-mode:lr-tb;direction:ltr;fill:#ececec;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
@@ -14688,10 +14756,10 @@
        height="24"
        x="202"
        y="-188"
-       inkscape:path-effect="#path-effect20-0-1-5-3-6-6"
        sodipodi:type="rect"
+       transform="translate(0,52)"
        d="m 207,-188 h 14 a 5,5 45 0 1 5,5 v 14 a 5,5 135 0 1 -5,5 h -14 a 5,5 45 0 1 -5,-5 v -14 a 5,5 135 0 1 5,-5 z"
-       transform="translate(0,52)" />
+       inkscape:path-effect="#path-effect20-0-1-5-3-6-6" />
     <path
        style="fill:url(#linearGradient45);fill-opacity:1;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
        id="rect21-3-6-2-2-7-1"
@@ -14699,10 +14767,10 @@
        height="22"
        x="203"
        y="-187"
-       inkscape:path-effect="#path-effect21-75-8-6-6-5-4"
        sodipodi:type="rect"
+       transform="translate(0,52)"
        d="m 207,-187 h 14 a 4,4 45 0 1 4,4 l 0,14 a 4,4 135 0 1 -4,4 h -14 a 4,4 45 0 1 -4,-4 l 0,-14 a 4,4 135 0 1 4,-4 z"
-       transform="translate(0,52)" />
+       inkscape:path-effect="#path-effect21-75-8-6-6-5-4" />
     <path
        style="fill:url(#linearGradient46);fill-opacity:1;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
        id="rect21-5-6-3-5-0-2-5"
@@ -14710,10 +14778,10 @@
        height="20"
        x="204"
        y="-186"
-       inkscape:path-effect="#path-effect21-7-2-3-3-3-7-1"
        sodipodi:type="rect"
+       transform="translate(0,52)"
        d="m 207,-186 h 14 a 3,3 45 0 1 3,3 v 14 a 3,3 135 0 1 -3,3 h -14 a 3,3 45 0 1 -3,-3 v -14 a 3,3 135 0 1 3,-3 z"
-       transform="translate(0,52)" />
+       inkscape:path-effect="#path-effect21-7-2-3-3-3-7-1" />
     <text
        xml:space="preserve"
        style="font-weight:bold;font-size:18.6667px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';writing-mode:lr-tb;direction:ltr;fill:#ececec;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
@@ -14732,10 +14800,10 @@
        height="24"
        x="202"
        y="-188"
-       inkscape:path-effect="#path-effect20-0-1-5-3-6-6-7"
        sodipodi:type="rect"
+       transform="translate(26,52)"
        d="m 207,-188 h 14 a 5,5 45 0 1 5,5 v 14 a 5,5 135 0 1 -5,5 h -14 a 5,5 45 0 1 -5,-5 v -14 a 5,5 135 0 1 5,-5 z"
-       transform="translate(26,52)" />
+       inkscape:path-effect="#path-effect20-0-1-5-3-6-6-7" />
     <path
        style="fill:url(#linearGradient47);fill-opacity:1;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
        id="rect21-3-6-2-2-7-1-3"
@@ -14743,10 +14811,10 @@
        height="22"
        x="203"
        y="-187"
-       inkscape:path-effect="#path-effect21-75-8-6-6-5-4-6"
        sodipodi:type="rect"
+       transform="translate(26,52)"
        d="m 207,-187 h 14 a 4,4 45 0 1 4,4 l 0,14 a 4,4 135 0 1 -4,4 h -14 a 4,4 45 0 1 -4,-4 l 0,-14 a 4,4 135 0 1 4,-4 z"
-       transform="translate(26,52)" />
+       inkscape:path-effect="#path-effect21-75-8-6-6-5-4-6" />
     <path
        style="fill:url(#linearGradient48);fill-opacity:1;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
        id="rect21-5-6-3-5-0-2-5-9"
@@ -14754,10 +14822,10 @@
        height="20"
        x="204"
        y="-186"
-       inkscape:path-effect="#path-effect21-7-2-3-3-3-7-1-8"
        sodipodi:type="rect"
+       transform="translate(26,52)"
        d="m 207,-186 h 14 a 3,3 45 0 1 3,3 v 14 a 3,3 135 0 1 -3,3 h -14 a 3,3 45 0 1 -3,-3 v -14 a 3,3 135 0 1 3,-3 z"
-       transform="translate(26,52)" />
+       inkscape:path-effect="#path-effect21-7-2-3-3-3-7-1-8" />
     <text
        xml:space="preserve"
        style="font-weight:bold;font-size:18.6667px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';writing-mode:lr-tb;direction:ltr;fill:#ececec;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
@@ -14776,10 +14844,10 @@
        height="24"
        x="202"
        y="-188"
-       inkscape:path-effect="#path-effect20-0-1-5-3-6-6-7-0"
        sodipodi:type="rect"
+       transform="translate(52.214045,51.999985)"
        d="m 207,-188 h 14 a 5,5 45 0 1 5,5 v 14 a 5,5 135 0 1 -5,5 h -14 a 5,5 45 0 1 -5,-5 v -14 a 5,5 135 0 1 5,-5 z"
-       transform="translate(52.214045,51.999985)" />
+       inkscape:path-effect="#path-effect20-0-1-5-3-6-6-7-0" />
     <path
        style="fill:url(#linearGradient49);fill-opacity:1;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
        id="rect21-3-6-2-2-7-1-3-4"
@@ -14787,10 +14855,10 @@
        height="22"
        x="203"
        y="-187"
-       inkscape:path-effect="#path-effect21-75-8-6-6-5-4-6-8"
        sodipodi:type="rect"
+       transform="translate(52.214045,51.999985)"
        d="m 207,-187 h 14 a 4,4 45 0 1 4,4 l 0,14 a 4,4 135 0 1 -4,4 h -14 a 4,4 45 0 1 -4,-4 l 0,-14 a 4,4 135 0 1 4,-4 z"
-       transform="translate(52.214045,51.999985)" />
+       inkscape:path-effect="#path-effect21-75-8-6-6-5-4-6-8" />
     <path
        style="fill:url(#linearGradient50);fill-opacity:1;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
        id="rect21-5-6-3-5-0-2-5-9-8"
@@ -14798,10 +14866,10 @@
        height="20"
        x="204"
        y="-186"
-       inkscape:path-effect="#path-effect21-7-2-3-3-3-7-1-8-1"
        sodipodi:type="rect"
+       transform="translate(52.214045,51.999985)"
        d="m 207,-186 h 14 a 3,3 45 0 1 3,3 v 14 a 3,3 135 0 1 -3,3 h -14 a 3,3 45 0 1 -3,-3 v -14 a 3,3 135 0 1 3,-3 z"
-       transform="translate(52.214045,51.999985)" />
+       inkscape:path-effect="#path-effect21-7-2-3-3-3-7-1-8-1" />
     <text
        xml:space="preserve"
        style="font-weight:bold;font-size:18.6667px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';writing-mode:lr-tb;direction:ltr;fill:#ececec;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
@@ -14820,10 +14888,10 @@
        height="24"
        x="202"
        y="-188"
-       inkscape:path-effect="#path-effect20-0-1-5-3-6-6-7-0-4"
        sodipodi:type="rect"
+       transform="translate(0,78)"
        d="m 207,-188 h 14 a 5,5 45 0 1 5,5 v 14 a 5,5 135 0 1 -5,5 h -14 a 5,5 45 0 1 -5,-5 v -14 a 5,5 135 0 1 5,-5 z"
-       transform="translate(0,78)" />
+       inkscape:path-effect="#path-effect20-0-1-5-3-6-6-7-0-4" />
     <path
        style="fill:url(#linearGradient51);fill-opacity:1;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
        id="rect21-3-6-2-2-7-1-3-4-2"
@@ -14831,10 +14899,10 @@
        height="22"
        x="203"
        y="-187"
-       inkscape:path-effect="#path-effect21-75-8-6-6-5-4-6-8-7"
        sodipodi:type="rect"
+       transform="translate(0,78)"
        d="m 207,-187 h 14 a 4,4 45 0 1 4,4 l 0,14 a 4,4 135 0 1 -4,4 h -14 a 4,4 45 0 1 -4,-4 l 0,-14 a 4,4 135 0 1 4,-4 z"
-       transform="translate(0,78)" />
+       inkscape:path-effect="#path-effect21-75-8-6-6-5-4-6-8-7" />
     <path
        style="fill:url(#linearGradient52);fill-opacity:1;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
        id="rect21-5-6-3-5-0-2-5-9-8-1"
@@ -14842,10 +14910,10 @@
        height="20"
        x="204"
        y="-186"
-       inkscape:path-effect="#path-effect21-7-2-3-3-3-7-1-8-1-7"
        sodipodi:type="rect"
+       transform="translate(0,78)"
        d="m 207,-186 h 14 a 3,3 45 0 1 3,3 v 14 a 3,3 135 0 1 -3,3 h -14 a 3,3 45 0 1 -3,-3 v -14 a 3,3 135 0 1 3,-3 z"
-       transform="translate(0,78)" />
+       inkscape:path-effect="#path-effect21-7-2-3-3-3-7-1-8-1-7" />
     <text
        xml:space="preserve"
        style="font-weight:bold;font-size:18.6667px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';writing-mode:lr-tb;direction:ltr;fill:#ececec;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
@@ -15117,5 +15185,38 @@
          id="tspan62-9-5-3-4"
          x="-411.67462"
          y="-196.69333">Quit</tspan></text>
+    <path
+       style="fill:url(#linearGradient26);fill-opacity:1;stroke:none;stroke-width:1.625;stroke-dasharray:none;paint-order:markers stroke fill"
+       id="rect339-96-2-62"
+       width="256"
+       height="256"
+       x="16"
+       y="-136"
+       inkscape:path-effect="#path-effect347-7-9-0"
+       sodipodi:type="rect"
+       d="m 23,-136 h 242 a 7,7 45 0 1 7,7 v 242 a 7,7 135 0 1 -7,7 H 23 a 7,7 45 0 1 -7,-7 v -242 a 7,7 135 0 1 7,-7 z"
+       transform="translate(-56,-456)" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#216778;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       id="rect339-1-2-9-6"
+       width="255"
+       height="255"
+       x="16.5"
+       y="-135.5"
+       inkscape:path-effect="#path-effect346-6-7-9"
+       sodipodi:type="rect"
+       d="m 22,-135.5 h 244 a 5.5,5.5 45 0 1 5.5,5.5 v 244 a 5.5,5.5 135 0 1 -5.5,5.5 H 22 A 5.5,5.5 45 0 1 16.5,114 v -244 a 5.5,5.5 135 0 1 5.5,-5.5 z"
+       transform="translate(-56,-456)" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#87cdde;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       id="rect339-1-3-1-3-1"
+       width="252"
+       height="252"
+       x="18"
+       y="-134"
+       inkscape:path-effect="#path-effect345-31-3-3"
+       sodipodi:type="rect"
+       d="m 22,-134 h 244 a 4,4 45 0 1 4,4 v 244 a 4,4 135 0 1 -4,4 H 22 a 4,4 45 0 1 -4,-4 v -244 a 4,4 135 0 1 4,-4 z"
+       transform="translate(-56,-456)" />
   </g>
 </svg>

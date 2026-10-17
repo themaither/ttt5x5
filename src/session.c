@@ -11,8 +11,7 @@
 #include <math.h>
 #include <assert.h>
 #include <draw_field.h>
-#include <draw_digit.h>
-#include <draw_cursor.h>
+#include <draw.h>
 #include <assets.h>
 
 /* lerp with small alignment logic to work with animations */
@@ -93,9 +92,8 @@ autodep_session_init (void)
     return;
 
   autodep_completed_init ();
+  autodep_Draw_init ();
   autodep_DrawField_init ();
-  autodep_DrawDigit_init ();
-  autodep_DrawCursor_init ();
 
   session_init ();
   imported = 1;

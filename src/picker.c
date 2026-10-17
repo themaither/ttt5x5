@@ -8,10 +8,9 @@
 #include <math.h>
 #include <imath.h>
 #include <draw_field.h>
-#include <draw_digit.h>
+#include <draw.h>
 #include <completed.h>
 #include <database.h>
-#include <draw_cursor.h>
 #include <assets.h>
 
 static Texture2D picker_texture;
@@ -129,8 +128,7 @@ autodep_picker_init (void)
 
   autodep_completed_init ();
   autodep_DrawField_init ();
-  autodep_DrawDigit_init ();
-  autodep_DrawCursor_init ();
+  autodep_Draw_init ();
 
   picker_init ();
   imported = 1;
