@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <lib/string-buffer.h>
+#include <string-buffer.h>
 
 static FILE *source;
 static FILE *sink;

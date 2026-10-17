@@ -12,6 +12,7 @@
 #include <completed.h>
 #include <database.h>
 #include <draw_cursor.h>
+#include <assets.h>
 
 static Texture2D picker_texture;
 static Texture2D leave_texture;
@@ -83,24 +84,37 @@ picker_starting (void)
   return starting;
 }
 
+static Texture2D
+LoadTextureFromMemory (unsigned char *data, int length)
+{
+  Image image = LoadImageFromMemory(".png", data, length);
+  Texture2D texture = LoadTextureFromImage (image);
+  UnloadImage (image);
+  return texture;
+}
+
 void
 picker_init (void)
 {
-  picker_texture = LoadTexture (PKGDATADIR "/picker.png");
-  leave_texture = LoadTexture (PKGDATADIR "/back.png");
-  leave_hovered_texture = LoadTexture (PKGDATADIR "/back_hovered.png");
-  leave_pressed_texture = LoadTexture (PKGDATADIR "/back_pressed.png");
-  completed_texture = LoadTexture (PKGDATADIR "/completed.png");
-  prev_texture = LoadTexture (PKGDATADIR "/prev.png");
-  prev_hovered_texture = LoadTexture (PKGDATADIR "/prev_hovered.png");
-  prev_pressed_texture = LoadTexture (PKGDATADIR "/prev_pressed.png");
-  prev_disabled_texture = LoadTexture (PKGDATADIR "/prev_disabled.png");
-  prev_hovered_disabled_texture = LoadTexture (PKGDATADIR "/prev_hovered_disabled.png");
-  next_texture = LoadTexture (PKGDATADIR "/next.png");
-  next_hovered_texture = LoadTexture (PKGDATADIR "/next_hovered.png");
-  next_pressed_texture = LoadTexture (PKGDATADIR "/next_pressed.png");
-  next_disabled_texture = LoadTexture (PKGDATADIR "/next_disabled.png");
-  next_hovered_disabled_texture = LoadTexture (PKGDATADIR "/next_hovered_disabled.png");
+  picker_texture = LoadTextureFromMemory (assets_picker, assets_picker_len);
+
+  leave_texture = LoadTextureFromMemory (assets_leave, assets_leave_len);
+  leave_hovered_texture = LoadTextureFromMemory (assets_leave_hovered, assets_leave_hovered_len);
+  leave_pressed_texture = LoadTextureFromMemory (assets_leave_pressed, assets_leave_pressed_len);
+
+  completed_texture = LoadTextureFromMemory (assets_completed, assets_completed_len);
+
+  prev_texture = LoadTextureFromMemory (assets_prev, assets_prev_len);
+  prev_hovered_texture = LoadTextureFromMemory (assets_prev_hovered, assets_prev_hovered_len);
+  prev_pressed_texture = LoadTextureFromMemory (assets_prev_pressed, assets_prev_pressed_len);
+  prev_disabled_texture = LoadTextureFromMemory (assets_prev_disabled, assets_prev_disabled_len);
+  prev_hovered_disabled_texture = LoadTextureFromMemory (assets_prev_hovered_disabled, assets_prev_hovered_disabled_len);
+
+  next_texture = LoadTextureFromMemory (assets_next, assets_next_len);
+  next_hovered_texture = LoadTextureFromMemory (assets_next_hovered, assets_next_hovered_len);
+  next_pressed_texture = LoadTextureFromMemory (assets_next_pressed, assets_next_pressed_len);
+  next_disabled_texture = LoadTextureFromMemory (assets_next_disabled, assets_next_disabled_len);
+  next_hovered_disabled_texture = LoadTextureFromMemory (assets_next_hovered_disabled, assets_next_hovered_disabled_len);
 
   buffer_field = _5x5_open ();
 }

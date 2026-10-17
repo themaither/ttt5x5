@@ -3,6 +3,7 @@
 #include <stddef.h>
 #include <5x5.h>
 #include <raylib.h>
+#include <assets.h>
 
 static Texture2D black48_texture;
 static Texture2D white48_texture;
@@ -22,15 +23,24 @@ DrawField_clear (void)
   _5x5_select (old);
 }
 
+static Texture2D
+LoadTextureFromMemory (unsigned char *data, int length)
+{
+  Image image = LoadImageFromMemory(".png", data, length);
+  Texture2D texture = LoadTextureFromImage (image);
+  UnloadImage (image);
+  return texture;
+}
+
 void
 DrawField_init (void)
 {
-  black48_texture = LoadTexture (PKGDATADIR "/black48.png");
-  white48_texture = LoadTexture (PKGDATADIR "/white48.png");
-  dark_green48_texture = LoadTexture (PKGDATADIR "/dark_green48.png");
-  light_green48_texture = LoadTexture (PKGDATADIR "/light_green48.png");
-  black16_texture = LoadTexture (PKGDATADIR "/black16.png");
-  white16_texture = LoadTexture (PKGDATADIR "/white16.png");
+  black48_texture = LoadTextureFromMemory (assets_black48, assets_black48_len);
+  white48_texture = LoadTextureFromMemory (assets_white48, assets_white48_len);
+  black16_texture = LoadTextureFromMemory (assets_black16, assets_black16_len);
+  white16_texture = LoadTextureFromMemory (assets_white16, assets_white16_len);
+  dark_green48_texture = LoadTextureFromMemory (assets_dark_green48, assets_dark_green48_len);
+  light_green48_texture = LoadTextureFromMemory (assets_light_green48, assets_light_green48_len);
 
   pattern_i = _5x5_open ();
 

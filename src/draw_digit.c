@@ -2,22 +2,32 @@
 
 #include <raylib.h>
 #include <assert.h>
+#include <assets.h>
 
 static Texture2D digit_textures[10];
+
+static Texture2D
+LoadTextureFromMemory (unsigned char *data, int length)
+{
+  Image image = LoadImageFromMemory(".png", data, length);
+  Texture2D texture = LoadTextureFromImage (image);
+  UnloadImage (image);
+  return texture;
+}
 
 void
 DrawDigit_init (void)
 {
-  digit_textures[0] = LoadTexture (PKGDATADIR "/digit_0.png");
-  digit_textures[1] = LoadTexture (PKGDATADIR "/digit_1.png");
-  digit_textures[2] = LoadTexture (PKGDATADIR "/digit_2.png");
-  digit_textures[3] = LoadTexture (PKGDATADIR "/digit_3.png");
-  digit_textures[4] = LoadTexture (PKGDATADIR "/digit_4.png");
-  digit_textures[5] = LoadTexture (PKGDATADIR "/digit_5.png");
-  digit_textures[6] = LoadTexture (PKGDATADIR "/digit_6.png");
-  digit_textures[7] = LoadTexture (PKGDATADIR "/digit_7.png");
-  digit_textures[8] = LoadTexture (PKGDATADIR "/digit_8.png");
-  digit_textures[9] = LoadTexture (PKGDATADIR "/digit_9.png");
+  digit_textures[0] = LoadTextureFromMemory(assets_digit_0, assets_digit_0_len);
+  digit_textures[1] = LoadTextureFromMemory(assets_digit_1, assets_digit_1_len);
+  digit_textures[2] = LoadTextureFromMemory(assets_digit_2, assets_digit_2_len);
+  digit_textures[3] = LoadTextureFromMemory(assets_digit_3, assets_digit_3_len);
+  digit_textures[4] = LoadTextureFromMemory(assets_digit_4, assets_digit_4_len);
+  digit_textures[5] = LoadTextureFromMemory(assets_digit_5, assets_digit_5_len);
+  digit_textures[6] = LoadTextureFromMemory(assets_digit_6, assets_digit_6_len);
+  digit_textures[7] = LoadTextureFromMemory(assets_digit_7, assets_digit_7_len);
+  digit_textures[8] = LoadTextureFromMemory(assets_digit_8, assets_digit_8_len);
+  digit_textures[9] = LoadTextureFromMemory(assets_digit_9, assets_digit_9_len);
 }
 
 void

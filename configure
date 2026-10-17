@@ -642,11 +642,14 @@ am__EXEEXT_FALSE
 am__EXEEXT_TRUE
 LTLIBOBJS
 LIBOBJS
-RAYLIB_LIBS
-RAYLIB_CFLAGS
+EMSCRIPTEN_LDFLAGS
 PKG_CONFIG_LIBDIR
 PKG_CONFIG_PATH
 PKG_CONFIG
+RAYLIB_DEPENDENCIES
+EMCMAKE_CMAKE
+RAYLIB_LIBS
+RAYLIB_CFLAGS
 LIBGNU_LTLIBDEPS
 LIBGNU_LIBDEPS
 GL_CFLAG_GNULIB_WARNINGS
@@ -5528,7 +5531,14 @@ fi
 
 
 
-# Checks for programs.
+if test "x$USE_EMSCRIPTEN" = "xyes"
+then :
+
+    { printf '%s\n' "$as_me:${as_lineno-$LINENO}: using emscripten settings" >&5
+printf '%s\n' "$as_me: using emscripten settings" >&6;}
+
+fi
+
 
 
 
@@ -13895,8 +13905,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:13898: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:13899: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:13908: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:13909: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -13925,7 +13935,7 @@ rm -rf conftest*
   *) :
      ;;
 esac
-      echo "$as_me:13928: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:13938: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill.
       if test $gl_pthread_api = yes && test -z "$LIBPTHREAD"
@@ -14177,7 +14187,7 @@ fi
 fi
 
 fi
-      echo "$as_me:14180: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:14190: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
 
 fi
     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
@@ -33467,7 +33477,6 @@ printf '%s\n' "#define GNULIB_TEST_WRITE 1" >>confdefs.h
 
 
 
-# Checks for libraries.
 
 
 
@@ -33600,6 +33609,54 @@ printf '%s\n' "no" >&6; }
 		PKG_CONFIG=""
 	fi
 fi
+if test "x$COMPILE_RAYLIB" = "xyes"
+then :
+
+    { printf '%s\n' "$as_me:${as_lineno-$LINENO}: raylib going to be compiled" >&5
+printf '%s\n' "$as_me: raylib going to be compiled" >&6;}
+    { printf '%s\n' "$as_me:${as_lineno-$LINENO}: ensure that '${srcdir}' has raylib source code, " >&5
+printf '%s\n' "$as_me: ensure that '${srcdir}' has raylib source code, " >&6;}
+    { printf '%s\n' "$as_me:${as_lineno-$LINENO}: and you have CMake installed" >&5
+printf '%s\n' "$as_me: and you have CMake installed" >&6;}
+
+    RAYLIB_CFLAGS="-I${srcdir}/raylib/src"
+
+    if test "x$USE_EMSCRIPTEN" = "xyes"
+then :
+
+        RAYLIB_LIBS="-Lraylib/raylib -lraylib"
+
+else case e in #(
+  e)
+        RAYLIB_LIBS="-Lraylib/raylib -lraylib -lX11"
+       ;;
+esac
+fi
+
+
+
+
+    # CMake is used to compile raylib
+    if test "x$USE_EMSCRIPTEN" = "xyes"
+then :
+
+        EMCMAKE_CMAKE="emcmake cmake"
+
+else case e in #(
+  e)
+        EMCMAKE_CMAKE="cmake"
+       ;;
+esac
+fi
+
+
+    RAYLIB_DEPENDENCIES="raylib/raylib/libraylib.a"
+
+
+else case e in #(
+  e)
+    { printf '%s\n' "$as_me:${as_lineno-$LINENO}: using pkg-config to resolve raylib" >&5
+printf '%s\n' "$as_me: using pkg-config to resolve raylib" >&6;}
 
 pkg_failed=no
 { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for raylib" >&5
@@ -33691,11 +33748,26 @@ else
 printf '%s\n' "yes" >&6; }
 
 fi
-# Checks for header files.
+    RAYLIB_DEPENDENCIES=""
 
-# Checks for typedefs, structures, and compiler characteristics.
+   ;;
+esac
+fi
 
-# Checks for library functions.
+# Flags used to compile using emscripten toolchain
+if test "x$USE_EMSCRIPTEN" = "xyes"
+then :
+
+    EMSCRIPTEN_LDFLAGS="-sUSE_GLFW=3 -sASSERTIONS=1 -sWASM=1 -sASYNCIFY -sGL_ENABLE_GET_PROC_ADDRESS=1"
+
+else case e in #(
+  e)
+    EMSCRIPTEN_LDFLAGS=""
+   ;;
+esac
+fi
+
+
 
 ac_config_files="$ac_config_files Makefile"
 

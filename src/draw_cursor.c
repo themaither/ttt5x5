@@ -1,19 +1,29 @@
 #include <config.h>
 
 #include <raylib.h>
+#include <assets.h>
 
 static Texture2D tl_texture;
 static Texture2D tr_texture;
 static Texture2D bl_texture;
 static Texture2D br_texture;
 
+static Texture2D
+LoadTextureFromMemory (unsigned char *data, int length)
+{
+  Image image = LoadImageFromMemory(".png", data, length);
+  Texture2D texture = LoadTextureFromImage (image);
+  UnloadImage (image);
+  return texture;
+}
+
 void
 DrawCursor_init (void)
 {
-  tl_texture = LoadTexture (PKGDATADIR "/selection_tl.png");
-  tr_texture = LoadTexture (PKGDATADIR "/selection_tr.png");
-  bl_texture = LoadTexture (PKGDATADIR "/selection_bl.png");
-  br_texture = LoadTexture (PKGDATADIR "/selection_br.png");
+  tl_texture = LoadTextureFromMemory (assets_selection_tl, assets_selection_tl_len);
+  tr_texture = LoadTextureFromMemory (assets_selection_tr, assets_selection_tr_len);
+  bl_texture = LoadTextureFromMemory (assets_selection_bl, assets_selection_bl_len);
+  br_texture = LoadTextureFromMemory (assets_selection_bl, assets_selection_br_len);
 }
 
 void

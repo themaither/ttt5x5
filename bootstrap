@@ -1,0 +1,21 @@
+#!/usr/bin/sh
+echo running gnulib-tool
+if (test -z ${GNULIB_TOOL})
+then
+  echo "warn: setting GNULIB_TOOL to 'gnulib-tool'"
+  echo "warn: you may want to change that value to path of your gnulib-tool"
+  GNULIB_TOOL="gnulib-tool"
+fi
+
+${GNULIB_TOOL} --import assert assert-h getline string-buffer
+
+if (test -d raylib)
+then
+  echo raylib is already present
+else
+  echo cloning raylib from git
+  git clone https://github.com/raysan5/raylib.git --depth=1
+fi
+
+echo running autoreconf
+autoreconf

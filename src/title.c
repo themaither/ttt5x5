@@ -5,6 +5,7 @@
 #include <btn.h>
 #include <imath.h>
 #include <math.h>
+#include <assets.h>
 
 static int level_select = 0;
 static int leaving = 0;
@@ -19,16 +20,25 @@ static Texture2D quit_texture;
 static Texture2D quit_hovered_texture;
 static Texture2D quit_pressed_texture;
 
+static Texture2D
+LoadTextureFromMemory (unsigned char *data, int length)
+{
+  Image image = LoadImageFromMemory(".png", data, length);
+  Texture2D texture = LoadTextureFromImage (image);
+  UnloadImage (image);
+  return texture;
+}
+
 void
 title_init (void)
 {
-  title_texture = LoadTexture (PKGDATADIR "/title.png");
-  level_select_texture = LoadTexture (PKGDATADIR "/level_select.png");
-  level_select_hovered_texture = LoadTexture (PKGDATADIR "/level_select_hovered.png");
-  level_select_pressed_texture = LoadTexture (PKGDATADIR "/level_select_pressed.png");
-  quit_texture = LoadTexture (PKGDATADIR "/quit.png");
-  quit_hovered_texture = LoadTexture (PKGDATADIR "/quit_hovered.png");
-  quit_pressed_texture = LoadTexture (PKGDATADIR "/quit_pressed.png");
+  title_texture = LoadTextureFromMemory (assets_title, assets_title_len);
+  level_select_texture = LoadTextureFromMemory (assets_level_select, assets_level_select_len);
+  level_select_hovered_texture = LoadTextureFromMemory (assets_level_select_hovered, assets_level_select_hovered_len);
+  level_select_pressed_texture = LoadTextureFromMemory (assets_level_select_pressed, assets_level_select_pressed_len);
+  quit_texture = LoadTextureFromMemory (assets_quit, assets_quit_len);
+  quit_hovered_texture = LoadTextureFromMemory (assets_quit_hovered, assets_quit_hovered_len);
+  quit_pressed_texture = LoadTextureFromMemory (assets_quit_pressed, assets_quit_pressed_len);
 }
 
 void

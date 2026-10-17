@@ -13,6 +13,7 @@
 #include <draw_field.h>
 #include <draw_digit.h>
 #include <draw_cursor.h>
+#include <assets.h>
 
 /* lerp with small alignment logic to work with animations */
 static float
@@ -42,12 +43,6 @@ static float press_animation = 0.f;
 static float win_animation = 0.f;
 
 static Texture2D session_texture;
-static Texture2D black48_texture;
-static Texture2D white48_texture;
-static Texture2D dark_green48_texture;
-static Texture2D light_green48_texture;
-static Texture2D black16_texture;
-static Texture2D white16_texture;
 static Texture2D leave_texture;
 static Texture2D leave_hovered_texture;
 static Texture2D leave_pressed_texture;
@@ -70,20 +65,23 @@ session_reset (void)
   moves = 0;
 }
 
+static Texture2D
+LoadTextureFromMemory (unsigned char *data, int length)
+{
+  Image image = LoadImageFromMemory(".png", data, length);
+  Texture2D texture = LoadTextureFromImage (image);
+  UnloadImage (image);
+  return texture;
+}
+
 void
 session_init (void)
 {
-  session_texture = LoadTexture (PKGDATADIR "/session.png");
-  black48_texture = LoadTexture (PKGDATADIR "/black48.png");
-  white48_texture = LoadTexture (PKGDATADIR "/white48.png");
-  dark_green48_texture = LoadTexture (PKGDATADIR "/dark_green48.png");
-  light_green48_texture = LoadTexture (PKGDATADIR "/light_green48.png");
-  black16_texture = LoadTexture (PKGDATADIR "/black16.png");
-  white16_texture = LoadTexture (PKGDATADIR "/white16.png");
-  leave_texture = LoadTexture (PKGDATADIR "/leave.png");
-  leave_hovered_texture = LoadTexture (PKGDATADIR "/leave_hovered.png");
-  leave_pressed_texture = LoadTexture (PKGDATADIR "/leave_pressed.png");
-  moves_texture = LoadTexture (PKGDATADIR "/moves.png");
+  leave_texture = LoadTextureFromMemory (assets_leave, assets_leave_len);
+  leave_hovered_texture = LoadTextureFromMemory (assets_leave_hovered, assets_leave_hovered_len);
+  leave_pressed_texture = LoadTextureFromMemory (assets_leave_pressed, assets_leave_pressed_len);
+  session_texture = LoadTextureFromMemory (assets_session, assets_session_len);
+  moves_texture = LoadTextureFromMemory (assets_moves, assets_moves_len);
 }
 
 int
