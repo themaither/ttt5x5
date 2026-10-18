@@ -14,7 +14,7 @@ void autodep_picker_init (void);
 void picker_update   (void);
 int  picker_leaving  (void);
 int  picker_starting (void);
-int  picker_reset    (void);
+void picker_reset    (void);
 
 #ifdef __cplusplus
 }

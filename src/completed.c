@@ -65,7 +65,7 @@ io_complete (void)
 
   command = strdupf ("/usr/bin/ls %s 2>/dev/null >/dev/null", ttt5x5path);
 
-  if (0 != system (command));
+  if (0 != system (command))
     {
       free (command);
       command = strdupf ("/usr/bin/mkdir -p %s 2>/dev/null >/dev/null", ttt5x5path);
