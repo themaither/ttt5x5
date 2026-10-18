@@ -298,7 +298,7 @@ picker_update (void)
   else if (whaton == 1 && top_whaton == 0)
     DrawButton (leave_texture, 2, 2, 80, 32, 1);
   else
-    DrawTexture (leave_texture, 2, 2, WHITE);
+    DrawButton (leave_texture, 2, 2, 80, 32, 3);
 
   if (page == 0)
     {

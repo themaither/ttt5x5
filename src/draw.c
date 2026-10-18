@@ -179,17 +179,53 @@ DrawNumber3 (int number, int x, int y)
 void
 DrawButton (Texture2D texture, int x, int y, int width, int height, int mode)
 {
+  Color color_default;
+  color_default.r = 50;
+  color_default.g = 50;
+  color_default.b = 50;
+  color_default.a = 255;
+
+  Color color_accent;
+  color_accent.r = 33;
+  color_accent.g = 103;
+  color_accent.b = 120;
+  color_accent.a = 255;
+
+  Color color_light;
+  color_light.r = 215;
+  color_light.g = 238;
+  color_light.b = 244;
+  color_light.a = 255;
+
+  Color color_pale;
+  color_pale.r = 153;
+  color_pale.g = 153;
+  color_pale.b = 153;
+  color_pale.a = 255;
+
   switch (mode)
     {
     case 0:
       DrawTexture3x3 (button_texture, 32, 256, 8, x, y, width, height);
+      DrawTexture (texture, x, y, color_default);
       break;
     case 1:
       DrawTexture3x3 (button_hovered_texture, 32, 256, 8, x, y, width, height);
+      DrawTexture (texture, x, y, color_accent);
       break;
     case 2:
       DrawTexture3x3 (button_pressed_texture, 32, 256, 8, x, y, width, height);
+      DrawTexture (texture, x, y, color_light);
+      break;
+    case 3:
+      DrawTexture (texture, x, y, color_default);
+      break;
+    case 4:
+      DrawTexture3x3 (button_texture, 32, 256, 8, x, y, width, height);
+      DrawTexture (texture, x, y, color_pale);
+      break;
+    case 5:
+      DrawTexture (texture, x, y, color_pale);
       break;
     }
-  DrawTexture (texture, x, y, WHITE);
 }
