@@ -58,11 +58,8 @@ main (int argc, char **argv)
           if (session_leaving ())
             {
               whaton = 0;
-              puts ("1");
               session_update ();
-              puts ("2");
               session_reset ();
-              puts ("3");
             }
           continue;
         case 2:
