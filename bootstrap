@@ -18,5 +18,6 @@ else
 fi
 
 echo running autoreconf
+autoheader
 automake --add-missing
 autoreconf
