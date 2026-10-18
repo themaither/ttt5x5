@@ -11,12 +11,12 @@ extern "C" {
 void Draw_init (void);
 void autodep_Draw_init (void);
 
-void autodep_DrawCursor_init (void);
 void DrawCursor (int x, int y, int size);
 
-void autodep_DrawDigit_init (void);
 void DrawDigit (int digit, int x, int y);
 void DrawNumber3 (int number, int x, int y);
+
+void DrawButton (Texture2D text, int x, int y, int width, int height, int mode);
 
 #ifdef __cplusplus
 }

@@ -11,6 +11,8 @@ static Texture2D bl_texture;
 static Texture2D br_texture;
 static Font font;
 static Texture2D button_hovered_texture;
+static Texture2D button_pressed_texture;
+static Texture2D button_texture;
 
 static Texture2D digit_textures[10];
 
@@ -54,8 +56,7 @@ DrawTexture3x3 (Texture2D texture, int image_x, int image_y,
   srcrect.x = image_x - padding;
   srcrect.y = image_y - padding;
   destrect.x = x + width - padding;
-  destrect.y = y + height - padding;
-  DrawTexturePro (texture, srcrect, destrect, origin, 0.f, WHITE);
+  destrect.y = y + height - padding; DrawTexturePro (texture, srcrect, destrect, origin, 0.f, WHITE);
 
   srcrect.x = 0;
   srcrect.y = image_y - padding;
@@ -130,6 +131,12 @@ Draw_init (void)
 
   button_hovered_texture = LoadTextureFromMemory (assets_button_hovered,
                                                   assets_button_hovered_len);
+
+  button_pressed_texture = LoadTextureFromMemory (assets_button_pressed,
+                                                  assets_button_pressed_len);
+
+  button_texture = LoadTextureFromMemory (assets_button,
+                                          assets_button_len);
 }
 
 void
@@ -167,4 +174,22 @@ DrawNumber3 (int number, int x, int y)
   DrawDigit (number % 10 , x + 52, y);
   DrawDigit ((number / 10) % 10 , x + 26, y);
   DrawDigit ((number / 100) % 10 , x, y);
+}
+
+void
+DrawButton (Texture2D texture, int x, int y, int width, int height, int mode)
+{
+  switch (mode)
+    {
+    case 0:
+      DrawTexture3x3 (button_texture, 32, 256, 8, x, y, width, height);
+      break;
+    case 1:
+      DrawTexture3x3 (button_hovered_texture, 32, 256, 8, x, y, width, height);
+      break;
+    case 2:
+      DrawTexture3x3 (button_pressed_texture, 32, 256, 8, x, y, width, height);
+      break;
+    }
+  DrawTexture (texture, x, y, WHITE);
 }

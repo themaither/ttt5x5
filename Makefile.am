@@ -203,6 +203,12 @@ assets.c :
 	xxd -n assets_button_hovered -i ${srcdir}/assets/button_hovered.png >>assets.c
 	echo "extern unsigned char assets_button_hovered[];" >> assets.h
 	echo "extern unsigned int assets_button_hovered_len;" >> assets.h
+	xxd -n assets_button_pressed -i ${srcdir}/assets/button_pressed.png >>assets.c
+	echo "extern unsigned char assets_button_pressed[];" >> assets.h
+	echo "extern unsigned int assets_button_pressed_len;" >> assets.h
+	xxd -n assets_button -i ${srcdir}/assets/button.png >>assets.c
+	echo "extern unsigned char assets_button[];" >> assets.h
+	echo "extern unsigned int assets_button_len;" >> assets.h
 	xxd -n assets_dejavusans -i ${srcdir}/assets/dejavusans.ttf >>assets.c
 	echo "extern unsigned char assets_dejavusans[];" >> assets.h
 	echo "extern unsigned int assets_dejavusans_len;" >> assets.h

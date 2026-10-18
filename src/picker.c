@@ -294,9 +294,9 @@ picker_update (void)
   DrawTexture (picker_texture, 0, 0, WHITE);
 
   if (whaton == 1 && top_whaton == 0 && IsBtnDown ())
-    DrawTexture (leave_pressed_texture, 2, 2, WHITE);
+    DrawButton (leave_texture, 2, 2, 80, 32, 2);
   else if (whaton == 1 && top_whaton == 0)
-    DrawTexture (leave_hovered_texture, 2, 2, WHITE);
+    DrawButton (leave_texture, 2, 2, 80, 32, 1);
   else
     DrawTexture (leave_texture, 2, 2, WHITE);
 
