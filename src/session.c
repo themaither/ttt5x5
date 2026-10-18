@@ -43,8 +43,6 @@ static float win_animation = 0.f;
 
 static Texture2D session_texture;
 static Texture2D leave_texture;
-static Texture2D leave_hovered_texture;
-static Texture2D leave_pressed_texture;
 static Texture2D moves_texture;
 
 static int mouse = 0;
@@ -77,8 +75,6 @@ void
 session_init (void)
 {
   leave_texture = LoadTextureFromMemory (assets_leave, assets_leave_len);
-  leave_hovered_texture = LoadTextureFromMemory (assets_leave_hovered, assets_leave_hovered_len);
-  leave_pressed_texture = LoadTextureFromMemory (assets_leave_pressed, assets_leave_pressed_len);
   session_texture = LoadTextureFromMemory (assets_session, assets_session_len);
   moves_texture = LoadTextureFromMemory (assets_moves, assets_moves_len);
 }
@@ -244,11 +240,11 @@ session_update (void)
     DrawCursor (x (player_x_interp * 48), y (player_y_interp * 48), 48);
 
   if (whaton == 1 && IsBtnDown ())
-    DrawTexture (leave_pressed_texture, 2, 2, WHITE);
+    DrawButton (leave_texture, 2, 2, 80, 32, 2);
   else if (whaton == 1)
-    DrawTexture (leave_hovered_texture, 2, 2, WHITE);
+    DrawButton (leave_texture, 2, 2, 80, 32, 1);
   else
-    DrawTexture (leave_texture, 2, 2, WHITE);
+    DrawButton (leave_texture, 2, 2, 80, 32, 3);
 
   DrawTexture (moves_texture, 336, 2, WHITE);
   DrawNumber3 (moves, 400, 6);

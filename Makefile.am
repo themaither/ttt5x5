@@ -59,33 +59,12 @@ assets.c :
 	xxd -n assets_leave -i ${srcdir}/assets/leave.png >>assets.c
 	echo "extern unsigned char assets_leave[];" >> assets.h
 	echo "extern unsigned int assets_leave_len;" >> assets.h
-	xxd -n assets_leave_hovered -i ${srcdir}/assets/leave_hovered.png >>assets.c
-	echo "extern unsigned char assets_leave_hovered[];" >> assets.h
-	echo "extern unsigned int assets_leave_hovered_len;" >> assets.h
-	xxd -n assets_leave_pressed -i ${srcdir}/assets/leave_pressed.png >>assets.c
-	echo "extern unsigned char assets_leave_pressed[];" >> assets.h
-	echo "extern unsigned int assets_leave_pressed_len;" >> assets.h
 	xxd -n assets_back -i ${srcdir}/assets/back.png >>assets.c
 	echo "extern unsigned char assets_back[];" >> assets.h
 	echo "extern unsigned int assets_back_len;" >> assets.h
-	xxd -n assets_back_hovered -i ${srcdir}/assets/back_hovered.png >>assets.c
-	echo "extern unsigned char assets_back_hovered[];" >> assets.h
-	echo "extern unsigned int assets_back_hovered_len;" >> assets.h
-	xxd -n assets_back_pressed -i ${srcdir}/assets/back_pressed.png >>assets.c
-	echo "extern unsigned char assets_back_pressed[];" >> assets.h
-	echo "extern unsigned int assets_back_pressed_len;" >> assets.h
 	xxd -n assets_session -i ${srcdir}/assets/session.png >>assets.c
 	echo "extern unsigned char assets_session[];" >> assets.h
 	echo "extern unsigned int assets_session_len;" >> assets.h
-	xxd -n assets_solve -i ${srcdir}/assets/solve.png >>assets.c
-	echo "extern unsigned char assets_solve[];" >> assets.h
-	echo "extern unsigned int assets_solve_len;" >> assets.h
-	xxd -n assets_solve_hovered -i ${srcdir}/assets/solve_hovered.png >>assets.c
-	echo "extern unsigned char assets_solve_hovered[];" >> assets.h
-	echo "extern unsigned int assets_solve_hovered_len;" >> assets.h
-	xxd -n assets_solve_pressed -i ${srcdir}/assets/solve_pressed.png >>assets.c
-	echo "extern unsigned char assets_solve_pressed[];" >> assets.h
-	echo "extern unsigned int assets_solve_pressed_len;" >> assets.h
 	xxd -n assets_white16 -i ${srcdir}/assets/white16.png >>assets.c
 	echo "extern unsigned char assets_white16[];" >> assets.h
 	echo "extern unsigned int assets_white16_len;" >> assets.h
@@ -107,33 +86,9 @@ assets.c :
 	xxd -n assets_prev -i ${srcdir}/assets/prev.png >>assets.c
 	echo "extern unsigned char assets_prev[];" >> assets.h
 	echo "extern unsigned int assets_prev_len;" >> assets.h
-	xxd -n assets_prev_disabled -i ${srcdir}/assets/prev_disabled.png >>assets.c
-	echo "extern unsigned char assets_prev_disabled[];" >> assets.h
-	echo "extern unsigned int assets_prev_disabled_len;" >> assets.h
-	xxd -n assets_prev_hovered -i ${srcdir}/assets/prev_hovered.png >>assets.c
-	echo "extern unsigned char assets_prev_hovered[];" >> assets.h
-	echo "extern unsigned int assets_prev_hovered_len;" >> assets.h
-	xxd -n assets_prev_hovered_disabled -i ${srcdir}/assets/prev_hovered_disabled.png >>assets.c
-	echo "extern unsigned char assets_prev_hovered_disabled[];" >> assets.h
-	echo "extern unsigned int assets_prev_hovered_disabled_len;" >> assets.h
-	xxd -n assets_prev_pressed -i ${srcdir}/assets/prev_pressed.png >>assets.c
-	echo "extern unsigned char assets_prev_pressed[];" >> assets.h
-	echo "extern unsigned int assets_prev_pressed_len;" >> assets.h
 	xxd -n assets_next -i ${srcdir}/assets/next.png >>assets.c
 	echo "extern unsigned char assets_next[];" >> assets.h
 	echo "extern unsigned int assets_next_len;" >> assets.h
-	xxd -n assets_next_disabled -i ${srcdir}/assets/next_disabled.png >>assets.c
-	echo "extern unsigned char assets_next_disabled[];" >> assets.h
-	echo "extern unsigned int assets_next_disabled_len;" >> assets.h
-	xxd -n assets_next_hovered -i ${srcdir}/assets/next_hovered.png >>assets.c
-	echo "extern unsigned char assets_next_hovered[];" >> assets.h
-	echo "extern unsigned int assets_next_hovered_len;" >> assets.h
-	xxd -n assets_next_hovered_disabled -i ${srcdir}/assets/next_hovered_disabled.png >>assets.c
-	echo "extern unsigned char assets_next_hovered_disabled[];" >> assets.h
-	echo "extern unsigned int assets_next_hovered_disabled_len;" >> assets.h
-	xxd -n assets_next_pressed -i ${srcdir}/assets/next_pressed.png >>assets.c
-	echo "extern unsigned char assets_next_pressed[];" >> assets.h
-	echo "extern unsigned int assets_next_pressed_len;" >> assets.h
 	xxd -n assets_digit_0 -i ${srcdir}/assets/digit_0.png >>assets.c
 	echo "extern unsigned char assets_digit_0[];" >> assets.h
 	echo "extern unsigned int assets_digit_0_len;" >> assets.h

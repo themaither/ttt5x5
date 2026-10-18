@@ -15,19 +15,9 @@
 
 static Texture2D picker_texture;
 static Texture2D leave_texture;
-static Texture2D leave_hovered_texture;
-static Texture2D leave_pressed_texture;
 static Texture2D completed_texture;
 static Texture2D prev_texture;
-static Texture2D prev_hovered_texture;
-static Texture2D prev_pressed_texture;
-static Texture2D prev_disabled_texture;
-static Texture2D prev_hovered_disabled_texture;
 static Texture2D next_texture;
-static Texture2D next_hovered_texture;
-static Texture2D next_pressed_texture;
-static Texture2D next_disabled_texture;
-static Texture2D next_hovered_disabled_texture;
 
 static int player_x = 0;
 static int player_y = 0;
@@ -98,22 +88,12 @@ picker_init (void)
   picker_texture = LoadTextureFromMemory (assets_picker, assets_picker_len);
 
   leave_texture = LoadTextureFromMemory (assets_leave, assets_leave_len);
-  leave_hovered_texture = LoadTextureFromMemory (assets_leave_hovered, assets_leave_hovered_len);
-  leave_pressed_texture = LoadTextureFromMemory (assets_leave_pressed, assets_leave_pressed_len);
 
   completed_texture = LoadTextureFromMemory (assets_completed, assets_completed_len);
 
   prev_texture = LoadTextureFromMemory (assets_prev, assets_prev_len);
-  prev_hovered_texture = LoadTextureFromMemory (assets_prev_hovered, assets_prev_hovered_len);
-  prev_pressed_texture = LoadTextureFromMemory (assets_prev_pressed, assets_prev_pressed_len);
-  prev_disabled_texture = LoadTextureFromMemory (assets_prev_disabled, assets_prev_disabled_len);
-  prev_hovered_disabled_texture = LoadTextureFromMemory (assets_prev_hovered_disabled, assets_prev_hovered_disabled_len);
 
   next_texture = LoadTextureFromMemory (assets_next, assets_next_len);
-  next_hovered_texture = LoadTextureFromMemory (assets_next_hovered, assets_next_hovered_len);
-  next_pressed_texture = LoadTextureFromMemory (assets_next_pressed, assets_next_pressed_len);
-  next_disabled_texture = LoadTextureFromMemory (assets_next_disabled, assets_next_disabled_len);
-  next_hovered_disabled_texture = LoadTextureFromMemory (assets_next_hovered_disabled, assets_next_hovered_disabled_len);
 
   buffer_field = _5x5_open ();
 }
@@ -303,18 +283,18 @@ picker_update (void)
   if (page == 0)
     {
       if (whaton == 1 && top_whaton == 1)
-        DrawTexture (prev_hovered_disabled_texture, 248, 2, WHITE);
+        DrawButton (prev_texture, 248, 2, 32, 32, 4);
       else
-        DrawTexture (prev_disabled_texture, 248, 2, WHITE);
+        DrawButton (prev_texture, 248, 2, 32, 32, 5);
     }
   else
     {
       if (whaton == 1 && top_whaton == 1 && IsBtnDown ())
-        DrawTexture (prev_pressed_texture, 248, 2, WHITE);
+        DrawButton (prev_texture, 248, 2, 32, 32, 2);
       else if (whaton == 1 && top_whaton == 1)
-        DrawTexture (prev_hovered_texture, 248, 2, WHITE);
+        DrawButton (prev_texture, 248, 2, 32, 32, 1);
       else
-        DrawTexture (prev_texture, 248, 2, WHITE);
+        DrawButton (prev_texture, 248, 2, 32, 32, 3);
     }
 
   DrawNumber3 (page + 1, 282, 6);
@@ -322,18 +302,18 @@ picker_update (void)
   if ((levelcount () - 1) / 15 <= page)
     {
       if (whaton == 1 && top_whaton == 2)
-        DrawTexture (next_hovered_disabled_texture, 360, 2, WHITE);
+        DrawButton (next_texture, 360, 2, 32, 32, 4);
       else
-        DrawTexture (next_disabled_texture, 360, 2, WHITE);
+        DrawButton (next_texture, 360, 2, 32, 32, 5);
     }
   else
     {
       if (whaton == 1 && top_whaton == 2 && IsBtnDown ())
-        DrawTexture (next_pressed_texture, 360, 2, WHITE);
+        DrawButton (next_texture, 360, 2, 32, 32, 2);
       else if (whaton == 1 && top_whaton == 2)
-        DrawTexture (next_hovered_texture, 360, 2, WHITE);
+        DrawButton (next_texture, 360, 2, 32, 32, 1);
       else
-        DrawTexture (next_texture, 360, 2, WHITE);
+        DrawButton (next_texture, 360, 2, 32, 32, 3);
     }
 
   _5x5_select (3);
