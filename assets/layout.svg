@@ -29,9 +29,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
-     inkscape:zoom="2.0081833"
-     inkscape:cx="-49.29829"
-     inkscape:cy="-162.0868"
+     inkscape:zoom="1.15"
+     inkscape:cx="746.95652"
+     inkscape:cy="-37.826087"
      inkscape:window-width="1366"
      inkscape:window-height="716"
      inkscape:window-x="0"
@@ -109,22 +109,6 @@
        id="page336"
        inkscape:label="leave" />
     <inkscape:page
-       x="0"
-       y="-136"
-       width="80"
-       height="32"
-       id="page338"
-       inkscape:label="leave_pressed" />
-    <inkscape:page
-       x="0"
-       y="-192"
-       width="80"
-       height="32"
-       id="page347"
-       margin="0"
-       bleed="0"
-       inkscape:label="leave_hovered" />
-    <inkscape:page
        x="927.01697"
        y="0"
        width="15.556349"
@@ -174,46 +158,6 @@
        id="page6"
        inkscape:label="back" />
     <inkscape:page
-       x="-76"
-       y="-136"
-       width="64"
-       height="32"
-       id="page7"
-       inkscape:label="bacK_pressed" />
-    <inkscape:page
-       x="-76"
-       y="-192"
-       width="64"
-       height="32"
-       id="page8"
-       inkscape:label="back_hovered" />
-    <inkscape:page
-       x="760"
-       y="160"
-       width="32"
-       height="32"
-       id="page9"
-       margin="0"
-       bleed="0"
-       inkscape:export-filename="completed.png"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
-       inkscape:label="completed" />
-    <inkscape:page
-       x="-120"
-       y="-192"
-       width="32"
-       height="32"
-       id="page10"
-       inkscape:label="next_pressed" />
-    <inkscape:page
-       x="-120"
-       y="-136"
-       width="32"
-       height="32"
-       id="page11"
-       inkscape:label="next_hovered" />
-    <inkscape:page
        x="-120"
        y="-72"
        width="32"
@@ -227,52 +171,6 @@
        height="32"
        id="page13"
        inkscape:label="prev" />
-    <inkscape:page
-       x="-164"
-       y="-136"
-       width="32"
-       height="32"
-       id="page14"
-       inkscape:label="prev_hovered" />
-    <inkscape:page
-       x="-164"
-       y="-192"
-       width="32"
-       height="32"
-       id="page15"
-       inkscape:label="prev_pressed" />
-    <inkscape:page
-       x="-164"
-       y="-234"
-       width="32"
-       height="32"
-       id="page16"
-       margin="0"
-       bleed="0"
-       inkscape:label="prev_disabled" />
-    <inkscape:page
-       x="-120"
-       y="-234"
-       width="32"
-       height="32"
-       id="page17"
-       inkscape:label="next_disabled" />
-    <inkscape:page
-       x="-164"
-       y="-274"
-       width="32"
-       height="32"
-       id="page18"
-       margin="0"
-       bleed="0"
-       inkscape:label="prev_hovered_disabled" />
-    <inkscape:page
-       x="-120"
-       y="-274"
-       width="32"
-       height="32"
-       id="page19"
-       inkscape:label="next_hovered_disabled" />
     <inkscape:page
        x="202"
        y="-188"
@@ -399,24 +297,6 @@
        inkscape:label="title" />
     <inkscape:page
        x="-720"
-       y="-104"
-       width="212"
-       height="56"
-       id="page62"
-       margin="0"
-       bleed="0"
-       inkscape:label="level_select_hovered" />
-    <inkscape:page
-       x="-720"
-       y="-168"
-       width="212"
-       height="56"
-       id="page63"
-       margin="0"
-       bleed="0"
-       inkscape:label="level_select_pressed" />
-    <inkscape:page
-       x="-720"
        y="-232"
        width="212"
        height="56"
@@ -424,24 +304,6 @@
        margin="0"
        bleed="0"
        inkscape:label="level_select" />
-    <inkscape:page
-       x="-496"
-       y="-104"
-       width="212"
-       height="56"
-       id="page65"
-       margin="0"
-       bleed="0"
-       inkscape:label="quit_hovered" />
-    <inkscape:page
-       x="-496"
-       y="-168"
-       width="212"
-       height="56"
-       id="page66"
-       margin="0"
-       bleed="0"
-       inkscape:label="quit_pressed" />
     <inkscape:page
        x="-496"
        y="-232"
@@ -7767,15 +7629,6 @@
          in="result6"
          id="feComposite323-82-8" />
     </filter>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient344"
-       id="linearGradient340"
-       x1="0"
-       y1="-136"
-       x2="0"
-       y2="-104"
-       gradientUnits="userSpaceOnUse" />
     <inkscape:path-effect
        effect="fillet_chamfer"
        id="path-effect347-5"
@@ -7878,15 +7731,6 @@
        apply_with_radius="true"
        only_selected="false"
        hide_knots="false" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient354"
-       id="linearGradient348"
-       gradientUnits="userSpaceOnUse"
-       x1="0"
-       y1="-136"
-       x2="0"
-       y2="-104" />
     <inkscape:path-effect
        effect="fillet_chamfer"
        id="path-effect347-4"
@@ -9040,15 +8884,6 @@
        apply_with_radius="true"
        only_selected="false"
        hide_knots="false" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient344"
-       id="linearGradient8"
-       gradientUnits="userSpaceOnUse"
-       x1="0"
-       y1="-136"
-       x2="0"
-       y2="-104" />
     <inkscape:path-effect
        effect="fillet_chamfer"
        id="path-effect347-2-31"
@@ -9100,15 +8935,6 @@
        apply_with_radius="true"
        only_selected="false"
        hide_knots="false" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient354"
-       id="linearGradient9"
-       gradientUnits="userSpaceOnUse"
-       x1="16"
-       y1="-136"
-       x2="16"
-       y2="-104" />
     <filter
        style="color-interpolation-filters:sRGB;"
        inkscape:label="Drop Shadow"
@@ -9522,15 +9348,6 @@
        apply_with_radius="true"
        only_selected="false"
        hide_knots="false" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient344"
-       id="linearGradient16"
-       gradientUnits="userSpaceOnUse"
-       x1="0"
-       y1="-136"
-       x2="0"
-       y2="-104" />
     <inkscape:path-effect
        effect="fillet_chamfer"
        id="path-effect347-2-31-2"
@@ -9582,15 +9399,6 @@
        apply_with_radius="true"
        only_selected="false"
        hide_knots="false" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient354"
-       id="linearGradient17"
-       gradientUnits="userSpaceOnUse"
-       x1="80"
-       y1="-136"
-       x2="80"
-       y2="-104" />
     <inkscape:path-effect
        effect="fillet_chamfer"
        id="path-effect347-2-31-2-5"
@@ -9642,15 +9450,6 @@
        apply_with_radius="true"
        only_selected="false"
        hide_knots="false" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient354"
-       id="linearGradient18"
-       gradientUnits="userSpaceOnUse"
-       x1="48"
-       y1="-136"
-       x2="48"
-       y2="-104" />
     <inkscape:path-effect
        effect="fillet_chamfer"
        id="path-effect347-7-9-2"
@@ -9702,15 +9501,6 @@
        apply_with_radius="true"
        only_selected="false"
        hide_knots="false" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient344"
-       id="linearGradient19"
-       gradientUnits="userSpaceOnUse"
-       x1="0"
-       y1="-136"
-       x2="0"
-       y2="-104" />
     <inkscape:path-effect
        effect="fillet_chamfer"
        id="path-effect347-7-9-3"
@@ -9813,24 +9603,6 @@
        apply_with_radius="true"
        only_selected="false"
        hide_knots="false" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient344"
-       id="linearGradient20"
-       gradientUnits="userSpaceOnUse"
-       x1="0"
-       y1="-136"
-       x2="0"
-       y2="-104" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient344"
-       id="linearGradient21"
-       gradientUnits="userSpaceOnUse"
-       x1="0"
-       y1="-136"
-       x2="0"
-       y2="-104" />
     <filter
        style="color-interpolation-filters:sRGB;"
        inkscape:label="Greyscale"
@@ -13893,124 +13665,6 @@
        height="80"
        x="280"
        y="306" />
-    <path
-       style="fill:url(#linearGradient340);fill-opacity:1;stroke:none;stroke-width:1.625;stroke-dasharray:none;paint-order:markers stroke fill"
-       id="rect339"
-       width="80"
-       height="32"
-       x="0"
-       y="-136"
-       inkscape:path-effect="#path-effect347"
-       sodipodi:type="rect"
-       d="m 7,-136 h 66 a 7,7 45 0 1 7,7 v 18 a 7,7 135 0 1 -7,7 l -66,0 a 7,7 45 0 1 -7,-7 v -18 a 7,7 135 0 1 7,-7 z" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#216778;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
-       id="rect339-1"
-       width="79"
-       height="31"
-       x="0.5"
-       y="-135.5"
-       inkscape:path-effect="#path-effect346"
-       sodipodi:type="rect"
-       d="m 6,-135.5 h 68 a 5.5,5.5 45 0 1 5.5,5.5 v 20 a 5.5,5.5 135 0 1 -5.5,5.5 l -68,0 A 5.5,5.5 45 0 1 0.5,-110 v -20 a 5.5,5.5 135 0 1 5.5,-5.5 z" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#87cdde;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
-       id="rect339-1-3"
-       width="76"
-       height="28"
-       x="2"
-       y="-134"
-       inkscape:path-effect="#path-effect345"
-       sodipodi:type="rect"
-       d="m 6,-134 h 68 a 4,4 45 0 1 4,4 v 20 a 4,4 135 0 1 -4,4 l -68,0 a 4,4 45 0 1 -4,-4 v -20 a 4,4 135 0 1 4,-4 z" />
-    <path
-       style="fill:url(#linearGradient348);fill-opacity:1;stroke:none;stroke-width:1.625;stroke-dasharray:none;paint-order:markers stroke fill"
-       id="rect339-9"
-       width="80"
-       height="32"
-       x="0"
-       y="-136"
-       inkscape:path-effect="#path-effect347-2"
-       sodipodi:type="rect"
-       d="m 7,-136 h 66 a 7,7 45 0 1 7,7 v 18 a 7,7 135 0 1 -7,7 l -66,0 a 7,7 45 0 1 -7,-7 v -18 a 7,7 135 0 1 7,-7 z"
-       transform="rotate(180,40,-148)" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#216778;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
-       id="rect339-1-6"
-       width="79"
-       height="31"
-       x="0.5"
-       y="-135.5"
-       inkscape:path-effect="#path-effect346-0"
-       sodipodi:type="rect"
-       d="m 6,-135.5 h 68 a 5.5,5.5 45 0 1 5.5,5.5 v 20 a 5.5,5.5 135 0 1 -5.5,5.5 l -68,0 A 5.5,5.5 45 0 1 0.5,-110 v -20 a 5.5,5.5 135 0 1 5.5,-5.5 z"
-       transform="translate(0,-56)" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#87cdde;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
-       id="rect339-1-3-5"
-       width="76"
-       height="28"
-       x="2"
-       y="-134"
-       inkscape:path-effect="#path-effect345-8"
-       sodipodi:type="rect"
-       d="m 6,-134 h 68 a 4,4 45 0 1 4,4 v 20 a 4,4 135 0 1 -4,4 l -68,0 a 4,4 45 0 1 -4,-4 v -20 a 4,4 135 0 1 4,-4 z"
-       transform="translate(0,-56)" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:Cantarell;writing-mode:lr-tb;direction:ltr;fill:#216778;stroke:none;stroke-width:4;stroke-dasharray:none;paint-order:markers stroke fill"
-       x="11.744003"
-       y="-114.528"
-       id="text5-9-7"><tspan
-         sodipodi:role="line"
-         id="tspan5-6-1"
-         x="11.744003"
-         y="-114.528"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';fill:#216778">← Leave</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:Cantarell;writing-mode:lr-tb;direction:ltr;fill:#d7eef4;stroke:none;stroke-width:4;stroke-dasharray:none;paint-order:markers stroke fill"
-       x="11.744003"
-       y="-170.528"
-       id="text5-9-7-2"><tspan
-         sodipodi:role="line"
-         id="tspan5-6-1-9"
-         x="11.744003"
-         y="-170.528"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';fill:#d7eef4">← Leave</tspan></text>
-    <path
-       style="fill:url(#linearGradient9);fill-opacity:1;stroke:none;stroke-width:1.625;stroke-dasharray:none;paint-order:markers stroke fill"
-       id="rect339-9-3"
-       width="64"
-       height="32"
-       x="16"
-       y="-136"
-       inkscape:path-effect="#path-effect347-2-31"
-       sodipodi:type="rect"
-       d="m 23,-136 h 50 a 7,7 45 0 1 7,7 v 18 a 7,7 135 0 1 -7,7 H 23 a 7,7 45 0 1 -7,-7 v -18 a 7,7 135 0 1 7,-7 z"
-       transform="rotate(180,2,-148)" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#216778;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
-       id="rect339-1-6-3"
-       width="63"
-       height="31"
-       x="0.5"
-       y="-135.5"
-       inkscape:path-effect="#path-effect346-0-8"
-       sodipodi:type="rect"
-       d="m 6,-135.5 h 52 a 5.5,5.5 45 0 1 5.5,5.5 l 0,20 a 5.5,5.5 135 0 1 -5.5,5.5 H 6 A 5.5,5.5 45 0 1 0.5,-110 v -20 a 5.5,5.5 135 0 1 5.5,-5.5 z"
-       transform="translate(-76,-56)" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#87cdde;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
-       id="rect339-1-3-5-38"
-       width="60"
-       height="28"
-       x="2"
-       y="-134"
-       inkscape:path-effect="#path-effect345-8-9"
-       sodipodi:type="rect"
-       d="m 6,-134 h 52 a 4,4 45 0 1 4,4 v 20 a 4,4 135 0 1 -4,4 H 6 a 4,4 45 0 1 -4,-4 v -20 a 4,4 135 0 1 4,-4 z"
-       transform="translate(-76,-56)" />
     <rect
        style="fill:#216778;stroke:none;stroke-width:1.21326;filter:url(#filter39-7)"
        id="rect3-3"
@@ -14150,94 +13804,6 @@
            y="528" />
       </g>
     </g>
-    <path
-       style="fill:url(#linearGradient8);fill-opacity:1;stroke:none;stroke-width:1.625;stroke-dasharray:none;paint-order:markers stroke fill"
-       id="rect339-96"
-       width="64"
-       height="31.999939"
-       x="16"
-       y="-136"
-       inkscape:path-effect="#path-effect347-7"
-       sodipodi:type="rect"
-       d="m 23,-136 h 50 a 7,7 45 0 1 7,7 v 17.99994 a 7,7 135 0 1 -7,7 H 23 a 7,7 45 0 1 -7,-7 V -129 a 7,7 135 0 1 7,-7 z"
-       transform="translate(-92)" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#216778;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
-       id="rect339-1-2"
-       width="63"
-       height="30.999908"
-       x="16.5"
-       y="-135.5"
-       inkscape:path-effect="#path-effect346-6"
-       sodipodi:type="rect"
-       d="m 22,-135.5 h 52 a 5.5,5.5 45 0 1 5.5,5.5 v 19.99991 a 5.5,5.5 135 0 1 -5.5,5.5 H 22 a 5.5,5.5 45 0 1 -5.5,-5.5 V -130 a 5.5,5.5 135 0 1 5.5,-5.5 z"
-       transform="translate(-92)" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#87cdde;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
-       id="rect339-1-3-1"
-       width="60"
-       height="28.000069"
-       x="18"
-       y="-134"
-       inkscape:path-effect="#path-effect345-31"
-       sodipodi:type="rect"
-       d="m 22,-134 h 52 a 4,4 45 0 1 4,4 v 20.00007 a 4,4 135 0 1 -4,4 H 22 a 4,4 45 0 1 -4,-4 V -130 a 4,4 135 0 1 4,-4 z"
-       transform="translate(-92)" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:Cantarell;writing-mode:lr-tb;direction:ltr;fill:#216778;stroke:none;stroke-width:4;stroke-dasharray:none;paint-order:markers stroke fill;fill-opacity:1"
-       x="-68.999985"
-       y="-114.168"
-       id="text5-9-9-8"><tspan
-         sodipodi:role="line"
-         id="tspan5-6-6-5"
-         x="-68.999985"
-         y="-114.168"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';fill:#216778;fill-opacity:1">← Back</tspan></text>
-    <path
-       style="fill:url(#linearGradient16);fill-opacity:1;stroke:none;stroke-width:1.625;stroke-dasharray:none;paint-order:markers stroke fill"
-       id="rect339-96-2"
-       width="32"
-       height="31"
-       x="16"
-       y="-136"
-       inkscape:path-effect="#path-effect347-7-9"
-       sodipodi:type="rect"
-       d="m 23,-136 h 18 a 7,7 45 0 1 7,7 l 0,17 a 7,7 135 0 1 -7,7 H 23 a 7,7 45 0 1 -7,-7 v -17 a 7,7 135 0 1 7,-7 z"
-       transform="translate(-180)" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#216778;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
-       id="rect339-1-2-9"
-       width="31"
-       height="31"
-       x="16.5"
-       y="-135.5"
-       inkscape:path-effect="#path-effect346-6-7"
-       sodipodi:type="rect"
-       d="m 22,-135.5 h 20 a 5.5,5.5 45 0 1 5.5,5.5 v 20 a 5.5,5.5 135 0 1 -5.5,5.5 H 22 a 5.5,5.5 45 0 1 -5.5,-5.5 v -20 a 5.5,5.5 135 0 1 5.5,-5.5 z"
-       transform="translate(-180)" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#87cdde;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
-       id="rect339-1-3-1-3"
-       width="28"
-       height="28.5"
-       x="18"
-       y="-134"
-       inkscape:path-effect="#path-effect345-31-3"
-       sodipodi:type="rect"
-       d="m 22,-134 h 20 a 4,4 45 0 1 4,4 v 20.5 a 4,4 135 0 1 -4,4 H 22 a 4,4 45 0 1 -4,-4 V -130 a 4,4 135 0 1 4,-4 z"
-       transform="translate(-180)" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:Cantarell;writing-mode:lr-tb;direction:ltr;fill:#216778;fill-opacity:1;stroke:none;stroke-width:4;stroke-dasharray:none;paint-order:markers stroke fill"
-       x="-153.28799"
-       y="-114.79201"
-       id="text5-9-9-8-1"><tspan
-         sodipodi:role="line"
-         id="tspan5-6-6-5-9"
-         x="-153.28799"
-         y="-114.79201"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';fill:#216778;fill-opacity:1">←</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:Cantarell;writing-mode:lr-tb;direction:ltr;fill:#f9f9f9;stroke:none;stroke-width:4;stroke-dasharray:none;paint-order:markers stroke fill"
@@ -14250,151 +13816,6 @@
          x="98.711998"
          y="-50.792007"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';fill:#f9f9f9">←</tspan></text>
-    <path
-       style="fill:url(#linearGradient19);fill-opacity:1;stroke:none;stroke-width:1.625;stroke-dasharray:none;paint-order:markers stroke fill"
-       id="rect339-96-2-6"
-       width="32"
-       height="31"
-       x="16"
-       y="-136"
-       inkscape:path-effect="#path-effect347-7-9-2"
-       sodipodi:type="rect"
-       d="m 23,-136 h 18 a 7,7 45 0 1 7,7 l 0,17 a 7,7 135 0 1 -7,7 H 23 a 7,7 45 0 1 -7,-7 v -17 a 7,7 135 0 1 7,-7 z"
-       transform="matrix(-1,0,0,1,-72,0)" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#216778;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
-       id="rect339-1-2-9-4"
-       width="31"
-       height="31"
-       x="16.5"
-       y="-135.5"
-       inkscape:path-effect="#path-effect346-6-7-0"
-       sodipodi:type="rect"
-       d="m 22,-135.5 h 20 a 5.5,5.5 45 0 1 5.5,5.5 v 20 a 5.5,5.5 135 0 1 -5.5,5.5 H 22 a 5.5,5.5 45 0 1 -5.5,-5.5 v -20 a 5.5,5.5 135 0 1 5.5,-5.5 z"
-       transform="matrix(-1,0,0,1,-72,0)" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#87cdde;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
-       id="rect339-1-3-1-3-9"
-       width="28"
-       height="28.5"
-       x="18"
-       y="-134"
-       inkscape:path-effect="#path-effect345-31-3-6"
-       sodipodi:type="rect"
-       d="m 22,-134 h 20 a 4,4 45 0 1 4,4 v 20.5 a 4,4 135 0 1 -4,4 H 22 a 4,4 45 0 1 -4,-4 V -130 a 4,4 135 0 1 4,-4 z"
-       transform="matrix(-1,0,0,1,-72,0)" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:Cantarell;writing-mode:lr-tb;direction:ltr;fill:#216778;fill-opacity:1;stroke:none;stroke-width:4;stroke-dasharray:none;paint-order:markers stroke fill"
-       x="98.712013"
-       y="-114.79201"
-       id="text5-9-9-8-1-5"
-       transform="scale(-1,1)"><tspan
-         sodipodi:role="line"
-         id="tspan5-6-6-5-9-0"
-         x="98.712013"
-         y="-114.79201"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';fill:#216778;fill-opacity:1">←</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:Cantarell;writing-mode:lr-tb;direction:ltr;fill:#d7eef4;stroke:none;stroke-width:4;stroke-dasharray:none;paint-order:markers stroke fill;fill-opacity:1"
-       x="-68.999985"
-       y="-170.168"
-       id="text5-9-9-8-9"><tspan
-         sodipodi:role="line"
-         id="tspan5-6-6-5-7"
-         x="-68.999985"
-         y="-170.168"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';fill:#d7eef4;fill-opacity:1">← Back</tspan></text>
-    <path
-       style="fill:url(#linearGradient17);fill-opacity:1;stroke:none;stroke-width:1.625;stroke-dasharray:none;paint-order:markers stroke fill"
-       id="rect339-9-3-5"
-       width="32"
-       height="32"
-       x="48"
-       y="-136"
-       inkscape:path-effect="#path-effect347-2-31-2"
-       sodipodi:type="rect"
-       d="m 55,-136 h 18 a 7,7 45 0 1 7,7 v 18 a 7,7 135 0 1 -7,7 H 55 a 7,7 45 0 1 -7,-7 v -18 a 7,7 135 0 1 7,-7 z"
-       transform="matrix(1,0,0,-1,-168,-296)" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#216778;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
-       id="rect339-1-6-3-4"
-       width="31"
-       height="31"
-       x="0.5"
-       y="-135.5"
-       inkscape:path-effect="#path-effect346-0-8-0"
-       sodipodi:type="rect"
-       d="m 6,-135.5 h 20 a 5.5,5.5 45 0 1 5.5,5.5 v 20 a 5.5,5.5 135 0 1 -5.5,5.5 H 6 A 5.5,5.5 45 0 1 0.5,-110 v -20 a 5.5,5.5 135 0 1 5.5,-5.5 z"
-       transform="matrix(-1,0,0,1,-88,-56)" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#87cdde;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
-       id="rect339-1-3-5-38-7"
-       width="28"
-       height="28"
-       x="2"
-       y="-134"
-       inkscape:path-effect="#path-effect345-8-9-6"
-       sodipodi:type="rect"
-       d="m 6,-134 h 20 a 4,4 45 0 1 4,4 v 20 a 4,4 135 0 1 -4,4 H 6 a 4,4 45 0 1 -4,-4 v -20 a 4,4 135 0 1 4,-4 z"
-       transform="matrix(-1,0,0,1,-88,-56)" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:Cantarell;writing-mode:lr-tb;direction:ltr;fill:#d7eef4;fill-opacity:1;stroke:none;stroke-width:4;stroke-dasharray:none;paint-order:markers stroke fill"
-       x="98.712013"
-       y="-170.79201"
-       id="text5-9-9-8-9-6"
-       transform="scale(-1,1)"><tspan
-         sodipodi:role="line"
-         id="tspan5-6-6-5-7-5"
-         x="98.712013"
-         y="-170.79201"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';fill:#d7eef4;fill-opacity:1">←</tspan></text>
-    <path
-       style="fill:url(#linearGradient18);fill-opacity:1;stroke:none;stroke-width:1.625;stroke-dasharray:none;paint-order:markers stroke fill"
-       id="rect339-9-3-5-3"
-       width="32"
-       height="32.000092"
-       x="48"
-       y="-136"
-       inkscape:path-effect="#path-effect347-2-31-2-5"
-       sodipodi:type="rect"
-       d="m 55,-136 h 18 a 7,7 45 0 1 7,7 v 18.00009 a 7,7 135 0 1 -7,7 H 55 a 7,7 45 0 1 -7,-7 V -129 a 7,7 135 0 1 7,-7 z"
-       transform="rotate(180,-42,-148)" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#216778;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
-       id="rect339-1-6-3-4-0"
-       width="31"
-       height="31"
-       x="0.5"
-       y="-135.5"
-       inkscape:path-effect="#path-effect346-0-8-0-4"
-       sodipodi:type="rect"
-       d="m 6,-135.5 h 20 a 5.5,5.5 45 0 1 5.5,5.5 v 20 a 5.5,5.5 135 0 1 -5.5,5.5 H 6 A 5.5,5.5 45 0 1 0.5,-110 v -20 a 5.5,5.5 135 0 1 5.5,-5.5 z"
-       transform="translate(-164,-56)" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#87cdde;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
-       id="rect339-1-3-5-38-7-7"
-       width="28"
-       height="28"
-       x="2"
-       y="-134"
-       inkscape:path-effect="#path-effect345-8-9-6-7"
-       sodipodi:type="rect"
-       d="m 6,-134 h 20 a 4,4 45 0 1 4,4 v 20 a 4,4 135 0 1 -4,4 H 6 a 4,4 45 0 1 -4,-4 v -20 a 4,4 135 0 1 4,-4 z"
-       transform="translate(-164,-56)" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:Cantarell;writing-mode:lr-tb;direction:ltr;fill:#d7eef4;fill-opacity:1;stroke:none;stroke-width:4;stroke-dasharray:none;paint-order:markers stroke fill"
-       x="-153.28799"
-       y="-170.79201"
-       id="text5-9-9-8-9-6-8"><tspan
-         sodipodi:role="line"
-         id="tspan5-6-6-5-7-5-6"
-         x="-153.28799"
-         y="-170.79201"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';fill:#d7eef4;fill-opacity:1">←</tspan></text>
     <rect
        style="opacity:0.744792;mix-blend-mode:multiply;fill:#666666;fill-opacity:1;stroke:none;stroke-width:6;stroke-linejoin:miter;stroke-dasharray:none;paint-order:markers fill stroke"
        id="rect13"
@@ -14409,44 +13830,6 @@
        height="48"
        x="848"
        y="88" />
-    <g
-       id="g171"
-       transform="translate(-0.49999868,-0.50000072)">
-      <circle
-         style="opacity:1;fill:#668000;fill-opacity:1;stroke-width:6;paint-order:markers fill stroke;filter:url(#filter109)"
-         id="path46"
-         cx="776"
-         cy="176"
-         r="16"
-         transform="matrix(0.90042368,0,0,0.90042372,77.771223,18.025426)" />
-      <ellipse
-         style="opacity:0.782776;mix-blend-mode:screen;fill:#668000;fill-opacity:1;stroke-width:5.40254;paint-order:markers fill stroke"
-         id="path127"
-         cx="776.5"
-         cy="176.5"
-         rx="14.406779"
-         ry="14.40678" />
-      <path
-         id="path128-3"
-         style="baseline-shift:baseline;display:inline;overflow:visible;opacity:0.92545;vector-effect:none;fill:#333f00;fill-opacity:1;stroke-width:0.900424;paint-order:markers fill stroke;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
-         d="m 783.1105,166.75713 c -2.59136,4.53509 -5.18269,9.07019 -7.77406,13.60528 -2.29342,-1.56898 -4.58679,-3.13805 -6.88023,-4.707 -1.01657,1.4861 -2.03335,2.97207 -3.04993,4.45816 3.90468,2.67158 7.80934,5.3432 11.71386,8.015 3.6349,-6.36066 7.26963,-12.72143 10.90445,-19.08213 -1.56355,-0.89343 -3.12719,-1.78673 -4.69073,-2.68017 -0.0744,0.13029 -0.1489,0.26058 -0.22336,0.39086 z" />
-      <path
-         style="opacity:1;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:3.60169;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
-         d="m 767.49576,178.30085 8.55402,5.85275 9.00425,-15.75741"
-         id="path128"
-         sodipodi:nodetypes="ccc" />
-    </g>
-    <path
-       d="m 776,160 a 16,16 0 0 0 -16,16 16,16 0 0 0 16,16 16,16 0 0 0 16,-16 16,16 0 0 0 -16,-16 z m 0,1.5 A 14.453403,14.500001 0 0 1 790.45312,176 14.453403,14.500001 0 0 1 776,190.5 14.453403,14.500001 0 0 1 761.54687,176 14.453403,14.500001 0 0 1 776,161.5 Z"
-       style="opacity:1;fill:#ececec;stroke-width:4.26666;paint-order:markers fill stroke"
-       id="path173" />
-    <circle
-       style="fill:#660080;fill-opacity:1;stroke-width:6;paint-order:markers fill stroke;filter:url(#filter109-6)"
-       id="path46-6"
-       cx="776"
-       cy="176"
-       r="16"
-       transform="matrix(0.90042368,0,0,0.90042372,115.21932,17.750531)" />
     <ellipse
        style="opacity:0.782776;mix-blend-mode:screen;fill:#aa0088;fill-opacity:1;stroke-width:5.40254;paint-order:markers fill stroke"
        id="path127-2"
@@ -14458,118 +13841,6 @@
        d="m 814,160 a 16,16 0 0 0 -16,16 16,16 0 0 0 16,16 16,16 0 0 0 16,-16 16,16 0 0 0 -16,-16 z m 0,1.5 A 14.453403,14.500001 0 0 1 828.45312,176 14.453403,14.500001 0 0 1 814,190.5 14.453403,14.500001 0 0 1 799.54687,176 14.453403,14.500001 0 0 1 814,161.5 Z"
        style="fill:#ececec;stroke-width:4.26666;paint-order:markers fill stroke"
        id="path173-0" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:Cantarell;writing-mode:lr-tb;direction:ltr;fill:#999999;stroke:none;stroke-width:4;stroke-dasharray:none;paint-order:markers stroke fill"
-       x="-153.28799"
-       y="-212.79201"
-       id="text5-9-9-5-3"><tspan
-         sodipodi:role="line"
-         id="tspan5-6-6-0-5"
-         x="-153.28799"
-         y="-212.79201"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';fill:#999999">←</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:Cantarell;writing-mode:lr-tb;direction:ltr;fill:#999999;stroke:none;stroke-width:4;stroke-dasharray:none;paint-order:markers stroke fill"
-       x="98.712006"
-       y="-212.79201"
-       id="text5-9-9-5-2-6"
-       transform="scale(-1,1)"><tspan
-         sodipodi:role="line"
-         id="tspan5-6-6-0-6-2"
-         x="98.712006"
-         y="-212.79201"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';fill:#999999">←</tspan></text>
-    <path
-       style="fill:url(#linearGradient20);fill-opacity:1;stroke:none;stroke-width:1.625;stroke-dasharray:none;paint-order:markers stroke fill;filter:url(#filter21)"
-       id="rect339-96-2-7"
-       width="32"
-       height="31"
-       x="16"
-       y="-136"
-       inkscape:path-effect="#path-effect347-7-9-3"
-       sodipodi:type="rect"
-       d="m 23,-136 h 18 a 7,7 45 0 1 7,7 l 0,17 a 7,7 135 0 1 -7,7 H 23 a 7,7 45 0 1 -7,-7 v -17 a 7,7 135 0 1 7,-7 z"
-       transform="translate(-180,-138)" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#216778;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter22)"
-       id="rect339-1-2-9-9"
-       width="31"
-       height="31"
-       x="16.5"
-       y="-135.5"
-       inkscape:path-effect="#path-effect346-6-7-6"
-       sodipodi:type="rect"
-       d="m 22,-135.5 h 20 a 5.5,5.5 45 0 1 5.5,5.5 v 20 a 5.5,5.5 135 0 1 -5.5,5.5 H 22 a 5.5,5.5 45 0 1 -5.5,-5.5 v -20 a 5.5,5.5 135 0 1 5.5,-5.5 z"
-       transform="translate(-180,-138)" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#87cdde;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter23)"
-       id="rect339-1-3-1-3-2"
-       width="28"
-       height="28.5"
-       x="18"
-       y="-134"
-       inkscape:path-effect="#path-effect345-31-3-0"
-       sodipodi:type="rect"
-       d="m 22,-134 h 20 a 4,4 45 0 1 4,4 v 20.5 a 4,4 135 0 1 -4,4 H 22 a 4,4 45 0 1 -4,-4 V -130 a 4,4 135 0 1 4,-4 z"
-       transform="translate(-180,-138)" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:Cantarell;writing-mode:lr-tb;direction:ltr;fill:#999999;fill-opacity:1;stroke:none;stroke-width:4;stroke-dasharray:none;paint-order:markers stroke fill;filter:url(#filter24)"
-       x="-153.28799"
-       y="-252.79201"
-       id="text5-9-9-8-1-0"><tspan
-         sodipodi:role="line"
-         id="tspan5-6-6-5-9-2"
-         x="-153.28799"
-         y="-252.79201"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';fill:#999999;fill-opacity:1">←</tspan></text>
-    <path
-       style="fill:url(#linearGradient21);fill-opacity:1;stroke:none;stroke-width:1.625;stroke-dasharray:none;paint-order:markers stroke fill;filter:url(#filter25)"
-       id="rect339-96-2-6-3"
-       width="32"
-       height="31"
-       x="16"
-       y="-136"
-       inkscape:path-effect="#path-effect347-7-9-2-6"
-       sodipodi:type="rect"
-       d="m 23,-136 h 18 a 7,7 45 0 1 7,7 l 0,17 a 7,7 135 0 1 -7,7 H 23 a 7,7 45 0 1 -7,-7 v -17 a 7,7 135 0 1 7,-7 z"
-       transform="matrix(-1,0,0,1,-72,-138)" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#216778;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter26)"
-       id="rect339-1-2-9-4-7"
-       width="31"
-       height="31"
-       x="16.5"
-       y="-135.5"
-       inkscape:path-effect="#path-effect346-6-7-0-2"
-       sodipodi:type="rect"
-       d="m 22,-135.5 h 20 a 5.5,5.5 45 0 1 5.5,5.5 v 20 a 5.5,5.5 135 0 1 -5.5,5.5 H 22 a 5.5,5.5 45 0 1 -5.5,-5.5 v -20 a 5.5,5.5 135 0 1 5.5,-5.5 z"
-       transform="matrix(-1,0,0,1,-72,-138)" />
-    <path
-       style="fill:none;fill-opacity:1;stroke:#87cdde;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter27)"
-       id="rect339-1-3-1-3-9-5"
-       width="28"
-       height="28.5"
-       x="18"
-       y="-134"
-       inkscape:path-effect="#path-effect345-31-3-6-6"
-       sodipodi:type="rect"
-       d="m 22,-134 h 20 a 4,4 45 0 1 4,4 v 20.5 a 4,4 135 0 1 -4,4 H 22 a 4,4 45 0 1 -4,-4 V -130 a 4,4 135 0 1 4,-4 z"
-       transform="matrix(-1,0,0,1,-72,-138)" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:Cantarell;writing-mode:lr-tb;direction:ltr;fill:#999999;fill-opacity:1;stroke:none;stroke-width:4;stroke-dasharray:none;paint-order:markers stroke fill;filter:url(#filter28)"
-       x="98.712013"
-       y="-252.79201"
-       id="text5-9-9-8-1-5-9"
-       transform="scale(-1,1)"><tspan
-         sodipodi:role="line"
-         id="tspan5-6-6-5-9-0-2"
-         x="98.712013"
-         y="-252.79201"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';fill:#999999;fill-opacity:1">←</tspan></text>
     <path
        style="fill:#333333;stroke:none;stroke-width:0.1;paint-order:markers fill stroke"
        id="rect20"
@@ -15019,14 +14290,6 @@
        cx="814"
        cy="176"
        r="6" />
-    <rect
-       style="fill:#668000;stroke:none;stroke-width:3.25;stroke-dasharray:none;paint-order:markers stroke fill;filter:url(#filter303-0-6-2-05-2-7)"
-       id="rect120-3-8-8-3-2-0"
-       width="96"
-       height="96"
-       x="178.76018"
-       y="28.830917"
-       transform="matrix(0.5,0,0,0.5,361.61991,-202.41546)" />
     <path
        style="fill:#d4ff2a;fill-opacity:1;stroke-width:3.49984;paint-order:markers fill stroke;filter:url(#filter31)"
        d="m 289,-51 v 16 h 8 v -8 h 8 v -8 z"
@@ -15163,86 +14426,9 @@
            y="160"
            style="font-size:21.3333px">ttt5x5</tspan></text>
     </g>
-    <rect
-       style="fill:#d4ff2a;fill-opacity:1;stroke-width:3.49984;paint-order:markers fill stroke;filter:url(#filter62-93)"
-       id="rect60-1"
-       width="212"
-       height="56"
-       x="-720"
-       y="-104" />
     <text
        xml:space="preserve"
-       style="font-weight:bold;font-size:21.3333px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;fill-opacity:1;stroke-width:3.49984;paint-order:markers fill stroke"
-       x="-672.73059"
-       y="-68.224014"
-       id="text62-5"><tspan
-         sodipodi:role="line"
-         id="tspan62-9"
-         x="-672.73059"
-         y="-68.224014">Level Select</tspan></text>
-    <rect
-       style="fill:#d4ff2a;fill-opacity:1;stroke-width:3.49984;paint-order:markers fill stroke;filter:url(#filter62-93-3)"
-       id="rect60-1-9"
-       width="212"
-       height="56"
-       x="-496"
-       y="-104" />
-    <text
-       xml:space="preserve"
-       style="font-weight:bold;font-size:21.3333px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;fill-opacity:1;stroke-width:3.49984;paint-order:markers fill stroke"
-       x="-411.67462"
-       y="-68.693329"
-       id="text62-5-87"><tspan
-         sodipodi:role="line"
-         id="tspan62-9-2"
-         x="-411.67462"
-         y="-68.693329">Quit</tspan></text>
-    <rect
-       style="fill:#668000;fill-opacity:1;stroke-width:3.49984;paint-order:markers fill stroke;filter:url(#filter62-93-4)"
-       id="rect60-1-7"
-       width="212"
-       height="56"
-       x="-720"
-       y="-168"
-       transform="rotate(180,-614,-140)" />
-    <text
-       xml:space="preserve"
-       style="font-weight:bold;font-size:21.3333px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;fill-opacity:1;stroke-width:3.49984;paint-order:markers fill stroke"
-       x="-672.73059"
-       y="-132.22401"
-       id="text62-5-8"><tspan
-         sodipodi:role="line"
-         id="tspan62-9-5"
-         x="-672.73059"
-         y="-132.22401">Level Select</tspan></text>
-    <rect
-       style="fill:#668000;fill-opacity:1;stroke-width:3.49984;paint-order:markers fill stroke;filter:url(#filter62-93-4-2)"
-       id="rect60-1-7-1"
-       width="212"
-       height="56"
-       x="-720"
-       y="-168"
-       transform="rotate(180,-502,-140)" />
-    <text
-       xml:space="preserve"
-       style="font-weight:bold;font-size:21.3333px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;fill-opacity:1;stroke-width:3.49984;paint-order:markers fill stroke"
-       x="-411.67462"
-       y="-132.69333"
-       id="text62-5-8-9"><tspan
-         sodipodi:role="line"
-         id="tspan62-9-5-6"
-         x="-411.67462"
-         y="-132.69333">Quit</tspan></text>
-    <rect
-       style="fill:#cccccc;fill-opacity:1;stroke-width:3.49984;paint-order:markers fill stroke;filter:url(#filter62-93-4-1)"
-       id="rect60-1-7-6"
-       width="212"
-       height="56"
-       x="-720"
-       y="-232" />
-    <text
-       xml:space="preserve"
-       style="font-weight:bold;font-size:21.3333px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;fill-opacity:1;stroke-width:3.49984;paint-order:markers fill stroke"
+       style="font-weight:bold;font-size:21.3333px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';writing-mode:lr-tb;direction:ltr;fill:#f9f9f9;fill-opacity:1;stroke-width:3.49984;paint-order:markers fill stroke"
        x="-672.73059"
        y="-196.22401"
        id="text62-5-8-4"><tspan
@@ -15250,16 +14436,9 @@
          id="tspan62-9-5-3"
          x="-672.73059"
          y="-196.22401">Level Select</tspan></text>
-    <rect
-       style="fill:#cccccc;fill-opacity:1;stroke-width:3.49984;paint-order:markers fill stroke;filter:url(#filter62-93-4-1-0)"
-       id="rect60-1-7-6-7"
-       width="212"
-       height="56"
-       x="-496"
-       y="-232" />
     <text
        xml:space="preserve"
-       style="font-weight:bold;font-size:21.3333px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;fill-opacity:1;stroke-width:3.49984;paint-order:markers fill stroke"
+       style="font-weight:bold;font-size:21.3333px;font-family:Cantarell;-inkscape-font-specification:'Cantarell Bold';writing-mode:lr-tb;direction:ltr;fill:#f9f9f9;fill-opacity:1;stroke-width:3.49984;paint-order:markers fill stroke"
        x="-411.67462"
        y="-196.69333"
        id="text62-5-8-4-2"><tspan
