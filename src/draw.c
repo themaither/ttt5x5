@@ -118,7 +118,7 @@ Draw_init (void)
   tl_texture = LoadTextureFromMemory (assets_selection_tl, assets_selection_tl_len);
   tr_texture = LoadTextureFromMemory (assets_selection_tr, assets_selection_tr_len);
   bl_texture = LoadTextureFromMemory (assets_selection_bl, assets_selection_bl_len);
-  br_texture = LoadTextureFromMemory (assets_selection_bl, assets_selection_br_len);
+  br_texture = LoadTextureFromMemory (assets_selection_br, assets_selection_br_len);
 
   digit_textures[0] = LoadTextureFromMemory(assets_digit_0, assets_digit_0_len);
   digit_textures[1] = LoadTextureFromMemory(assets_digit_1, assets_digit_1_len);
