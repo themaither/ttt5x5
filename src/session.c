@@ -114,7 +114,7 @@ session_update (void)
 
     if (mouse)
       {
-        if (x >= 2 && x <= 66)
+        if (x >= 2 && x <= 81)
           if (y >= 2 && y<= 34)
             {
               whaton = 1;
