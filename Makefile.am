@@ -140,21 +140,9 @@ assets.c :
 	xxd -n assets_level_select -i ${srcdir}/assets/level_select.png >>assets.c
 	echo "extern unsigned char assets_level_select[];" >> assets.h
 	echo "extern unsigned int assets_level_select_len;" >> assets.h
-	xxd -n assets_level_select_hovered -i ${srcdir}/assets/level_select_hovered.png >>assets.c
-	echo "extern unsigned char assets_level_select_hovered[];" >> assets.h
-	echo "extern unsigned int assets_level_select_hovered_len;" >> assets.h
-	xxd -n assets_level_select_pressed -i ${srcdir}/assets/level_select_pressed.png >>assets.c
-	echo "extern unsigned char assets_level_select_pressed[];" >> assets.h
-	echo "extern unsigned int assets_level_select_pressed_len;" >> assets.h
 	xxd -n assets_quit -i ${srcdir}/assets/quit.png >>assets.c
 	echo "extern unsigned char assets_quit[];" >> assets.h
 	echo "extern unsigned int assets_quit_len;" >> assets.h
-	xxd -n assets_quit_hovered -i ${srcdir}/assets/quit_hovered.png >>assets.c
-	echo "extern unsigned char assets_quit_hovered[];" >> assets.h
-	echo "extern unsigned int assets_quit_hovered_len;" >> assets.h
-	xxd -n assets_quit_pressed -i ${srcdir}/assets/quit_pressed.png >>assets.c
-	echo "extern unsigned char assets_quit_pressed[];" >> assets.h
-	echo "extern unsigned int assets_quit_pressed_len;" >> assets.h
 	xxd -n assets_button_hovered -i ${srcdir}/assets/button_hovered.png >>assets.c
 	echo "extern unsigned char assets_button_hovered[];" >> assets.h
 	echo "extern unsigned int assets_button_hovered_len;" >> assets.h

@@ -16,6 +16,11 @@ static Texture2D button_texture;
 
 static Texture2D digit_textures[10];
 
+static Texture2D black48_texture;
+static Texture2D white48_texture;
+static Texture2D dark_green48_texture;
+static Texture2D light_green48_texture;
+
 static Texture2D
 LoadTextureFromMemory (unsigned char *data, int length)
 {
@@ -137,6 +142,11 @@ Draw_init (void)
 
   button_texture = LoadTextureFromMemory (assets_button,
                                           assets_button_len);
+
+  black48_texture = LoadTextureFromMemory (assets_black48, assets_black48_len);
+  white48_texture = LoadTextureFromMemory (assets_white48, assets_white48_len);
+  dark_green48_texture = LoadTextureFromMemory (assets_dark_green48, assets_dark_green48_len);
+  light_green48_texture = LoadTextureFromMemory (assets_light_green48, assets_light_green48_len);
 }
 
 void
@@ -226,6 +236,18 @@ DrawButton (Texture2D texture, int x, int y, int width, int height, int mode)
       break;
     case 5:
       DrawTexture (texture, x, y, color_pale);
+      break;
+    case 6:
+      DrawTexture3x3 (white48_texture, 48, 48, 8, x, y, width, height);
+      DrawTexture (texture, x, y, color_default);
+      break;
+    case 7:
+      DrawTexture3x3 (light_green48_texture, 48, 48, 8, x, y, width, height);
+      DrawTexture (texture, x, y, color_default);
+      break;
+    case 8:
+      DrawTexture3x3 (dark_green48_texture, 48, 48, 8, x, y, width, height);
+      DrawTexture (texture, x, y, color_default);
       break;
     }
 }

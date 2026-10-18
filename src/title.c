@@ -6,6 +6,7 @@
 #include <imath.h>
 #include <math.h>
 #include <assets.h>
+#include <draw.h>
 
 static int level_select = 0;
 static int leaving = 0;
@@ -14,11 +15,7 @@ static int mouse = 0;
 
 static Texture2D title_texture;
 static Texture2D level_select_texture;
-static Texture2D level_select_hovered_texture;
-static Texture2D level_select_pressed_texture;
 static Texture2D quit_texture;
-static Texture2D quit_hovered_texture;
-static Texture2D quit_pressed_texture;
 
 static Texture2D
 LoadTextureFromMemory (unsigned char *data, int length)
@@ -34,11 +31,7 @@ title_init (void)
 {
   title_texture = LoadTextureFromMemory (assets_title, assets_title_len);
   level_select_texture = LoadTextureFromMemory (assets_level_select, assets_level_select_len);
-  level_select_hovered_texture = LoadTextureFromMemory (assets_level_select_hovered, assets_level_select_hovered_len);
-  level_select_pressed_texture = LoadTextureFromMemory (assets_level_select_pressed, assets_level_select_pressed_len);
   quit_texture = LoadTextureFromMemory (assets_quit, assets_quit_len);
-  quit_hovered_texture = LoadTextureFromMemory (assets_quit_hovered, assets_quit_hovered_len);
-  quit_pressed_texture = LoadTextureFromMemory (assets_quit_pressed, assets_quit_pressed_len);
 }
 
 void
@@ -109,18 +102,18 @@ title_update (void)
   DrawTexture (title_texture, 0, 0, WHITE);
 
   if (whaton == 0 && IsBtnDown ())
-    DrawTexture (level_select_pressed_texture, 214, 102, WHITE);
+    DrawButton (level_select_texture, 214, 102, 212, 56, 8);
   else if (whaton == 0)
-    DrawTexture (level_select_hovered_texture, 214, 102, WHITE);
+    DrawButton (level_select_texture, 214, 102, 212, 56, 7);
   else
-    DrawTexture (level_select_texture, 214, 102, WHITE);
+    DrawButton (level_select_texture, 214, 102, 212, 56, 6);
 
   if (whaton == 1 && IsBtnDown ())
-    DrawTexture (quit_pressed_texture, 214, 102 + 56, WHITE);
+    DrawButton (quit_texture, 214, 102 + 56, 212, 56, 8);
   else if (whaton == 1)
-    DrawTexture (quit_hovered_texture, 214, 102 + 56, WHITE);
+    DrawButton (quit_texture, 214, 102 + 56, 212, 56, 7);
   else
-    DrawTexture (quit_texture, 214, 102 + 56, WHITE);
+    DrawButton (quit_texture, 214, 102 + 56, 212, 56, 6);
 
   EndDrawing ();
 }
