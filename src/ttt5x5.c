@@ -12,6 +12,7 @@
 #include <config.h>
 #include <gamescript.h>
 #include <assets.h>
+#include <optbus.h>
 
 static Texture2D
 LoadTextureFromMemory (unsigned char *data, int length)
@@ -25,12 +26,16 @@ LoadTextureFromMemory (unsigned char *data, int length)
 int
 main (int argc, char **argv)
 {
+  autodep_optbus_init ();
+
   SetTargetFPS (60);
   InitWindow (640, 400, PACKAGE_STRING);
 
   autodep_title_init ();
   autodep_session_init ();
   autodep_picker_init  ();
+
+  optbus_parse (argc, argv);
 
   int whaton = 0;
 

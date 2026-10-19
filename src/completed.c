@@ -45,8 +45,9 @@ io_init (void)
   else
     ttt5x5path = strdup ("./");
 
+  puts ("1");
   savepath = strdupf ("%s%s", ttt5x5path, "save.dlf");
-
+  puts ("2");
   FILE *file = fopen (savepath, "r");
 
   if (!file)
@@ -54,8 +55,9 @@ io_init (void)
       perror ("Unable to open save file for reading");
       return;
     }
-
+  puts ("3");
   evalf (file);
+  puts ("4");
 }
 
 static void

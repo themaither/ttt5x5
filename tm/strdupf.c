@@ -1,8 +1,9 @@
 #include <config.h>
 
-#include <lib/string-buffer.h>
+#include <string-buffer.h>
 #include <stdarg.h>
 
+/* Used by 'strdupf'. */
 static struct string_buffer buffer;
 
 char *

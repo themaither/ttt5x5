@@ -8,7 +8,7 @@
 int
 eval (void)
 {
-  if (-1 == dlnext ())
+  if (DLNEXT_EOF == dlnext ())
     return -1;
 
   int value;

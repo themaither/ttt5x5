@@ -109,6 +109,15 @@ session_update (void)
     int x = GetMouseX ();
     int y = GetMouseY ();
 
+    /*
+    if (GetTouchPointCount () > 0)
+      {
+        puts ("Touc");
+        x = GetTouchX ();
+        y = GetTouchY ();
+      }
+      */
+
     if (fabs (delta.x) > 0. && fabs (delta.y) > 0.)
       mouse = 1;
 

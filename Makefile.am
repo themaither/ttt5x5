@@ -1,6 +1,6 @@
-SUBDIRS = lib
+SUBDIRS = lib tm
 ACLOCAL_AMFLAGS = -I m4
-EXTRA_DIST = m4/gnulib-cache.m4
+EXTRA_DIST = m4/gnulib-cache.m4 tm
 
 bin_PROGRAMS = ttt5x5
 
@@ -16,8 +16,6 @@ ttt5x5_SOURCES = src/ttt5x5.c \
                  src/database.c src/database.h \
                  src/draw.c src/draw.h \
                  src/title.c src/title.h \
-                 src/dlf.c src/dlf.h \
-                 src/strdupf.c src/strdupf.h \
                  src/gamescript.c src/gamescript.h \
                  assets.c
 
@@ -25,13 +23,15 @@ BUILT_SOURCES = assets.c
 
 ttt5x5_CFLAGS = -g -DPKGDATADIR="${PKGDATADIR}" -I${srcdir}/src \
                 ${RAYLIB_CFLAGS} \
+                -I$(srcdir)/tm $(READLINE_CFLAGS) \
                 -I${srcdir}/lib -Ilib
 
 ttt5x5_LDADD = -lm $(HARD_LOCALE_LIB) $(LIBC32CONV) \
                $(LIBUNISTRING) $(MBRTOWC_LIB) $(SETLOCALE_NULL_LIB) ${LIBGNU} \
-               -Llib -lgnu ${RAYLIB_LIBS} ${EMSCRIPTEN_LDFLAGS}
+               ${RAYLIB_LIBS} ${EMSCRIPTEN_LDFLAGS} \
+               -Ltm -ltm $(READLINE_LIBS) -Llib -lgnu
 
-ttt5x5_DEPENDENCIES = ${RAYLIB_DEPENDENCIES}
+ttt5x5_DEPENDENCIES = ${RAYLIB_DEPENDENCIES} tm/libtm.a
 
 raylib/raylib/libraylib.a :
 	${EMCMAKE_CMAKE} ${srcdir}/raylib -B ./raylib

@@ -7,7 +7,9 @@ then
   GNULIB_TOOL="gnulib-tool"
 fi
 
-${GNULIB_TOOL} --import assert assert-h getline string-buffer
+${GNULIB_TOOL} --import assert assert-h getline string-buffer fprintf-posix \
+                        mbstok_r snprintf strdup strdup-posix strtok_r \
+                        vfprintf-posix
 
 if (test -d raylib)
 then

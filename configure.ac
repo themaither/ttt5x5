@@ -54,6 +54,8 @@ AS_IF([test "x$COMPILE_RAYLIB" = "xyes"],
     AC_SUBST([RAYLIB_DEPENDENCIES])
   ])
 
+PKG_CHECK_MODULES([READLINE], [readline])
+
 # Flags used to compile using emscripten toolchain
 AS_IF([test "x$USE_EMSCRIPTEN" = "xyes"],
   [
@@ -67,5 +69,6 @@ AC_SUBST([EMSCRIPTEN_LDFLAGS])
 
 AC_CONFIG_FILES([Makefile])
 AC_CONFIG_FILES([lib/Makefile])
+AC_CONFIG_FILES([tm/Makefile])
 AC_CONFIG_HEADERS([config.h])
 AC_OUTPUT
