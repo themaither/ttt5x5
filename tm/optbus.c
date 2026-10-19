@@ -4,6 +4,12 @@
 #include <config.h>
 
 #include <stdio.h>
+
+#ifndef TMLIB_OPTBUS
+#define TMLIB_OPTBUS 1
+#endif
+
+#if TMLIB_OPTBUS
 #include <stdlib.h>
 #include <argp.h>
 #include <assert.h>
@@ -53,9 +59,12 @@ parse_opt (int key, char *arg, struct argp_state *state)
   return 0;
 }
 
+#endif /* TMLIB_OPTBUS */
+
 void
 optbus_init (void)
 {
+#if TMLIB_OPTBUS
   argp.options = options;
   argp.parser = parse_opt;
   argp.args_doc = 0;
@@ -70,11 +79,13 @@ optbus_init (void)
 
       fn_table[i] = NULL;
     }
+#endif /* TMLIB_OPTBUS */
 }
 
 void
 autodep_optbus_init (void)
 {
+#if TMLIB_OPTBUS
   static int imported = 0;
 
   if (imported)
@@ -82,17 +93,21 @@ autodep_optbus_init (void)
 
   optbus_init ();
   imported = 1;
+#endif /* TMLIB_OPTBUS */
 }
 
 void
 optbus_doc (const char *doc)
 {
+#if TMLIB_OPTBUS
   argp.doc = doc;
+#endif /* TMLIB_OPTBUS */
 }
 
 void
 optbus_push (const char *name, const char *doc, void (*handler)(void))
 {
+#if TMLIB_OPTBUS
   options[option_count].name = name;
   options[option_count].key = 256 + option_count;
   options[option_count].arg = 0;
@@ -102,10 +117,16 @@ optbus_push (const char *name, const char *doc, void (*handler)(void))
 
   fn_table[option_count] = handler;
   ++option_count;
+#endif /* TMLIB_OPTBUS */
 }
 
 void
 optbus_parse (int argc, char **argv)
 {
+#if TMLIB_OPTBUS
   argp_parse (&argp, argc, argv, 0, 0, NULL);
+#else
+  if (argc != 1)
+    fprintf (stderr, "%s: options are unsupported\n", argv[0]);
+#endif /* TMLIB_OPTBUS */
 }
