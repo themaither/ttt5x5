@@ -41,12 +41,25 @@ void dline (void);
 void dlf_setsource (FILE *);
 
 /* Pushes a file to source stack.  After file was fully read, source return
-   to previous file with all state intact.  Usefull for making file includes.
-   Previous source can be returned by calling 'dlf_popsource'. */
+   to previous file with all state intact. Previous source can be returned by
+   calling 'dlf_popsource'. */
 void dlf_pushsource (FILE *);
 
 /* Pops last source, returning to previous file with all it's state. */
-void dlf_popsource ();
+void dlf_popsource (void);
+
+/* Sets source name. Generally it's just a path to the file being read.
+   Used only in 'dlf_errorf'. */
+void dlf_setsourcename (const char *);
+
+/* When source reaches EOF, 'dlnext', instead of returning EOF, pops a
+   source stack and continues reading like nothing happened.  Usefull for
+   making file includes.
+
+   If this function is called, there should not be
+   a call to 'dlf_popsource' because this function pops automatically, and
+   calling 'dlf_popsource' would mean to pop twice. */
+void dlf_source_autowrap (void);
 
 /* Note to use asynchronous reading mode.  In this mode, 'dlnext' polls source
    stream before reading.  If source stream has nothing to read, 'dlnext'
@@ -100,9 +113,6 @@ int dlf_ln (void);
 /* Get field number. */
 int dlf_fn (void);
 
-/* Sets source name. Generally it's just a path to the file being read.
-   Used only in dlf_errorf*/
-void dlf_setsourcename (const char *);
 
 /* Print an error message associated with previously read field. */
 void dlf_errorf (const char *fmt, ...);

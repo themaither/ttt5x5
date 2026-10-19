@@ -36,6 +36,9 @@ struct source_state
 
   /* Set to 1 by readline callback to indicate end of file. */
   int eof;
+
+  /* When EOF is reached, pops source stack and proceeds instead of failing. */
+  int autowrap;
 };
 
 struct sink_state
@@ -264,6 +267,7 @@ dlf_setsource (FILE *f)
   source[source_curidx].async = 0;
   source[source_curidx].line_number = 0;
   source[source_curidx].eof = 0;
+  source[source_curidx].autowrap = 0;
 
   ifc = 0;
   saveptr = NULL;
@@ -335,8 +339,14 @@ dlf_setsourcename (const char *name)
   source[source_curidx].name = strdup (name);
 }
 
+void
+dlf_source_autowrap (void)
+{
+  source[source_curidx].autowrap = 1;
+}
+
 static int
-dlnext_sync ()
+dlnext_sync (void)
 {
   ifc = 0;
   int result = getline (&line, &n, source[source_curidx].file);
@@ -475,12 +485,13 @@ dlnext (void)
   result = dlnext_sync ();
 #endif /* TMLIB_USE_READLINE */
 
-  if (result == DLNEXT_EOF && source_curidx > 0)
+  if (result == DLNEXT_EOF
+        && source[source_curidx].autowrap
+        && source_curidx > 0)
     {
-      // dlf_popsource ();
+      dlf_popsource ();
 
-      // return dlnext ();
-      return DLNEXT_EOF;
+      return dlnext ();
     }
 
   return result;
