@@ -4,6 +4,7 @@
 #include <session.h>
 #include <picker.h>
 #include <title.h>
+#include <locale.h>
 #include <completed.h>
 #include <draw_field.h>
 #include <draw.h>
@@ -26,6 +27,8 @@ LoadTextureFromMemory (unsigned char *data, int length)
 int
 main (int argc, char **argv)
 {
+  setlocale (LC_ALL, "");
+
   autodep_optbus_init ();
 
   SetTargetFPS (60);
