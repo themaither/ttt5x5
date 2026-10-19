@@ -47,15 +47,17 @@ raylib_log (int level, const char *fmt, va_list ap)
 int
 main (int argc, char **argv)
 {
-  setlocale (LC_ALL, "");
-
   progmsg_setname (argv[0]);
+
+  setlocale (LC_ALL, "");
 
   autodep_optbus_init ();
 
   autodep_title_init   ();
   autodep_session_init ();
   autodep_picker_init  ();
+
+  optbus_parse (argc, argv);
 
   SetTraceLogCallback(raylib_log);
   SetTargetFPS (60);
@@ -64,8 +66,6 @@ main (int argc, char **argv)
   autodep_title_ginit   ();
   autodep_session_ginit ();
   autodep_picker_ginit  ();
-
-  optbus_parse (argc, argv);
 
   int whaton = 0;
 

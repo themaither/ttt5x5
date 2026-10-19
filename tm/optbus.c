@@ -4,6 +4,7 @@
 #include <config.h>
 
 #include <stdio.h>
+#include <progmsg.h>
 
 #ifndef TMLIB_OPTBUS
 #define TMLIB_OPTBUS 1
@@ -127,6 +128,6 @@ optbus_parse (int argc, char **argv)
   argp_parse (&argp, argc, argv, 0, 0, NULL);
 #else
   if (argc != 1)
-    fprintf (stderr, "%s: options are unsupported\n", argv[0]);
+    progmsg ("program arguments are not supported");
 #endif /* TMLIB_OPTBUS */
 }
