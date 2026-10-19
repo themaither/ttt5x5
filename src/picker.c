@@ -85,16 +85,6 @@ LoadTextureFromMemory (unsigned char *data, int length)
 void
 picker_init (void)
 {
-  picker_texture = LoadTextureFromMemory (assets_picker, assets_picker_len);
-
-  leave_texture = LoadTextureFromMemory (assets_leave, assets_leave_len);
-
-  completed_texture = LoadTextureFromMemory (assets_completed, assets_completed_len);
-
-  prev_texture = LoadTextureFromMemory (assets_prev, assets_prev_len);
-
-  next_texture = LoadTextureFromMemory (assets_next, assets_next_len);
-
   buffer_field = _5x5_open ();
 }
 
@@ -107,10 +97,33 @@ autodep_picker_init (void)
     return;
 
   autodep_completed_init ();
+
+  picker_init ();
+  imported = 1;
+}
+
+void
+picker_ginit (void)
+{
+  picker_texture = LoadTextureFromMemory (assets_picker, assets_picker_len);
+  leave_texture = LoadTextureFromMemory (assets_leave, assets_leave_len);
+  completed_texture = LoadTextureFromMemory (assets_completed, assets_completed_len);
+  prev_texture = LoadTextureFromMemory (assets_prev, assets_prev_len);
+  next_texture = LoadTextureFromMemory (assets_next, assets_next_len);
+}
+
+void
+autodep_picker_ginit (void)
+{
+  static int imported = 0;
+
+  if (imported)
+    return;
+
   autodep_DrawField_init ();
   autodep_Draw_init ();
 
-  picker_init ();
+  picker_ginit ();
   imported = 1;
 }
 

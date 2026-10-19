@@ -11,11 +11,18 @@ extern "C"
 
 extern int session_status;
 
-void session_init    (void);
+/* Should be called before library is used. */
+void session_init         (void);
 void autodep_session_init (void);
-void session_update  (void);
+
+/* Should be called after graphical context was initialized. */
+void session_ginit         (void);
+void autodep_session_ginit (void);
+
+void session_update (void);
+void session_reset  (void);
+
 int  session_leaving (void);
-void session_reset   (void);
 
 #ifdef __cplusplus
 }

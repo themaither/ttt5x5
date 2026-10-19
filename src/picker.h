@@ -9,12 +9,19 @@ extern "C"
 {
 #endif
 
-void picker_init     (void);
+/* Should be called before library is used. */
+void picker_init         (void);
 void autodep_picker_init (void);
-void picker_update   (void);
+
+/* Should be called after graphical context was initialized. */
+void picker_ginit         (void);
+void autodep_picker_ginit (void);
+
+void picker_update (void);
+void picker_reset  (void);
+
 int  picker_leaving  (void);
 int  picker_starting (void);
-void picker_reset    (void);
 
 #ifdef __cplusplus
 }

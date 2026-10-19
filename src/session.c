@@ -74,9 +74,6 @@ LoadTextureFromMemory (unsigned char *data, int length)
 void
 session_init (void)
 {
-  leave_texture = LoadTextureFromMemory (assets_leave, assets_leave_len);
-  session_texture = LoadTextureFromMemory (assets_session, assets_session_len);
-  moves_texture = LoadTextureFromMemory (assets_moves, assets_moves_len);
 }
 
 void
@@ -88,10 +85,31 @@ autodep_session_init (void)
     return;
 
   autodep_completed_init ();
+
+  session_init ();
+  imported = 1;
+}
+
+void
+session_ginit (void)
+{
+  leave_texture = LoadTextureFromMemory (assets_leave, assets_leave_len);
+  session_texture = LoadTextureFromMemory (assets_session, assets_session_len);
+  moves_texture = LoadTextureFromMemory (assets_moves, assets_moves_len);
+}
+
+void
+autodep_session_ginit (void)
+{
+  static int imported = 0;
+
+  if (imported)
+    return;
+
   autodep_Draw_init ();
   autodep_DrawField_init ();
 
-  session_init ();
+  session_ginit ();
   imported = 1;
 }
 

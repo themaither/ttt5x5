@@ -31,12 +31,16 @@ main (int argc, char **argv)
 
   autodep_optbus_init ();
 
+  autodep_title_init   ();
+  autodep_session_init ();
+  autodep_picker_init  ();
+
   SetTargetFPS (60);
   InitWindow (640, 400, PACKAGE_STRING);
 
-  autodep_title_init ();
-  autodep_session_init ();
-  autodep_picker_init  ();
+  autodep_title_ginit   ();
+  autodep_session_ginit ();
+  autodep_picker_ginit  ();
 
   optbus_parse (argc, argv);
 

@@ -29,9 +29,6 @@ LoadTextureFromMemory (unsigned char *data, int length)
 void
 title_init (void)
 {
-  title_texture = LoadTextureFromMemory (assets_title, assets_title_len);
-  level_select_texture = LoadTextureFromMemory (assets_level_select, assets_level_select_len);
-  quit_texture = LoadTextureFromMemory (assets_quit, assets_quit_len);
 }
 
 void
@@ -43,6 +40,26 @@ autodep_title_init (void)
     return;
 
   title_init ();
+  imported = 1;
+}
+
+void
+title_ginit (void)
+{
+  title_texture = LoadTextureFromMemory (assets_title, assets_title_len);
+  level_select_texture = LoadTextureFromMemory (assets_level_select, assets_level_select_len);
+  quit_texture = LoadTextureFromMemory (assets_quit, assets_quit_len);
+}
+
+void
+autodep_title_ginit (void)
+{
+  static int imported = 0;
+
+  if (imported)
+    return;
+
+  title_ginit ();
   imported = 1;
 }
 
