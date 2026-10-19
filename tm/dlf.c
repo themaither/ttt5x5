@@ -7,9 +7,16 @@
 #include <stdio.h>
 #include <errno.h>
 #include <string-buffer.h>
+#include <assert.h>
+
+#ifndef TMLIB_USE_READLINE
+#define TMLIB_USE_READLINE 1
+#endif /* TMLIB_USE_READLINE */
+
+#if TMLIB_USE_READLINE
 #include <readline/readline.h>
 #include <readline/history.h>
-#include <assert.h>
+#endif /* TMLIB_USE_READLINE */
 
 /* Where to print lines of fields made by 'dline' and 'dlputs'. */
 static FILE *sink;
@@ -66,11 +73,13 @@ static int line_number = 0;
 /* Amount of fields read */
 static int ifc = 0;
 
-/* Used to detect if readline callback hander was installed. */
-static int handler_installed = 0;
-
 /* Used by 'mbstok_r'. */
 static char *saveptr = NULL;
+
+#if TMLIB_USE_READLINE
+/* Used to detect if readline callback hander was installed. */
+static int handler_installed = 0;
+#endif /* TMLIB_USE_READLINE */
 
 void
 dlf_async (void)
@@ -96,6 +105,7 @@ dlf_noninteractive (void)
   source[source_curidx].interactive = 0;
 }
 
+#if TMLIB_USE_READLINE
 static void
 callback_handler (char *_line)
 {
@@ -117,6 +127,7 @@ callback_handler (char *_line)
 
   rl_callback_handler_remove ();
 }
+#endif /* TMLIB_USE_READLINE */
 
 void
 dlf_init (void)
@@ -137,9 +148,10 @@ dlf_init (void)
   n = 0;
   line_queue = NULL;
 
+#if TMLIB_USE_READLINE
   handler_installed = 0;
-
   using_history ();
+#endif /* TMLIB_USE_READLINE */
 }
 
 void
@@ -248,11 +260,13 @@ dlf_setsource (FILE *f)
       line = NULL;
     }
 
+#if TMLIB_USE_READLINE
   if (handler_installed)
     {
       rl_callback_handler_remove ();
       handler_installed = 0;
     }
+#endif /* TMLIB_USE_READLINE */
 }
 
 void
@@ -278,7 +292,25 @@ dlf_setsourcename (const char *name)
 }
 
 static int
-dlnext_sync_interactive (void)
+dlnext_sync ()
+{
+  ifc = 0;
+  int result = getline (&line, &n, source[source_curidx].file);
+  if (result != -1)
+    {
+      ++source[source_curidx].line_number;
+      return DLNEXT_OK;
+    }
+  else
+    {
+      return DLNEXT_EOF;
+    }
+}
+
+
+#if TMLIB_USE_READLINE
+static int
+dlnext_sync_readline (void)
 {
   ifc = 0;
   line = readline (PACKAGE_NAME "-" PACKAGE_VERSION "$ ");
@@ -296,9 +328,11 @@ dlnext_sync_interactive (void)
       return DLNEXT_EOF;
     }
 }
+#endif /* TMLIB_USE_READLINE */
 
+#if TMLIB_USE_READLINE
 static int
-dlnext_async_interactive (void)
+dlnext_async_readline (void)
 {
   if (!handler_installed)
     {
@@ -370,43 +404,32 @@ dlnext_async_interactive (void)
       return DLNEXT_NOTAVAIL;
     }
 }
-
-static int
-dlnext_sync_noninteractive ()
-{
-  ifc = 0;
-  int result = getline (&line, &n, source[source_curidx].file);
-  if (result != -1)
-    {
-      ++source[source_curidx].line_number;
-      return DLNEXT_OK;
-    }
-  else
-    {
-      return DLNEXT_EOF;
-    }
-}
+#endif /* TMLIB_USE_READLINE */
 
 int
 dlnext (void)
 {
   int result;
 
+#if TMLIB_USE_READLINE
   if (source[source_curidx].interactive)
     {
       if (!source[source_curidx].async)
         {
-          result = dlnext_sync_interactive ();
+          result = dlnext_sync_readline ();
         }
       else
         {
-          result = dlnext_async_interactive ();
+          result = dlnext_async_readline ();
         }
     }
   else
     {
-      result = dlnext_sync_noninteractive ();
+      result = dlnext_sync ();
     }
+#else
+  result = dlnext_sync ();
+#endif /* TMLIB_USE_READLINE */
 
   if (result == DLNEXT_EOF && source_curidx > 0)
     {
@@ -426,11 +449,13 @@ dlnext (void)
           line = NULL;
         }
 
+#if TMLIB_USE_READLINE
       if (handler_installed)
         {
           rl_callback_handler_remove ();
           handler_installed = 0;
         }
+#endif /* TMLIB_USE_READLINE */
 
       return dlnext ();
     }
