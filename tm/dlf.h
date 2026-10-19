@@ -30,6 +30,10 @@ void fdline (FILE *);
 /* Sets a sink, where text is written.  Set to 'stdout' by default. */
 void dlf_setsink (FILE *f);
 
+void dlf_pushsink (FILE *f);
+
+void dlf_popsink (void);
+
 /* Puts a field into a line.  To write a line use 'dline'. */
 void dlputs (const char *field);
 

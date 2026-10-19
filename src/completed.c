@@ -83,11 +83,13 @@ io_complete (void)
       return;
     }
 
-  fdlputs (file, "completed_setid");
-  fdlputi (file, id);
-  fdline  (file);
-  fdlputs (file, "complete");
-  fdline  (file);
+  dlf_pushsink (file);
+  dlputs ("completed_setid");
+  dlputi (id);
+  dline  ();
+  dlputs ("complete");
+  dline  ();
+  dlf_popsink ();
 
   fclose (file);
 }

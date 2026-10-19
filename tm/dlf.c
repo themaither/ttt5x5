@@ -219,6 +219,22 @@ dlf_setsink (FILE *f)
 }
 
 void
+dlf_pushsink (FILE *f)
+{
+  ++sink_curidx;
+  assert (("Stack out of memory", sink_curidx < SOURCE_STACK_CAP));
+
+  dlf_setsink (f);
+}
+
+void
+dlf_popsink (void)
+{
+  --sink_curidx;
+  fc = 0;
+}
+
+void
 dlputs (const char *s)
 {
   fdlputs (sink[sink_curidx].file, s);
