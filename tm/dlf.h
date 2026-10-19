@@ -20,6 +20,7 @@ void autodep_dlf_init (void);
 /* Sets a sink, where text is written.  Set to 'stdout' by default. */
 void dlf_setsink (FILE *f);
 
+/* Pushes a sink.  Previous sink can be restored by calling 'dlf_popsink'. */
 void dlf_pushsink (FILE *f);
 
 void dlf_popsink (void);
@@ -40,8 +41,12 @@ void dline (void);
 void dlf_setsource (FILE *);
 
 /* Pushes a file to source stack.  After file was fully read, source return
-   to previous file with all state intact.  Usefull for making file includes. */
+   to previous file with all state intact.  Usefull for making file includes.
+   Previous source can be returned by calling 'dlf_popsource'. */
 void dlf_pushsource (FILE *);
+
+/* Pops last source, returning to previous file with all it's state. */
+void dlf_popsource ();
 
 /* Note to use asynchronous reading mode.  In this mode, 'dlnext' polls source
    stream before reading.  If source stream has nothing to read, 'dlnext'

@@ -299,6 +299,36 @@ dlf_pushsource (FILE *f)
 }
 
 void
+dlf_popsource (void)
+{
+  assert (("Cannot pop last source", source_curidx > 0));
+
+  --source_curidx;
+  ifc = 0;
+  saveptr = NULL;
+
+  if (line_queue)
+    {
+      free (line_queue);
+      line_queue = NULL;
+    }
+
+  if (line)
+    {
+      free (line);
+      line = NULL;
+    }
+
+#if TMLIB_USE_READLINE
+  if (handler_installed)
+    {
+      rl_callback_handler_remove ();
+      handler_installed = 0;
+    }
+#endif /* TMLIB_USE_READLINE */
+}
+
+void
 dlf_setsourcename (const char *name)
 {
   free (source[source_curidx].name);
@@ -447,31 +477,10 @@ dlnext (void)
 
   if (result == DLNEXT_EOF && source_curidx > 0)
     {
-      --source_curidx;
-      ifc = 0;
-      saveptr = NULL;
+      // dlf_popsource ();
 
-      if (line_queue)
-        {
-          free (line_queue);
-          line_queue = NULL;
-        }
-
-      if (line)
-        {
-          free (line);
-          line = NULL;
-        }
-
-#if TMLIB_USE_READLINE
-      if (handler_installed)
-        {
-          rl_callback_handler_remove ();
-          handler_installed = 0;
-        }
-#endif /* TMLIB_USE_READLINE */
-
-      return dlnext ();
+      // return dlnext ();
+      return DLNEXT_EOF;
     }
 
   return result;

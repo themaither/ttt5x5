@@ -142,10 +142,12 @@ evalf (FILE *f)
 {
   int value;
   const char *field = NULL;
-  dlf_setsource (f);
+  dlf_pushsource (f);
 
   while (-1 != eval ())
   {
   }
+
+  dlf_popsource ();
 }
 
