@@ -18,8 +18,6 @@
 #include <readline/history.h>
 #endif /* TMLIB_USE_READLINE */
 
-/* Where to print lines of fields made by 'dline' and 'dlputs'. */
-static FILE *sink;
 
 struct source_state
 {
@@ -40,10 +38,17 @@ struct source_state
   int eof;
 };
 
+struct sink_state
+{
+  FILE *file;
+};
+
+static int sink_curidx = 0;
 static int source_curidx = 0;
 
 enum {
-  SOURCE_STACK_CAP = 16
+  SOURCE_STACK_CAP = 16,
+  SINK_STACK_CAP = 16
 };
 
 /* Stack of sources, where 'dlnext' gets lines.  'dlf_pushsource' can add
@@ -51,6 +56,9 @@ enum {
    source reaches EOF, stack is poped, activating previous source with
    its state preserved. */
 static struct source_state source[SOURCE_STACK_CAP];
+
+/* Where to print lines of fields made by 'dline' and 'dlputs'. */
+static struct sink_state sink[SINK_STACK_CAP];
 
 /* Amount of fields written.  Resets to 0 when fields are flushed by 'dline' */
 static int fc = 0;
@@ -132,7 +140,8 @@ callback_handler (char *_line)
 void
 dlf_init (void)
 {
-  sink = stdout;
+  sink_curidx = 0;
+  sink[sink_curidx].file = stdout;
   source_curidx = 0;
   source[source_curidx].file = stdin;
   source[source_curidx].name = strdup ("<stdin>");
@@ -205,26 +214,26 @@ fdline (FILE *f)
 void
 dlf_setsink (FILE *f)
 {
-  sink = f;
+  sink[sink_curidx].file = f;
   fc = 0;
 }
 
 void
 dlputs (const char *s)
 {
-  fdlputs (sink, s);
+  fdlputs (sink[sink_curidx].file, s);
 }
 
 void
 dlputi (int n)
 {
-  fdlputi (sink, n);
+  fdlputi (sink[sink_curidx].file, n);
 }
 
 void
 dline (void)
 {
-  fdline (sink);
+  fdline (sink[sink_curidx].file);
 }
 
 void
