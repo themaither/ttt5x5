@@ -230,6 +230,7 @@ dlf_pushsink (FILE *f)
 void
 dlf_popsink (void)
 {
+  assert (("Cannot pop last sink", sink_curidx > 0));
   --sink_curidx;
   fc = 0;
 }
