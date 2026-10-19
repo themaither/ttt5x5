@@ -74,8 +74,8 @@ void dlf_interactive (void);
    by default. */
 void dlf_noninteractive (void);
 
-/* Get next line. Should be called BEFORE dlgets and similar.  Returns -1 on
-   EOF, 0 on timeout.  Returns values described in 'DLNEXT_RESULT'. */
+/* Get next line. Should be called BEFORE dlgets and similar.  Returns values
+   described in 'DLNEXT_RESULT'. */
 int dlnext (void);
 
 /* Values, which can be returned from 'dlnext'. */
