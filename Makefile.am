@@ -17,6 +17,7 @@ ttt5x5_SOURCES = src/ttt5x5.c \
                  src/draw.c src/draw.h \
                  src/title.c src/title.h \
                  src/gamescript.c src/gamescript.h \
+                 src/progmsg.c src/progmsg.h \
                  assets.c
 
 BUILT_SOURCES = assets.c

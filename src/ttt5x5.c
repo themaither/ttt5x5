@@ -14,6 +14,8 @@
 #include <gamescript.h>
 #include <assets.h>
 #include <optbus.h>
+#include <progmsg.h>
+#include <stdarg.h>
 
 static Texture2D
 LoadTextureFromMemory (unsigned char *data, int length)
@@ -24,10 +26,30 @@ LoadTextureFromMemory (unsigned char *data, int length)
   return texture;
 }
 
+static void
+raylib_log (int level, const char *fmt, va_list ap)
+{
+  switch (level)
+  {
+    case LOG_DEBUG:
+      break;
+    case LOG_INFO:
+      break;
+    case LOG_WARNING:
+      vprogmsg (fmt, ap);
+      break;
+    case LOG_ERROR:
+      vprogmsg (fmt, ap);
+      break;
+  }
+}
+
 int
 main (int argc, char **argv)
 {
   setlocale (LC_ALL, "");
+
+  progmsg_setname (argv[0]);
 
   autodep_optbus_init ();
 
@@ -35,6 +57,7 @@ main (int argc, char **argv)
   autodep_session_init ();
   autodep_picker_init  ();
 
+  SetTraceLogCallback(raylib_log);
   SetTargetFPS (60);
   InitWindow (640, 400, PACKAGE_STRING);
 
