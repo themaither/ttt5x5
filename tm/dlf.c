@@ -175,7 +175,7 @@ autodep_dlf_init (void)
   imported = 1;
 }
 
-void
+static void
 fdlputs (FILE *f, const char *s)
 {
   if (fc == 0)
@@ -190,7 +190,7 @@ fdlputs (FILE *f, const char *s)
   ++fc;
 }
 
-void
+static void
 fdlputi (FILE *f, int n)
 {
   if (fc == 0)
@@ -204,7 +204,7 @@ fdlputi (FILE *f, int n)
   ++fc;
 }
 
-void
+static void
 fdline (FILE *f)
 {
   fc = 0;

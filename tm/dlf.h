@@ -17,16 +17,6 @@ void dlf_init (void);
 /* Automatically import all dependencies and init. */
 void autodep_dlf_init (void);
 
-/* Puts a field */
-void fdlputs (FILE *, const char *field);
-
-/* Puts a field with an integer */
-void fdlputi (FILE *, int);
-
-/* Flushes line to provided stream.  Stream passed as an argument should be
-   same one, which was used to put field. */
-void fdline (FILE *);
-
 /* Sets a sink, where text is written.  Set to 'stdout' by default. */
 void dlf_setsink (FILE *f);
 
