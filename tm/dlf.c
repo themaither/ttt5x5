@@ -209,12 +209,6 @@ dlf_setsink (FILE *f)
   fc = 0;
 }
 
-FILE *
-dlf_sink ()
-{
-  return sink;
-}
-
 void
 dlputs (const char *s)
 {
@@ -276,12 +270,6 @@ dlf_pushsource (FILE *f)
   assert (("Stack out of memory", source_curidx < SOURCE_STACK_CAP));
 
   dlf_setsource (f);
-}
-
-FILE *
-dlf_source (void)
-{
-  return source[source_curidx].file;
 }
 
 void

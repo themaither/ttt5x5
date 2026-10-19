@@ -30,10 +30,6 @@ void fdline (FILE *);
 /* Sets a sink, where text is written.  Set to 'stdout' by default. */
 void dlf_setsink (FILE *f);
 
-/* Get current sink stream, where all lines are written.  'stdout' by default.
-   Can be changed by calling 'dlf_setsink'. */
-FILE *dlf_sink (void);
-
 /* Puts a field into a line.  To write a line use 'dline'. */
 void dlputs (const char *field);
 
@@ -52,10 +48,6 @@ void dlf_setsource (FILE *);
 /* Pushes a file to source stack.  After file was fully read, source return
    to previous file with all state intact.  Usefull for making file includes. */
 void dlf_pushsource (FILE *);
-
-/* Get current source stream, from where all lines are read.  stdin by
-   default.  Can be changed by calling 'dlf_setsource'. */
-FILE *dlf_source (void);
 
 /* Note to use asynchronous reading mode.  In this mode, 'dlnext' polls source
    stream before reading.  If source stream has nothing to read, 'dlnext'
