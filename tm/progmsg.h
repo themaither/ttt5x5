@@ -1,8 +1,8 @@
 /* progmsg.h: logging
 Copyright (C) 2026 TheMaither <themaither@gmail.com> */
 
-#ifndef IMATH_H_INCLUDED
-#define IMATH_H_INCLUDED
+#ifndef PROGMSG_H_INCLUDED
+#define PROGMSG_H_INCLUDED
 
 #ifdef __cplusplus
 extern "C"
@@ -16,8 +16,14 @@ void progmsg_setname (const char *);
 void progmsg  (const char *fmt, ...);
 void vprogmsg (const char *fmt, va_list);
 
+/* Fancy. */
+#define progmsg_pos(FMT, ...)                                                  \
+    progmsg ("%s:%d (%s): " FMT, __FILE__, __LINE__,                           \
+                                 __PRETTY_FUNCTION__, __VA_ARGS__)
+
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* IMATH_H_INCLUDED */
+#endif /* PROGMSG_H_INCLUDED */
+
