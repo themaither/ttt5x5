@@ -55,7 +55,7 @@ raylib/raylib/libraylib.a :
 www :
 	install -D ttt5x5 www/ttt5x5.js
 	install -D ttt5x5.wasm www/ttt5x5.wasm
-	sed 's/{{{ SCRIPT }}}/<script src="ttt5x5.js"><\/script>/' <${srcdir}/raylib/src/shell.html >www/index.html
+	sed 's/{{{ SCRIPT }}}/<script src="ttt5x5.js"><\/script>/' <${srcdir}/raylib/src/minshell.html >www/index.html
 
 .PHONY : www
 
