@@ -1,5 +1,7 @@
 #include <config.h>
 
+#include "title.h"
+
 #include <raylib.h>
 #include <stdio.h>
 #include <btn.h>
@@ -8,14 +10,23 @@
 #include <assets.h>
 #include <draw.h>
 
-static int level_select = 0;
-static int leaving = 0;
+static int status;
+
+enum
+{
+  STATUS_NONE,
+  STATUS_LEVEL_SELECT,
+  STATUS_RANDOM_LEVEL,
+  STATUS_LEAVING
+};
+
 static int whaton = 0;
 static int mouse = 0;
 
 static Texture2D title_texture;
 static Texture2D level_select_texture;
 static Texture2D quit_texture;
+static Texture2D random_level_texture;
 
 static Texture2D
 LoadTextureFromMemory (unsigned char *data, int length)
@@ -29,6 +40,7 @@ LoadTextureFromMemory (unsigned char *data, int length)
 void
 title_init (void)
 {
+  status = 0;
 }
 
 void
@@ -43,11 +55,18 @@ autodep_title_init (void)
   imported = 1;
 }
 
+int
+title_status (void)
+{
+  return status;
+}
+
 void
 title_ginit (void)
 {
   title_texture = LoadTextureFromMemory (assets_title, assets_title_len);
   level_select_texture = LoadTextureFromMemory (assets_level_select, assets_level_select_len);
+  random_level_texture = LoadTextureFromMemory (assets_random_level, assets_random_level_len);
   quit_texture = LoadTextureFromMemory (assets_quit, assets_quit_len);
 }
 
@@ -87,16 +106,25 @@ title_update (void)
             {
               whaton = 1;
             }
+
+        if (x >= 214 && x <= 214 + 212)
+          if (y >= 102 + 56 * 2 && y <= 102 + 56 * 2 + 56)
+            {
+              whaton = 2;
+            }
       }
   }
 
   if (IsBtnPressed ())
     {
       if (whaton == 0)
-        level_select = 1;
+        status = STATUS_LEVEL_SELECT;
 
       if (whaton == 1)
-        leaving = 1;
+        status = STATUS_RANDOM_LEVEL;
+
+      if (whaton == 2)
+        status = STATUS_LEAVING;
     }
 
   if (IsKeyPressed (KEY_S))
@@ -113,7 +141,7 @@ title_update (void)
       --whaton;
     }
 
-  whaton = clamp (whaton, 0, 1);
+  whaton = clamp (whaton, 0, 2);
 
   BeginDrawing ();
   DrawTexture (title_texture, 0, 0, WHITE);
@@ -126,11 +154,18 @@ title_update (void)
     DrawButton (level_select_texture, 214, 102, 212, 56, 6);
 
   if (whaton == 1 && IsBtnDown ())
-    DrawButton (quit_texture, 214, 102 + 56, 212, 56, 8);
+    DrawButton (random_level_texture, 214, 102 + 56, 212, 56, 8);
   else if (whaton == 1)
-    DrawButton (quit_texture, 214, 102 + 56, 212, 56, 7);
+    DrawButton (random_level_texture, 214, 102 + 56, 212, 56, 7);
   else
-    DrawButton (quit_texture, 214, 102 + 56, 212, 56, 6);
+    DrawButton (random_level_texture, 214, 102 + 56, 212, 56, 6);
+
+  if (whaton == 2 && IsBtnDown ())
+    DrawButton (quit_texture, 214, 102 + 56 * 2, 212, 56, 8);
+  else if (whaton == 2)
+    DrawButton (quit_texture, 214, 102 + 56 * 2, 212, 56, 7);
+  else
+    DrawButton (quit_texture, 214, 102 + 56 * 2, 212, 56, 6);
 
   EndDrawing ();
 }
@@ -138,19 +173,6 @@ title_update (void)
 void
 title_reset (void)
 {
-  level_select = 0;
-  leaving = 0;
+  status = 0;
   whaton = 0;
-}
-
-int
-title_level_select (void)
-{
-  return level_select;
-}
-
-int
-title_leaving (void)
-{
-  return leaving;
 }

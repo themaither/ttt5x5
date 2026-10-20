@@ -155,6 +155,9 @@ assets.c :
 	xxd -n assets_level_select -i ${srcdir}/assets/level_select.png >>assets.c
 	echo "extern unsigned char assets_level_select[];" >> assets.h
 	echo "extern unsigned int assets_level_select_len;" >> assets.h
+	xxd -n assets_random_level -i ${srcdir}/assets/random_level.png >>assets.c
+	echo "extern unsigned char assets_random_level[];" >> assets.h
+	echo "extern unsigned int assets_random_level_len;" >> assets.h
 	xxd -n assets_quit -i ${srcdir}/assets/quit.png >>assets.c
 	echo "extern unsigned char assets_quit[];" >> assets.h
 	echo "extern unsigned int assets_quit_len;" >> assets.h

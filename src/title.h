@@ -20,8 +20,7 @@ void autodep_title_ginit (void);
 void title_update (void);
 void title_reset (void);
 
-int title_leaving      (void);
-int title_level_select (void);
+int title_status (void);
 
 #ifdef __cplusplus
 }
