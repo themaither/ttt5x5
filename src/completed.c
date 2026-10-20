@@ -51,15 +51,12 @@ io_init (void)
 
   savepath = strdupf ("%s%s", ttt5x5path, "save.dlf");
 
+  /* File is going to be created while saving anyway. */
+  if (!FileExists (savepath))
+    return;
+
   char *text = LoadFileText (savepath);
   const char *line;
-
-  if (!text)
-    {
-      perror ("Unable to open save file for reading");
-      UnloadFileText (text);
-      return;
-    }
 
   dlf_pushsource_manual ();
 
