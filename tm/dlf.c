@@ -18,9 +18,10 @@
 #include <readline/history.h>
 #endif /* TMLIB_USE_READLINE */
 
-
 struct source_state
 {
+  int manual;
+
   FILE *file;
 
   /* Name shown in error messages. */
@@ -147,6 +148,7 @@ dlf_init (void)
   sink[sink_curidx].file = stdout;
   source_curidx = 0;
   source[source_curidx].file = stdin;
+  source[source_curidx].manual = 0;
   source[source_curidx].name = strdup ("<stdin>");
   source[source_curidx].async = 0;
   source[source_curidx].interactive = 0;
@@ -268,6 +270,7 @@ dlf_setsource (FILE *f)
   source[source_curidx].line_number = 0;
   source[source_curidx].eof = 0;
   source[source_curidx].autowrap = 0;
+  source[source_curidx].manual = 0;
 
   ifc = 0;
   saveptr = NULL;
@@ -360,7 +363,6 @@ dlnext_sync (void)
       return DLNEXT_EOF;
     }
 }
-
 
 #if TMLIB_USE_READLINE
 static int
@@ -460,30 +462,73 @@ dlnext_async_readline (void)
 }
 #endif /* TMLIB_USE_READLINE */
 
+static int
+dlnext_feed (void)
+{
+  ifc = 0;
+
+  if (line_eof)
+    {
+      return DLNEXT_EOF;
+    }
+
+  if (line)
+    {
+      free (line);
+      line = NULL;
+    }
+
+  if (line_queue)
+    {
+      line = line_queue;
+      line_queue = NULL;
+
+      ifc = 0;
+
+      if (line)
+        ++line_number;
+      else
+        return DLNEXT_EOF;
+
+      return DLNEXT_OK;
+    }
+  else
+    {
+      return DLNEXT_NOTAVAIL;
+    }
+}
+
 int
 dlnext (void)
 {
   int result;
 
-#if TMLIB_USE_READLINE
-  if (source[source_curidx].interactive)
+  if (source[source_curidx].manual)
     {
-      if (!source[source_curidx].async)
-        {
-          result = dlnext_sync_readline ();
-        }
-      else
-        {
-          result = dlnext_async_readline ();
-        }
+      result = dlnext_feed ();
     }
   else
     {
-      result = dlnext_sync ();
-    }
+#if TMLIB_USE_READLINE
+      if (source[source_curidx].interactive)
+        {
+          if (!source[source_curidx].async)
+            {
+              result = dlnext_sync_readline ();
+            }
+          else
+            {
+              result = dlnext_async_readline ();
+            }
+        }
+      else
+        {
+          result = dlnext_sync ();
+        }
 #else
-  result = dlnext_sync ();
+      result = dlnext_sync ();
 #endif /* TMLIB_USE_READLINE */
+    }
 
   if (result == DLNEXT_EOF
         && source[source_curidx].autowrap
@@ -557,4 +602,67 @@ dlf_errorf (const char *fmt, ...)
   vfprintf (stderr, fmt, args);
 
   va_end (args);
+}
+
+void
+dlf_setsource_manual (void)
+{
+  source[source_curidx].manual = 1;
+
+  /* Killing all state */
+  source[source_curidx].line_number = 0;
+  source[source_curidx].interactive = 0;
+  source[source_curidx].async = 0;
+  source[source_curidx].line_number = 0;
+  source[source_curidx].eof = 0;
+  source[source_curidx].autowrap = 0;
+
+  ifc = 0;
+  saveptr = NULL;
+
+  if (line_queue)
+    {
+      free (line_queue);
+      line_queue = NULL;
+    }
+
+  if (line)
+    {
+      free (line);
+      line = NULL;
+    }
+
+#if TMLIB_USE_READLINE
+  if (handler_installed)
+    {
+      rl_callback_handler_remove ();
+      handler_installed = 0;
+    }
+#endif /* TMLIB_USE_READLINE */
+}
+
+void
+dlf_pushsource_manual (void)
+{
+  ++source_curidx;
+  assert (("Stack out of memory", source_curidx < SOURCE_STACK_CAP));
+
+  dlf_setsource_manual ();
+}
+
+void
+dlf_feed (const char *_line)
+{
+  if (!_line)
+    {
+      line_queue = NULL;
+      line_eof = 1;
+      rl_callback_handler_remove ();
+      return;
+    }
+
+  /* No more space left in queue */
+  assert (("Not enough space in queue.", !line_queue));
+
+  line_queue = strdup (_line);
 }

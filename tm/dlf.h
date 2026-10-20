@@ -45,8 +45,14 @@ void dlf_setsource (FILE *);
    calling 'dlf_popsource'. */
 void dlf_pushsource (FILE *);
 
+void dlf_setsource_manual (void);
+
+void dlf_pushsource_manual (void);
+
 /* Pops last source, returning to previous file with all it's state. */
 void dlf_popsource (void);
+
+void dlf_feed (const char *);
 
 /* Sets source name. Generally it's just a path to the file being read.
    Used only in 'dlf_errorf'. */
