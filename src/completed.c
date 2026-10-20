@@ -51,7 +51,7 @@ io_init (void)
   else
     ttt5x5path = strdup ("./");
 
-  savepath = strdupf ("%s%s", getuserroot (), "save.dlf");
+  savepath = strdupf ("%s%s", ttt5x5path, "save.dlf");
 
   /* File is going to be created while saving anyway. */
   if (!FileExists (savepath))
