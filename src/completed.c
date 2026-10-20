@@ -9,6 +9,8 @@
 #include <strdupf.h>
 #include <gamescript.h>
 #include <raylib.h>
+#include <progmsg.h>
+#include <string-buffer.h>
 
 static int db[128];
 static int id;
@@ -49,7 +51,7 @@ io_init (void)
   else
     ttt5x5path = strdup ("./");
 
-  savepath = strdupf ("%s%s", ttt5x5path, "save.dlf");
+  savepath = strdupf ("%s%s", getuserroot (), "save.dlf");
 
   /* File is going to be created while saving anyway. */
   if (!FileExists (savepath))
@@ -89,23 +91,43 @@ io_complete (void)
     }
   free (command);
 
-  file = fopen (savepath, "a");
+  struct string_buffer sb;
+  sb_init (&sb);
 
-  if (!file)
+  if (FileExists (savepath))
     {
-      perror ("Unable to open save file for writing");
-      return;
+      char *previous = LoadFileText (savepath);
+      sb_append_c (&sb, previous);
+      UnloadFileText (previous);
     }
 
-  dlf_pushsink (file);
+  char *line;
+
+  dlf_pushsink_manual ();
   dlputs ("completed_setid");
   dlputi (id);
   dline  ();
+  line = dlf_eat ();
+  progmsg ("Got from sink: %s", line);
+  sb_append_c (&sb, line);
+  sb_append1  (&sb, '\n');
+  free (line);
+
   dlputs ("complete");
   dline  ();
+  line = dlf_eat ();
+  progmsg ("Got from sink: %s", line);
+  sb_append_c (&sb, line);
+  sb_append1  (&sb, '\n');
+  free (line);
+
   dlf_popsink ();
 
-  fclose (file);
+  char *result = sb_dupfree_c (&sb);
+  progmsg ("A");
+  SaveFileText(savepath, result);
+  progmsg ("B");
+  free (result);
 }
 
 void

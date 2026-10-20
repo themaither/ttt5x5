@@ -23,7 +23,15 @@ void dlf_setsink (FILE *f);
 /* Pushes a sink.  Previous sink can be restored by calling 'dlf_popsink'. */
 void dlf_pushsink (FILE *f);
 
+void dlf_setsink_manual (void);
+
+void dlf_pushsink_manual (void);
+
 void dlf_popsink (void);
+
+/* Returns a line flushed by dline.  Returned value should be freed using
+   'free'. */
+char *dlf_eat (void);
 
 /* Puts a field into a line.  To write a line use 'dline'. */
 void dlputs (const char *field);

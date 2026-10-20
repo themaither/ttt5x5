@@ -44,6 +44,8 @@ struct source_state
 
 struct sink_state
 {
+  int manual;
+
   FILE *file;
 };
 
@@ -76,6 +78,13 @@ static size_t n = 0;
 /* Queue, used to store lines read by asynchronous readline callback.
    Currently can only store one line. */
 static char *line_queue = NULL;
+
+/* Queue to be read from by using 'dlf_eat'. */
+static char *sink_line_queue = NULL;
+
+/* Used by manual 'dlputs' and 'dline' to store fields before they're
+   flushed. */
+static struct string_buffer manual_sink_sb;
 
 /* Set to 1 by readline callback to indicate end of file. */
 static int line_eof = 0;
@@ -155,6 +164,8 @@ dlf_init (void)
   source[source_curidx].line_number = 0;
   source[source_curidx].eof = 0;
 
+  sb_init (&manual_sink_sb);
+
   fc = 0;
   ifc = 0;
 
@@ -220,6 +231,14 @@ void
 dlf_setsink (FILE *f)
 {
   sink[sink_curidx].file = f;
+  sink[sink_curidx].manual = 0;
+  fc = 0;
+}
+
+void
+dlf_setsink_manual (void)
+{
+  sink[sink_curidx].manual = 1;
   fc = 0;
 }
 
@@ -233,6 +252,15 @@ dlf_pushsink (FILE *f)
 }
 
 void
+dlf_pushsink_manual (void)
+{
+  ++sink_curidx;
+  assert (("Stack out of memory", sink_curidx < SOURCE_STACK_CAP));
+
+  dlf_setsink_manual ();
+}
+
+void
 dlf_popsink (void)
 {
   assert (("Cannot pop last sink", sink_curidx > 0));
@@ -243,19 +271,60 @@ dlf_popsink (void)
 void
 dlputs (const char *s)
 {
-  fdlputs (sink[sink_curidx].file, s);
+  if (sink[sink_curidx].manual == 0)
+    return fdlputs (sink[sink_curidx].file, s);
+
+  if (fc == 0)
+    {
+      sb_append_c (&manual_sink_sb, s);
+    }
+  else
+    {
+      sb_append1 (&manual_sink_sb, ' ');
+      sb_append_c (&manual_sink_sb, s);
+    }
+  ++fc;
 }
 
 void
 dlputi (int n)
 {
-  fdlputi (sink[sink_curidx].file, n);
+  if (sink[sink_curidx].manual == 0)
+    return fdlputi (sink[sink_curidx].file, n);
+
+  if (fc == 0)
+    {
+      sb_appendf (&manual_sink_sb, "%d", n);
+    }
+  else
+    {
+      sb_appendf (&manual_sink_sb, " %d", n);
+    }
+  ++fc;
 }
 
 void
 dline (void)
 {
-  fdline (sink[sink_curidx].file);
+  if (sink[sink_curidx].manual == 0)
+    return fdline (sink[sink_curidx].file);
+
+  fc = 0;
+  assert (("Not enough space in queue", sink_line_queue == NULL));
+
+  sink_line_queue = sb_dupfree_c (&manual_sink_sb);
+  sb_init (&manual_sink_sb);
+}
+
+char *
+dlf_eat (void)
+{
+  if (sink_line_queue == NULL)
+    return NULL;
+
+  char *result = sink_line_queue;
+  sink_line_queue = NULL;
+  return result;
 }
 
 void
