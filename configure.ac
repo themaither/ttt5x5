@@ -56,14 +56,19 @@ AS_IF([test "x$COMPILE_RAYLIB" = "xyes"],
 
 AS_IF([test "x$USE_READLINE" = "xno"],
   [
-    PKG_CHECK_MODULES([READLINE], [readline])
-  ],
-  [
     [READLINE_CFLAGS=""]
     [READLINE_LIBS=""]
     AC_SUBST([READLINE_CFLAGS])
     AC_SUBST([READLINE_LIBS])
     AC_DEFINE([TMLIB_USE_READLINE], [0], [Whether or not tmlib should use GNU Readline])
+  ],
+  [
+    PKG_CHECK_MODULES([READLINE], [readline])
+  ])
+
+AS_IF([test "x$TMLIB_OPTBUS" = "xno"],
+  [
+    AC_DEFINE([TMLIB_OPTBUS], [0], [Disable or enable tmlib optbus library])
   ])
 
 # Flags used to compile using emscripten toolchain

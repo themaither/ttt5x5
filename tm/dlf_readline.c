@@ -1,5 +1,11 @@
 #include <config.h>
 
+#ifndef TMLIB_USE_READLINE
+#define TMLIB_USE_READLINE 1
+#endif /* TMLIB_USE_READLINE */
+
+#if TMLIB_USE_READLINE
+
 #include <dlf.h>
 
 #include <readline/readline.h>
@@ -19,3 +25,5 @@ dlf_readline_feed (void)
 
   free (line);
 }
+
+#endif /* TMLIB_USE_READLINE */
