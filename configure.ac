@@ -18,8 +18,14 @@ gl_INIT
 AS_IF([test "x$USE_EMSCRIPTEN" = "xyes"],
   [
     AC_MSG_NOTICE([using emscripten settings])
+    AC_DEFINE([PLATFORM_WEB], [], [Defined if programs is compiled to run in a browser.])
+    [EMSCRIPTEN_LDFLAGS="-sUSE_GLFW=3 -sASSERTIONS=1 -sWASM=1 -sASYNCIFY -sGL_ENABLE_GET_PROC_ADDRESS=1"]
+  ],
+  [
+    [EMSCRIPTEN_LDFLAGS=""]
   ])
 AC_ARG_VAR([USE_EMSCRIPTEN], [set to 'yes' for emscripten support])
+AC_ARG_VAR([EMSCRIPTEN_LDFLAGS], [flags passed to linker if compiling using emscripten])
 
 
 
@@ -38,6 +44,15 @@ AC_ARG_VAR([EMCMAKE_CMAKE], [emscripten CMake command])
 
 # Checking for readline
 
+
+AC_ARG_VAR([WITH_READLINE],
+  [disable or enable interactive input using GNU readline])
+
+AS_IF([test "x$WITH_READLINE" != "xyes"],
+[
+  [with_readline="$WITH_READLINE"]
+])
+
 AC_ARG_WITH([readline],
   [AS_HELP_STRING([--without-readline],
     [disable interactive input using GNU readline])],
@@ -50,7 +65,7 @@ AS_IF([test "x$with_readline" = "xno"],
     [READLINE_LIBS=""]
     AC_SUBST([READLINE_CFLAGS])
     AC_SUBST([READLINE_LIBS])
-    AC_DEFINE([TMLIB_USE_READLINE], [0], [Whether or not tmlib should use GNU Readline])
+    AC_DEFINE([TMLIB_USE_READLINE], [0], [Whether or not tmlib should use GNU readline.])
   ],
   [
     PKG_CHECK_MODULES([READLINE], [readline])
@@ -60,6 +75,14 @@ AS_IF([test "x$with_readline" = "xno"],
 
 # Checking for tmlib-optbus
 
+AC_ARG_VAR([ENABLE_TMLIB_OPTBUS],
+  [disable or enable tmlib program argument parser])
+
+AS_IF([test "x$ENABLE_TMLIB_OPTBUS" != "xyes"],
+[
+  [enable_tmlib_optbus="$ENABLE_TMLIB_OPTBUS"]
+])
+
 AC_ARG_ENABLE([tmlib-optbus],
   [AS_HELP_STRING([--disable-tmlib-optbus],
     [disable tmlib program argument parser])],
@@ -68,7 +91,7 @@ AC_ARG_ENABLE([tmlib-optbus],
 
 AS_IF([test "x$enable_tmlib_optbus" = "xno"],
   [
-    AC_DEFINE([TMLIB_OPTBUS], [0], [Disable or enable tmlib optbus library])
+    AC_DEFINE([TMLIB_OPTBUS], [0], [Disable or enable tmlib optbus library.])
   ])
 
 
@@ -101,17 +124,6 @@ AS_IF([test "x$COMPILE_RAYLIB" = "xyes"],
   ])
 
 
-
-# Flags used to compile using emscripten toolchain
-AS_IF([test "x$USE_EMSCRIPTEN" = "xyes"],
-  [
-    [EMSCRIPTEN_LDFLAGS="-sUSE_GLFW=3 -sASSERTIONS=1 -sWASM=1 -sASYNCIFY -sGL_ENABLE_GET_PROC_ADDRESS=1"]
-  ],
-  [
-    [EMSCRIPTEN_LDFLAGS=""]
-  ])
-
-AC_SUBST([EMSCRIPTEN_LDFLAGS])
 
 AC_CONFIG_FILES([Makefile])
 AC_CONFIG_FILES([lib/Makefile])

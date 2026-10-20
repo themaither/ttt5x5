@@ -51,8 +51,7 @@ want, you can add them to your system settings and be good.
 3. Compile as usual
 
 # Building for Web
-
-1. `COMPILE_RAYLIB=yes USE_EMSCRIPTEN=yes emconfigure ./configure --without-readline --disable-tmlib-optbus` 
+1. `USE_EMSCRIPTEN=yes ENABLE_TMLIB_OPTBUS=no COMPILE_RAYLIB=yes WITH_READLINE=no emconfigure ../configure` 
 2. `make`
 3. `make www`
 4. Hope it works (it won't).
