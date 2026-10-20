@@ -52,7 +52,7 @@ want, you can add them to your system settings and be good.
 
 # Building for Web
 
-1. `COMPILE_RAYLIB="yes" USE_EMSCRIPTEN="yes" emconfigure ../configure` 
+1. `COMPILE_RAYLIB=yes USE_EMSCRIPTEN=yes emconfigure ./configure --without-readline --disable-tmlib-optbus` 
 2. `make`
 3. `make www`
 4. Hope it works (it won't).

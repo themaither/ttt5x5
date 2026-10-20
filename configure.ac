@@ -5,56 +5,46 @@ AC_PREREQ([2.72])
 AC_INIT([ttt5x5], [0.0.8], [themaither@gmail.com])
 AM_INIT_AUTOMAKE([foreign subdir-objects])
 
-AS_IF([test "x$USE_EMSCRIPTEN" = "xyes"],
-  [
-    AC_MSG_NOTICE([using emscripten settings])
-  ])
 
 gl_EARLY
 AC_PROG_CC
 
 gl_INIT
 
-AS_IF([test "x$COMPILE_RAYLIB" = "xyes"],
+
+
+# Testing if we are using emscripten
+
+AS_IF([test "x$USE_EMSCRIPTEN" = "xyes"],
   [
-    AC_MSG_NOTICE([raylib going to be compiled])
-    AC_MSG_NOTICE([ensure that '${srcdir}' has raylib source code, ])
-    AC_MSG_NOTICE([and you have CMake installed])
+    AC_MSG_NOTICE([using emscripten settings])
+  ])
+AC_ARG_VAR([USE_EMSCRIPTEN], [set to 'yes' for emscripten support])
 
-    [RAYLIB_CFLAGS="-I${srcdir}/raylib/src"]
 
-    AS_IF([test "x$USE_EMSCRIPTEN" = "xyes"],
-      [
-        [RAYLIB_LIBS="-Lraylib/raylib -lraylib"]
-      ],
-      [
-        [RAYLIB_LIBS="-Lraylib/raylib -lraylib -lX11"]
-      ])
 
-    AC_SUBST([RAYLIB_CFLAGS])
-    AC_SUBST([RAYLIB_LIBS])
+# Testing for 'emcmake cmake'
 
-    # CMake is used to compile raylib
-    AS_IF([test "x$USE_EMSCRIPTEN" = "xyes"],
-      [
-        [EMCMAKE_CMAKE="emcmake cmake"]
-      ],
-      [
-        [EMCMAKE_CMAKE="cmake"]
-      ])
-    AC_SUBST([EMCMAKE_CMAKE])
-
-    RAYLIB_DEPENDENCIES="raylib/raylib/libraylib.a"
-    AC_SUBST([RAYLIB_DEPENDENCIES])
+AS_IF([test "x$USE_EMSCRIPTEN" = "xyes"],
+  [
+    [EMCMAKE_CMAKE="emcmake cmake"]
   ],
   [
-    AC_MSG_NOTICE([using pkg-config to resolve raylib])
-    PKG_CHECK_MODULES([RAYLIB], [raylib])
-    RAYLIB_DEPENDENCIES=""
-    AC_SUBST([RAYLIB_DEPENDENCIES])
+    [EMCMAKE_CMAKE="cmake"]
   ])
+AC_ARG_VAR([EMCMAKE_CMAKE], [emscripten CMake command])
 
-AS_IF([test "x$USE_READLINE" = "xno"],
+
+
+# Checking for readline
+
+AC_ARG_WITH([readline],
+  [AS_HELP_STRING([--without-readline],
+    [disable interactive input using GNU readline])],
+  [],
+  [with_readline=yes])
+
+AS_IF([test "x$with_readline" = "xno"],
   [
     [READLINE_CFLAGS=""]
     [READLINE_LIBS=""]
@@ -66,10 +56,51 @@ AS_IF([test "x$USE_READLINE" = "xno"],
     PKG_CHECK_MODULES([READLINE], [readline])
   ])
 
-AS_IF([test "x$TMLIB_OPTBUS" = "xno"],
+
+
+# Checking for tmlib-optbus
+
+AC_ARG_ENABLE([tmlib-optbus],
+  [AS_HELP_STRING([--disable-tmlib-optbus],
+    [disable tmlib program argument parser])],
+  [],
+  [enable_tmlib_optbus=yes])
+
+AS_IF([test "x$enable_tmlib_optbus" = "xno"],
   [
     AC_DEFINE([TMLIB_OPTBUS], [0], [Disable or enable tmlib optbus library])
   ])
+
+
+
+# Checking for raylib
+
+AC_ARG_VAR([COMPILE_RAYLIB], [set to 'yes' whether or not to compile Raylib
+from source instead of finding it through pkg-config])
+AS_IF([test "x$COMPILE_RAYLIB" = "xyes"],
+  [
+    AC_MSG_NOTICE([raylib going to be compiled])
+    AC_MSG_NOTICE([ensure that '${srcdir}' has raylib source code, ])
+    AC_MSG_NOTICE([and you have CMake installed])
+
+    [RAYLIB_CFLAGS="-I${srcdir}/raylib/src"]
+    [RAYLIB_LIBS="-Lraylib/raylib -lraylib"]
+
+    AC_SUBST([RAYLIB_CFLAGS])
+    AC_SUBST([RAYLIB_LIBS])
+
+
+    RAYLIB_DEPENDENCIES="raylib/raylib/libraylib.a"
+    AC_SUBST([RAYLIB_DEPENDENCIES])
+  ],
+  [
+    AC_MSG_NOTICE([using pkg-config to resolve raylib])
+    PKG_CHECK_MODULES([RAYLIB], [raylib])
+    RAYLIB_DEPENDENCIES=""
+    AC_SUBST([RAYLIB_DEPENDENCIES])
+  ])
+
+
 
 # Flags used to compile using emscripten toolchain
 AS_IF([test "x$USE_EMSCRIPTEN" = "xyes"],
