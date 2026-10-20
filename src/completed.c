@@ -53,7 +53,14 @@ io_init (void)
       perror ("Unable to open save file for reading");
       return;
     }
-  evalf (file);
+
+  dlf_pushsource (file);
+
+  while (-1 != eval ())
+  {
+  }
+
+  dlf_popsource ();
 }
 
 static void
@@ -132,18 +139,3 @@ complete (void)
   mem_complete ();
   io_complete ();
 }
-
-static void
-evalf (FILE *f)
-{
-  int value;
-  const char *field = NULL;
-  dlf_pushsource (f);
-
-  while (-1 != eval ())
-  {
-  }
-
-  dlf_popsource ();
-}
-
