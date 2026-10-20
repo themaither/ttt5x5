@@ -5,12 +5,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include <dlf.h>
-#include <dlf_getline.h>
 #include <strdupf.h>
 #include <gamescript.h>
-#include <raylib.h>
-#include <progmsg.h>
-#include <string-buffer.h>
 
 static int db[128];
 static int id;
@@ -22,8 +18,6 @@ static char *ttt5x5path = NULL;
 
 static char *command = NULL;
 size_t command_size = 0;
-
-static char *saveptr = NULL;
 
 static void
 mem_init (void)
@@ -52,28 +46,14 @@ io_init (void)
     ttt5x5path = strdup ("./");
 
   savepath = strdupf ("%s%s", ttt5x5path, "save.dlf");
+  FILE *file = fopen (savepath, "r");
 
-  /* File is going to be created while saving anyway. */
-  if (!FileExists (savepath))
+  if (!file)
+  {
+    perror ("Unable to open save file for reading");
     return;
-
-  char *text = LoadFileText (savepath);
-  const char *line;
-
-  dlf_pushsource_manual ();
-
-  if (line = mbstok_r (text, "\n", &saveptr))
-    do
-      {
-        dlf_feed (line);
-        if (eval () == -1)
-          break;
-      }
-    while (line = mbstok_r (NULL, "\n", &saveptr));
-
-  UnloadFileText (text);
-
-  dlf_popsource ();
+  }
+  evalf (file);
 }
 
 static void
@@ -84,46 +64,30 @@ io_complete (void)
   command = strdupf ("/usr/bin/ls %s 2>/dev/null >/dev/null", ttt5x5path);
 
   if (0 != system (command))
-    {
-      free (command);
-      command = strdupf ("/usr/bin/mkdir -p %s 2>/dev/null >/dev/null", ttt5x5path);
-      system (command);
-    }
+  {
+    free (command);
+    command = strdupf ("/usr/bin/mkdir -p %s 2>/dev/null >/dev/null", ttt5x5path);
+    system (command);
+  }
   free (command);
 
-  struct string_buffer sb;
-  sb_init (&sb);
+  file = fopen (savepath, "a");
 
-  if (FileExists (savepath))
-    {
-      char *previous = LoadFileText (savepath);
-      sb_append_c (&sb, previous);
-      UnloadFileText (previous);
-    }
+  if (!file)
+  {
+    perror ("Unable to open save file for writing");
+    return;
+  }
 
-  char *line;
-
-  dlf_pushsink_manual ();
+  dlf_pushsink (file);
   dlputs ("completed_setid");
   dlputi (id);
   dline  ();
-  line = dlf_eat ();
-  sb_append_c (&sb, line);
-  sb_append1  (&sb, '\n');
-  free (line);
-
   dlputs ("complete");
   dline  ();
-  line = dlf_eat ();
-  sb_append_c (&sb, line);
-  sb_append1  (&sb, '\n');
-  free (line);
-
   dlf_popsink ();
 
-  char *result = sb_dupfree_c (&sb);
-  SaveFileText(savepath, result);
-  free (result);
+  fclose (file);
 }
 
 void
@@ -167,4 +131,18 @@ complete (void)
 
   mem_complete ();
   io_complete ();
+}
+
+static void
+evalf (FILE *f)
+{
+  int value;
+  const char *field = NULL;
+  dlf_pushsource (f);
+
+  while (-1 != eval ())
+  {
+  }
+
+  dlf_popsource ();
 }
