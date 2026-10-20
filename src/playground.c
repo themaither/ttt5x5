@@ -1,6 +1,7 @@
 #include <config.h>
 
 #include <dlf.h>
+#include <dlf_getline.h>
 
 int
 main (int argc, char **argv)
@@ -9,11 +10,11 @@ main (int argc, char **argv)
 
   dlf_pushsource_manual ();
 
-  dlf_feed ("first field");
-
   for (;;)
     {
       const char *field;
+
+      dlf_getline_feed (stdin);
 
       if (dlnext () != DLNEXT_OK)
         {
@@ -31,4 +32,6 @@ main (int argc, char **argv)
 
       printf ("%s\n", field);
     }
+
+  dlf_popsource ();
 }
