@@ -54,7 +54,17 @@ AS_IF([test "x$COMPILE_RAYLIB" = "xyes"],
     AC_SUBST([RAYLIB_DEPENDENCIES])
   ])
 
-PKG_CHECK_MODULES([READLINE], [readline])
+AS_IF([test "x$USE_READLINE" = "xno"],
+  [
+    PKG_CHECK_MODULES([READLINE], [readline])
+  ],
+  [
+    [READLINE_CFLAGS=""]
+    [READLINE_LIBS=""]
+    AC_SUBST([READLINE_CFLAGS])
+    AC_SUBST([READLINE_LIBS])
+    AC_DEFINE([TMLIB_USE_READLINE], [0], [Whether or not tmlib should use GNU Readline])
+  ])
 
 # Flags used to compile using emscripten toolchain
 AS_IF([test "x$USE_EMSCRIPTEN" = "xyes"],

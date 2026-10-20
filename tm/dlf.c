@@ -657,7 +657,6 @@ dlf_feed (const char *_line)
     {
       line_queue = NULL;
       line_eof = 1;
-      rl_callback_handler_remove ();
       return;
     }
 
