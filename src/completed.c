@@ -108,7 +108,6 @@ io_complete (void)
   dlputi (id);
   dline  ();
   line = dlf_eat ();
-  progmsg ("Got from sink: %s", line);
   sb_append_c (&sb, line);
   sb_append1  (&sb, '\n');
   free (line);
@@ -116,7 +115,6 @@ io_complete (void)
   dlputs ("complete");
   dline  ();
   line = dlf_eat ();
-  progmsg ("Got from sink: %s", line);
   sb_append_c (&sb, line);
   sb_append1  (&sb, '\n');
   free (line);
@@ -124,9 +122,7 @@ io_complete (void)
   dlf_popsink ();
 
   char *result = sb_dupfree_c (&sb);
-  progmsg ("A");
   SaveFileText(savepath, result);
-  progmsg ("B");
   free (result);
 }
 
