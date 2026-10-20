@@ -49,6 +49,8 @@ main (int argc, char **argv)
 {
   progmsg_setname (argv[0]);
 
+  SetTraceLogCallback(raylib_log);
+
   setlocale (LC_ALL, "");
 
   autodep_optbus_init ();
@@ -59,7 +61,6 @@ main (int argc, char **argv)
 
   optbus_parse (argc, argv);
 
-  SetTraceLogCallback(raylib_log);
   SetTargetFPS (60);
   InitWindow (640, 400, PACKAGE_STRING);
 

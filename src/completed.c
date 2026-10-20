@@ -5,8 +5,10 @@
 #include <string.h>
 #include <stdlib.h>
 #include <dlf.h>
+#include <dlf_getline.h>
 #include <strdupf.h>
 #include <gamescript.h>
+#include <raylib.h>
 
 static int db[128];
 static int id;
@@ -18,6 +20,8 @@ static char *ttt5x5path = NULL;
 
 static char *command = NULL;
 size_t command_size = 0;
+
+static char *saveptr = NULL;
 
 static void
 mem_init (void)
@@ -46,19 +50,29 @@ io_init (void)
     ttt5x5path = strdup ("./");
 
   savepath = strdupf ("%s%s", ttt5x5path, "save.dlf");
-  FILE *file = fopen (savepath, "r");
 
-  if (!file)
+  char *text = LoadFileText (savepath);
+  const char *line;
+
+  if (!text)
     {
       perror ("Unable to open save file for reading");
+      UnloadFileText (text);
       return;
     }
 
-  dlf_pushsource (file);
+  dlf_pushsource_manual ();
 
-  while (-1 != eval ())
-  {
-  }
+  if (line = mbstok_r (text, "\n", &saveptr))
+    do
+      {
+        dlf_feed (line);
+        if (eval () == -1)
+          break;
+      }
+    while (line = mbstok_r (NULL, "\n", &saveptr));
+
+  UnloadFileText (text);
 
   dlf_popsource ();
 }
