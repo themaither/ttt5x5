@@ -230,6 +230,9 @@ session_update (void)
         }
     }
 
+  if (IsKeyPressed (KEY_R))
+    _5x5_startpattern ();
+
   press_animation = fmax (0.f, press_animation - GetFrameTime () * 2.f);
   win_animation   = fmax (0.f, win_animation   - GetFrameTime () * 2.f);
 
