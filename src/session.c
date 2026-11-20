@@ -44,6 +44,8 @@ static float win_animation = 0.f;
 static Texture2D session_texture;
 static Texture2D leave_texture;
 static Texture2D moves_texture;
+static Texture2D key_esc_texture;
+static Texture2D key_r_texture;
 
 static int mouse = 0;
 
@@ -96,6 +98,8 @@ session_ginit (void)
   leave_texture = LoadTextureFromMemory (assets_leave, assets_leave_len);
   session_texture = LoadTextureFromMemory (assets_session, assets_session_len);
   moves_texture = LoadTextureFromMemory (assets_moves, assets_moves_len);
+  key_r_texture = LoadTextureFromMemory (assets_key_r, assets_key_r_len);
+  key_esc_texture = LoadTextureFromMemory (assets_key_esc, assets_key_esc_len);
 }
 
 void
@@ -278,6 +282,8 @@ session_update (void)
 
   DrawTexture (moves_texture, 336, 2, WHITE);
   DrawNumber3 (moves, 400, 6);
+
+  DrawTexture (key_esc_texture, 14, 36, WHITE);
 
   EndDrawing ();
 }

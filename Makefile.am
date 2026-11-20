@@ -66,6 +66,12 @@ assets.c :
 	echo "extern unsigned char assets_black16[];" >> assets.h
 	echo "extern unsigned int assets_black16_len;" >> assets.h
 	xxd -n assets_black48 -i ${srcdir}/assets/black48.png >>assets.c
+	echo "extern unsigned char assets_key_esc[];" >> assets.h
+	echo "extern unsigned int assets_key_esc_len;" >> assets.h
+	xxd -n assets_key_esc -i ${srcdir}/assets/key_esc.png >>assets.c
+	echo "extern unsigned char assets_key_r[];" >> assets.h
+	echo "extern unsigned int assets_key_r_len;" >> assets.h
+	xxd -n assets_key_r -i ${srcdir}/assets/key_r.png >>assets.c
 	echo "extern unsigned char assets_black48[];" >> assets.h
 	echo "extern unsigned int assets_black48_len;" >> assets.h
 	xxd -n assets_layout -i ${srcdir}/assets/layout.svg >>assets.c
