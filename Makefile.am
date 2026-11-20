@@ -59,7 +59,7 @@ www :
 
 .PHONY : www
 
-assets.c :
+assets.c : Makefile
 	echo "" > assets.c
 	echo "" > assets.h
 	xxd -n assets_black16 -i ${srcdir}/assets/black16.png >>assets.c
@@ -71,6 +71,9 @@ assets.c :
 	xxd -n assets_key_esc -i ${srcdir}/assets/key_esc.png >>assets.c
 	echo "extern unsigned char assets_key_r[];" >> assets.h
 	echo "extern unsigned int assets_key_r_len;" >> assets.h
+	xxd -n assets_hint_controls -i ${srcdir}/assets/hint_controls.png >>assets.c
+	echo "extern unsigned char assets_hint_controls[];" >> assets.h
+	echo "extern unsigned int assets_hint_controls_len;" >> assets.h
 	xxd -n assets_key_r -i ${srcdir}/assets/key_r.png >>assets.c
 	echo "extern unsigned char assets_black48[];" >> assets.h
 	echo "extern unsigned int assets_black48_len;" >> assets.h

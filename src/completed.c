@@ -118,6 +118,12 @@ completed_setid (int x)
 }
 
 int
+completed_getid (void)
+{
+  return id;
+}
+
+int
 completed (void)
 {
   return db[id];

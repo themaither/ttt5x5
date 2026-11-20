@@ -14,6 +14,7 @@ void autodep_completed_init (void);
 
 /* chooses level by id */
 void completed_setid (int);
+int completed_getid (void);
 
 int  completed (void);
 void complete  (void);
