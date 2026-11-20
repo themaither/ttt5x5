@@ -47,6 +47,7 @@ static Texture2D moves_texture;
 static Texture2D key_esc_texture;
 static Texture2D key_r_texture;
 static Texture2D hint_controls_texture;
+static Texture2D hint_objective_texture;
 
 static int mouse = 0;
 
@@ -103,6 +104,8 @@ session_ginit (void)
   key_esc_texture = LoadTextureFromMemory (assets_key_esc, assets_key_esc_len);
   hint_controls_texture = LoadTextureFromMemory (assets_hint_controls,
                                                  assets_hint_controls_len);
+  hint_objective_texture = LoadTextureFromMemory (assets_hint_objective,
+                                                 assets_hint_objective_len);
 }
 
 void
@@ -288,7 +291,10 @@ session_update (void)
 
   DrawTexture (key_esc_texture, 14, 36, WHITE);
   if (completed_getid () == 0)
-    DrawTexture (hint_controls_texture, 450, 60, WHITE);
+    {
+      DrawTexture (hint_controls_texture, 450, 60, WHITE);
+      DrawTexture (hint_objective_texture, 40, 195, WHITE);
+    }
 
   EndDrawing ();
 }

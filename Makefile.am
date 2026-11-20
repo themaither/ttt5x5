@@ -74,6 +74,9 @@ assets.c : Makefile
 	xxd -n assets_hint_controls -i ${srcdir}/assets/hint_controls.png >>assets.c
 	echo "extern unsigned char assets_hint_controls[];" >> assets.h
 	echo "extern unsigned int assets_hint_controls_len;" >> assets.h
+	xxd -n assets_hint_objective -i ${srcdir}/assets/hint_objective.png >>assets.c
+	echo "extern unsigned char assets_hint_objective[];" >> assets.h
+	echo "extern unsigned int assets_hint_objective_len;" >> assets.h
 	xxd -n assets_key_r -i ${srcdir}/assets/key_r.png >>assets.c
 	echo "extern unsigned char assets_black48[];" >> assets.h
 	echo "extern unsigned int assets_black48_len;" >> assets.h
