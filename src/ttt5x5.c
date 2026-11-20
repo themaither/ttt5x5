@@ -69,6 +69,7 @@ main (int argc, char **argv)
 
   SetTargetFPS (60);
   InitWindow (640, 400, PACKAGE_STRING);
+  SetExitKey (0);
 
   autodep_title_ginit   ();
   autodep_session_ginit ();

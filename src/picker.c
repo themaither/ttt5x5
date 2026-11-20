@@ -221,6 +221,12 @@ picker_update (void)
       top_whaton = clamp (0, 2, top_whaton);
     }
 
+  if (IsKeyPressed (KEY_ESCAPE))
+    {
+      BtnAbort ();
+      whaton = 1;
+    }
+
   /* controls for pattern cursor */
   else if (whaton == 0)
     {

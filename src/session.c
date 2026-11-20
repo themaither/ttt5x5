@@ -195,12 +195,6 @@ session_update (void)
 
       if (IsKeyPressed (KEY_W))
         {
-          if (player_y == 0)
-            {
-              BtnAbort ();
-              whaton = 1;
-            }
-
           --player_y;
           mouse = 0;
         }
@@ -232,6 +226,12 @@ session_update (void)
 
   if (IsKeyPressed (KEY_R))
     _5x5_startpattern ();
+
+  if (IsKeyPressed (KEY_ESCAPE))
+    {
+      BtnAbort ();
+      whaton = 1;
+    }
 
   press_animation = fmax (0.f, press_animation - GetFrameTime () * 2.f);
   win_animation   = fmax (0.f, win_animation   - GetFrameTime () * 2.f);
