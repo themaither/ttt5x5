@@ -19,3 +19,4 @@ config.sub
 config.guess
 compile
 aclocal.m4
+*.cache
