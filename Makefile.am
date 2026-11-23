@@ -173,6 +173,9 @@ assets.c : Makefile
 	xxd -n assets_quit -i ${srcdir}/assets/quit.png >>assets.c
 	echo "extern unsigned char assets_quit[];" >> assets.h
 	echo "extern unsigned int assets_quit_len;" >> assets.h
+	xxd -n assets_restart -i ${srcdir}/assets/restart.png >>assets.c
+	echo "extern unsigned char assets_restart[];" >> assets.h
+	echo "extern unsigned int assets_restart_len;" >> assets.h
 	xxd -n assets_button_hovered -i ${srcdir}/assets/button_hovered.png >>assets.c
 	echo "extern unsigned char assets_button_hovered[];" >> assets.h
 	echo "extern unsigned int assets_button_hovered_len;" >> assets.h

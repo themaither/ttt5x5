@@ -48,11 +48,13 @@ static Texture2D key_esc_texture;
 static Texture2D key_r_texture;
 static Texture2D hint_controls_texture;
 static Texture2D hint_objective_texture;
+static Texture2D restart_texture;
 
 static int mouse = 0;
 
 /* what cursor is on */
 static int whaton = 0;
+static int whaton2 = 0;
 
 static int leaving = 0;
 
@@ -98,6 +100,7 @@ void
 session_ginit (void)
 {
   leave_texture = LoadTextureFromMemory (assets_leave, assets_leave_len);
+  restart_texture = LoadTextureFromMemory (assets_restart, assets_restart_len);
   session_texture = LoadTextureFromMemory (assets_session, assets_session_len);
   moves_texture = LoadTextureFromMemory (assets_moves, assets_moves_len);
   key_r_texture = LoadTextureFromMemory (assets_key_r, assets_key_r_len);
@@ -178,13 +181,19 @@ session_update (void)
           mouse = 0;
         }
 
-      if (IsBtnPressed ())
+      if (whaton2 == 0 && IsBtnPressed ())
         {
           leaving = 1;
           _5x5_resetgame ();
 #ifdef BUILDLEVEL
           printf ("break;\n");
 #endif
+        }
+
+      if (whaton2 == 1 && IsBtnPressed ())
+        {
+          _5x5_startpattern ();
+          whaton = 0;
         }
     }
 
@@ -234,13 +243,18 @@ session_update (void)
         }
     }
 
-  if (IsKeyPressed (KEY_R))
-    _5x5_startpattern ();
-
   if (IsKeyPressed (KEY_ESCAPE))
     {
       BtnAbort ();
       whaton = 1;
+      whaton2 = 0;
+    }
+
+  if (IsKeyPressed (KEY_R))
+    {
+      BtnAbort ();
+      whaton = 1;
+      whaton2 = 1;
     }
 
   press_animation = fmax (0.f, press_animation - GetFrameTime () * 2.f);
@@ -279,17 +293,27 @@ session_update (void)
   if (whaton == 0)
     DrawCursor (x (player_x_interp * 48), y (player_y_interp * 48), 48);
 
-  if (whaton == 1 && IsBtnDown ())
+  if (whaton == 1 && whaton2 == 0 && IsBtnDown ())
     DrawButton (leave_texture, 2, 2, 80, 32, 2);
-  else if (whaton == 1)
+  else if (whaton == 1 && whaton2 == 0)
     DrawButton (leave_texture, 2, 2, 80, 32, 1);
   else
     DrawButton (leave_texture, 2, 2, 80, 32, 3);
 
+  DrawTexture (key_esc_texture, 75, 11, WHITE);
+
+  if (whaton == 1 && whaton2 == 1 && IsBtnDown ())
+    DrawButton (restart_texture, 120, 2, 68, 32, 2);
+  else if (whaton == 1 && whaton2 == 1)
+    DrawButton (restart_texture, 120, 2, 68, 32, 1);
+  else
+    DrawButton (restart_texture, 120, 2, 68, 32, 3);
+
+  DrawTexture (key_r_texture, 185, 11, WHITE);
+
   DrawTexture (moves_texture, 336, 2, WHITE);
   DrawNumber3 (moves, 400, 6);
 
-  DrawTexture (key_esc_texture, 14, 36, WHITE);
   if (completed_getid () == 0)
     {
       DrawTexture (hint_controls_texture, 450, 60, WHITE);
