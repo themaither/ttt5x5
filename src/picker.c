@@ -221,12 +221,6 @@ picker_update (void)
       top_whaton = clamp (0, 2, top_whaton);
     }
 
-  if (IsKeyPressed (KEY_ESCAPE))
-    {
-      BtnAbort ();
-      whaton = 1;
-    }
-
   /* controls for pattern cursor */
   else if (whaton == 0)
     {
@@ -280,6 +274,12 @@ picker_update (void)
             }
           return;
         }
+    }
+
+  if (IsKeyPressed (KEY_ESCAPE))
+    {
+      BtnAbort ();
+      whaton = 1;
     }
 
   player_x = clamp (player_x, 0, 4);
